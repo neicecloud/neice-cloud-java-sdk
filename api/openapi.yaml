@@ -67,6 +67,11 @@ paths:
       description: 获取iOS设备证书列表
       operationId: getCertificates
       parameters:
+      - description: asc
+        in: query
+        name: asc
+        schema:
+          type: boolean
       - description: limit
         in: query
         name: limit
@@ -74,11 +79,6 @@ paths:
         schema:
           format: int32
           type: integer
-      - description: order
-        in: query
-        name: order
-        schema:
-          type: string
       - description: page
         in: query
         name: page
@@ -342,10 +342,18 @@ components:
     DeviceRequest:
       example:
         phone: phone
+        name: name
         reserve: true
+        callback: callback
         udid: udid
         quality: 0
       properties:
+        callback:
+          description: 预定证书激活时可通过回调地址将证书推送到业务系统中，为空将不会回调
+          type: string
+        name:
+          description: 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分
+          type: string
         phone:
           description: 预定手机:设备激活后发送可以安装APP的通知短信
           type: string
@@ -413,20 +421,34 @@ components:
         msg: msg
         code: 0
         data:
-        - valid: true
-          password: password
+        - certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
           description: description
-          udid: udid
+          deviceId: deviceId
           uuid: uuid
-        - valid: true
+          quality: 1
+          valid: true
           password: password
+          price: 6.027456183070403
+          profileId: profileId
+          name: name
+          reserve: true
+          udid: udid
+        - certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
           description: description
-          udid: udid
+          deviceId: deviceId
           uuid: uuid
+          quality: 1
+          valid: true
+          password: password
+          price: 6.027456183070403
+          profileId: profileId
+          name: name
+          reserve: true
+          udid: udid
         success: true
       properties:
         code:
@@ -447,13 +469,20 @@ components:
         msg: msg
         code: 0
         data:
-          valid: true
-          password: password
+          certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
           description: description
-          udid: udid
+          deviceId: deviceId
           uuid: uuid
+          quality: 1
+          valid: true
+          password: password
+          price: 6.027456183070403
+          profileId: profileId
+          name: name
+          reserve: true
+          udid: udid
         success: true
       properties:
         code:
@@ -469,26 +498,55 @@ components:
       type: object
     PersonalCertificate:
       example:
-        valid: true
-        password: password
+        certificateId: certificateId
         mobileprovision: mobileprovision
         certificate: certificate
         description: description
-        udid: udid
+        deviceId: deviceId
         uuid: uuid
+        quality: 1
+        valid: true
+        password: password
+        price: 6.027456183070403
+        profileId: profileId
+        name: name
+        reserve: true
+        udid: udid
       properties:
         certificate:
           description: 设备证书P12
           type: string
+        certificateId:
+          description: 证书ID
+          type: string
         description:
           description: 证书描述信息
+          type: string
+        deviceId:
+          description: 设备ID
           type: string
         mobileprovision:
           description: 设备的描述文件Mobileprovision
           type: string
+        name:
+          description: 证书名称
+          type: string
         password:
           description: 设备证书密码
           type: string
+        price:
+          description: 服务价格
+          type: number
+        profileId:
+          description: 描述文件ID
+          type: string
+        quality:
+          description: 证书质保天数
+          format: int32
+          type: integer
+        reserve:
+          description: 预定证书
+          type: boolean
         udid:
           description: 设备的UDID
           type: string

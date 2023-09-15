@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -49,11 +50,27 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'certificateId'
+     */
+    @Test
+    public void certificateIdTest() {
+        // TODO: test certificateId
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'deviceId'
+     */
+    @Test
+    public void deviceIdTest() {
+        // TODO: test deviceId
     }
 
     /**
@@ -65,11 +82,51 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
+
+    /**
      * Test the property 'password'
      */
     @Test
     public void passwordTest() {
         // TODO: test password
+    }
+
+    /**
+     * Test the property 'price'
+     */
+    @Test
+    public void priceTest() {
+        // TODO: test price
+    }
+
+    /**
+     * Test the property 'profileId'
+     */
+    @Test
+    public void profileIdTest() {
+        // TODO: test profileId
+    }
+
+    /**
+     * Test the property 'quality'
+     */
+    @Test
+    public void qualityTest() {
+        // TODO: test quality
+    }
+
+    /**
+     * Test the property 'reserve'
+     */
+    @Test
+    public void reserveTest() {
+        // TODO: test reserve
     }
 
     /**

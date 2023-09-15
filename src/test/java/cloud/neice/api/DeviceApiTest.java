@@ -62,8 +62,8 @@ public class DeviceApiTest {
     public void getCertificatesTest() throws ApiException {
         Integer limit = null;
         Integer page = null;
-        String order = null;
-        OutResponseOfListOfPersonalCertificate response = api.getCertificates(limit, page, order);
+        Boolean asc = null;
+        OutResponseOfListOfPersonalCertificate response = api.getCertificates(limit, page, asc);
 
         // TODO: test validations
     }

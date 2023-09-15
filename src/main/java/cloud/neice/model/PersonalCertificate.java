@@ -23,27 +23,56 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-14T22:42:54.556275+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T18:43:40.801506+08:00[Asia/Shanghai]")
 public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
   private String certificate;
 
+  public static final String SERIALIZED_NAME_CERTIFICATE_ID = "certificateId";
+  @SerializedName(SERIALIZED_NAME_CERTIFICATE_ID)
+  private String certificateId;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
+
+  public static final String SERIALIZED_NAME_DEVICE_ID = "deviceId";
+  @SerializedName(SERIALIZED_NAME_DEVICE_ID)
+  private String deviceId;
 
   public static final String SERIALIZED_NAME_MOBILEPROVISION = "mobileprovision";
   @SerializedName(SERIALIZED_NAME_MOBILEPROVISION)
   private String mobileprovision;
 
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
   private String password;
+
+  public static final String SERIALIZED_NAME_PRICE = "price";
+  @SerializedName(SERIALIZED_NAME_PRICE)
+  private BigDecimal price;
+
+  public static final String SERIALIZED_NAME_PROFILE_ID = "profileId";
+  @SerializedName(SERIALIZED_NAME_PROFILE_ID)
+  private String profileId;
+
+  public static final String SERIALIZED_NAME_QUALITY = "quality";
+  @SerializedName(SERIALIZED_NAME_QUALITY)
+  private Integer quality;
+
+  public static final String SERIALIZED_NAME_RESERVE = "reserve";
+  @SerializedName(SERIALIZED_NAME_RESERVE)
+  private Boolean reserve;
 
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
@@ -81,6 +110,29 @@ public class PersonalCertificate {
   }
 
 
+  public PersonalCertificate certificateId(String certificateId) {
+    
+    this.certificateId = certificateId;
+    return this;
+  }
+
+   /**
+   * 证书ID
+   * @return certificateId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "证书ID")
+
+  public String getCertificateId() {
+    return certificateId;
+  }
+
+
+  public void setCertificateId(String certificateId) {
+    this.certificateId = certificateId;
+  }
+
+
   public PersonalCertificate description(String description) {
     
     this.description = description;
@@ -101,6 +153,29 @@ public class PersonalCertificate {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+
+  public PersonalCertificate deviceId(String deviceId) {
+    
+    this.deviceId = deviceId;
+    return this;
+  }
+
+   /**
+   * 设备ID
+   * @return deviceId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "设备ID")
+
+  public String getDeviceId() {
+    return deviceId;
+  }
+
+
+  public void setDeviceId(String deviceId) {
+    this.deviceId = deviceId;
   }
 
 
@@ -127,6 +202,29 @@ public class PersonalCertificate {
   }
 
 
+  public PersonalCertificate name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * 证书名称
+   * @return name
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "证书名称")
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
   public PersonalCertificate password(String password) {
     
     this.password = password;
@@ -147,6 +245,98 @@ public class PersonalCertificate {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+
+  public PersonalCertificate price(BigDecimal price) {
+    
+    this.price = price;
+    return this;
+  }
+
+   /**
+   * 服务价格
+   * @return price
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "服务价格")
+
+  public BigDecimal getPrice() {
+    return price;
+  }
+
+
+  public void setPrice(BigDecimal price) {
+    this.price = price;
+  }
+
+
+  public PersonalCertificate profileId(String profileId) {
+    
+    this.profileId = profileId;
+    return this;
+  }
+
+   /**
+   * 描述文件ID
+   * @return profileId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "描述文件ID")
+
+  public String getProfileId() {
+    return profileId;
+  }
+
+
+  public void setProfileId(String profileId) {
+    this.profileId = profileId;
+  }
+
+
+  public PersonalCertificate quality(Integer quality) {
+    
+    this.quality = quality;
+    return this;
+  }
+
+   /**
+   * 证书质保天数
+   * @return quality
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "证书质保天数")
+
+  public Integer getQuality() {
+    return quality;
+  }
+
+
+  public void setQuality(Integer quality) {
+    this.quality = quality;
+  }
+
+
+  public PersonalCertificate reserve(Boolean reserve) {
+    
+    this.reserve = reserve;
+    return this;
+  }
+
+   /**
+   * 预定证书
+   * @return reserve
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "预定证书")
+
+  public Boolean getReserve() {
+    return reserve;
+  }
+
+
+  public void setReserve(Boolean reserve) {
+    this.reserve = reserve;
   }
 
 
@@ -229,9 +419,16 @@ public class PersonalCertificate {
     }
     PersonalCertificate personalCertificate = (PersonalCertificate) o;
     return Objects.equals(this.certificate, personalCertificate.certificate) &&
+        Objects.equals(this.certificateId, personalCertificate.certificateId) &&
         Objects.equals(this.description, personalCertificate.description) &&
+        Objects.equals(this.deviceId, personalCertificate.deviceId) &&
         Objects.equals(this.mobileprovision, personalCertificate.mobileprovision) &&
+        Objects.equals(this.name, personalCertificate.name) &&
         Objects.equals(this.password, personalCertificate.password) &&
+        Objects.equals(this.price, personalCertificate.price) &&
+        Objects.equals(this.profileId, personalCertificate.profileId) &&
+        Objects.equals(this.quality, personalCertificate.quality) &&
+        Objects.equals(this.reserve, personalCertificate.reserve) &&
         Objects.equals(this.udid, personalCertificate.udid) &&
         Objects.equals(this.uuid, personalCertificate.uuid) &&
         Objects.equals(this.valid, personalCertificate.valid);
@@ -239,7 +436,7 @@ public class PersonalCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, description, mobileprovision, password, udid, uuid, valid);
+    return Objects.hash(certificate, certificateId, description, deviceId, mobileprovision, name, password, price, profileId, quality, reserve, udid, uuid, valid);
   }
 
 
@@ -248,9 +445,16 @@ public class PersonalCertificate {
     StringBuilder sb = new StringBuilder();
     sb.append("class PersonalCertificate {\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
+    sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
     sb.append("    mobileprovision: ").append(toIndentedString(mobileprovision)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    profileId: ").append(toIndentedString(profileId)).append("\n");
+    sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
+    sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");

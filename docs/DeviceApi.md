@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificates"></a>
 # **getCertificates**
-> OutResponseOfListOfPersonalCertificate getCertificates(limit, page, order)
+> OutResponseOfListOfPersonalCertificate getCertificates(limit, page, asc)
 
 获取iOS设备证书列表
 
@@ -110,9 +110,9 @@ public class Example {
     DeviceApi apiInstance = new DeviceApi(defaultClient);
     Integer limit = 56; // Integer | limit
     Integer page = 56; // Integer | page
-    String order = "order_example"; // String | order
+    Boolean asc = true; // Boolean | asc
     try {
-      OutResponseOfListOfPersonalCertificate result = apiInstance.getCertificates(limit, page, order);
+      OutResponseOfListOfPersonalCertificate result = apiInstance.getCertificates(limit, page, asc);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#getCertificates");
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| limit |
  **page** | **Integer**| page |
- **order** | **String**| order | [optional]
+ **asc** | **Boolean**| asc | [optional]
 
 ### Return type
 

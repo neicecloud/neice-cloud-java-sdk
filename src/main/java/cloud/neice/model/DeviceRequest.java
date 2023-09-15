@@ -27,8 +27,16 @@ import java.io.IOException;
 /**
  * DeviceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-14T22:42:54.556275+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T18:43:40.801506+08:00[Asia/Shanghai]")
 public class DeviceRequest {
+  public static final String SERIALIZED_NAME_CALLBACK = "callback";
+  @SerializedName(SERIALIZED_NAME_CALLBACK)
+  private String callback;
+
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
   private String phone;
@@ -44,6 +52,52 @@ public class DeviceRequest {
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
   private String udid;
+
+
+  public DeviceRequest callback(String callback) {
+    
+    this.callback = callback;
+    return this;
+  }
+
+   /**
+   * 预定证书激活时可通过回调地址将证书推送到业务系统中，为空将不会回调
+   * @return callback
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "预定证书激活时可通过回调地址将证书推送到业务系统中，为空将不会回调")
+
+  public String getCallback() {
+    return callback;
+  }
+
+
+  public void setCallback(String callback) {
+    this.callback = callback;
+  }
+
+
+  public DeviceRequest name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分
+   * @return name
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "当调用的预定证书激活时，激活通知短信将发送该名称，方便区分")
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
+  }
 
 
   public DeviceRequest phone(String phone) {
@@ -146,7 +200,9 @@ public class DeviceRequest {
       return false;
     }
     DeviceRequest deviceRequest = (DeviceRequest) o;
-    return Objects.equals(this.phone, deviceRequest.phone) &&
+    return Objects.equals(this.callback, deviceRequest.callback) &&
+        Objects.equals(this.name, deviceRequest.name) &&
+        Objects.equals(this.phone, deviceRequest.phone) &&
         Objects.equals(this.quality, deviceRequest.quality) &&
         Objects.equals(this.reserve, deviceRequest.reserve) &&
         Objects.equals(this.udid, deviceRequest.udid);
@@ -154,7 +210,7 @@ public class DeviceRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(phone, quality, reserve, udid);
+    return Objects.hash(callback, name, phone, quality, reserve, udid);
   }
 
 
@@ -162,6 +218,8 @@ public class DeviceRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeviceRequest {\n");
+    sb.append("    callback: ").append(toIndentedString(callback)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");

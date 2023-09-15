@@ -187,7 +187,7 @@ public class DeviceApi {
      * Build call for getCertificates
      * @param limit limit (required)
      * @param page page (required)
-     * @param order order (optional)
+     * @param asc asc (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -201,7 +201,7 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificatesCall(Integer limit, Integer page, String order, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCertificatesCall(Integer limit, Integer page, Boolean asc, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -213,12 +213,12 @@ public class DeviceApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        if (asc != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("asc", asc));
         }
 
-        if (order != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("order", order));
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
         }
 
         if (page != null) {
@@ -244,7 +244,7 @@ public class DeviceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCertificatesValidateBeforeCall(Integer limit, Integer page, String order, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCertificatesValidateBeforeCall(Integer limit, Integer page, Boolean asc, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'limit' is set
         if (limit == null) {
@@ -257,7 +257,7 @@ public class DeviceApi {
         }
         
 
-        okhttp3.Call localVarCall = getCertificatesCall(limit, page, order, _callback);
+        okhttp3.Call localVarCall = getCertificatesCall(limit, page, asc, _callback);
         return localVarCall;
 
     }
@@ -267,7 +267,7 @@ public class DeviceApi {
      * 获取iOS设备证书列表
      * @param limit limit (required)
      * @param page page (required)
-     * @param order order (optional)
+     * @param asc asc (optional)
      * @return OutResponseOfListOfPersonalCertificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -280,8 +280,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfPersonalCertificate getCertificates(Integer limit, Integer page, String order) throws ApiException {
-        ApiResponse<OutResponseOfListOfPersonalCertificate> localVarResp = getCertificatesWithHttpInfo(limit, page, order);
+    public OutResponseOfListOfPersonalCertificate getCertificates(Integer limit, Integer page, Boolean asc) throws ApiException {
+        ApiResponse<OutResponseOfListOfPersonalCertificate> localVarResp = getCertificatesWithHttpInfo(limit, page, asc);
         return localVarResp.getData();
     }
 
@@ -290,7 +290,7 @@ public class DeviceApi {
      * 获取iOS设备证书列表
      * @param limit limit (required)
      * @param page page (required)
-     * @param order order (optional)
+     * @param asc asc (optional)
      * @return ApiResponse&lt;OutResponseOfListOfPersonalCertificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -303,8 +303,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfPersonalCertificate> getCertificatesWithHttpInfo(Integer limit, Integer page, String order) throws ApiException {
-        okhttp3.Call localVarCall = getCertificatesValidateBeforeCall(limit, page, order, null);
+    public ApiResponse<OutResponseOfListOfPersonalCertificate> getCertificatesWithHttpInfo(Integer limit, Integer page, Boolean asc) throws ApiException {
+        okhttp3.Call localVarCall = getCertificatesValidateBeforeCall(limit, page, asc, null);
         Type localVarReturnType = new TypeToken<OutResponseOfListOfPersonalCertificate>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -314,7 +314,7 @@ public class DeviceApi {
      * 获取iOS设备证书列表
      * @param limit limit (required)
      * @param page page (required)
-     * @param order order (optional)
+     * @param asc asc (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -328,9 +328,9 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificatesAsync(Integer limit, Integer page, String order, final ApiCallback<OutResponseOfListOfPersonalCertificate> _callback) throws ApiException {
+    public okhttp3.Call getCertificatesAsync(Integer limit, Integer page, Boolean asc, final ApiCallback<OutResponseOfListOfPersonalCertificate> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCertificatesValidateBeforeCall(limit, page, order, _callback);
+        okhttp3.Call localVarCall = getCertificatesValidateBeforeCall(limit, page, asc, _callback);
         Type localVarReturnType = new TypeToken<OutResponseOfListOfPersonalCertificate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

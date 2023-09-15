@@ -41,6 +41,22 @@ public class DeviceRequestTest {
     }
 
     /**
+     * Test the property 'callback'
+     */
+    @Test
+    public void callbackTest() {
+        // TODO: test callback
+    }
+
+    /**
+     * Test the property 'name'
+     */
+    @Test
+    public void nameTest() {
+        // TODO: test name
+    }
+
+    /**
      * Test the property 'phone'
      */
     @Test

@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * OutResponseOfBalance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-14T22:42:54.556275+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-15T18:43:40.801506+08:00[Asia/Shanghai]")
 public class OutResponseOfBalance {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)

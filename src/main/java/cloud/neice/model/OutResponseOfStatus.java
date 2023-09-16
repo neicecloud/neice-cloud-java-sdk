@@ -15,7 +15,7 @@ package cloud.neice.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import cloud.neice.model.Balance;
+import cloud.neice.model.Status;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,17 +26,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * OutResponseOfBalance
+ * OutResponseOfStatus
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-16T22:35:05.881170+08:00[Asia/Shanghai]")
-public class OutResponseOfBalance {
+public class OutResponseOfStatus {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private Balance data;
+  private Status data;
 
   public static final String SERIALIZED_NAME_MSG = "msg";
   @SerializedName(SERIALIZED_NAME_MSG)
@@ -47,7 +47,7 @@ public class OutResponseOfBalance {
   private Boolean success;
 
 
-  public OutResponseOfBalance code(Integer code) {
+  public OutResponseOfStatus code(Integer code) {
     
     this.code = code;
     return this;
@@ -70,7 +70,7 @@ public class OutResponseOfBalance {
   }
 
 
-  public OutResponseOfBalance data(Balance data) {
+  public OutResponseOfStatus data(Status data) {
     
     this.data = data;
     return this;
@@ -83,17 +83,17 @@ public class OutResponseOfBalance {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Balance getData() {
+  public Status getData() {
     return data;
   }
 
 
-  public void setData(Balance data) {
+  public void setData(Status data) {
     this.data = data;
   }
 
 
-  public OutResponseOfBalance msg(String msg) {
+  public OutResponseOfStatus msg(String msg) {
     
     this.msg = msg;
     return this;
@@ -116,7 +116,7 @@ public class OutResponseOfBalance {
   }
 
 
-  public OutResponseOfBalance success(Boolean success) {
+  public OutResponseOfStatus success(Boolean success) {
     
     this.success = success;
     return this;
@@ -147,11 +147,11 @@ public class OutResponseOfBalance {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OutResponseOfBalance outResponseOfBalance = (OutResponseOfBalance) o;
-    return Objects.equals(this.code, outResponseOfBalance.code) &&
-        Objects.equals(this.data, outResponseOfBalance.data) &&
-        Objects.equals(this.msg, outResponseOfBalance.msg) &&
-        Objects.equals(this.success, outResponseOfBalance.success);
+    OutResponseOfStatus outResponseOfStatus = (OutResponseOfStatus) o;
+    return Objects.equals(this.code, outResponseOfStatus.code) &&
+        Objects.equals(this.data, outResponseOfStatus.data) &&
+        Objects.equals(this.msg, outResponseOfStatus.msg) &&
+        Objects.equals(this.success, outResponseOfStatus.success);
   }
 
   @Override
@@ -163,7 +163,7 @@ public class OutResponseOfBalance {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OutResponseOfBalance {\n");
+    sb.append("class OutResponseOfStatus {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");

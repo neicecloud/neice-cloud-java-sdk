@@ -4,7 +4,7 @@ All URIs are relative to *https://neice.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getBalance**](BalanceApi.md#getBalance) | **POST** /api/user/v1/balance | 获取用户余额
+[**getBalance**](BalanceApi.md#getBalance) | **POST** /user/api/v1/balance | 获取用户余额
 
 
 <a name="getBalance"></a>

@@ -17,6 +17,7 @@ import cloud.neice.ApiException;
 import cloud.neice.model.DeviceRequest;
 import cloud.neice.model.OutResponseOfListOfPersonalCertificate;
 import cloud.neice.model.OutResponseOfPersonalCertificate;
+import cloud.neice.model.OutResponseOfStatus;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -64,6 +65,21 @@ public class DeviceApiTest {
         Integer page = null;
         Boolean asc = null;
         OutResponseOfListOfPersonalCertificate response = api.getCertificates(limit, page, asc);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 获取证书支持类型
+     *
+     * 获取证书支持类型
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getStatusTest() throws ApiException {
+        OutResponseOfStatus response = api.getStatus();
 
         // TODO: test validations
     }

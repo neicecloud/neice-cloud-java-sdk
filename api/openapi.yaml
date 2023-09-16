@@ -23,7 +23,7 @@ tags:
 - description: 客户端授权登录认证获取Token接口
   name: oauth
 paths:
-  /api/aas/v1/certificate:
+  /aas/api/v1/certificate:
     post:
       description: 获取iOS设备证书
       operationId: getCertificate
@@ -62,7 +62,7 @@ paths:
       x-codegen-request-body-name: udid
       x-contentType: application/json
       x-accepts: '*/*'
-  /api/aas/v1/certificates:
+  /aas/api/v1/certificates:
     post:
       description: 获取iOS设备证书列表
       operationId: getCertificates
@@ -112,7 +112,7 @@ paths:
       tags:
       - device
       x-accepts: '*/*'
-  /api/aas/v1/register:
+  /aas/api/v1/register:
     post:
       description: iOS设备注册
       operationId: register
@@ -151,16 +151,16 @@ paths:
       x-codegen-request-body-name: deviceRequest
       x-contentType: application/json
       x-accepts: '*/*'
-  /api/user/v1/balance:
+  /aas/api/v1/status:
     post:
-      description: 获取用户余额
-      operationId: getBalance
+      description: 获取证书支持类型
+      operationId: getStatus
       responses:
         "200":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/OutResponseOfBalance'
+                $ref: '#/components/schemas/OutResponseOfStatus'
           description: OK
         "201":
           content: {}
@@ -177,9 +177,9 @@ paths:
       security:
       - Authorization:
         - global
-      summary: 获取用户余额
+      summary: 获取证书支持类型
       tags:
-      - balance
+      - device
       x-accepts: '*/*'
   /endpoint/getEndpoint:
     post:
@@ -320,6 +320,36 @@ paths:
       tags:
       - oauth
       x-accepts: application/json;charset=UTF-8
+  /user/api/v1/balance:
+    post:
+      description: 获取用户余额
+      operationId: getBalance
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfBalance'
+          description: OK
+        "201":
+          content: {}
+          description: Created
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 获取用户余额
+      tags:
+      - balance
+      x-accepts: '*/*'
 components:
   schemas:
     Balance:
@@ -496,6 +526,27 @@ components:
           type: boolean
       title: OutResponseOfPersonalCertificate
       type: object
+    OutResponseOfStatus:
+      example:
+        msg: msg
+        code: 0
+        data:
+          magic: true
+          quick: true
+          reserve: true
+        success: true
+      properties:
+        code:
+          format: int32
+          type: integer
+        data:
+          $ref: '#/components/schemas/Status'
+        msg:
+          type: string
+        success:
+          type: boolean
+      title: OutResponseOfStatus
+      type: object
     PersonalCertificate:
       example:
         certificateId: certificateId
@@ -557,6 +608,23 @@ components:
           description: 证书是否有效
           type: boolean
       title: PersonalCertificate
+      type: object
+    Status:
+      example:
+        magic: true
+        quick: true
+        reserve: true
+      properties:
+        magic:
+          description: 标记该系统是否支持部分设备证书能秒出激活的功能
+          type: boolean
+        quick:
+          description: 标记该系统是否支持全部设备证书能立即秒出激活的功能
+          type: boolean
+        reserve:
+          description: 标记该系统是否支持预定设备证书的功能
+          type: boolean
+      title: Status
       type: object
   securitySchemes:
     Authorization:

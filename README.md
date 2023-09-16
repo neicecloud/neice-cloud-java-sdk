@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2023-09-15T18:43:40.801506+08:00[Asia/Shanghai]
+  - Build date: 2023-09-16T22:35:05.881170+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 
@@ -112,10 +112,11 @@ All URIs are relative to *https://neice.cloud*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*BalanceApi* | [**getBalance**](docs/BalanceApi.md#getBalance) | **POST** /api/user/v1/balance | 获取用户余额
-*DeviceApi* | [**getCertificate**](docs/DeviceApi.md#getCertificate) | **POST** /api/aas/v1/certificate | 获取iOS设备证书
-*DeviceApi* | [**getCertificates**](docs/DeviceApi.md#getCertificates) | **POST** /api/aas/v1/certificates | 获取iOS设备证书列表
-*DeviceApi* | [**register**](docs/DeviceApi.md#register) | **POST** /api/aas/v1/register | iOS设备注册
+*BalanceApi* | [**getBalance**](docs/BalanceApi.md#getBalance) | **POST** /user/api/v1/balance | 获取用户余额
+*DeviceApi* | [**getCertificate**](docs/DeviceApi.md#getCertificate) | **POST** /aas/api/v1/certificate | 获取iOS设备证书
+*DeviceApi* | [**getCertificates**](docs/DeviceApi.md#getCertificates) | **POST** /aas/api/v1/certificates | 获取iOS设备证书列表
+*DeviceApi* | [**getStatus**](docs/DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
+*DeviceApi* | [**register**](docs/DeviceApi.md#register) | **POST** /aas/api/v1/register | iOS设备注册
 *EndpointApi* | [**getEndpoint**](docs/EndpointApi.md#getEndpoint) | **POST** /endpoint/getEndpoint | 获取签名节点入口
 *OauthApi* | [**getToken**](docs/OauthApi.md#getToken) | **POST** /oauth2/token | 获取Token
 *OauthApi* | [**getUserInfo**](docs/OauthApi.md#getUserInfo) | **GET** /oauth2/userInfo | 获取用户信息
@@ -131,7 +132,9 @@ Class | Method | HTTP request | Description
  - [OutResponseOfBalance](docs/OutResponseOfBalance.md)
  - [OutResponseOfListOfPersonalCertificate](docs/OutResponseOfListOfPersonalCertificate.md)
  - [OutResponseOfPersonalCertificate](docs/OutResponseOfPersonalCertificate.md)
+ - [OutResponseOfStatus](docs/OutResponseOfStatus.md)
  - [PersonalCertificate](docs/PersonalCertificate.md)
+ - [Status](docs/Status.md)
 
 
 ## Documentation for Authorization

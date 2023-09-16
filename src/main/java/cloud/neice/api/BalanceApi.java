@@ -73,7 +73,7 @@ public class BalanceApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/user/v1/balance";
+        String localVarPath = "/user/api/v1/balance";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();

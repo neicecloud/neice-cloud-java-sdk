@@ -4,9 +4,10 @@ All URIs are relative to *https://neice.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getCertificate**](DeviceApi.md#getCertificate) | **POST** /api/aas/v1/certificate | 获取iOS设备证书
-[**getCertificates**](DeviceApi.md#getCertificates) | **POST** /api/aas/v1/certificates | 获取iOS设备证书列表
-[**register**](DeviceApi.md#register) | **POST** /api/aas/v1/register | iOS设备注册
+[**getCertificate**](DeviceApi.md#getCertificate) | **POST** /aas/api/v1/certificate | 获取iOS设备证书
+[**getCertificates**](DeviceApi.md#getCertificates) | **POST** /aas/api/v1/certificates | 获取iOS设备证书列表
+[**getStatus**](DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
+[**register**](DeviceApi.md#register) | **POST** /aas/api/v1/register | iOS设备注册
 
 
 <a name="getCertificate"></a>
@@ -136,6 +137,73 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OutResponseOfListOfPersonalCertificate**](OutResponseOfListOfPersonalCertificate.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+<a name="getStatus"></a>
+# **getStatus**
+> OutResponseOfStatus getStatus()
+
+获取证书支持类型
+
+获取证书支持类型
+
+### Example
+```java
+// Import classes:
+import cloud.neice.ApiClient;
+import cloud.neice.ApiException;
+import cloud.neice.Configuration;
+import cloud.neice.auth.*;
+import cloud.neice.models.*;
+import cloud.neice.api.DeviceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://neice.cloud");
+    
+    // Configure OAuth2 access token for authorization: Authorization
+    OAuth Authorization = (OAuth) defaultClient.getAuthentication("Authorization");
+    Authorization.setAccessToken("YOUR ACCESS TOKEN");
+
+    DeviceApi apiInstance = new DeviceApi(defaultClient);
+    try {
+      OutResponseOfStatus result = apiInstance.getStatus();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeviceApi#getStatus");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OutResponseOfStatus**](OutResponseOfStatus.md)
 
 ### Authorization
 

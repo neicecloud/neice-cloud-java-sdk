@@ -122,6 +122,14 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'refer'
+     */
+    @Test
+    public void referTest() {
+        // TODO: test refer
+    }
+
+    /**
      * Test the property 'reserve'
      */
     @Test

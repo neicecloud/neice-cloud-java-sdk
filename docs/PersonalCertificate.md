@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **price** | **BigDecimal** | 服务价格 |  [optional]
 **profileId** | **String** | 描述文件ID |  [optional]
 **quality** | **Integer** | 证书质保天数 |  [optional]
+**refer** | **String** | 该设备的用户,后台自动透传该参数 |  [optional]
 **reserve** | **Boolean** | 预定证书 |  [optional]
 **udid** | **String** | 设备的UDID |  [optional]
 **uuid** | **String** | 单个设备证书UUID |  [optional]

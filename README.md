@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2023-09-16T22:35:05.881170+08:00[Asia/Shanghai]
+  - Build date: 2023-09-17T11:48:58.465959+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DeviceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-16T22:35:05.881170+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-17T11:48:58.465959+08:00[Asia/Shanghai]")
 public class DeviceRequest {
   public static final String SERIALIZED_NAME_CALLBACK = "callback";
   @SerializedName(SERIALIZED_NAME_CALLBACK)
@@ -44,6 +44,10 @@ public class DeviceRequest {
   public static final String SERIALIZED_NAME_QUALITY = "quality";
   @SerializedName(SERIALIZED_NAME_QUALITY)
   private Integer quality;
+
+  public static final String SERIALIZED_NAME_REFER = "refer";
+  @SerializedName(SERIALIZED_NAME_REFER)
+  private String refer;
 
   public static final String SERIALIZED_NAME_RESERVE = "reserve";
   @SerializedName(SERIALIZED_NAME_RESERVE)
@@ -84,11 +88,11 @@ public class DeviceRequest {
   }
 
    /**
-   * 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分
+   * 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分，允许为空值
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "当调用的预定证书激活时，激活通知短信将发送该名称，方便区分")
+  @ApiModelProperty(value = "当调用的预定证书激活时，激活通知短信将发送该名称，方便区分，允许为空值")
 
   public String getName() {
     return name;
@@ -107,11 +111,11 @@ public class DeviceRequest {
   }
 
    /**
-   * 预定手机:设备激活后发送可以安装APP的通知短信
+   * 预定手机:设备激活后发送可以安装APP的通知短信，当注册预定证书时，电话号码不能为空值
    * @return phone
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "预定手机:设备激活后发送可以安装APP的通知短信")
+  @ApiModelProperty(value = "预定手机:设备激活后发送可以安装APP的通知短信，当注册预定证书时，电话号码不能为空值")
 
   public String getPhone() {
     return phone;
@@ -143,6 +147,29 @@ public class DeviceRequest {
 
   public void setQuality(Integer quality) {
     this.quality = quality;
+  }
+
+
+  public DeviceRequest refer(String refer) {
+    
+    this.refer = refer;
+    return this;
+  }
+
+   /**
+   * 下游系统可以标记该设备的注册用户，上游系统将透传回去，非必要参数
+   * @return refer
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "下游系统可以标记该设备的注册用户，上游系统将透传回去，非必要参数")
+
+  public String getRefer() {
+    return refer;
+  }
+
+
+  public void setRefer(String refer) {
+    this.refer = refer;
   }
 
 
@@ -204,13 +231,14 @@ public class DeviceRequest {
         Objects.equals(this.name, deviceRequest.name) &&
         Objects.equals(this.phone, deviceRequest.phone) &&
         Objects.equals(this.quality, deviceRequest.quality) &&
+        Objects.equals(this.refer, deviceRequest.refer) &&
         Objects.equals(this.reserve, deviceRequest.reserve) &&
         Objects.equals(this.udid, deviceRequest.udid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callback, name, phone, quality, reserve, udid);
+    return Objects.hash(callback, name, phone, quality, refer, reserve, udid);
   }
 
 
@@ -222,6 +250,7 @@ public class DeviceRequest {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
+    sb.append("    refer: ").append(toIndentedString(refer)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("}");

@@ -372,6 +372,7 @@ components:
     DeviceRequest:
       example:
         phone: phone
+        refer: refer
         name: name
         reserve: true
         callback: callback
@@ -382,15 +383,18 @@ components:
           description: 预定证书激活时可通过回调地址将证书推送到业务系统中，为空将不会回调
           type: string
         name:
-          description: 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分
+          description: 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分，允许为空值
           type: string
         phone:
-          description: 预定手机:设备激活后发送可以安装APP的通知短信
+          description: 预定手机:设备激活后发送可以安装APP的通知短信，当注册预定证书时，电话号码不能为空值
           type: string
         quality:
           description: 增加质保天数后台可能会增加计费
           format: int32
           type: integer
+        refer:
+          description: 下游系统可以标记该设备的注册用户，上游系统将透传回去，非必要参数
+          type: string
         reserve:
           description: 证书预定参数开关如果卡设备，将在设备处于激活状态时通知用户安装
           type: boolean
@@ -460,6 +464,7 @@ components:
           quality: 1
           valid: true
           password: password
+          refer: refer
           price: 6.027456183070403
           profileId: profileId
           name: name
@@ -474,6 +479,7 @@ components:
           quality: 1
           valid: true
           password: password
+          refer: refer
           price: 6.027456183070403
           profileId: profileId
           name: name
@@ -508,6 +514,7 @@ components:
           quality: 1
           valid: true
           password: password
+          refer: refer
           price: 6.027456183070403
           profileId: profileId
           name: name
@@ -558,6 +565,7 @@ components:
         quality: 1
         valid: true
         password: password
+        refer: refer
         price: 6.027456183070403
         profileId: profileId
         name: name
@@ -595,6 +603,9 @@ components:
           description: 证书质保天数
           format: int32
           type: integer
+        refer:
+          description: 该设备的用户,后台自动透传该参数
+          type: string
         reserve:
           description: 预定证书
           type: boolean

@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-16T22:35:05.881170+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-17T11:48:58.465959+08:00[Asia/Shanghai]")
 public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
@@ -69,6 +69,10 @@ public class PersonalCertificate {
   public static final String SERIALIZED_NAME_QUALITY = "quality";
   @SerializedName(SERIALIZED_NAME_QUALITY)
   private Integer quality;
+
+  public static final String SERIALIZED_NAME_REFER = "refer";
+  @SerializedName(SERIALIZED_NAME_REFER)
+  private String refer;
 
   public static final String SERIALIZED_NAME_RESERVE = "reserve";
   @SerializedName(SERIALIZED_NAME_RESERVE)
@@ -317,6 +321,29 @@ public class PersonalCertificate {
   }
 
 
+  public PersonalCertificate refer(String refer) {
+    
+    this.refer = refer;
+    return this;
+  }
+
+   /**
+   * 该设备的用户,后台自动透传该参数
+   * @return refer
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "该设备的用户,后台自动透传该参数")
+
+  public String getRefer() {
+    return refer;
+  }
+
+
+  public void setRefer(String refer) {
+    this.refer = refer;
+  }
+
+
   public PersonalCertificate reserve(Boolean reserve) {
     
     this.reserve = reserve;
@@ -428,6 +455,7 @@ public class PersonalCertificate {
         Objects.equals(this.price, personalCertificate.price) &&
         Objects.equals(this.profileId, personalCertificate.profileId) &&
         Objects.equals(this.quality, personalCertificate.quality) &&
+        Objects.equals(this.refer, personalCertificate.refer) &&
         Objects.equals(this.reserve, personalCertificate.reserve) &&
         Objects.equals(this.udid, personalCertificate.udid) &&
         Objects.equals(this.uuid, personalCertificate.uuid) &&
@@ -436,7 +464,7 @@ public class PersonalCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, certificateId, description, deviceId, mobileprovision, name, password, price, profileId, quality, reserve, udid, uuid, valid);
+    return Objects.hash(certificate, certificateId, description, deviceId, mobileprovision, name, password, price, profileId, quality, refer, reserve, udid, uuid, valid);
   }
 
 
@@ -454,6 +482,7 @@ public class PersonalCertificate {
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    profileId: ").append(toIndentedString(profileId)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
+    sb.append("    refer: ").append(toIndentedString(refer)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

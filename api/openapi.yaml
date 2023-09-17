@@ -22,6 +22,8 @@ tags:
   name: endpoint
 - description: 客户端授权登录认证获取Token接口
   name: oauth
+- description: 系统接口版本
+  name: version
 paths:
   /aas/api/v1/certificate:
     post:
@@ -180,6 +182,36 @@ paths:
       summary: 获取证书支持类型
       tags:
       - device
+      x-accepts: '*/*'
+  /aas/api/v1/version:
+    post:
+      description: 获取接口系统版本
+      operationId: getVersion
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfVersion'
+          description: OK
+        "201":
+          content: {}
+          description: Created
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 获取接口系统版本
+      tags:
+      - version
       x-accepts: '*/*'
   /endpoint/getEndpoint:
     post:
@@ -554,6 +586,28 @@ components:
           type: boolean
       title: OutResponseOfStatus
       type: object
+    OutResponseOfVersion:
+      example:
+        msg: msg
+        code: 0
+        data:
+          major: 1
+          minor: 5
+          build: 6
+          revision: 5
+        success: true
+      properties:
+        code:
+          format: int32
+          type: integer
+        data:
+          $ref: '#/components/schemas/Version'
+        msg:
+          type: string
+        success:
+          type: boolean
+      title: OutResponseOfVersion
+      type: object
     PersonalCertificate:
       example:
         certificateId: certificateId
@@ -636,6 +690,31 @@ components:
           description: 标记该系统是否支持预定设备证书的功能
           type: boolean
       title: Status
+      type: object
+    Version:
+      example:
+        major: 1
+        minor: 5
+        build: 6
+        revision: 5
+      properties:
+        build:
+          description: 构建版本
+          format: int32
+          type: integer
+        major:
+          description: 主版本号
+          format: int32
+          type: integer
+        minor:
+          description: 次版本号
+          format: int32
+          type: integer
+        revision:
+          description: 修订版本
+          format: int32
+          type: integer
+      title: Version
       type: object
   securitySchemes:
     Authorization:

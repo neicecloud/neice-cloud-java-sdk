@@ -2,8 +2,7 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-.idea/
-.openapi-generator/
+
 # Package Files #
 *.jar
 *.war

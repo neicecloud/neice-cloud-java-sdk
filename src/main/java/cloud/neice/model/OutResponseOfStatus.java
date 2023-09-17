@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * OutResponseOfStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-17T11:48:58.465959+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-17T20:09:04.775708+08:00[Asia/Shanghai]")
 public class OutResponseOfStatus {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)

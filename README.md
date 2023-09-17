@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2023-09-17T11:48:58.465959+08:00[Asia/Shanghai]
+  - Build date: 2023-09-17T20:09:04.775708+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 
@@ -121,6 +121,7 @@ Class | Method | HTTP request | Description
 *OauthApi* | [**getToken**](docs/OauthApi.md#getToken) | **POST** /oauth2/token | 获取Token
 *OauthApi* | [**getUserInfo**](docs/OauthApi.md#getUserInfo) | **GET** /oauth2/userInfo | 获取用户信息
 *OauthApi* | [**getUserInfo1**](docs/OauthApi.md#getUserInfo1) | **POST** /oauth2/userInfo | 获取用户信息
+*VersionApi* | [**getVersion**](docs/VersionApi.md#getVersion) | **POST** /aas/api/v1/version | 获取接口系统版本
 
 
 ## Documentation for Models
@@ -133,8 +134,10 @@ Class | Method | HTTP request | Description
  - [OutResponseOfListOfPersonalCertificate](docs/OutResponseOfListOfPersonalCertificate.md)
  - [OutResponseOfPersonalCertificate](docs/OutResponseOfPersonalCertificate.md)
  - [OutResponseOfStatus](docs/OutResponseOfStatus.md)
+ - [OutResponseOfVersion](docs/OutResponseOfVersion.md)
  - [PersonalCertificate](docs/PersonalCertificate.md)
  - [Status](docs/Status.md)
+ - [Version](docs/Version.md)
 
 
 ## Documentation for Authorization

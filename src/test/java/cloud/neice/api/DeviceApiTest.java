@@ -18,6 +18,7 @@ import cloud.neice.model.DeviceRequest;
 import cloud.neice.model.OutResponseOfListOfPersonalCertificate;
 import cloud.neice.model.OutResponseOfPersonalCertificate;
 import cloud.neice.model.OutResponseOfStatus;
+import cloud.neice.model.OutResponseOfstring;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -96,6 +97,22 @@ public class DeviceApiTest {
     public void registerTest() throws ApiException {
         DeviceRequest deviceRequest = null;
         OutResponseOfPersonalCertificate response = api.register(deviceRequest);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * iOS设备批量提交注册
+     *
+     * 请确保批量提交的数据的准性，提交后不可撤销，批量提交注册将不直接返回证书，请通过回调接口接收证书，如果没提供回调接口，可使用查询接口查询
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void registersTest() throws ApiException {
+        List<DeviceRequest> deviceRequests = null;
+        OutResponseOfstring response = api.registers(deviceRequests);
 
         // TODO: test validations
     }

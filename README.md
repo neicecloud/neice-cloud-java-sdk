@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2023-09-17T20:09:04.775708+08:00[Asia/Shanghai]
+  - Build date: 2023-09-18T15:42:17.094275+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 
@@ -117,6 +117,7 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**getCertificates**](docs/DeviceApi.md#getCertificates) | **POST** /aas/api/v1/certificates | 获取iOS设备证书列表
 *DeviceApi* | [**getStatus**](docs/DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
 *DeviceApi* | [**register**](docs/DeviceApi.md#register) | **POST** /aas/api/v1/register | iOS设备注册
+*DeviceApi* | [**registers**](docs/DeviceApi.md#registers) | **POST** /aas/api/v1/registers | iOS设备批量提交注册
 *EndpointApi* | [**getEndpoint**](docs/EndpointApi.md#getEndpoint) | **POST** /endpoint/getEndpoint | 获取签名节点入口
 *OauthApi* | [**getToken**](docs/OauthApi.md#getToken) | **POST** /oauth2/token | 获取Token
 *OauthApi* | [**getUserInfo**](docs/OauthApi.md#getUserInfo) | **GET** /oauth2/userInfo | 获取用户信息
@@ -135,6 +136,7 @@ Class | Method | HTTP request | Description
  - [OutResponseOfPersonalCertificate](docs/OutResponseOfPersonalCertificate.md)
  - [OutResponseOfStatus](docs/OutResponseOfStatus.md)
  - [OutResponseOfVersion](docs/OutResponseOfVersion.md)
+ - [OutResponseOfstring](docs/OutResponseOfstring.md)
  - [PersonalCertificate](docs/PersonalCertificate.md)
  - [Status](docs/Status.md)
  - [Version](docs/Version.md)

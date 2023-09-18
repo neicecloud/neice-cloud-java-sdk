@@ -15,7 +15,6 @@ package cloud.neice.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import cloud.neice.model.PersonalCertificate;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,17 +25,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * OutResponseOfPersonalCertificate
+ * OutResponseOfstring
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-18T15:42:17.094275+08:00[Asia/Shanghai]")
-public class OutResponseOfPersonalCertificate {
+public class OutResponseOfstring {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private PersonalCertificate data;
+  private String data;
 
   public static final String SERIALIZED_NAME_MSG = "msg";
   @SerializedName(SERIALIZED_NAME_MSG)
@@ -47,7 +46,7 @@ public class OutResponseOfPersonalCertificate {
   private Boolean success;
 
 
-  public OutResponseOfPersonalCertificate code(Integer code) {
+  public OutResponseOfstring code(Integer code) {
     
     this.code = code;
     return this;
@@ -70,7 +69,7 @@ public class OutResponseOfPersonalCertificate {
   }
 
 
-  public OutResponseOfPersonalCertificate data(PersonalCertificate data) {
+  public OutResponseOfstring data(String data) {
     
     this.data = data;
     return this;
@@ -83,17 +82,17 @@ public class OutResponseOfPersonalCertificate {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public PersonalCertificate getData() {
+  public String getData() {
     return data;
   }
 
 
-  public void setData(PersonalCertificate data) {
+  public void setData(String data) {
     this.data = data;
   }
 
 
-  public OutResponseOfPersonalCertificate msg(String msg) {
+  public OutResponseOfstring msg(String msg) {
     
     this.msg = msg;
     return this;
@@ -116,7 +115,7 @@ public class OutResponseOfPersonalCertificate {
   }
 
 
-  public OutResponseOfPersonalCertificate success(Boolean success) {
+  public OutResponseOfstring success(Boolean success) {
     
     this.success = success;
     return this;
@@ -147,11 +146,11 @@ public class OutResponseOfPersonalCertificate {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OutResponseOfPersonalCertificate outResponseOfPersonalCertificate = (OutResponseOfPersonalCertificate) o;
-    return Objects.equals(this.code, outResponseOfPersonalCertificate.code) &&
-        Objects.equals(this.data, outResponseOfPersonalCertificate.data) &&
-        Objects.equals(this.msg, outResponseOfPersonalCertificate.msg) &&
-        Objects.equals(this.success, outResponseOfPersonalCertificate.success);
+    OutResponseOfstring outResponseOfstring = (OutResponseOfstring) o;
+    return Objects.equals(this.code, outResponseOfstring.code) &&
+        Objects.equals(this.data, outResponseOfstring.data) &&
+        Objects.equals(this.msg, outResponseOfstring.msg) &&
+        Objects.equals(this.success, outResponseOfstring.success);
   }
 
   @Override
@@ -163,7 +162,7 @@ public class OutResponseOfPersonalCertificate {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OutResponseOfPersonalCertificate {\n");
+    sb.append("class OutResponseOfstring {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");

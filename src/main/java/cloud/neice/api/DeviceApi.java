@@ -31,6 +31,7 @@ import cloud.neice.model.DeviceRequest;
 import cloud.neice.model.OutResponseOfListOfPersonalCertificate;
 import cloud.neice.model.OutResponseOfPersonalCertificate;
 import cloud.neice.model.OutResponseOfStatus;
+import cloud.neice.model.OutResponseOfstring;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -578,6 +579,133 @@ public class DeviceApi {
 
         okhttp3.Call localVarCall = registerValidateBeforeCall(deviceRequest, _callback);
         Type localVarReturnType = new TypeToken<OutResponseOfPersonalCertificate>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for registers
+     * @param deviceRequests deviceRequests (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call registersCall(List<DeviceRequest> deviceRequests, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = deviceRequests;
+
+        // create path and map variables
+        String localVarPath = "/aas/api/v1/registers";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Authorization" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call registersValidateBeforeCall(List<DeviceRequest> deviceRequests, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'deviceRequests' is set
+        if (deviceRequests == null) {
+            throw new ApiException("Missing the required parameter 'deviceRequests' when calling registers(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = registersCall(deviceRequests, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * iOS设备批量提交注册
+     * 请确保批量提交的数据的准性，提交后不可撤销，批量提交注册将不直接返回证书，请通过回调接口接收证书，如果没提供回调接口，可使用查询接口查询
+     * @param deviceRequests deviceRequests (required)
+     * @return OutResponseOfstring
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public OutResponseOfstring registers(List<DeviceRequest> deviceRequests) throws ApiException {
+        ApiResponse<OutResponseOfstring> localVarResp = registersWithHttpInfo(deviceRequests);
+        return localVarResp.getData();
+    }
+
+    /**
+     * iOS设备批量提交注册
+     * 请确保批量提交的数据的准性，提交后不可撤销，批量提交注册将不直接返回证书，请通过回调接口接收证书，如果没提供回调接口，可使用查询接口查询
+     * @param deviceRequests deviceRequests (required)
+     * @return ApiResponse&lt;OutResponseOfstring&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<OutResponseOfstring> registersWithHttpInfo(List<DeviceRequest> deviceRequests) throws ApiException {
+        okhttp3.Call localVarCall = registersValidateBeforeCall(deviceRequests, null);
+        Type localVarReturnType = new TypeToken<OutResponseOfstring>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * iOS设备批量提交注册 (asynchronously)
+     * 请确保批量提交的数据的准性，提交后不可撤销，批量提交注册将不直接返回证书，请通过回调接口接收证书，如果没提供回调接口，可使用查询接口查询
+     * @param deviceRequests deviceRequests (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call registersAsync(List<DeviceRequest> deviceRequests, final ApiCallback<OutResponseOfstring> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = registersValidateBeforeCall(deviceRequests, _callback);
+        Type localVarReturnType = new TypeToken<OutResponseOfstring>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

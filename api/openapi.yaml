@@ -153,6 +153,47 @@ paths:
       x-codegen-request-body-name: deviceRequest
       x-contentType: application/json
       x-accepts: '*/*'
+  /aas/api/v1/registers:
+    post:
+      description: 请确保批量提交的数据的准性，提交后不可撤销，批量提交注册将不直接返回证书，请通过回调接口接收证书，如果没提供回调接口，可使用查询接口查询
+      operationId: registers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/DeviceRequest'
+              type: array
+        description: deviceRequests
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfstring'
+          description: OK
+        "201":
+          content: {}
+          description: Created
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: iOS设备批量提交注册
+      tags:
+      - device
+      x-codegen-request-body-name: deviceRequests
+      x-contentType: application/json
+      x-accepts: '*/*'
   /aas/api/v1/status:
     post:
       description: 获取证书支持类型
@@ -607,6 +648,24 @@ components:
         success:
           type: boolean
       title: OutResponseOfVersion
+      type: object
+    OutResponseOfstring:
+      example:
+        msg: msg
+        code: 0
+        data: data
+        success: true
+      properties:
+        code:
+          format: int32
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+        success:
+          type: boolean
+      title: OutResponseOfstring
       type: object
     PersonalCertificate:
       example:

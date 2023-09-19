@@ -533,10 +533,12 @@ components:
           certificate: certificate
           description: description
           deviceId: deviceId
+          qualityTime: qualityTime
           uuid: uuid
           quality: 1
           valid: true
           password: password
+          createTime: createTime
           phone: phone
           refer: refer
           price: 6.027456183070403
@@ -549,10 +551,12 @@ components:
           certificate: certificate
           description: description
           deviceId: deviceId
+          qualityTime: qualityTime
           uuid: uuid
           quality: 1
           valid: true
           password: password
+          createTime: createTime
           phone: phone
           refer: refer
           price: 6.027456183070403
@@ -585,10 +589,12 @@ components:
           certificate: certificate
           description: description
           deviceId: deviceId
+          qualityTime: qualityTime
           uuid: uuid
           quality: 1
           valid: true
           password: password
+          createTime: createTime
           phone: phone
           refer: refer
           price: 6.027456183070403
@@ -677,10 +683,12 @@ components:
         certificate: certificate
         description: description
         deviceId: deviceId
+        qualityTime: qualityTime
         uuid: uuid
         quality: 1
         valid: true
         password: password
+        createTime: createTime
         phone: phone
         refer: refer
         price: 6.027456183070403
@@ -694,6 +702,9 @@ components:
           type: string
         certificateId:
           description: 证书ID
+          type: string
+        createTime:
+          description: 证书创建时间
           type: string
         description:
           description: 证书描述信息
@@ -723,6 +734,9 @@ components:
           description: 证书质保天数
           format: int32
           type: integer
+        qualityTime:
+          description: 证书质保到期时间
+          type: string
         refer:
           description: 该设备的用户,后台自动透传该参数
           type: string

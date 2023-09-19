@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-19T21:21:33.147817+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-19T22:01:43.721743+08:00[Asia/Shanghai]")
 public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
@@ -37,6 +37,10 @@ public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE_ID = "certificateId";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE_ID)
   private String certificateId;
+
+  public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
+  @SerializedName(SERIALIZED_NAME_CREATE_TIME)
+  private String createTime;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -73,6 +77,10 @@ public class PersonalCertificate {
   public static final String SERIALIZED_NAME_QUALITY = "quality";
   @SerializedName(SERIALIZED_NAME_QUALITY)
   private Integer quality;
+
+  public static final String SERIALIZED_NAME_QUALITY_TIME = "qualityTime";
+  @SerializedName(SERIALIZED_NAME_QUALITY_TIME)
+  private String qualityTime;
 
   public static final String SERIALIZED_NAME_REFER = "refer";
   @SerializedName(SERIALIZED_NAME_REFER)
@@ -138,6 +146,29 @@ public class PersonalCertificate {
 
   public void setCertificateId(String certificateId) {
     this.certificateId = certificateId;
+  }
+
+
+  public PersonalCertificate createTime(String createTime) {
+    
+    this.createTime = createTime;
+    return this;
+  }
+
+   /**
+   * 证书创建时间
+   * @return createTime
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "证书创建时间")
+
+  public String getCreateTime() {
+    return createTime;
+  }
+
+
+  public void setCreateTime(String createTime) {
+    this.createTime = createTime;
   }
 
 
@@ -348,6 +379,29 @@ public class PersonalCertificate {
   }
 
 
+  public PersonalCertificate qualityTime(String qualityTime) {
+    
+    this.qualityTime = qualityTime;
+    return this;
+  }
+
+   /**
+   * 证书质保到期时间
+   * @return qualityTime
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "证书质保到期时间")
+
+  public String getQualityTime() {
+    return qualityTime;
+  }
+
+
+  public void setQualityTime(String qualityTime) {
+    this.qualityTime = qualityTime;
+  }
+
+
   public PersonalCertificate refer(String refer) {
     
     this.refer = refer;
@@ -474,6 +528,7 @@ public class PersonalCertificate {
     PersonalCertificate personalCertificate = (PersonalCertificate) o;
     return Objects.equals(this.certificate, personalCertificate.certificate) &&
         Objects.equals(this.certificateId, personalCertificate.certificateId) &&
+        Objects.equals(this.createTime, personalCertificate.createTime) &&
         Objects.equals(this.description, personalCertificate.description) &&
         Objects.equals(this.deviceId, personalCertificate.deviceId) &&
         Objects.equals(this.mobileprovision, personalCertificate.mobileprovision) &&
@@ -483,6 +538,7 @@ public class PersonalCertificate {
         Objects.equals(this.price, personalCertificate.price) &&
         Objects.equals(this.profileId, personalCertificate.profileId) &&
         Objects.equals(this.quality, personalCertificate.quality) &&
+        Objects.equals(this.qualityTime, personalCertificate.qualityTime) &&
         Objects.equals(this.refer, personalCertificate.refer) &&
         Objects.equals(this.reserve, personalCertificate.reserve) &&
         Objects.equals(this.udid, personalCertificate.udid) &&
@@ -492,7 +548,7 @@ public class PersonalCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, certificateId, description, deviceId, mobileprovision, name, password, phone, price, profileId, quality, refer, reserve, udid, uuid, valid);
+    return Objects.hash(certificate, certificateId, createTime, description, deviceId, mobileprovision, name, password, phone, price, profileId, quality, qualityTime, refer, reserve, udid, uuid, valid);
   }
 
 
@@ -502,6 +558,7 @@ public class PersonalCertificate {
     sb.append("class PersonalCertificate {\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
+    sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
     sb.append("    mobileprovision: ").append(toIndentedString(mobileprovision)).append("\n");
@@ -511,6 +568,7 @@ public class PersonalCertificate {
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    profileId: ").append(toIndentedString(profileId)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
+    sb.append("    qualityTime: ").append(toIndentedString(qualityTime)).append("\n");
     sb.append("    refer: ").append(toIndentedString(refer)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");

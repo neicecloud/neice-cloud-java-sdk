@@ -58,6 +58,14 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'createTime'
+     */
+    @Test
+    public void createTimeTest() {
+        // TODO: test createTime
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test
@@ -127,6 +135,14 @@ public class PersonalCertificateTest {
     @Test
     public void qualityTest() {
         // TODO: test quality
+    }
+
+    /**
+     * Test the property 'qualityTime'
+     */
+    @Test
+    public void qualityTimeTest() {
+        // TODO: test qualityTime
     }
 
     /**

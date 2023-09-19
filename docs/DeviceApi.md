@@ -226,7 +226,7 @@ This endpoint does not need any parameter.
 
 <a name="register"></a>
 # **register**
-> OutResponseOfPersonalCertificate register(deviceRequest)
+> OutResponseOfPersonalCertificate register(request)
 
 iOS设备注册
 
@@ -252,9 +252,9 @@ public class Example {
     Authorization.setAccessToken("YOUR ACCESS TOKEN");
 
     DeviceApi apiInstance = new DeviceApi(defaultClient);
-    DeviceRequest deviceRequest = new DeviceRequest(); // DeviceRequest | deviceRequest
+    DeviceRequest request = new DeviceRequest(); // DeviceRequest | request
     try {
-      OutResponseOfPersonalCertificate result = apiInstance.register(deviceRequest);
+      OutResponseOfPersonalCertificate result = apiInstance.register(request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#register");
@@ -271,7 +271,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **deviceRequest** | [**DeviceRequest**](DeviceRequest.md)| deviceRequest |
+ **request** | [**DeviceRequest**](DeviceRequest.md)| request |
 
 ### Return type
 

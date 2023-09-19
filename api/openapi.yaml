@@ -123,7 +123,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DeviceRequest'
-        description: deviceRequest
+        description: request
         required: true
       responses:
         "200":
@@ -150,7 +150,7 @@ paths:
       summary: iOS设备注册
       tags:
       - device
-      x-codegen-request-body-name: deviceRequest
+      x-codegen-request-body-name: request
       x-contentType: application/json
       x-accepts: '*/*'
   /aas/api/v1/registers:
@@ -537,6 +537,7 @@ components:
           quality: 1
           valid: true
           password: password
+          phone: phone
           refer: refer
           price: 6.027456183070403
           profileId: profileId
@@ -552,6 +553,7 @@ components:
           quality: 1
           valid: true
           password: password
+          phone: phone
           refer: refer
           price: 6.027456183070403
           profileId: profileId
@@ -587,6 +589,7 @@ components:
           quality: 1
           valid: true
           password: password
+          phone: phone
           refer: refer
           price: 6.027456183070403
           profileId: profileId
@@ -678,6 +681,7 @@ components:
         quality: 1
         valid: true
         password: password
+        phone: phone
         refer: refer
         price: 6.027456183070403
         profileId: profileId
@@ -705,6 +709,9 @@ components:
           type: string
         password:
           description: 设备证书密码
+          type: string
+        phone:
+          description: 预定手机
           type: string
         price:
           description: 服务价格

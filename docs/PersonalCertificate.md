@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **mobileprovision** | **String** | 设备的描述文件Mobileprovision |  [optional]
 **name** | **String** | 证书名称 |  [optional]
 **password** | **String** | 设备证书密码 |  [optional]
+**phone** | **String** | 预定手机 |  [optional]
 **price** | **BigDecimal** | 服务价格 |  [optional]
 **profileId** | **String** | 描述文件ID |  [optional]
 **quality** | **Integer** | 证书质保天数 |  [optional]

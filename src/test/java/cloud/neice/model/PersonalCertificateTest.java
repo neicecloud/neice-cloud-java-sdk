@@ -98,6 +98,14 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'phone'
+     */
+    @Test
+    public void phoneTest() {
+        // TODO: test phone
+    }
+
+    /**
      * Test the property 'price'
      */
     @Test

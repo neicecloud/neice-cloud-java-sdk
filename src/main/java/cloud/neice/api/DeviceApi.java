@@ -457,7 +457,7 @@ public class DeviceApi {
     }
     /**
      * Build call for register
-     * @param deviceRequest deviceRequest (required)
+     * @param request request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -471,8 +471,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerCall(DeviceRequest deviceRequest, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = deviceRequest;
+    public okhttp3.Call registerCall(DeviceRequest request, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = request;
 
         // create path and map variables
         String localVarPath = "/aas/api/v1/register";
@@ -502,15 +502,15 @@ public class DeviceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerValidateBeforeCall(DeviceRequest deviceRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call registerValidateBeforeCall(DeviceRequest request, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'deviceRequest' is set
-        if (deviceRequest == null) {
-            throw new ApiException("Missing the required parameter 'deviceRequest' when calling register(Async)");
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling register(Async)");
         }
         
 
-        okhttp3.Call localVarCall = registerCall(deviceRequest, _callback);
+        okhttp3.Call localVarCall = registerCall(request, _callback);
         return localVarCall;
 
     }
@@ -518,7 +518,7 @@ public class DeviceApi {
     /**
      * iOS设备注册
      * iOS设备注册
-     * @param deviceRequest deviceRequest (required)
+     * @param request request (required)
      * @return OutResponseOfPersonalCertificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -531,15 +531,15 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfPersonalCertificate register(DeviceRequest deviceRequest) throws ApiException {
-        ApiResponse<OutResponseOfPersonalCertificate> localVarResp = registerWithHttpInfo(deviceRequest);
+    public OutResponseOfPersonalCertificate register(DeviceRequest request) throws ApiException {
+        ApiResponse<OutResponseOfPersonalCertificate> localVarResp = registerWithHttpInfo(request);
         return localVarResp.getData();
     }
 
     /**
      * iOS设备注册
      * iOS设备注册
-     * @param deviceRequest deviceRequest (required)
+     * @param request request (required)
      * @return ApiResponse&lt;OutResponseOfPersonalCertificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -552,8 +552,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfPersonalCertificate> registerWithHttpInfo(DeviceRequest deviceRequest) throws ApiException {
-        okhttp3.Call localVarCall = registerValidateBeforeCall(deviceRequest, null);
+    public ApiResponse<OutResponseOfPersonalCertificate> registerWithHttpInfo(DeviceRequest request) throws ApiException {
+        okhttp3.Call localVarCall = registerValidateBeforeCall(request, null);
         Type localVarReturnType = new TypeToken<OutResponseOfPersonalCertificate>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -561,7 +561,7 @@ public class DeviceApi {
     /**
      * iOS设备注册 (asynchronously)
      * iOS设备注册
-     * @param deviceRequest deviceRequest (required)
+     * @param request request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -575,9 +575,9 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerAsync(DeviceRequest deviceRequest, final ApiCallback<OutResponseOfPersonalCertificate> _callback) throws ApiException {
+    public okhttp3.Call registerAsync(DeviceRequest request, final ApiCallback<OutResponseOfPersonalCertificate> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = registerValidateBeforeCall(deviceRequest, _callback);
+        okhttp3.Call localVarCall = registerValidateBeforeCall(request, _callback);
         Type localVarReturnType = new TypeToken<OutResponseOfPersonalCertificate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

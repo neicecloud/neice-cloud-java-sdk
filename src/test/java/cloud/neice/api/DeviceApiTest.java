@@ -95,8 +95,8 @@ public class DeviceApiTest {
      */
     @Test
     public void registerTest() throws ApiException {
-        DeviceRequest deviceRequest = null;
-        OutResponseOfPersonalCertificate response = api.register(deviceRequest);
+        DeviceRequest request = null;
+        OutResponseOfPersonalCertificate response = api.register(request);
 
         // TODO: test validations
     }

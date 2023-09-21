@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -49,6 +50,14 @@ public class StatusTest {
     }
 
     /**
+     * Test the property 'magicUnit'
+     */
+    @Test
+    public void magicUnitTest() {
+        // TODO: test magicUnit
+    }
+
+    /**
      * Test the property 'quick'
      */
     @Test
@@ -57,11 +66,27 @@ public class StatusTest {
     }
 
     /**
+     * Test the property 'quickUnit'
+     */
+    @Test
+    public void quickUnitTest() {
+        // TODO: test quickUnit
+    }
+
+    /**
      * Test the property 'reserve'
      */
     @Test
     public void reserveTest() {
         // TODO: test reserve
+    }
+
+    /**
+     * Test the property 'reserveUnit'
+     */
+    @Test
+    public void reserveUnitTest() {
+        // TODO: test reserveUnit
     }
 
 }

@@ -623,6 +623,9 @@ components:
           magic: true
           quick: true
           reserve: true
+          quickUnit: 1.4658129805029452
+          magicUnit: 6.027456183070403
+          reserveUnit: 5.962133916683182
         success: true
       properties:
         code:
@@ -759,16 +762,28 @@ components:
         magic: true
         quick: true
         reserve: true
+        quickUnit: 1.4658129805029452
+        magicUnit: 6.027456183070403
+        reserveUnit: 5.962133916683182
       properties:
         magic:
           description: 标记该系统是否支持部分设备证书能秒出激活的功能
           type: boolean
+        magicUnit:
+          description: 部分秒出证书单价
+          type: number
         quick:
           description: 标记该系统是否支持全部设备证书能立即秒出激活的功能
           type: boolean
+        quickUnit:
+          description: 全量秒出证书单价
+          type: number
         reserve:
           description: 标记该系统是否支持预定设备证书的功能
           type: boolean
+        reserveUnit:
+          description: 预定证书服务单价
+          type: number
       title: Status
       type: object
     Version:

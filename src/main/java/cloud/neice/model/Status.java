@@ -23,23 +23,36 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * Status
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-19T22:01:43.721743+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-21T11:30:59.131335+08:00[Asia/Shanghai]")
 public class Status {
   public static final String SERIALIZED_NAME_MAGIC = "magic";
   @SerializedName(SERIALIZED_NAME_MAGIC)
   private Boolean magic;
 
+  public static final String SERIALIZED_NAME_MAGIC_UNIT = "magicUnit";
+  @SerializedName(SERIALIZED_NAME_MAGIC_UNIT)
+  private BigDecimal magicUnit;
+
   public static final String SERIALIZED_NAME_QUICK = "quick";
   @SerializedName(SERIALIZED_NAME_QUICK)
   private Boolean quick;
 
+  public static final String SERIALIZED_NAME_QUICK_UNIT = "quickUnit";
+  @SerializedName(SERIALIZED_NAME_QUICK_UNIT)
+  private BigDecimal quickUnit;
+
   public static final String SERIALIZED_NAME_RESERVE = "reserve";
   @SerializedName(SERIALIZED_NAME_RESERVE)
   private Boolean reserve;
+
+  public static final String SERIALIZED_NAME_RESERVE_UNIT = "reserveUnit";
+  @SerializedName(SERIALIZED_NAME_RESERVE_UNIT)
+  private BigDecimal reserveUnit;
 
 
   public Status magic(Boolean magic) {
@@ -62,6 +75,29 @@ public class Status {
 
   public void setMagic(Boolean magic) {
     this.magic = magic;
+  }
+
+
+  public Status magicUnit(BigDecimal magicUnit) {
+    
+    this.magicUnit = magicUnit;
+    return this;
+  }
+
+   /**
+   * 部分秒出证书单价
+   * @return magicUnit
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "部分秒出证书单价")
+
+  public BigDecimal getMagicUnit() {
+    return magicUnit;
+  }
+
+
+  public void setMagicUnit(BigDecimal magicUnit) {
+    this.magicUnit = magicUnit;
   }
 
 
@@ -88,6 +124,29 @@ public class Status {
   }
 
 
+  public Status quickUnit(BigDecimal quickUnit) {
+    
+    this.quickUnit = quickUnit;
+    return this;
+  }
+
+   /**
+   * 全量秒出证书单价
+   * @return quickUnit
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "全量秒出证书单价")
+
+  public BigDecimal getQuickUnit() {
+    return quickUnit;
+  }
+
+
+  public void setQuickUnit(BigDecimal quickUnit) {
+    this.quickUnit = quickUnit;
+  }
+
+
   public Status reserve(Boolean reserve) {
     
     this.reserve = reserve;
@@ -111,6 +170,29 @@ public class Status {
   }
 
 
+  public Status reserveUnit(BigDecimal reserveUnit) {
+    
+    this.reserveUnit = reserveUnit;
+    return this;
+  }
+
+   /**
+   * 预定证书服务单价
+   * @return reserveUnit
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "预定证书服务单价")
+
+  public BigDecimal getReserveUnit() {
+    return reserveUnit;
+  }
+
+
+  public void setReserveUnit(BigDecimal reserveUnit) {
+    this.reserveUnit = reserveUnit;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -121,13 +203,16 @@ public class Status {
     }
     Status status = (Status) o;
     return Objects.equals(this.magic, status.magic) &&
+        Objects.equals(this.magicUnit, status.magicUnit) &&
         Objects.equals(this.quick, status.quick) &&
-        Objects.equals(this.reserve, status.reserve);
+        Objects.equals(this.quickUnit, status.quickUnit) &&
+        Objects.equals(this.reserve, status.reserve) &&
+        Objects.equals(this.reserveUnit, status.reserveUnit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(magic, quick, reserve);
+    return Objects.hash(magic, magicUnit, quick, quickUnit, reserve, reserveUnit);
   }
 
 
@@ -136,8 +221,11 @@ public class Status {
     StringBuilder sb = new StringBuilder();
     sb.append("class Status {\n");
     sb.append("    magic: ").append(toIndentedString(magic)).append("\n");
+    sb.append("    magicUnit: ").append(toIndentedString(magicUnit)).append("\n");
     sb.append("    quick: ").append(toIndentedString(quick)).append("\n");
+    sb.append("    quickUnit: ").append(toIndentedString(quickUnit)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
+    sb.append("    reserveUnit: ").append(toIndentedString(reserveUnit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

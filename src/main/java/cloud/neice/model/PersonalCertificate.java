@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-21T11:30:59.131335+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-22T16:10:39.902765+08:00[Asia/Shanghai]")
 public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
@@ -85,6 +85,10 @@ public class PersonalCertificate {
   public static final String SERIALIZED_NAME_REFER = "refer";
   @SerializedName(SERIALIZED_NAME_REFER)
   private String refer;
+
+  public static final String SERIALIZED_NAME_REPAIR = "repair";
+  @SerializedName(SERIALIZED_NAME_REPAIR)
+  private Boolean repair;
 
   public static final String SERIALIZED_NAME_RESERVE = "reserve";
   @SerializedName(SERIALIZED_NAME_RESERVE)
@@ -425,6 +429,29 @@ public class PersonalCertificate {
   }
 
 
+  public PersonalCertificate repair(Boolean repair) {
+    
+    this.repair = repair;
+    return this;
+  }
+
+   /**
+   * 补偿证书:预定失败或质保期内掉签，后台重订的设备标记，一般免服务费
+   * @return repair
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "补偿证书:预定失败或质保期内掉签，后台重订的设备标记，一般免服务费")
+
+  public Boolean getRepair() {
+    return repair;
+  }
+
+
+  public void setRepair(Boolean repair) {
+    this.repair = repair;
+  }
+
+
   public PersonalCertificate reserve(Boolean reserve) {
     
     this.reserve = reserve;
@@ -540,6 +567,7 @@ public class PersonalCertificate {
         Objects.equals(this.quality, personalCertificate.quality) &&
         Objects.equals(this.qualityTime, personalCertificate.qualityTime) &&
         Objects.equals(this.refer, personalCertificate.refer) &&
+        Objects.equals(this.repair, personalCertificate.repair) &&
         Objects.equals(this.reserve, personalCertificate.reserve) &&
         Objects.equals(this.udid, personalCertificate.udid) &&
         Objects.equals(this.uuid, personalCertificate.uuid) &&
@@ -548,7 +576,7 @@ public class PersonalCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, certificateId, createTime, description, deviceId, mobileprovision, name, password, phone, price, profileId, quality, qualityTime, refer, reserve, udid, uuid, valid);
+    return Objects.hash(certificate, certificateId, createTime, description, deviceId, mobileprovision, name, password, phone, price, profileId, quality, qualityTime, refer, repair, reserve, udid, uuid, valid);
   }
 
 
@@ -570,6 +598,7 @@ public class PersonalCertificate {
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    qualityTime: ").append(toIndentedString(qualityTime)).append("\n");
     sb.append("    refer: ").append(toIndentedString(refer)).append("\n");
+    sb.append("    repair: ").append(toIndentedString(repair)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

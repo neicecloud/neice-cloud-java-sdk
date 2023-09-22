@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **quality** | **Integer** | 证书质保天数 |  [optional]
 **qualityTime** | **String** | 证书质保到期时间 |  [optional]
 **refer** | **String** | 该设备的用户,后台自动透传该参数 |  [optional]
+**repair** | **Boolean** | 补偿证书:预定失败或质保期内掉签，后台重订的设备标记，一般免服务费 |  [optional]
 **reserve** | **Boolean** | 预定证书 |  [optional]
 **udid** | **String** | 设备的UDID |  [optional]
 **uuid** | **String** | 单个设备证书UUID |  [optional]

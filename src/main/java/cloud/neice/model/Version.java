@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Version
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-21T11:30:59.131335+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-22T16:10:39.902765+08:00[Asia/Shanghai]")
 public class Version {
   public static final String SERIALIZED_NAME_BUILD = "build";
   @SerializedName(SERIALIZED_NAME_BUILD)

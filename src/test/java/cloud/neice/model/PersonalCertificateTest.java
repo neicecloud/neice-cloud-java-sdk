@@ -154,6 +154,14 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'repair'
+     */
+    @Test
+    public void repairTest() {
+        // TODO: test repair
+    }
+
+    /**
      * Test the property 'reserve'
      */
     @Test

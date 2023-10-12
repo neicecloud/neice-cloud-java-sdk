@@ -624,11 +624,15 @@ components:
         code: 0
         data:
           magic: true
+          blindReserveUnit: 6.027456183070403
+          blind: true
+          blindReserve: true
           quick: true
+          blindUnit: 1.4658129805029452
           reserve: true
-          quickUnit: 1.4658129805029452
-          magicUnit: 6.027456183070403
-          reserveUnit: 5.962133916683182
+          quickUnit: 5.637376656633329
+          magicUnit: 5.962133916683182
+          reserveUnit: 2.3021358869347655
         success: true
       properties:
         code:
@@ -767,12 +771,28 @@ components:
     Status:
       example:
         magic: true
+        blindReserveUnit: 6.027456183070403
+        blind: true
+        blindReserve: true
         quick: true
+        blindUnit: 1.4658129805029452
         reserve: true
-        quickUnit: 1.4658129805029452
-        magicUnit: 6.027456183070403
-        reserveUnit: 5.962133916683182
+        quickUnit: 5.637376656633329
+        magicUnit: 5.962133916683182
+        reserveUnit: 2.3021358869347655
       properties:
+        blind:
+          description: 标记该系统是否支持盲盒设备证书能立即秒出激活的功能
+          type: boolean
+        blindReserve:
+          description: 标记该系统是否支持盲盒预定设备证书的功能
+          type: boolean
+        blindReserveUnit:
+          description: 盲盒预定证书服务单价
+          type: number
+        blindUnit:
+          description: 盲盒秒出证书单价
+          type: number
         magic:
           description: 标记该系统是否支持部分设备证书能秒出激活的功能
           type: boolean

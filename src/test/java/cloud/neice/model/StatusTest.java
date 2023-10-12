@@ -42,6 +42,38 @@ public class StatusTest {
     }
 
     /**
+     * Test the property 'blind'
+     */
+    @Test
+    public void blindTest() {
+        // TODO: test blind
+    }
+
+    /**
+     * Test the property 'blindReserve'
+     */
+    @Test
+    public void blindReserveTest() {
+        // TODO: test blindReserve
+    }
+
+    /**
+     * Test the property 'blindReserveUnit'
+     */
+    @Test
+    public void blindReserveUnitTest() {
+        // TODO: test blindReserveUnit
+    }
+
+    /**
+     * Test the property 'blindUnit'
+     */
+    @Test
+    public void blindUnitTest() {
+        // TODO: test blindUnit
+    }
+
+    /**
      * Test the property 'magic'
      */
     @Test

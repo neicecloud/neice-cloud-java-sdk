@@ -28,8 +28,24 @@ import java.math.BigDecimal;
 /**
  * Status
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-22T16:10:39.902765+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-12T18:48:21.637434+08:00[Asia/Shanghai]")
 public class Status {
+  public static final String SERIALIZED_NAME_BLIND = "blind";
+  @SerializedName(SERIALIZED_NAME_BLIND)
+  private Boolean blind;
+
+  public static final String SERIALIZED_NAME_BLIND_RESERVE = "blindReserve";
+  @SerializedName(SERIALIZED_NAME_BLIND_RESERVE)
+  private Boolean blindReserve;
+
+  public static final String SERIALIZED_NAME_BLIND_RESERVE_UNIT = "blindReserveUnit";
+  @SerializedName(SERIALIZED_NAME_BLIND_RESERVE_UNIT)
+  private BigDecimal blindReserveUnit;
+
+  public static final String SERIALIZED_NAME_BLIND_UNIT = "blindUnit";
+  @SerializedName(SERIALIZED_NAME_BLIND_UNIT)
+  private BigDecimal blindUnit;
+
   public static final String SERIALIZED_NAME_MAGIC = "magic";
   @SerializedName(SERIALIZED_NAME_MAGIC)
   private Boolean magic;
@@ -53,6 +69,98 @@ public class Status {
   public static final String SERIALIZED_NAME_RESERVE_UNIT = "reserveUnit";
   @SerializedName(SERIALIZED_NAME_RESERVE_UNIT)
   private BigDecimal reserveUnit;
+
+
+  public Status blind(Boolean blind) {
+    
+    this.blind = blind;
+    return this;
+  }
+
+   /**
+   * 标记该系统是否支持盲盒设备证书能立即秒出激活的功能
+   * @return blind
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "标记该系统是否支持盲盒设备证书能立即秒出激活的功能")
+
+  public Boolean getBlind() {
+    return blind;
+  }
+
+
+  public void setBlind(Boolean blind) {
+    this.blind = blind;
+  }
+
+
+  public Status blindReserve(Boolean blindReserve) {
+    
+    this.blindReserve = blindReserve;
+    return this;
+  }
+
+   /**
+   * 标记该系统是否支持盲盒预定设备证书的功能
+   * @return blindReserve
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "标记该系统是否支持盲盒预定设备证书的功能")
+
+  public Boolean getBlindReserve() {
+    return blindReserve;
+  }
+
+
+  public void setBlindReserve(Boolean blindReserve) {
+    this.blindReserve = blindReserve;
+  }
+
+
+  public Status blindReserveUnit(BigDecimal blindReserveUnit) {
+    
+    this.blindReserveUnit = blindReserveUnit;
+    return this;
+  }
+
+   /**
+   * 盲盒预定证书服务单价
+   * @return blindReserveUnit
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "盲盒预定证书服务单价")
+
+  public BigDecimal getBlindReserveUnit() {
+    return blindReserveUnit;
+  }
+
+
+  public void setBlindReserveUnit(BigDecimal blindReserveUnit) {
+    this.blindReserveUnit = blindReserveUnit;
+  }
+
+
+  public Status blindUnit(BigDecimal blindUnit) {
+    
+    this.blindUnit = blindUnit;
+    return this;
+  }
+
+   /**
+   * 盲盒秒出证书单价
+   * @return blindUnit
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "盲盒秒出证书单价")
+
+  public BigDecimal getBlindUnit() {
+    return blindUnit;
+  }
+
+
+  public void setBlindUnit(BigDecimal blindUnit) {
+    this.blindUnit = blindUnit;
+  }
 
 
   public Status magic(Boolean magic) {
@@ -202,7 +310,11 @@ public class Status {
       return false;
     }
     Status status = (Status) o;
-    return Objects.equals(this.magic, status.magic) &&
+    return Objects.equals(this.blind, status.blind) &&
+        Objects.equals(this.blindReserve, status.blindReserve) &&
+        Objects.equals(this.blindReserveUnit, status.blindReserveUnit) &&
+        Objects.equals(this.blindUnit, status.blindUnit) &&
+        Objects.equals(this.magic, status.magic) &&
         Objects.equals(this.magicUnit, status.magicUnit) &&
         Objects.equals(this.quick, status.quick) &&
         Objects.equals(this.quickUnit, status.quickUnit) &&
@@ -212,7 +324,7 @@ public class Status {
 
   @Override
   public int hashCode() {
-    return Objects.hash(magic, magicUnit, quick, quickUnit, reserve, reserveUnit);
+    return Objects.hash(blind, blindReserve, blindReserveUnit, blindUnit, magic, magicUnit, quick, quickUnit, reserve, reserveUnit);
   }
 
 
@@ -220,6 +332,10 @@ public class Status {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Status {\n");
+    sb.append("    blind: ").append(toIndentedString(blind)).append("\n");
+    sb.append("    blindReserve: ").append(toIndentedString(blindReserve)).append("\n");
+    sb.append("    blindReserveUnit: ").append(toIndentedString(blindReserveUnit)).append("\n");
+    sb.append("    blindUnit: ").append(toIndentedString(blindUnit)).append("\n");
     sb.append("    magic: ").append(toIndentedString(magic)).append("\n");
     sb.append("    magicUnit: ").append(toIndentedString(magicUnit)).append("\n");
     sb.append("    quick: ").append(toIndentedString(quick)).append("\n");

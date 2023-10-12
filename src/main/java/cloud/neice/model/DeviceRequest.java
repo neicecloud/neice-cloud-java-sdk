@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DeviceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-09-22T16:10:39.902765+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-12T18:48:21.637434+08:00[Asia/Shanghai]")
 public class DeviceRequest {
   public static final String SERIALIZED_NAME_CALLBACK = "callback";
   @SerializedName(SERIALIZED_NAME_CALLBACK)

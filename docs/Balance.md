@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **reward** | **BigDecimal** |  |  [optional]
 **total** | **BigDecimal** |  |  [optional]
 **userUuid** | **String** |  |  [optional]
+**voucher** | **BigDecimal** |  |  [optional]
 
 
 

@@ -73,4 +73,12 @@ public class BalanceTest {
         // TODO: test userUuid
     }
 
+    /**
+     * Test the property 'voucher'
+     */
+    @Test
+    public void voucherTest() {
+        // TODO: test voucher
+    }
+
 }

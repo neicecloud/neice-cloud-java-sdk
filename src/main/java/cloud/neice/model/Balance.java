@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Balance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-12T18:48:21.637434+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-08T16:27:27.498790+08:00[Asia/Shanghai]")
 public class Balance {
   public static final String SERIALIZED_NAME_BALANCE = "balance";
   @SerializedName(SERIALIZED_NAME_BALANCE)
@@ -45,6 +45,10 @@ public class Balance {
   public static final String SERIALIZED_NAME_USER_UUID = "userUuid";
   @SerializedName(SERIALIZED_NAME_USER_UUID)
   private String userUuid;
+
+  public static final String SERIALIZED_NAME_VOUCHER = "voucher";
+  @SerializedName(SERIALIZED_NAME_VOUCHER)
+  private BigDecimal voucher;
 
 
   public Balance balance(BigDecimal balance) {
@@ -139,6 +143,29 @@ public class Balance {
   }
 
 
+  public Balance voucher(BigDecimal voucher) {
+    
+    this.voucher = voucher;
+    return this;
+  }
+
+   /**
+   * Get voucher
+   * @return voucher
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getVoucher() {
+    return voucher;
+  }
+
+
+  public void setVoucher(BigDecimal voucher) {
+    this.voucher = voucher;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -151,12 +178,13 @@ public class Balance {
     return Objects.equals(this.balance, balance.balance) &&
         Objects.equals(this.reward, balance.reward) &&
         Objects.equals(this.total, balance.total) &&
-        Objects.equals(this.userUuid, balance.userUuid);
+        Objects.equals(this.userUuid, balance.userUuid) &&
+        Objects.equals(this.voucher, balance.voucher);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(balance, reward, total, userUuid);
+    return Objects.hash(balance, reward, total, userUuid, voucher);
   }
 
 
@@ -168,6 +196,7 @@ public class Balance {
     sb.append("    reward: ").append(toIndentedString(reward)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    userUuid: ").append(toIndentedString(userUuid)).append("\n");
+    sb.append("    voucher: ").append(toIndentedString(voucher)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T15:57:37.996995+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T16:07:59.097019+08:00[Asia/Shanghai]")
 public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
@@ -40,7 +40,7 @@ public class PersonalCertificate {
 
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
-  private Integer code;
+  private String code;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
@@ -169,7 +169,7 @@ public class PersonalCertificate {
   }
 
 
-  public PersonalCertificate code(Integer code) {
+  public PersonalCertificate code(String code) {
     
     this.code = code;
     return this;
@@ -182,12 +182,12 @@ public class PersonalCertificate {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "证书兑换码")
 
-  public Integer getCode() {
+  public String getCode() {
     return code;
   }
 
 
-  public void setCode(Integer code) {
+  public void setCode(String code) {
     this.code = code;
   }
 

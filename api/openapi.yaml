@@ -996,7 +996,7 @@ components:
         code: 0
         data:
         - repair: true
-          code: 6
+          code: code
           certificateId: certificateId
           mobileprovision: mobileprovision
           profile: profile
@@ -1006,20 +1006,20 @@ components:
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
-          quality: 5
+          quality: 1
           valid: true
           password: password
           createTime: createTime
           phone: phone
           refer: refer
-          price: 1.4658129805029452
+          price: 6.027456183070403
           profileId: profileId
           name: name
           reserve: true
           tag: tag
           udid: udid
         - repair: true
-          code: 6
+          code: code
           certificateId: certificateId
           mobileprovision: mobileprovision
           profile: profile
@@ -1029,13 +1029,13 @@ components:
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
-          quality: 5
+          quality: 1
           valid: true
           password: password
           createTime: createTime
           phone: phone
           refer: refer
-          price: 1.4658129805029452
+          price: 6.027456183070403
           profileId: profileId
           name: name
           reserve: true
@@ -1064,7 +1064,7 @@ components:
         code: 0
         data:
           repair: true
-          code: 6
+          code: code
           certificateId: certificateId
           mobileprovision: mobileprovision
           profile: profile
@@ -1074,13 +1074,13 @@ components:
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
-          quality: 5
+          quality: 1
           valid: true
           password: password
           createTime: createTime
           phone: phone
           refer: refer
-          price: 1.4658129805029452
+          price: 6.027456183070403
           profileId: profileId
           name: name
           reserve: true
@@ -1175,7 +1175,7 @@ components:
     PersonalCertificate:
       example:
         repair: true
-        code: 6
+        code: code
         certificateId: certificateId
         mobileprovision: mobileprovision
         profile: profile
@@ -1185,13 +1185,13 @@ components:
         deviceId: deviceId
         qualityTime: qualityTime
         uuid: uuid
-        quality: 5
+        quality: 1
         valid: true
         password: password
         createTime: createTime
         phone: phone
         refer: refer
-        price: 1.4658129805029452
+        price: 6.027456183070403
         profileId: profileId
         name: name
         reserve: true
@@ -1206,8 +1206,7 @@ components:
           type: string
         code:
           description: 证书兑换码
-          format: int32
-          type: integer
+          type: string
         createTime:
           description: 证书创建时间
           type: string

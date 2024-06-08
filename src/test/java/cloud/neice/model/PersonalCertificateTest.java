@@ -58,6 +58,14 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'code'
+     */
+    @Test
+    public void codeTest() {
+        // TODO: test code
+    }
+
+    /**
      * Test the property 'createTime'
      */
     @Test

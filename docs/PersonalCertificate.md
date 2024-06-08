@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **certificate** | **String** | 设备证书P12 |  [optional]
 **certificateId** | **String** | 证书ID |  [optional]
+**code** | **Integer** | 证书兑换码 |  [optional]
 **createTime** | **String** | 证书创建时间 |  [optional]
 **description** | **String** | 证书描述信息 |  [optional]
 **deviceId** | **String** | 设备ID |  [optional]

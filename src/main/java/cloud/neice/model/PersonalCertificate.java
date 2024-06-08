@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T12:06:52.936740+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T15:57:37.996995+08:00[Asia/Shanghai]")
 public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
@@ -37,6 +37,10 @@ public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE_ID = "certificateId";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE_ID)
   private String certificateId;
+
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private Integer code;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
@@ -162,6 +166,29 @@ public class PersonalCertificate {
 
   public void setCertificateId(String certificateId) {
     this.certificateId = certificateId;
+  }
+
+
+  public PersonalCertificate code(Integer code) {
+    
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * 证书兑换码
+   * @return code
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "证书兑换码")
+
+  public Integer getCode() {
+    return code;
+  }
+
+
+  public void setCode(Integer code) {
+    this.code = code;
   }
 
 
@@ -636,6 +663,7 @@ public class PersonalCertificate {
     PersonalCertificate personalCertificate = (PersonalCertificate) o;
     return Objects.equals(this.certificate, personalCertificate.certificate) &&
         Objects.equals(this.certificateId, personalCertificate.certificateId) &&
+        Objects.equals(this.code, personalCertificate.code) &&
         Objects.equals(this.createTime, personalCertificate.createTime) &&
         Objects.equals(this.description, personalCertificate.description) &&
         Objects.equals(this.deviceId, personalCertificate.deviceId) &&
@@ -660,7 +688,7 @@ public class PersonalCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, certificateId, createTime, description, deviceId, mobileprovision, name, password, phone, price, profile, profileId, quality, qualityTime, refer, repair, reserve, tag, team, udid, uuid, valid);
+    return Objects.hash(certificate, certificateId, code, createTime, description, deviceId, mobileprovision, name, password, phone, price, profile, profileId, quality, qualityTime, refer, repair, reserve, tag, team, udid, uuid, valid);
   }
 
 
@@ -670,6 +698,7 @@ public class PersonalCertificate {
     sb.append("class PersonalCertificate {\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    certificateId: ").append(toIndentedString(certificateId)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");

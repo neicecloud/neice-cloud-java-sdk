@@ -67,12 +67,4 @@ public class OutResponseOfListOfPersonalCertificateTest {
         // TODO: test msg
     }
 
-    /**
-     * Test the property 'success'
-     */
-    @Test
-    public void successTest() {
-        // TODO: test success
-    }
-
 }

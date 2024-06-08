@@ -13,7 +13,6 @@
 
 package cloud.neice.model;
 
-import cloud.neice.model.Version;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,17 +27,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for OutResponseOfVersion
+ * Model tests for CertificateRequest
  */
-public class OutResponseOfVersionTest {
-    private final OutResponseOfVersion model = new OutResponseOfVersion();
+public class CertificateRequestTest {
+    private final CertificateRequest model = new CertificateRequest();
 
     /**
-     * Model tests for OutResponseOfVersion
+     * Model tests for CertificateRequest
      */
     @Test
-    public void testOutResponseOfVersion() {
-        // TODO: test OutResponseOfVersion
+    public void testCertificateRequest() {
+        // TODO: test CertificateRequest
     }
 
     /**
@@ -50,19 +49,27 @@ public class OutResponseOfVersionTest {
     }
 
     /**
-     * Test the property 'data'
+     * Test the property 'force'
      */
     @Test
-    public void dataTest() {
-        // TODO: test data
+    public void forceTest() {
+        // TODO: test force
     }
 
     /**
-     * Test the property 'msg'
+     * Test the property 'phone'
      */
     @Test
-    public void msgTest() {
-        // TODO: test msg
+    public void phoneTest() {
+        // TODO: test phone
+    }
+
+    /**
+     * Test the property 'udid'
+     */
+    @Test
+    public void udidTest() {
+        // TODO: test udid
     }
 
 }

@@ -49,6 +49,14 @@ public class DeviceRequestTest {
     }
 
     /**
+     * Test the property 'code'
+     */
+    @Test
+    public void codeTest() {
+        // TODO: test code
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test

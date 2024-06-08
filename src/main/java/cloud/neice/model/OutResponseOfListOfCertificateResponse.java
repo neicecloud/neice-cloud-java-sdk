@@ -15,7 +15,7 @@ package cloud.neice.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import cloud.neice.model.Status;
+import cloud.neice.model.CertificateResponse;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,26 +24,28 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * OutResponseOfStatus
+ * OutResponseOfListOfCertificateResponse
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T12:06:52.936740+08:00[Asia/Shanghai]")
-public class OutResponseOfStatus {
+public class OutResponseOfListOfCertificateResponse {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private Status data;
+  private List<CertificateResponse> data = null;
 
   public static final String SERIALIZED_NAME_MSG = "msg";
   @SerializedName(SERIALIZED_NAME_MSG)
   private String msg;
 
 
-  public OutResponseOfStatus code(Integer code) {
+  public OutResponseOfListOfCertificateResponse code(Integer code) {
     
     this.code = code;
     return this;
@@ -65,30 +67,38 @@ public class OutResponseOfStatus {
   }
 
 
-  public OutResponseOfStatus data(Status data) {
+  public OutResponseOfListOfCertificateResponse data(List<CertificateResponse> data) {
     
     this.data = data;
     return this;
   }
 
+  public OutResponseOfListOfCertificateResponse addDataItem(CertificateResponse dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<CertificateResponse>();
+    }
+    this.data.add(dataItem);
+    return this;
+  }
+
    /**
-   * Get data
+   * 响应数据
    * @return data
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "响应数据")
 
-  public Status getData() {
+  public List<CertificateResponse> getData() {
     return data;
   }
 
 
-  public void setData(Status data) {
+  public void setData(List<CertificateResponse> data) {
     this.data = data;
   }
 
 
-  public OutResponseOfStatus msg(String msg) {
+  public OutResponseOfListOfCertificateResponse msg(String msg) {
     
     this.msg = msg;
     return this;
@@ -119,10 +129,10 @@ public class OutResponseOfStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OutResponseOfStatus outResponseOfStatus = (OutResponseOfStatus) o;
-    return Objects.equals(this.code, outResponseOfStatus.code) &&
-        Objects.equals(this.data, outResponseOfStatus.data) &&
-        Objects.equals(this.msg, outResponseOfStatus.msg);
+    OutResponseOfListOfCertificateResponse outResponseOfListOfCertificateResponse = (OutResponseOfListOfCertificateResponse) o;
+    return Objects.equals(this.code, outResponseOfListOfCertificateResponse.code) &&
+        Objects.equals(this.data, outResponseOfListOfCertificateResponse.data) &&
+        Objects.equals(this.msg, outResponseOfListOfCertificateResponse.msg);
   }
 
   @Override
@@ -134,7 +144,7 @@ public class OutResponseOfStatus {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OutResponseOfStatus {\n");
+    sb.append("class OutResponseOfListOfCertificateResponse {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");

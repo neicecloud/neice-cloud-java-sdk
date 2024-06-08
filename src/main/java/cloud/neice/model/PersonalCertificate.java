@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-08T16:27:27.498790+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T12:06:52.936740+08:00[Asia/Shanghai]")
 public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
@@ -70,6 +70,10 @@ public class PersonalCertificate {
   @SerializedName(SERIALIZED_NAME_PRICE)
   private BigDecimal price;
 
+  public static final String SERIALIZED_NAME_PROFILE = "profile";
+  @SerializedName(SERIALIZED_NAME_PROFILE)
+  private String profile;
+
   public static final String SERIALIZED_NAME_PROFILE_ID = "profileId";
   @SerializedName(SERIALIZED_NAME_PROFILE_ID)
   private String profileId;
@@ -93,6 +97,14 @@ public class PersonalCertificate {
   public static final String SERIALIZED_NAME_RESERVE = "reserve";
   @SerializedName(SERIALIZED_NAME_RESERVE)
   private Boolean reserve;
+
+  public static final String SERIALIZED_NAME_TAG = "tag";
+  @SerializedName(SERIALIZED_NAME_TAG)
+  private String tag;
+
+  public static final String SERIALIZED_NAME_TEAM = "team";
+  @SerializedName(SERIALIZED_NAME_TEAM)
+  private String team;
 
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
@@ -337,6 +349,29 @@ public class PersonalCertificate {
   }
 
 
+  public PersonalCertificate profile(String profile) {
+    
+    this.profile = profile;
+    return this;
+  }
+
+   /**
+   * Get profile
+   * @return profile
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getProfile() {
+    return profile;
+  }
+
+
+  public void setProfile(String profile) {
+    this.profile = profile;
+  }
+
+
   public PersonalCertificate profileId(String profileId) {
     
     this.profileId = profileId;
@@ -475,6 +510,52 @@ public class PersonalCertificate {
   }
 
 
+  public PersonalCertificate tag(String tag) {
+    
+    this.tag = tag;
+    return this;
+  }
+
+   /**
+   * Get tag
+   * @return tag
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTag() {
+    return tag;
+  }
+
+
+  public void setTag(String tag) {
+    this.tag = tag;
+  }
+
+
+  public PersonalCertificate team(String team) {
+    
+    this.team = team;
+    return this;
+  }
+
+   /**
+   * Get team
+   * @return team
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTeam() {
+    return team;
+  }
+
+
+  public void setTeam(String team) {
+    this.team = team;
+  }
+
+
   public PersonalCertificate udid(String udid) {
     
     this.udid = udid;
@@ -563,12 +644,15 @@ public class PersonalCertificate {
         Objects.equals(this.password, personalCertificate.password) &&
         Objects.equals(this.phone, personalCertificate.phone) &&
         Objects.equals(this.price, personalCertificate.price) &&
+        Objects.equals(this.profile, personalCertificate.profile) &&
         Objects.equals(this.profileId, personalCertificate.profileId) &&
         Objects.equals(this.quality, personalCertificate.quality) &&
         Objects.equals(this.qualityTime, personalCertificate.qualityTime) &&
         Objects.equals(this.refer, personalCertificate.refer) &&
         Objects.equals(this.repair, personalCertificate.repair) &&
         Objects.equals(this.reserve, personalCertificate.reserve) &&
+        Objects.equals(this.tag, personalCertificate.tag) &&
+        Objects.equals(this.team, personalCertificate.team) &&
         Objects.equals(this.udid, personalCertificate.udid) &&
         Objects.equals(this.uuid, personalCertificate.uuid) &&
         Objects.equals(this.valid, personalCertificate.valid);
@@ -576,7 +660,7 @@ public class PersonalCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, certificateId, createTime, description, deviceId, mobileprovision, name, password, phone, price, profileId, quality, qualityTime, refer, repair, reserve, udid, uuid, valid);
+    return Objects.hash(certificate, certificateId, createTime, description, deviceId, mobileprovision, name, password, phone, price, profile, profileId, quality, qualityTime, refer, repair, reserve, tag, team, udid, uuid, valid);
   }
 
 
@@ -594,12 +678,15 @@ public class PersonalCertificate {
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    price: ").append(toIndentedString(price)).append("\n");
+    sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    profileId: ").append(toIndentedString(profileId)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    qualityTime: ").append(toIndentedString(qualityTime)).append("\n");
     sb.append("    refer: ").append(toIndentedString(refer)).append("\n");
     sb.append("    repair: ").append(toIndentedString(repair)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
+    sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
+    sb.append("    team: ").append(toIndentedString(team)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");

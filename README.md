@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2023-12-08T16:27:27.498790+08:00[Asia/Shanghai]
+  - Build date: 2024-06-08T12:06:52.936740+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 
@@ -122,16 +122,27 @@ Class | Method | HTTP request | Description
 *OauthApi* | [**getToken**](docs/OauthApi.md#getToken) | **POST** /oauth2/token | 获取Token
 *OauthApi* | [**getUserInfo**](docs/OauthApi.md#getUserInfo) | **GET** /oauth2/userInfo | 获取用户信息
 *OauthApi* | [**getUserInfo1**](docs/OauthApi.md#getUserInfo1) | **POST** /oauth2/userInfo | 获取用户信息
+*OpenApi* | [**getCertificate1**](docs/OpenApi.md#getCertificate1) | **GET** /open/api/v1/certificate | 获取开发的iOS设备证书
+*OpenApi* | [**getCertificate2**](docs/OpenApi.md#getCertificate2) | **POST** /open/api/v1/certificate/{udid} | 获取开发的iOS设备证书
+*OpenApi* | [**getCertificate3**](docs/OpenApi.md#getCertificate3) | **GET** /open/api/v1/certificate/{udid} | 获取开发的iOS设备证书
+*OpenApi* | [**getCertificate4**](docs/OpenApi.md#getCertificate4) | **POST** /open/api/v1/certificate | 获取开发的iOS设备证书
+*OpenApi* | [**getEnterpriseCertificates**](docs/OpenApi.md#getEnterpriseCertificates) | **GET** /open/api/v1/enterprise/certificates | 获取企业开发者证书
+*OpenApi* | [**getEnterpriseCertificates1**](docs/OpenApi.md#getEnterpriseCertificates1) | **POST** /open/api/v1/enterprise/certificates | 获取企业开发者证书
 *VersionApi* | [**getVersion**](docs/VersionApi.md#getVersion) | **POST** /aas/api/v1/version | 获取接口系统版本
 
 
 ## Documentation for Models
 
  - [Balance](docs/Balance.md)
+ - [CertificateRequest](docs/CertificateRequest.md)
+ - [CertificateResponse](docs/CertificateResponse.md)
  - [DeviceRequest](docs/DeviceRequest.md)
  - [Endpoint](docs/Endpoint.md)
  - [HttpEntity](docs/HttpEntity.md)
+ - [OpenEnterpriseCertificate](docs/OpenEnterpriseCertificate.md)
  - [OutResponseOfBalance](docs/OutResponseOfBalance.md)
+ - [OutResponseOfListOfCertificateResponse](docs/OutResponseOfListOfCertificateResponse.md)
+ - [OutResponseOfListOfOpenEnterpriseCertificate](docs/OutResponseOfListOfOpenEnterpriseCertificate.md)
  - [OutResponseOfListOfPersonalCertificate](docs/OutResponseOfListOfPersonalCertificate.md)
  - [OutResponseOfPersonalCertificate](docs/OutResponseOfPersonalCertificate.md)
  - [OutResponseOfStatus](docs/OutResponseOfStatus.md)

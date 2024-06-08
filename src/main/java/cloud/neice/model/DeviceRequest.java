@@ -27,11 +27,15 @@ import java.io.IOException;
 /**
  * DeviceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-08T16:27:27.498790+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T12:06:52.936740+08:00[Asia/Shanghai]")
 public class DeviceRequest {
   public static final String SERIALIZED_NAME_CALLBACK = "callback";
   @SerializedName(SERIALIZED_NAME_CALLBACK)
   private String callback;
+
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
+  private String code;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -78,6 +82,29 @@ public class DeviceRequest {
 
   public void setCallback(String callback) {
     this.callback = callback;
+  }
+
+
+  public DeviceRequest code(String code) {
+    
+    this.code = code;
+    return this;
+  }
+
+   /**
+   * 可使用兑换码注册设备
+   * @return code
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "可使用兑换码注册设备")
+
+  public String getCode() {
+    return code;
+  }
+
+
+  public void setCode(String code) {
+    this.code = code;
   }
 
 
@@ -228,6 +255,7 @@ public class DeviceRequest {
     }
     DeviceRequest deviceRequest = (DeviceRequest) o;
     return Objects.equals(this.callback, deviceRequest.callback) &&
+        Objects.equals(this.code, deviceRequest.code) &&
         Objects.equals(this.name, deviceRequest.name) &&
         Objects.equals(this.phone, deviceRequest.phone) &&
         Objects.equals(this.quality, deviceRequest.quality) &&
@@ -238,7 +266,7 @@ public class DeviceRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(callback, name, phone, quality, refer, reserve, udid);
+    return Objects.hash(callback, code, name, phone, quality, refer, reserve, udid);
   }
 
 
@@ -247,6 +275,7 @@ public class DeviceRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeviceRequest {\n");
     sb.append("    callback: ").append(toIndentedString(callback)).append("\n");
+    sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");

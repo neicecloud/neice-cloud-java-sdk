@@ -21,24 +21,23 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for PersonalCertificate
+ * Model tests for CertificateResponse
  */
-public class PersonalCertificateTest {
-    private final PersonalCertificate model = new PersonalCertificate();
+public class CertificateResponseTest {
+    private final CertificateResponse model = new CertificateResponse();
 
     /**
-     * Model tests for PersonalCertificate
+     * Model tests for CertificateResponse
      */
     @Test
-    public void testPersonalCertificate() {
-        // TODO: test PersonalCertificate
+    public void testCertificateResponse() {
+        // TODO: test CertificateResponse
     }
 
     /**
@@ -50,19 +49,11 @@ public class PersonalCertificateTest {
     }
 
     /**
-     * Test the property 'certificateId'
+     * Test the property 'code'
      */
     @Test
-    public void certificateIdTest() {
-        // TODO: test certificateId
-    }
-
-    /**
-     * Test the property 'createTime'
-     */
-    @Test
-    public void createTimeTest() {
-        // TODO: test createTime
+    public void codeTest() {
+        // TODO: test code
     }
 
     /**
@@ -71,14 +62,6 @@ public class PersonalCertificateTest {
     @Test
     public void descriptionTest() {
         // TODO: test description
-    }
-
-    /**
-     * Test the property 'deviceId'
-     */
-    @Test
-    public void deviceIdTest() {
-        // TODO: test deviceId
     }
 
     /**
@@ -114,14 +97,6 @@ public class PersonalCertificateTest {
     }
 
     /**
-     * Test the property 'price'
-     */
-    @Test
-    public void priceTest() {
-        // TODO: test price
-    }
-
-    /**
      * Test the property 'profile'
      */
     @Test
@@ -130,43 +105,11 @@ public class PersonalCertificateTest {
     }
 
     /**
-     * Test the property 'profileId'
-     */
-    @Test
-    public void profileIdTest() {
-        // TODO: test profileId
-    }
-
-    /**
      * Test the property 'quality'
      */
     @Test
     public void qualityTest() {
         // TODO: test quality
-    }
-
-    /**
-     * Test the property 'qualityTime'
-     */
-    @Test
-    public void qualityTimeTest() {
-        // TODO: test qualityTime
-    }
-
-    /**
-     * Test the property 'refer'
-     */
-    @Test
-    public void referTest() {
-        // TODO: test refer
-    }
-
-    /**
-     * Test the property 'repair'
-     */
-    @Test
-    public void repairTest() {
-        // TODO: test repair
     }
 
     /**

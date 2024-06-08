@@ -22,6 +22,8 @@ tags:
   name: endpoint
 - description: 客户端授权登录认证获取Token接口
   name: oauth
+- description: 开放设备证书，提供设备证书提取和查询功能
+  name: open
 - description: 系统接口版本
   name: version
 paths:
@@ -393,6 +395,210 @@ paths:
       tags:
       - oauth
       x-accepts: application/json;charset=UTF-8
+  /open/api/v1/certificate:
+    get:
+      description: 获取开发的iOS设备证书
+      operationId: getCertificate_1
+      parameters:
+      - description: code
+        in: query
+        name: code
+        required: true
+        schema:
+          type: string
+      - description: udid
+        in: query
+        name: udid
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfListOfCertificateResponse'
+          description: OK
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 获取开发的iOS设备证书
+      tags:
+      - open
+      x-accepts: '*/*'
+    post:
+      description: 获取开发的iOS设备证书
+      operationId: getCertificate_4
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificateRequest'
+        description: certificateRequest
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfListOfCertificateResponse'
+          description: OK
+        "201":
+          content: {}
+          description: Created
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 获取开发的iOS设备证书
+      tags:
+      - open
+      x-codegen-request-body-name: certificateRequest
+      x-contentType: application/json
+      x-accepts: '*/*'
+  /open/api/v1/certificate/{udid}:
+    get:
+      description: 获取开发的iOS设备证书
+      operationId: getCertificate_3
+      parameters:
+      - description: udid
+        in: path
+        name: udid
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfListOfCertificateResponse'
+          description: OK
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 获取开发的iOS设备证书
+      tags:
+      - open
+      x-accepts: '*/*'
+    post:
+      description: 获取开发的iOS设备证书
+      operationId: getCertificate_2
+      parameters:
+      - description: udid
+        in: path
+        name: udid
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfListOfCertificateResponse'
+          description: OK
+        "201":
+          content: {}
+          description: Created
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 获取开发的iOS设备证书
+      tags:
+      - open
+      x-accepts: '*/*'
+  /open/api/v1/enterprise/certificates:
+    get:
+      description: 获取企业开发者证书
+      operationId: getEnterpriseCertificates
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfListOfOpenEnterpriseCertificate'
+          description: OK
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 获取企业开发者证书
+      tags:
+      - open
+      x-accepts: '*/*'
+    post:
+      description: 获取企业开发者证书
+      operationId: getEnterpriseCertificates_1
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfListOfOpenEnterpriseCertificate'
+          description: OK
+        "201":
+          content: {}
+          description: Created
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 获取企业开发者证书
+      tags:
+      - open
+      x-accepts: '*/*'
   /user/api/v1/balance:
     post:
       description: 获取用户余额
@@ -445,8 +651,103 @@ components:
           type: number
       title: Balance
       type: object
+    CertificateRequest:
+      example:
+        code: code
+        phone: phone
+        force: true
+        udid: udid
+      properties:
+        code:
+          description: 通过设备证书兑换码可以兑换设备证书
+          type: string
+        force:
+          description: 强制触发证书查询刷新:证书模式下，系统如果检查该设备证书不为空，将不会触发渠道证书拉取同步，增加强制后，将强制系统查询各渠道证书
+          type: boolean
+        phone:
+          description: 如果你兑换的预定证书，需输入手机号用以接收激活通知
+          type: string
+        udid:
+          description: iOS设备的UDID
+          type: string
+      required:
+      - udid
+      title: CertificateRequest
+      type: object
+    CertificateResponse:
+      example:
+        code: code
+        mobileprovision: mobileprovision
+        profile: profile
+        certificate: certificate
+        description: description
+        team: team
+        uuid: uuid
+        quality: 6
+        valid: true
+        password: password
+        phone: phone
+        name: name
+        reserve: true
+        tag: tag
+        udid: udid
+      properties:
+        certificate:
+          description: Base64格式的证书P12文件
+          type: string
+        code:
+          description: 证书兑换码
+          type: string
+        description:
+          description: 证书说明
+          type: string
+        mobileprovision:
+          description: Base64格式的证书描述文件
+          type: string
+        name:
+          description: 证书名
+          type: string
+        password:
+          description: 证书P12对应的密码
+          type: string
+        phone:
+          description: 预定证书的手机号
+          type: string
+        profile:
+          description: 证书描述文件ID
+          type: string
+        quality:
+          description: 证书质保天数
+          format: int32
+          type: integer
+        reserve:
+          description: 是否为预定的证书
+          type: boolean
+        tag:
+          description: 标记
+          type: string
+        team:
+          description: 证书TEAM
+          type: string
+        udid:
+          description: 证书的UDID
+          type: string
+        uuid:
+          description: 上游渠道生成的证书的UUID
+          type: string
+        valid:
+          description: 证书是否有效
+          type: boolean
+      required:
+      - certificate
+      - mobileprovision
+      - password
+      - udid
+      title: CertificateResponse
+      type: object
     DeviceRequest:
       example:
+        code: code
         phone: phone
         refer: refer
         name: name
@@ -457,6 +758,9 @@ components:
       properties:
         callback:
           description: 预定证书激活时可通过回调地址将证书推送到业务系统中，为空将不会回调
+          type: string
+        code:
+          description: 可使用兑换码注册设备
           type: string
         name:
           description: 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分，允许为空值
@@ -504,6 +808,60 @@ components:
           type: object
       title: HttpEntity
       type: object
+    OpenEnterpriseCertificate:
+      example:
+        notAfter: 2000-01-23T04:56:07.000+00:00
+        issuerDn: issuerDn
+        mobileprovision: mobileprovision
+        revocationTime: 2000-01-23T04:56:07.000+00:00
+        certificate: certificate
+        certificateName: certificateName
+        uuid: uuid
+        notBefore: 2000-01-23T04:56:07.000+00:00
+        valid: true
+        password: password
+        createTime: 2000-01-23T04:56:07.000+00:00
+        teamId: teamId
+        revocationReason: revocationReason
+        md5: md5
+        subjectDn: subjectDn
+      properties:
+        certificate:
+          type: string
+        certificateName:
+          type: string
+        createTime:
+          format: date-time
+          type: string
+        issuerDn:
+          type: string
+        md5:
+          type: string
+        mobileprovision:
+          type: string
+        notAfter:
+          format: date-time
+          type: string
+        notBefore:
+          format: date-time
+          type: string
+        password:
+          type: string
+        revocationReason:
+          type: string
+        revocationTime:
+          format: date-time
+          type: string
+        subjectDn:
+          type: string
+        teamId:
+          type: string
+        uuid:
+          type: string
+        valid:
+          type: boolean
+      title: OpenEnterpriseCertificate
+      type: object
     OutResponseOfBalance:
       example:
         msg: msg
@@ -514,18 +872,123 @@ components:
           balance: 6.027456183070403
           voucher: 5.637376656633329
           userUuid: userUuid
-        success: true
       properties:
         code:
+          description: 响应代码
           format: int32
           type: integer
         data:
           $ref: '#/components/schemas/Balance'
         msg:
+          description: 错误信息:成功时为空或为success
           type: string
-        success:
-          type: boolean
+      required:
+      - code
       title: OutResponseOfBalance
+      type: object
+    OutResponseOfListOfCertificateResponse:
+      example:
+        msg: msg
+        code: 0
+        data:
+        - code: code
+          mobileprovision: mobileprovision
+          profile: profile
+          certificate: certificate
+          description: description
+          team: team
+          uuid: uuid
+          quality: 6
+          valid: true
+          password: password
+          phone: phone
+          name: name
+          reserve: true
+          tag: tag
+          udid: udid
+        - code: code
+          mobileprovision: mobileprovision
+          profile: profile
+          certificate: certificate
+          description: description
+          team: team
+          uuid: uuid
+          quality: 6
+          valid: true
+          password: password
+          phone: phone
+          name: name
+          reserve: true
+          tag: tag
+          udid: udid
+      properties:
+        code:
+          description: 响应代码
+          format: int32
+          type: integer
+        data:
+          description: 响应数据
+          items:
+            $ref: '#/components/schemas/CertificateResponse'
+          type: array
+        msg:
+          description: 错误信息:成功时为空或为success
+          type: string
+      required:
+      - code
+      title: OutResponseOfListOfCertificateResponse
+      type: object
+    OutResponseOfListOfOpenEnterpriseCertificate:
+      example:
+        msg: msg
+        code: 0
+        data:
+        - notAfter: 2000-01-23T04:56:07.000+00:00
+          issuerDn: issuerDn
+          mobileprovision: mobileprovision
+          revocationTime: 2000-01-23T04:56:07.000+00:00
+          certificate: certificate
+          certificateName: certificateName
+          uuid: uuid
+          notBefore: 2000-01-23T04:56:07.000+00:00
+          valid: true
+          password: password
+          createTime: 2000-01-23T04:56:07.000+00:00
+          teamId: teamId
+          revocationReason: revocationReason
+          md5: md5
+          subjectDn: subjectDn
+        - notAfter: 2000-01-23T04:56:07.000+00:00
+          issuerDn: issuerDn
+          mobileprovision: mobileprovision
+          revocationTime: 2000-01-23T04:56:07.000+00:00
+          certificate: certificate
+          certificateName: certificateName
+          uuid: uuid
+          notBefore: 2000-01-23T04:56:07.000+00:00
+          valid: true
+          password: password
+          createTime: 2000-01-23T04:56:07.000+00:00
+          teamId: teamId
+          revocationReason: revocationReason
+          md5: md5
+          subjectDn: subjectDn
+      properties:
+        code:
+          description: 响应代码
+          format: int32
+          type: integer
+        data:
+          description: 响应数据
+          items:
+            $ref: '#/components/schemas/OpenEnterpriseCertificate'
+          type: array
+        msg:
+          description: 错误信息:成功时为空或为success
+          type: string
+      required:
+      - code
+      title: OutResponseOfListOfOpenEnterpriseCertificate
       type: object
     OutResponseOfListOfPersonalCertificate:
       example:
@@ -535,8 +998,10 @@ components:
         - repair: true
           certificateId: certificateId
           mobileprovision: mobileprovision
+          profile: profile
           certificate: certificate
           description: description
+          team: team
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
@@ -550,12 +1015,15 @@ components:
           profileId: profileId
           name: name
           reserve: true
+          tag: tag
           udid: udid
         - repair: true
           certificateId: certificateId
           mobileprovision: mobileprovision
+          profile: profile
           certificate: certificate
           description: description
+          team: team
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
@@ -569,20 +1037,23 @@ components:
           profileId: profileId
           name: name
           reserve: true
+          tag: tag
           udid: udid
-        success: true
       properties:
         code:
+          description: 响应代码
           format: int32
           type: integer
         data:
+          description: 响应数据
           items:
             $ref: '#/components/schemas/PersonalCertificate'
           type: array
         msg:
+          description: 错误信息:成功时为空或为success
           type: string
-        success:
-          type: boolean
+      required:
+      - code
       title: OutResponseOfListOfPersonalCertificate
       type: object
     OutResponseOfPersonalCertificate:
@@ -593,8 +1064,10 @@ components:
           repair: true
           certificateId: certificateId
           mobileprovision: mobileprovision
+          profile: profile
           certificate: certificate
           description: description
+          team: team
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
@@ -608,18 +1081,20 @@ components:
           profileId: profileId
           name: name
           reserve: true
+          tag: tag
           udid: udid
-        success: true
       properties:
         code:
+          description: 响应代码
           format: int32
           type: integer
         data:
           $ref: '#/components/schemas/PersonalCertificate'
         msg:
+          description: 错误信息:成功时为空或为success
           type: string
-        success:
-          type: boolean
+      required:
+      - code
       title: OutResponseOfPersonalCertificate
       type: object
     OutResponseOfStatus:
@@ -637,17 +1112,18 @@ components:
           quickUnit: 5.637376656633329
           magicUnit: 5.962133916683182
           reserveUnit: 2.3021358869347655
-        success: true
       properties:
         code:
+          description: 响应代码
           format: int32
           type: integer
         data:
           $ref: '#/components/schemas/Status'
         msg:
+          description: 错误信息:成功时为空或为success
           type: string
-        success:
-          type: boolean
+      required:
+      - code
       title: OutResponseOfStatus
       type: object
     OutResponseOfVersion:
@@ -659,17 +1135,18 @@ components:
           minor: 5
           build: 6
           revision: 5
-        success: true
       properties:
         code:
+          description: 响应代码
           format: int32
           type: integer
         data:
           $ref: '#/components/schemas/Version'
         msg:
+          description: 错误信息:成功时为空或为success
           type: string
-        success:
-          type: boolean
+      required:
+      - code
       title: OutResponseOfVersion
       type: object
     OutResponseOfstring:
@@ -677,17 +1154,19 @@ components:
         msg: msg
         code: 0
         data: data
-        success: true
       properties:
         code:
+          description: 响应代码
           format: int32
           type: integer
         data:
+          description: 响应数据
           type: string
         msg:
+          description: 错误信息:成功时为空或为success
           type: string
-        success:
-          type: boolean
+      required:
+      - code
       title: OutResponseOfstring
       type: object
     PersonalCertificate:
@@ -695,8 +1174,10 @@ components:
         repair: true
         certificateId: certificateId
         mobileprovision: mobileprovision
+        profile: profile
         certificate: certificate
         description: description
+        team: team
         deviceId: deviceId
         qualityTime: qualityTime
         uuid: uuid
@@ -710,6 +1191,7 @@ components:
         profileId: profileId
         name: name
         reserve: true
+        tag: tag
         udid: udid
       properties:
         certificate:
@@ -742,6 +1224,8 @@ components:
         price:
           description: 服务价格
           type: number
+        profile:
+          type: string
         profileId:
           description: 描述文件ID
           type: string
@@ -761,6 +1245,10 @@ components:
         reserve:
           description: 预定证书
           type: boolean
+        tag:
+          type: string
+        team:
+          type: string
         udid:
           description: 设备的UDID
           type: string

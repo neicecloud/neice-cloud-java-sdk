@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * OutResponseOfListOfPersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-08T16:27:27.498790+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T12:06:52.936740+08:00[Asia/Shanghai]")
 public class OutResponseOfListOfPersonalCertificate {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -44,10 +44,6 @@ public class OutResponseOfListOfPersonalCertificate {
   @SerializedName(SERIALIZED_NAME_MSG)
   private String msg;
 
-  public static final String SERIALIZED_NAME_SUCCESS = "success";
-  @SerializedName(SERIALIZED_NAME_SUCCESS)
-  private Boolean success;
-
 
   public OutResponseOfListOfPersonalCertificate code(Integer code) {
     
@@ -56,11 +52,10 @@ public class OutResponseOfListOfPersonalCertificate {
   }
 
    /**
-   * Get code
+   * 响应代码
    * @return code
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "响应代码")
 
   public Integer getCode() {
     return code;
@@ -87,11 +82,11 @@ public class OutResponseOfListOfPersonalCertificate {
   }
 
    /**
-   * Get data
+   * 响应数据
    * @return data
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "响应数据")
 
   public List<PersonalCertificate> getData() {
     return data;
@@ -110,11 +105,11 @@ public class OutResponseOfListOfPersonalCertificate {
   }
 
    /**
-   * Get msg
+   * 错误信息:成功时为空或为success
    * @return msg
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "错误信息:成功时为空或为success")
 
   public String getMsg() {
     return msg;
@@ -123,29 +118,6 @@ public class OutResponseOfListOfPersonalCertificate {
 
   public void setMsg(String msg) {
     this.msg = msg;
-  }
-
-
-  public OutResponseOfListOfPersonalCertificate success(Boolean success) {
-    
-    this.success = success;
-    return this;
-  }
-
-   /**
-   * Get success
-   * @return success
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getSuccess() {
-    return success;
-  }
-
-
-  public void setSuccess(Boolean success) {
-    this.success = success;
   }
 
 
@@ -160,13 +132,12 @@ public class OutResponseOfListOfPersonalCertificate {
     OutResponseOfListOfPersonalCertificate outResponseOfListOfPersonalCertificate = (OutResponseOfListOfPersonalCertificate) o;
     return Objects.equals(this.code, outResponseOfListOfPersonalCertificate.code) &&
         Objects.equals(this.data, outResponseOfListOfPersonalCertificate.data) &&
-        Objects.equals(this.msg, outResponseOfListOfPersonalCertificate.msg) &&
-        Objects.equals(this.success, outResponseOfListOfPersonalCertificate.success);
+        Objects.equals(this.msg, outResponseOfListOfPersonalCertificate.msg);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, data, msg, success);
+    return Objects.hash(code, data, msg);
   }
 
 
@@ -177,7 +148,6 @@ public class OutResponseOfListOfPersonalCertificate {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
-    sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -15,7 +15,7 @@ package cloud.neice.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import cloud.neice.model.Status;
+import cloud.neice.model.OpenEnterpriseCertificate;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -24,26 +24,28 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * OutResponseOfStatus
+ * OutResponseOfListOfOpenEnterpriseCertificate
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T12:06:52.936740+08:00[Asia/Shanghai]")
-public class OutResponseOfStatus {
+public class OutResponseOfListOfOpenEnterpriseCertificate {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private Status data;
+  private List<OpenEnterpriseCertificate> data = null;
 
   public static final String SERIALIZED_NAME_MSG = "msg";
   @SerializedName(SERIALIZED_NAME_MSG)
   private String msg;
 
 
-  public OutResponseOfStatus code(Integer code) {
+  public OutResponseOfListOfOpenEnterpriseCertificate code(Integer code) {
     
     this.code = code;
     return this;
@@ -65,30 +67,38 @@ public class OutResponseOfStatus {
   }
 
 
-  public OutResponseOfStatus data(Status data) {
+  public OutResponseOfListOfOpenEnterpriseCertificate data(List<OpenEnterpriseCertificate> data) {
     
     this.data = data;
     return this;
   }
 
+  public OutResponseOfListOfOpenEnterpriseCertificate addDataItem(OpenEnterpriseCertificate dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<OpenEnterpriseCertificate>();
+    }
+    this.data.add(dataItem);
+    return this;
+  }
+
    /**
-   * Get data
+   * 响应数据
    * @return data
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "响应数据")
 
-  public Status getData() {
+  public List<OpenEnterpriseCertificate> getData() {
     return data;
   }
 
 
-  public void setData(Status data) {
+  public void setData(List<OpenEnterpriseCertificate> data) {
     this.data = data;
   }
 
 
-  public OutResponseOfStatus msg(String msg) {
+  public OutResponseOfListOfOpenEnterpriseCertificate msg(String msg) {
     
     this.msg = msg;
     return this;
@@ -119,10 +129,10 @@ public class OutResponseOfStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OutResponseOfStatus outResponseOfStatus = (OutResponseOfStatus) o;
-    return Objects.equals(this.code, outResponseOfStatus.code) &&
-        Objects.equals(this.data, outResponseOfStatus.data) &&
-        Objects.equals(this.msg, outResponseOfStatus.msg);
+    OutResponseOfListOfOpenEnterpriseCertificate outResponseOfListOfOpenEnterpriseCertificate = (OutResponseOfListOfOpenEnterpriseCertificate) o;
+    return Objects.equals(this.code, outResponseOfListOfOpenEnterpriseCertificate.code) &&
+        Objects.equals(this.data, outResponseOfListOfOpenEnterpriseCertificate.data) &&
+        Objects.equals(this.msg, outResponseOfListOfOpenEnterpriseCertificate.msg);
   }
 
   @Override
@@ -134,7 +144,7 @@ public class OutResponseOfStatus {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OutResponseOfStatus {\n");
+    sb.append("class OutResponseOfListOfOpenEnterpriseCertificate {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");

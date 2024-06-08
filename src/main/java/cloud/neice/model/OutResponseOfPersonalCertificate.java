@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * OutResponseOfPersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-12-08T16:27:27.498790+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T12:06:52.936740+08:00[Asia/Shanghai]")
 public class OutResponseOfPersonalCertificate {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -42,10 +42,6 @@ public class OutResponseOfPersonalCertificate {
   @SerializedName(SERIALIZED_NAME_MSG)
   private String msg;
 
-  public static final String SERIALIZED_NAME_SUCCESS = "success";
-  @SerializedName(SERIALIZED_NAME_SUCCESS)
-  private Boolean success;
-
 
   public OutResponseOfPersonalCertificate code(Integer code) {
     
@@ -54,11 +50,10 @@ public class OutResponseOfPersonalCertificate {
   }
 
    /**
-   * Get code
+   * 响应代码
    * @return code
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "响应代码")
 
   public Integer getCode() {
     return code;
@@ -100,11 +95,11 @@ public class OutResponseOfPersonalCertificate {
   }
 
    /**
-   * Get msg
+   * 错误信息:成功时为空或为success
    * @return msg
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "错误信息:成功时为空或为success")
 
   public String getMsg() {
     return msg;
@@ -113,29 +108,6 @@ public class OutResponseOfPersonalCertificate {
 
   public void setMsg(String msg) {
     this.msg = msg;
-  }
-
-
-  public OutResponseOfPersonalCertificate success(Boolean success) {
-    
-    this.success = success;
-    return this;
-  }
-
-   /**
-   * Get success
-   * @return success
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getSuccess() {
-    return success;
-  }
-
-
-  public void setSuccess(Boolean success) {
-    this.success = success;
   }
 
 
@@ -150,13 +122,12 @@ public class OutResponseOfPersonalCertificate {
     OutResponseOfPersonalCertificate outResponseOfPersonalCertificate = (OutResponseOfPersonalCertificate) o;
     return Objects.equals(this.code, outResponseOfPersonalCertificate.code) &&
         Objects.equals(this.data, outResponseOfPersonalCertificate.data) &&
-        Objects.equals(this.msg, outResponseOfPersonalCertificate.msg) &&
-        Objects.equals(this.success, outResponseOfPersonalCertificate.success);
+        Objects.equals(this.msg, outResponseOfPersonalCertificate.msg);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, data, msg, success);
+    return Objects.hash(code, data, msg);
   }
 
 
@@ -167,7 +138,6 @@ public class OutResponseOfPersonalCertificate {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
-    sb.append("    success: ").append(toIndentedString(success)).append("\n");
     sb.append("}");
     return sb.toString();
   }

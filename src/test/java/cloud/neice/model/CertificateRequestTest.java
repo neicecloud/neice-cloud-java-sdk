@@ -57,6 +57,14 @@ public class CertificateRequestTest {
     }
 
     /**
+     * Test the property 'model'
+     */
+    @Test
+    public void modelTest() {
+        // TODO: test model
+    }
+
+    /**
      * Test the property 'phone'
      */
     @Test
@@ -70,6 +78,14 @@ public class CertificateRequestTest {
     @Test
     public void udidTest() {
         // TODO: test udid
+    }
+
+    /**
+     * Test the property 'version'
+     */
+    @Test
+    public void versionTest() {
+        // TODO: test version
     }
 
 }

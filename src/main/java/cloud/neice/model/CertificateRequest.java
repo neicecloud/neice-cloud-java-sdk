@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CertificateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T16:07:59.097019+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-30T12:28:02.341031+08:00[Asia/Shanghai]")
 public class CertificateRequest {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -37,6 +37,10 @@ public class CertificateRequest {
   @SerializedName(SERIALIZED_NAME_FORCE)
   private Boolean force;
 
+  public static final String SERIALIZED_NAME_MODEL = "model";
+  @SerializedName(SERIALIZED_NAME_MODEL)
+  private String model;
+
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
   private String phone;
@@ -44,6 +48,10 @@ public class CertificateRequest {
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
   private String udid;
+
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private String version;
 
 
   public CertificateRequest code(String code) {
@@ -92,6 +100,29 @@ public class CertificateRequest {
   }
 
 
+  public CertificateRequest model(String model) {
+    
+    this.model = model;
+    return this;
+  }
+
+   /**
+   * 指定设备型号:iPhone,iPad,iPod,如不指定则使用任何设备
+   * @return model
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "指定设备型号:iPhone,iPad,iPod,如不指定则使用任何设备")
+
+  public String getModel() {
+    return model;
+  }
+
+
+  public void setModel(String model) {
+    this.model = model;
+  }
+
+
   public CertificateRequest phone(String phone) {
     
     this.phone = phone;
@@ -137,6 +168,29 @@ public class CertificateRequest {
   }
 
 
+  public CertificateRequest version(String version) {
+    
+    this.version = version;
+    return this;
+  }
+
+   /**
+   * 传递APP客户端的版本号
+   * @return version
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "传递APP客户端的版本号")
+
+  public String getVersion() {
+    return version;
+  }
+
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -148,13 +202,15 @@ public class CertificateRequest {
     CertificateRequest certificateRequest = (CertificateRequest) o;
     return Objects.equals(this.code, certificateRequest.code) &&
         Objects.equals(this.force, certificateRequest.force) &&
+        Objects.equals(this.model, certificateRequest.model) &&
         Objects.equals(this.phone, certificateRequest.phone) &&
-        Objects.equals(this.udid, certificateRequest.udid);
+        Objects.equals(this.udid, certificateRequest.udid) &&
+        Objects.equals(this.version, certificateRequest.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, force, phone, udid);
+    return Objects.hash(code, force, model, phone, udid, version);
   }
 
 
@@ -164,8 +220,10 @@ public class CertificateRequest {
     sb.append("class CertificateRequest {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    force: ").append(toIndentedString(force)).append("\n");
+    sb.append("    model: ").append(toIndentedString(model)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

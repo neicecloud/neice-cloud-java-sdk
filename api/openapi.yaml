@@ -403,7 +403,6 @@ paths:
       - description: code
         in: query
         name: code
-        required: true
         schema:
           type: string
       - description: udid
@@ -656,7 +655,9 @@ components:
         code: code
         phone: phone
         force: true
+        model: model
         udid: udid
+        version: version
       properties:
         code:
           description: 通过设备证书兑换码可以兑换设备证书
@@ -664,11 +665,17 @@ components:
         force:
           description: 强制触发证书查询刷新:证书模式下，系统如果检查该设备证书不为空，将不会触发渠道证书拉取同步，增加强制后，将强制系统查询各渠道证书
           type: boolean
+        model:
+          description: 指定设备型号:iPhone,iPad,iPod,如不指定则使用任何设备
+          type: string
         phone:
           description: 如果你兑换的预定证书，需输入手机号用以接收激活通知
           type: string
         udid:
           description: iOS设备的UDID
+          type: string
+        version:
+          description: 传递APP客户端的版本号
           type: string
       required:
       - udid
@@ -676,30 +683,81 @@ components:
       type: object
     CertificateResponse:
       example:
+        notAfter: 2000-01-23T04:56:07.000+00:00
         code: code
+        buy: buy
         mobileprovision: mobileprovision
-        profile: profile
         certificate: certificate
         description: description
-        team: team
+        invisible: true
+        experience: 1
+        title: title
         uuid: uuid
-        quality: 6
         valid: true
         password: password
-        phone: phone
-        name: name
+        price: 5
+        contact: contact
         reserve: true
+        create: 2000-01-23T04:56:07.000+00:00
+        lock: 5
         tag: tag
         udid: udid
+        actual: 6
+        serialNumber: serialNumber
+        profile: profile
+        mobile: mobile
+        pay: pay
+        signed: 7
+        team: team
+        quality: 2
+        phone: phone
+        domain: domain
+        teamId: teamId
+        name: name
+        device: device
       properties:
+        actual:
+          description: 实际支付
+          format: int32
+          type: integer
+        buy:
+          description: 购买地址
+          type: string
         certificate:
           description: Base64格式的证书P12文件
           type: string
         code:
           description: 证书兑换码
           type: string
+        contact:
+          description: 联系人
+          type: string
+        create:
+          description: 创建时间
+          format: date-time
+          type: string
         description:
           description: 证书说明
+          type: string
+        device:
+          description: 设备名
+          type: string
+        domain:
+          description: 归属
+          type: string
+        experience:
+          description: 允许用户体验的次数
+          format: int32
+          type: integer
+        invisible:
+          description: 隐形证书
+          type: boolean
+        lock:
+          description: 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁
+          format: int32
+          type: integer
+        mobile:
+          description: 预定证书的手机号
           type: string
         mobileprovision:
           description: Base64格式的证书描述文件
@@ -707,12 +765,23 @@ components:
         name:
           description: 证书名
           type: string
+        notAfter:
+          description: 过期时间
+          format: date-time
+          type: string
         password:
           description: 证书P12对应的密码
+          type: string
+        pay:
+          description: 购买
           type: string
         phone:
           description: 预定证书的手机号
           type: string
+        price:
+          description: 官方定价
+          format: int32
+          type: integer
         profile:
           description: 证书描述文件ID
           type: string
@@ -723,11 +792,22 @@ components:
         reserve:
           description: 是否为预定的证书
           type: boolean
+        serialNumber:
+          type: string
+        signed:
+          description: 用户签名应用的次数
+          format: int32
+          type: integer
         tag:
           description: 标记
           type: string
         team:
           description: 证书TEAM
+          type: string
+        teamId:
+          type: string
+        title:
+          description: 标题
           type: string
         udid:
           description: 证书的UDID
@@ -748,12 +828,16 @@ components:
     DeviceRequest:
       example:
         code: code
+        system: system
+        param: param
         phone: phone
         refer: refer
         name: name
         reserve: true
         callback: callback
+        model: model
         udid: udid
+        version: version
         quality: 0
       properties:
         callback:
@@ -762,8 +846,14 @@ components:
         code:
           description: 可使用兑换码注册设备
           type: string
+        model:
+          description: 兑换设备的手机型号，非必要参数
+          type: string
         name:
           description: 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分，允许为空值
+          type: string
+        param:
+          description: 额外透传参数，非必要参数
           type: string
         phone:
           description: 预定手机:设备激活后发送可以安装APP的通知短信，当注册预定证书时，电话号码不能为空值
@@ -778,8 +868,14 @@ components:
         reserve:
           description: 证书预定参数开关如果卡设备，将在设备处于激活状态时通知用户安装
           type: boolean
+        system:
+          description: 兑换设备的系统，非必要参数
+          type: string
         udid:
           description: iOS或iPad设备UDID
+          type: string
+        version:
+          description: 兑换设备的客户端版本，非必要参数
           type: string
       required:
       - udid
@@ -811,6 +907,7 @@ components:
     OpenEnterpriseCertificate:
       example:
         notAfter: 2000-01-23T04:56:07.000+00:00
+        serialNumber: serialNumber
         issuerDn: issuerDn
         mobileprovision: mobileprovision
         revocationTime: 2000-01-23T04:56:07.000+00:00
@@ -852,6 +949,8 @@ components:
         revocationTime:
           format: date-time
           type: string
+        serialNumber:
+          type: string
         subjectDn:
           type: string
         teamId:
@@ -891,36 +990,70 @@ components:
         msg: msg
         code: 0
         data:
-        - code: code
+        - notAfter: 2000-01-23T04:56:07.000+00:00
+          code: code
+          buy: buy
           mobileprovision: mobileprovision
-          profile: profile
           certificate: certificate
           description: description
-          team: team
+          invisible: true
+          experience: 1
+          title: title
           uuid: uuid
-          quality: 6
           valid: true
           password: password
-          phone: phone
-          name: name
+          price: 5
+          contact: contact
           reserve: true
+          create: 2000-01-23T04:56:07.000+00:00
+          lock: 5
           tag: tag
           udid: udid
-        - code: code
-          mobileprovision: mobileprovision
+          actual: 6
+          serialNumber: serialNumber
           profile: profile
+          mobile: mobile
+          pay: pay
+          signed: 7
+          team: team
+          quality: 2
+          phone: phone
+          domain: domain
+          teamId: teamId
+          name: name
+          device: device
+        - notAfter: 2000-01-23T04:56:07.000+00:00
+          code: code
+          buy: buy
+          mobileprovision: mobileprovision
           certificate: certificate
           description: description
-          team: team
+          invisible: true
+          experience: 1
+          title: title
           uuid: uuid
-          quality: 6
           valid: true
           password: password
-          phone: phone
-          name: name
+          price: 5
+          contact: contact
           reserve: true
+          create: 2000-01-23T04:56:07.000+00:00
+          lock: 5
           tag: tag
           udid: udid
+          actual: 6
+          serialNumber: serialNumber
+          profile: profile
+          mobile: mobile
+          pay: pay
+          signed: 7
+          team: team
+          quality: 2
+          phone: phone
+          domain: domain
+          teamId: teamId
+          name: name
+          device: device
       properties:
         code:
           description: 响应代码
@@ -944,6 +1077,7 @@ components:
         code: 0
         data:
         - notAfter: 2000-01-23T04:56:07.000+00:00
+          serialNumber: serialNumber
           issuerDn: issuerDn
           mobileprovision: mobileprovision
           revocationTime: 2000-01-23T04:56:07.000+00:00
@@ -959,6 +1093,7 @@ components:
           md5: md5
           subjectDn: subjectDn
         - notAfter: 2000-01-23T04:56:07.000+00:00
+          serialNumber: serialNumber
           issuerDn: issuerDn
           mobileprovision: mobileprovision
           revocationTime: 2000-01-23T04:56:07.000+00:00
@@ -999,48 +1134,58 @@ components:
           code: code
           certificateId: certificateId
           mobileprovision: mobileprovision
-          profile: profile
           certificate: certificate
           description: description
-          team: team
+          invisible: true
+          experience: 6
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
-          quality: 1
           valid: true
           password: password
+          price: 5.962133916683182
+          reserve: true
+          lock: 1
+          tag: tag
+          udid: udid
+          serialNumber: serialNumber
+          profile: profile
+          team: team
+          quality: 5
           createTime: createTime
           phone: phone
           refer: refer
-          price: 6.027456183070403
           profileId: profileId
+          teamId: teamId
           name: name
-          reserve: true
-          tag: tag
-          udid: udid
         - repair: true
           code: code
           certificateId: certificateId
           mobileprovision: mobileprovision
-          profile: profile
           certificate: certificate
           description: description
-          team: team
+          invisible: true
+          experience: 6
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
-          quality: 1
           valid: true
           password: password
+          price: 5.962133916683182
+          reserve: true
+          lock: 1
+          tag: tag
+          udid: udid
+          serialNumber: serialNumber
+          profile: profile
+          team: team
+          quality: 5
           createTime: createTime
           phone: phone
           refer: refer
-          price: 6.027456183070403
           profileId: profileId
+          teamId: teamId
           name: name
-          reserve: true
-          tag: tag
-          udid: udid
       properties:
         code:
           description: 响应代码
@@ -1067,25 +1212,30 @@ components:
           code: code
           certificateId: certificateId
           mobileprovision: mobileprovision
-          profile: profile
           certificate: certificate
           description: description
-          team: team
+          invisible: true
+          experience: 6
           deviceId: deviceId
           qualityTime: qualityTime
           uuid: uuid
-          quality: 1
           valid: true
           password: password
+          price: 5.962133916683182
+          reserve: true
+          lock: 1
+          tag: tag
+          udid: udid
+          serialNumber: serialNumber
+          profile: profile
+          team: team
+          quality: 5
           createTime: createTime
           phone: phone
           refer: refer
-          price: 6.027456183070403
           profileId: profileId
+          teamId: teamId
           name: name
-          reserve: true
-          tag: tag
-          udid: udid
       properties:
         code:
           description: 响应代码
@@ -1178,25 +1328,30 @@ components:
         code: code
         certificateId: certificateId
         mobileprovision: mobileprovision
-        profile: profile
         certificate: certificate
         description: description
-        team: team
+        invisible: true
+        experience: 6
         deviceId: deviceId
         qualityTime: qualityTime
         uuid: uuid
-        quality: 1
         valid: true
         password: password
+        price: 5.962133916683182
+        reserve: true
+        lock: 1
+        tag: tag
+        udid: udid
+        serialNumber: serialNumber
+        profile: profile
+        team: team
+        quality: 5
         createTime: createTime
         phone: phone
         refer: refer
-        price: 6.027456183070403
         profileId: profileId
+        teamId: teamId
         name: name
-        reserve: true
-        tag: tag
-        udid: udid
       properties:
         certificate:
           description: 设备证书P12
@@ -1216,6 +1371,17 @@ components:
         deviceId:
           description: 设备ID
           type: string
+        experience:
+          description: 允许用户体验的次数
+          format: int32
+          type: integer
+        invisible:
+          description: 隐形证书
+          type: boolean
+        lock:
+          description: 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁
+          format: int32
+          type: integer
         mobileprovision:
           description: 设备的描述文件Mobileprovision
           type: string
@@ -1252,9 +1418,13 @@ components:
         reserve:
           description: 预定证书
           type: boolean
+        serialNumber:
+          type: string
         tag:
           type: string
         team:
+          type: string
+        teamId:
           type: string
         udid:
           description: 设备的UDID

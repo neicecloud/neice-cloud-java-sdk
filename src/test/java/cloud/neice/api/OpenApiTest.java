@@ -44,9 +44,9 @@ public class OpenApiTest {
      */
     @Test
     public void getCertificate1Test() throws ApiException {
-        String code = null;
         String udid = null;
-        OutResponseOfListOfCertificateResponse response = api.getCertificate1(code, udid);
+        String code = null;
+        OutResponseOfListOfCertificateResponse response = api.getCertificate1(udid, code);
 
         // TODO: test validations
     }

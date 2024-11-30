@@ -130,6 +130,14 @@ public class OpenEnterpriseCertificateTest {
     }
 
     /**
+     * Test the property 'serialNumber'
+     */
+    @Test
+    public void serialNumberTest() {
+        // TODO: test serialNumber
+    }
+
+    /**
      * Test the property 'subjectDn'
      */
     @Test

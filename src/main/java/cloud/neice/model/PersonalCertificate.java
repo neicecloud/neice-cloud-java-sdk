@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T16:07:59.097019+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-30T12:28:02.341031+08:00[Asia/Shanghai]")
 public class PersonalCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
@@ -53,6 +53,18 @@ public class PersonalCertificate {
   public static final String SERIALIZED_NAME_DEVICE_ID = "deviceId";
   @SerializedName(SERIALIZED_NAME_DEVICE_ID)
   private String deviceId;
+
+  public static final String SERIALIZED_NAME_EXPERIENCE = "experience";
+  @SerializedName(SERIALIZED_NAME_EXPERIENCE)
+  private Integer experience;
+
+  public static final String SERIALIZED_NAME_INVISIBLE = "invisible";
+  @SerializedName(SERIALIZED_NAME_INVISIBLE)
+  private Boolean invisible;
+
+  public static final String SERIALIZED_NAME_LOCK = "lock";
+  @SerializedName(SERIALIZED_NAME_LOCK)
+  private Integer lock;
 
   public static final String SERIALIZED_NAME_MOBILEPROVISION = "mobileprovision";
   @SerializedName(SERIALIZED_NAME_MOBILEPROVISION)
@@ -102,6 +114,10 @@ public class PersonalCertificate {
   @SerializedName(SERIALIZED_NAME_RESERVE)
   private Boolean reserve;
 
+  public static final String SERIALIZED_NAME_SERIAL_NUMBER = "serialNumber";
+  @SerializedName(SERIALIZED_NAME_SERIAL_NUMBER)
+  private String serialNumber;
+
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
   private String tag;
@@ -109,6 +125,10 @@ public class PersonalCertificate {
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
   private String team;
+
+  public static final String SERIALIZED_NAME_TEAM_ID = "teamId";
+  @SerializedName(SERIALIZED_NAME_TEAM_ID)
+  private String teamId;
 
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
@@ -258,6 +278,75 @@ public class PersonalCertificate {
 
   public void setDeviceId(String deviceId) {
     this.deviceId = deviceId;
+  }
+
+
+  public PersonalCertificate experience(Integer experience) {
+    
+    this.experience = experience;
+    return this;
+  }
+
+   /**
+   * 允许用户体验的次数
+   * @return experience
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "允许用户体验的次数")
+
+  public Integer getExperience() {
+    return experience;
+  }
+
+
+  public void setExperience(Integer experience) {
+    this.experience = experience;
+  }
+
+
+  public PersonalCertificate invisible(Boolean invisible) {
+    
+    this.invisible = invisible;
+    return this;
+  }
+
+   /**
+   * 隐形证书
+   * @return invisible
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "隐形证书")
+
+  public Boolean getInvisible() {
+    return invisible;
+  }
+
+
+  public void setInvisible(Boolean invisible) {
+    this.invisible = invisible;
+  }
+
+
+  public PersonalCertificate lock(Integer lock) {
+    
+    this.lock = lock;
+    return this;
+  }
+
+   /**
+   * 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁
+   * @return lock
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁")
+
+  public Integer getLock() {
+    return lock;
+  }
+
+
+  public void setLock(Integer lock) {
+    this.lock = lock;
   }
 
 
@@ -537,6 +626,29 @@ public class PersonalCertificate {
   }
 
 
+  public PersonalCertificate serialNumber(String serialNumber) {
+    
+    this.serialNumber = serialNumber;
+    return this;
+  }
+
+   /**
+   * Get serialNumber
+   * @return serialNumber
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSerialNumber() {
+    return serialNumber;
+  }
+
+
+  public void setSerialNumber(String serialNumber) {
+    this.serialNumber = serialNumber;
+  }
+
+
   public PersonalCertificate tag(String tag) {
     
     this.tag = tag;
@@ -580,6 +692,29 @@ public class PersonalCertificate {
 
   public void setTeam(String team) {
     this.team = team;
+  }
+
+
+  public PersonalCertificate teamId(String teamId) {
+    
+    this.teamId = teamId;
+    return this;
+  }
+
+   /**
+   * Get teamId
+   * @return teamId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTeamId() {
+    return teamId;
+  }
+
+
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
   }
 
 
@@ -667,6 +802,9 @@ public class PersonalCertificate {
         Objects.equals(this.createTime, personalCertificate.createTime) &&
         Objects.equals(this.description, personalCertificate.description) &&
         Objects.equals(this.deviceId, personalCertificate.deviceId) &&
+        Objects.equals(this.experience, personalCertificate.experience) &&
+        Objects.equals(this.invisible, personalCertificate.invisible) &&
+        Objects.equals(this.lock, personalCertificate.lock) &&
         Objects.equals(this.mobileprovision, personalCertificate.mobileprovision) &&
         Objects.equals(this.name, personalCertificate.name) &&
         Objects.equals(this.password, personalCertificate.password) &&
@@ -679,8 +817,10 @@ public class PersonalCertificate {
         Objects.equals(this.refer, personalCertificate.refer) &&
         Objects.equals(this.repair, personalCertificate.repair) &&
         Objects.equals(this.reserve, personalCertificate.reserve) &&
+        Objects.equals(this.serialNumber, personalCertificate.serialNumber) &&
         Objects.equals(this.tag, personalCertificate.tag) &&
         Objects.equals(this.team, personalCertificate.team) &&
+        Objects.equals(this.teamId, personalCertificate.teamId) &&
         Objects.equals(this.udid, personalCertificate.udid) &&
         Objects.equals(this.uuid, personalCertificate.uuid) &&
         Objects.equals(this.valid, personalCertificate.valid);
@@ -688,7 +828,7 @@ public class PersonalCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, certificateId, code, createTime, description, deviceId, mobileprovision, name, password, phone, price, profile, profileId, quality, qualityTime, refer, repair, reserve, tag, team, udid, uuid, valid);
+    return Objects.hash(certificate, certificateId, code, createTime, description, deviceId, experience, invisible, lock, mobileprovision, name, password, phone, price, profile, profileId, quality, qualityTime, refer, repair, reserve, serialNumber, tag, team, teamId, udid, uuid, valid);
   }
 
 
@@ -702,6 +842,9 @@ public class PersonalCertificate {
     sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+    sb.append("    experience: ").append(toIndentedString(experience)).append("\n");
+    sb.append("    invisible: ").append(toIndentedString(invisible)).append("\n");
+    sb.append("    lock: ").append(toIndentedString(lock)).append("\n");
     sb.append("    mobileprovision: ").append(toIndentedString(mobileprovision)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
@@ -714,8 +857,10 @@ public class PersonalCertificate {
     sb.append("    refer: ").append(toIndentedString(refer)).append("\n");
     sb.append("    repair: ").append(toIndentedString(repair)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
+    sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");
+    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");

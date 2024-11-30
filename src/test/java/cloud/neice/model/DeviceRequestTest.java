@@ -57,11 +57,27 @@ public class DeviceRequestTest {
     }
 
     /**
+     * Test the property 'model'
+     */
+    @Test
+    public void modelTest() {
+        // TODO: test model
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'param'
+     */
+    @Test
+    public void paramTest() {
+        // TODO: test param
     }
 
     /**
@@ -97,11 +113,27 @@ public class DeviceRequestTest {
     }
 
     /**
+     * Test the property 'system'
+     */
+    @Test
+    public void systemTest() {
+        // TODO: test system
+    }
+
+    /**
      * Test the property 'udid'
      */
     @Test
     public void udidTest() {
         // TODO: test udid
+    }
+
+    /**
+     * Test the property 'version'
+     */
+    @Test
+    public void versionTest() {
+        // TODO: test version
     }
 
 }

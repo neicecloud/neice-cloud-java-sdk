@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="getCertificate1"></a>
 # **getCertificate1**
-> OutResponseOfListOfCertificateResponse getCertificate1(code, udid)
+> OutResponseOfListOfCertificateResponse getCertificate1(udid, code)
 
 获取开发的iOS设备证书
 
@@ -40,10 +40,10 @@ public class Example {
     Authorization.setAccessToken("YOUR ACCESS TOKEN");
 
     OpenApi apiInstance = new OpenApi(defaultClient);
-    String code = "code_example"; // String | code
     String udid = "udid_example"; // String | udid
+    String code = "code_example"; // String | code
     try {
-      OutResponseOfListOfCertificateResponse result = apiInstance.getCertificate1(code, udid);
+      OutResponseOfListOfCertificateResponse result = apiInstance.getCertificate1(udid, code);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenApi#getCertificate1");
@@ -60,8 +60,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **code** | **String**| code |
  **udid** | **String**| udid |
+ **code** | **String**| code | [optional]
 
 ### Return type
 

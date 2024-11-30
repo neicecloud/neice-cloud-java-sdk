@@ -58,8 +58,8 @@ public class OpenApi {
 
     /**
      * Build call for getCertificate1
-     * @param code code (required)
      * @param udid udid (required)
+     * @param code code (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -72,7 +72,7 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificate1Call(String code, String udid, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCertificate1Call(String udid, String code, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -111,12 +111,7 @@ public class OpenApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCertificate1ValidateBeforeCall(String code, String udid, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'code' is set
-        if (code == null) {
-            throw new ApiException("Missing the required parameter 'code' when calling getCertificate1(Async)");
-        }
+    private okhttp3.Call getCertificate1ValidateBeforeCall(String udid, String code, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'udid' is set
         if (udid == null) {
@@ -124,7 +119,7 @@ public class OpenApi {
         }
         
 
-        okhttp3.Call localVarCall = getCertificate1Call(code, udid, _callback);
+        okhttp3.Call localVarCall = getCertificate1Call(udid, code, _callback);
         return localVarCall;
 
     }
@@ -132,8 +127,8 @@ public class OpenApi {
     /**
      * 获取开发的iOS设备证书
      * 获取开发的iOS设备证书
-     * @param code code (required)
      * @param udid udid (required)
+     * @param code code (optional)
      * @return OutResponseOfListOfCertificateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -145,16 +140,16 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfCertificateResponse getCertificate1(String code, String udid) throws ApiException {
-        ApiResponse<OutResponseOfListOfCertificateResponse> localVarResp = getCertificate1WithHttpInfo(code, udid);
+    public OutResponseOfListOfCertificateResponse getCertificate1(String udid, String code) throws ApiException {
+        ApiResponse<OutResponseOfListOfCertificateResponse> localVarResp = getCertificate1WithHttpInfo(udid, code);
         return localVarResp.getData();
     }
 
     /**
      * 获取开发的iOS设备证书
      * 获取开发的iOS设备证书
-     * @param code code (required)
      * @param udid udid (required)
+     * @param code code (optional)
      * @return ApiResponse&lt;OutResponseOfListOfCertificateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -166,8 +161,8 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfCertificateResponse> getCertificate1WithHttpInfo(String code, String udid) throws ApiException {
-        okhttp3.Call localVarCall = getCertificate1ValidateBeforeCall(code, udid, null);
+    public ApiResponse<OutResponseOfListOfCertificateResponse> getCertificate1WithHttpInfo(String udid, String code) throws ApiException {
+        okhttp3.Call localVarCall = getCertificate1ValidateBeforeCall(udid, code, null);
         Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -175,8 +170,8 @@ public class OpenApi {
     /**
      * 获取开发的iOS设备证书 (asynchronously)
      * 获取开发的iOS设备证书
-     * @param code code (required)
      * @param udid udid (required)
+     * @param code code (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -189,9 +184,9 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificate1Async(String code, String udid, final ApiCallback<OutResponseOfListOfCertificateResponse> _callback) throws ApiException {
+    public okhttp3.Call getCertificate1Async(String udid, String code, final ApiCallback<OutResponseOfListOfCertificateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCertificate1ValidateBeforeCall(code, udid, _callback);
+        okhttp3.Call localVarCall = getCertificate1ValidateBeforeCall(udid, code, _callback);
         Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

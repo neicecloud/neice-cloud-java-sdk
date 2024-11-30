@@ -90,6 +90,30 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'experience'
+     */
+    @Test
+    public void experienceTest() {
+        // TODO: test experience
+    }
+
+    /**
+     * Test the property 'invisible'
+     */
+    @Test
+    public void invisibleTest() {
+        // TODO: test invisible
+    }
+
+    /**
+     * Test the property 'lock'
+     */
+    @Test
+    public void lockTest() {
+        // TODO: test lock
+    }
+
+    /**
      * Test the property 'mobileprovision'
      */
     @Test
@@ -186,6 +210,14 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'serialNumber'
+     */
+    @Test
+    public void serialNumberTest() {
+        // TODO: test serialNumber
+    }
+
+    /**
      * Test the property 'tag'
      */
     @Test
@@ -199,6 +231,14 @@ public class PersonalCertificateTest {
     @Test
     public void teamTest() {
         // TODO: test team
+    }
+
+    /**
+     * Test the property 'teamId'
+     */
+    @Test
+    public void teamIdTest() {
+        // TODO: test teamId
     }
 
     /**

@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.threeten.bp.OffsetDateTime;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -41,6 +42,22 @@ public class CertificateResponseTest {
     }
 
     /**
+     * Test the property 'actual'
+     */
+    @Test
+    public void actualTest() {
+        // TODO: test actual
+    }
+
+    /**
+     * Test the property 'buy'
+     */
+    @Test
+    public void buyTest() {
+        // TODO: test buy
+    }
+
+    /**
      * Test the property 'certificate'
      */
     @Test
@@ -57,11 +74,75 @@ public class CertificateResponseTest {
     }
 
     /**
+     * Test the property 'contact'
+     */
+    @Test
+    public void contactTest() {
+        // TODO: test contact
+    }
+
+    /**
+     * Test the property 'create'
+     */
+    @Test
+    public void createTest() {
+        // TODO: test create
+    }
+
+    /**
      * Test the property 'description'
      */
     @Test
     public void descriptionTest() {
         // TODO: test description
+    }
+
+    /**
+     * Test the property 'device'
+     */
+    @Test
+    public void deviceTest() {
+        // TODO: test device
+    }
+
+    /**
+     * Test the property 'domain'
+     */
+    @Test
+    public void domainTest() {
+        // TODO: test domain
+    }
+
+    /**
+     * Test the property 'experience'
+     */
+    @Test
+    public void experienceTest() {
+        // TODO: test experience
+    }
+
+    /**
+     * Test the property 'invisible'
+     */
+    @Test
+    public void invisibleTest() {
+        // TODO: test invisible
+    }
+
+    /**
+     * Test the property 'lock'
+     */
+    @Test
+    public void lockTest() {
+        // TODO: test lock
+    }
+
+    /**
+     * Test the property 'mobile'
+     */
+    @Test
+    public void mobileTest() {
+        // TODO: test mobile
     }
 
     /**
@@ -81,6 +162,14 @@ public class CertificateResponseTest {
     }
 
     /**
+     * Test the property 'notAfter'
+     */
+    @Test
+    public void notAfterTest() {
+        // TODO: test notAfter
+    }
+
+    /**
      * Test the property 'password'
      */
     @Test
@@ -89,11 +178,27 @@ public class CertificateResponseTest {
     }
 
     /**
+     * Test the property 'pay'
+     */
+    @Test
+    public void payTest() {
+        // TODO: test pay
+    }
+
+    /**
      * Test the property 'phone'
      */
     @Test
     public void phoneTest() {
         // TODO: test phone
+    }
+
+    /**
+     * Test the property 'price'
+     */
+    @Test
+    public void priceTest() {
+        // TODO: test price
     }
 
     /**
@@ -121,6 +226,22 @@ public class CertificateResponseTest {
     }
 
     /**
+     * Test the property 'serialNumber'
+     */
+    @Test
+    public void serialNumberTest() {
+        // TODO: test serialNumber
+    }
+
+    /**
+     * Test the property 'signed'
+     */
+    @Test
+    public void signedTest() {
+        // TODO: test signed
+    }
+
+    /**
      * Test the property 'tag'
      */
     @Test
@@ -134,6 +255,22 @@ public class CertificateResponseTest {
     @Test
     public void teamTest() {
         // TODO: test team
+    }
+
+    /**
+     * Test the property 'teamId'
+     */
+    @Test
+    public void teamIdTest() {
+        // TODO: test teamId
+    }
+
+    /**
+     * Test the property 'title'
+     */
+    @Test
+    public void titleTest() {
+        // TODO: test title
     }
 
     /**

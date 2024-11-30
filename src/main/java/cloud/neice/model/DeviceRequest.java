@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DeviceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T16:07:59.097019+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-30T12:28:02.341031+08:00[Asia/Shanghai]")
 public class DeviceRequest {
   public static final String SERIALIZED_NAME_CALLBACK = "callback";
   @SerializedName(SERIALIZED_NAME_CALLBACK)
@@ -37,9 +37,17 @@ public class DeviceRequest {
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
+  public static final String SERIALIZED_NAME_MODEL = "model";
+  @SerializedName(SERIALIZED_NAME_MODEL)
+  private String model;
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_PARAM = "param";
+  @SerializedName(SERIALIZED_NAME_PARAM)
+  private String param;
 
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
@@ -57,9 +65,17 @@ public class DeviceRequest {
   @SerializedName(SERIALIZED_NAME_RESERVE)
   private Boolean reserve;
 
+  public static final String SERIALIZED_NAME_SYSTEM = "system";
+  @SerializedName(SERIALIZED_NAME_SYSTEM)
+  private String system;
+
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
   private String udid;
+
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
+  private String version;
 
 
   public DeviceRequest callback(String callback) {
@@ -108,6 +124,29 @@ public class DeviceRequest {
   }
 
 
+  public DeviceRequest model(String model) {
+    
+    this.model = model;
+    return this;
+  }
+
+   /**
+   * 兑换设备的手机型号，非必要参数
+   * @return model
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "兑换设备的手机型号，非必要参数")
+
+  public String getModel() {
+    return model;
+  }
+
+
+  public void setModel(String model) {
+    this.model = model;
+  }
+
+
   public DeviceRequest name(String name) {
     
     this.name = name;
@@ -128,6 +167,29 @@ public class DeviceRequest {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public DeviceRequest param(String param) {
+    
+    this.param = param;
+    return this;
+  }
+
+   /**
+   * 额外透传参数，非必要参数
+   * @return param
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "额外透传参数，非必要参数")
+
+  public String getParam() {
+    return param;
+  }
+
+
+  public void setParam(String param) {
+    this.param = param;
   }
 
 
@@ -223,6 +285,29 @@ public class DeviceRequest {
   }
 
 
+  public DeviceRequest system(String system) {
+    
+    this.system = system;
+    return this;
+  }
+
+   /**
+   * 兑换设备的系统，非必要参数
+   * @return system
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "兑换设备的系统，非必要参数")
+
+  public String getSystem() {
+    return system;
+  }
+
+
+  public void setSystem(String system) {
+    this.system = system;
+  }
+
+
   public DeviceRequest udid(String udid) {
     
     this.udid = udid;
@@ -245,6 +330,29 @@ public class DeviceRequest {
   }
 
 
+  public DeviceRequest version(String version) {
+    
+    this.version = version;
+    return this;
+  }
+
+   /**
+   * 兑换设备的客户端版本，非必要参数
+   * @return version
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "兑换设备的客户端版本，非必要参数")
+
+  public String getVersion() {
+    return version;
+  }
+
+
+  public void setVersion(String version) {
+    this.version = version;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -256,17 +364,21 @@ public class DeviceRequest {
     DeviceRequest deviceRequest = (DeviceRequest) o;
     return Objects.equals(this.callback, deviceRequest.callback) &&
         Objects.equals(this.code, deviceRequest.code) &&
+        Objects.equals(this.model, deviceRequest.model) &&
         Objects.equals(this.name, deviceRequest.name) &&
+        Objects.equals(this.param, deviceRequest.param) &&
         Objects.equals(this.phone, deviceRequest.phone) &&
         Objects.equals(this.quality, deviceRequest.quality) &&
         Objects.equals(this.refer, deviceRequest.refer) &&
         Objects.equals(this.reserve, deviceRequest.reserve) &&
-        Objects.equals(this.udid, deviceRequest.udid);
+        Objects.equals(this.system, deviceRequest.system) &&
+        Objects.equals(this.udid, deviceRequest.udid) &&
+        Objects.equals(this.version, deviceRequest.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callback, code, name, phone, quality, refer, reserve, udid);
+    return Objects.hash(callback, code, model, name, param, phone, quality, refer, reserve, system, udid, version);
   }
 
 
@@ -276,12 +388,16 @@ public class DeviceRequest {
     sb.append("class DeviceRequest {\n");
     sb.append("    callback: ").append(toIndentedString(callback)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    model: ").append(toIndentedString(model)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    param: ").append(toIndentedString(param)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    refer: ").append(toIndentedString(refer)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
+    sb.append("    system: ").append(toIndentedString(system)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
+    sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();
   }

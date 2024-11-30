@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **password** | **String** |  |  [optional]
 **revocationReason** | **String** |  |  [optional]
 **revocationTime** | **OffsetDateTime** |  |  [optional]
+**serialNumber** | **String** |  |  [optional]
 **subjectDn** | **String** |  |  [optional]
 **teamId** | **String** |  |  [optional]
 **uuid** | **String** |  |  [optional]

@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * OpenEnterpriseCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T16:07:59.097019+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-30T12:28:02.341031+08:00[Asia/Shanghai]")
 public class OpenEnterpriseCertificate {
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
@@ -73,6 +73,10 @@ public class OpenEnterpriseCertificate {
   public static final String SERIALIZED_NAME_REVOCATION_TIME = "revocationTime";
   @SerializedName(SERIALIZED_NAME_REVOCATION_TIME)
   private OffsetDateTime revocationTime;
+
+  public static final String SERIALIZED_NAME_SERIAL_NUMBER = "serialNumber";
+  @SerializedName(SERIALIZED_NAME_SERIAL_NUMBER)
+  private String serialNumber;
 
   public static final String SERIALIZED_NAME_SUBJECT_DN = "subjectDn";
   @SerializedName(SERIALIZED_NAME_SUBJECT_DN)
@@ -344,6 +348,29 @@ public class OpenEnterpriseCertificate {
   }
 
 
+  public OpenEnterpriseCertificate serialNumber(String serialNumber) {
+    
+    this.serialNumber = serialNumber;
+    return this;
+  }
+
+   /**
+   * Get serialNumber
+   * @return serialNumber
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSerialNumber() {
+    return serialNumber;
+  }
+
+
+  public void setSerialNumber(String serialNumber) {
+    this.serialNumber = serialNumber;
+  }
+
+
   public OpenEnterpriseCertificate subjectDn(String subjectDn) {
     
     this.subjectDn = subjectDn;
@@ -456,6 +483,7 @@ public class OpenEnterpriseCertificate {
         Objects.equals(this.password, openEnterpriseCertificate.password) &&
         Objects.equals(this.revocationReason, openEnterpriseCertificate.revocationReason) &&
         Objects.equals(this.revocationTime, openEnterpriseCertificate.revocationTime) &&
+        Objects.equals(this.serialNumber, openEnterpriseCertificate.serialNumber) &&
         Objects.equals(this.subjectDn, openEnterpriseCertificate.subjectDn) &&
         Objects.equals(this.teamId, openEnterpriseCertificate.teamId) &&
         Objects.equals(this.uuid, openEnterpriseCertificate.uuid) &&
@@ -464,7 +492,7 @@ public class OpenEnterpriseCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, certificateName, createTime, issuerDn, md5, mobileprovision, notAfter, notBefore, password, revocationReason, revocationTime, subjectDn, teamId, uuid, valid);
+    return Objects.hash(certificate, certificateName, createTime, issuerDn, md5, mobileprovision, notAfter, notBefore, password, revocationReason, revocationTime, serialNumber, subjectDn, teamId, uuid, valid);
   }
 
 
@@ -483,6 +511,7 @@ public class OpenEnterpriseCertificate {
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    revocationReason: ").append(toIndentedString(revocationReason)).append("\n");
     sb.append("    revocationTime: ").append(toIndentedString(revocationTime)).append("\n");
+    sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
     sb.append("    subjectDn: ").append(toIndentedString(subjectDn)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

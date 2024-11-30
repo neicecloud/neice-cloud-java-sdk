@@ -23,12 +23,21 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.threeten.bp.OffsetDateTime;
 
 /**
  * CertificateResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-06-08T16:07:59.097019+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-30T12:28:02.341031+08:00[Asia/Shanghai]")
 public class CertificateResponse {
+  public static final String SERIALIZED_NAME_ACTUAL = "actual";
+  @SerializedName(SERIALIZED_NAME_ACTUAL)
+  private Integer actual;
+
+  public static final String SERIALIZED_NAME_BUY = "buy";
+  @SerializedName(SERIALIZED_NAME_BUY)
+  private String buy;
+
   public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE)
   private String certificate;
@@ -37,9 +46,41 @@ public class CertificateResponse {
   @SerializedName(SERIALIZED_NAME_CODE)
   private String code;
 
+  public static final String SERIALIZED_NAME_CONTACT = "contact";
+  @SerializedName(SERIALIZED_NAME_CONTACT)
+  private String contact;
+
+  public static final String SERIALIZED_NAME_CREATE = "create";
+  @SerializedName(SERIALIZED_NAME_CREATE)
+  private OffsetDateTime create;
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
+
+  public static final String SERIALIZED_NAME_DEVICE = "device";
+  @SerializedName(SERIALIZED_NAME_DEVICE)
+  private String device;
+
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
+  private String domain;
+
+  public static final String SERIALIZED_NAME_EXPERIENCE = "experience";
+  @SerializedName(SERIALIZED_NAME_EXPERIENCE)
+  private Integer experience;
+
+  public static final String SERIALIZED_NAME_INVISIBLE = "invisible";
+  @SerializedName(SERIALIZED_NAME_INVISIBLE)
+  private Boolean invisible;
+
+  public static final String SERIALIZED_NAME_LOCK = "lock";
+  @SerializedName(SERIALIZED_NAME_LOCK)
+  private Integer lock;
+
+  public static final String SERIALIZED_NAME_MOBILE = "mobile";
+  @SerializedName(SERIALIZED_NAME_MOBILE)
+  private String mobile;
 
   public static final String SERIALIZED_NAME_MOBILEPROVISION = "mobileprovision";
   @SerializedName(SERIALIZED_NAME_MOBILEPROVISION)
@@ -49,13 +90,25 @@ public class CertificateResponse {
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
 
+  public static final String SERIALIZED_NAME_NOT_AFTER = "notAfter";
+  @SerializedName(SERIALIZED_NAME_NOT_AFTER)
+  private OffsetDateTime notAfter;
+
   public static final String SERIALIZED_NAME_PASSWORD = "password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
   private String password;
 
+  public static final String SERIALIZED_NAME_PAY = "pay";
+  @SerializedName(SERIALIZED_NAME_PAY)
+  private String pay;
+
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
   private String phone;
+
+  public static final String SERIALIZED_NAME_PRICE = "price";
+  @SerializedName(SERIALIZED_NAME_PRICE)
+  private Integer price;
 
   public static final String SERIALIZED_NAME_PROFILE = "profile";
   @SerializedName(SERIALIZED_NAME_PROFILE)
@@ -69,6 +122,14 @@ public class CertificateResponse {
   @SerializedName(SERIALIZED_NAME_RESERVE)
   private Boolean reserve;
 
+  public static final String SERIALIZED_NAME_SERIAL_NUMBER = "serialNumber";
+  @SerializedName(SERIALIZED_NAME_SERIAL_NUMBER)
+  private String serialNumber;
+
+  public static final String SERIALIZED_NAME_SIGNED = "signed";
+  @SerializedName(SERIALIZED_NAME_SIGNED)
+  private Integer signed;
+
   public static final String SERIALIZED_NAME_TAG = "tag";
   @SerializedName(SERIALIZED_NAME_TAG)
   private String tag;
@@ -76,6 +137,14 @@ public class CertificateResponse {
   public static final String SERIALIZED_NAME_TEAM = "team";
   @SerializedName(SERIALIZED_NAME_TEAM)
   private String team;
+
+  public static final String SERIALIZED_NAME_TEAM_ID = "teamId";
+  @SerializedName(SERIALIZED_NAME_TEAM_ID)
+  private String teamId;
+
+  public static final String SERIALIZED_NAME_TITLE = "title";
+  @SerializedName(SERIALIZED_NAME_TITLE)
+  private String title;
 
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
@@ -88,6 +157,52 @@ public class CertificateResponse {
   public static final String SERIALIZED_NAME_VALID = "valid";
   @SerializedName(SERIALIZED_NAME_VALID)
   private Boolean valid;
+
+
+  public CertificateResponse actual(Integer actual) {
+    
+    this.actual = actual;
+    return this;
+  }
+
+   /**
+   * 实际支付
+   * @return actual
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "实际支付")
+
+  public Integer getActual() {
+    return actual;
+  }
+
+
+  public void setActual(Integer actual) {
+    this.actual = actual;
+  }
+
+
+  public CertificateResponse buy(String buy) {
+    
+    this.buy = buy;
+    return this;
+  }
+
+   /**
+   * 购买地址
+   * @return buy
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "购买地址")
+
+  public String getBuy() {
+    return buy;
+  }
+
+
+  public void setBuy(String buy) {
+    this.buy = buy;
+  }
 
 
   public CertificateResponse certificate(String certificate) {
@@ -135,6 +250,52 @@ public class CertificateResponse {
   }
 
 
+  public CertificateResponse contact(String contact) {
+    
+    this.contact = contact;
+    return this;
+  }
+
+   /**
+   * 联系人
+   * @return contact
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "联系人")
+
+  public String getContact() {
+    return contact;
+  }
+
+
+  public void setContact(String contact) {
+    this.contact = contact;
+  }
+
+
+  public CertificateResponse create(OffsetDateTime create) {
+    
+    this.create = create;
+    return this;
+  }
+
+   /**
+   * 创建时间
+   * @return create
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "创建时间")
+
+  public OffsetDateTime getCreate() {
+    return create;
+  }
+
+
+  public void setCreate(OffsetDateTime create) {
+    this.create = create;
+  }
+
+
   public CertificateResponse description(String description) {
     
     this.description = description;
@@ -155,6 +316,144 @@ public class CertificateResponse {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+
+  public CertificateResponse device(String device) {
+    
+    this.device = device;
+    return this;
+  }
+
+   /**
+   * 设备名
+   * @return device
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "设备名")
+
+  public String getDevice() {
+    return device;
+  }
+
+
+  public void setDevice(String device) {
+    this.device = device;
+  }
+
+
+  public CertificateResponse domain(String domain) {
+    
+    this.domain = domain;
+    return this;
+  }
+
+   /**
+   * 归属
+   * @return domain
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "归属")
+
+  public String getDomain() {
+    return domain;
+  }
+
+
+  public void setDomain(String domain) {
+    this.domain = domain;
+  }
+
+
+  public CertificateResponse experience(Integer experience) {
+    
+    this.experience = experience;
+    return this;
+  }
+
+   /**
+   * 允许用户体验的次数
+   * @return experience
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "允许用户体验的次数")
+
+  public Integer getExperience() {
+    return experience;
+  }
+
+
+  public void setExperience(Integer experience) {
+    this.experience = experience;
+  }
+
+
+  public CertificateResponse invisible(Boolean invisible) {
+    
+    this.invisible = invisible;
+    return this;
+  }
+
+   /**
+   * 隐形证书
+   * @return invisible
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "隐形证书")
+
+  public Boolean getInvisible() {
+    return invisible;
+  }
+
+
+  public void setInvisible(Boolean invisible) {
+    this.invisible = invisible;
+  }
+
+
+  public CertificateResponse lock(Integer lock) {
+    
+    this.lock = lock;
+    return this;
+  }
+
+   /**
+   * 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁
+   * @return lock
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁")
+
+  public Integer getLock() {
+    return lock;
+  }
+
+
+  public void setLock(Integer lock) {
+    this.lock = lock;
+  }
+
+
+  public CertificateResponse mobile(String mobile) {
+    
+    this.mobile = mobile;
+    return this;
+  }
+
+   /**
+   * 预定证书的手机号
+   * @return mobile
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "预定证书的手机号")
+
+  public String getMobile() {
+    return mobile;
+  }
+
+
+  public void setMobile(String mobile) {
+    this.mobile = mobile;
   }
 
 
@@ -203,6 +502,29 @@ public class CertificateResponse {
   }
 
 
+  public CertificateResponse notAfter(OffsetDateTime notAfter) {
+    
+    this.notAfter = notAfter;
+    return this;
+  }
+
+   /**
+   * 过期时间
+   * @return notAfter
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "过期时间")
+
+  public OffsetDateTime getNotAfter() {
+    return notAfter;
+  }
+
+
+  public void setNotAfter(OffsetDateTime notAfter) {
+    this.notAfter = notAfter;
+  }
+
+
   public CertificateResponse password(String password) {
     
     this.password = password;
@@ -222,6 +544,29 @@ public class CertificateResponse {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+
+  public CertificateResponse pay(String pay) {
+    
+    this.pay = pay;
+    return this;
+  }
+
+   /**
+   * 购买
+   * @return pay
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "购买")
+
+  public String getPay() {
+    return pay;
+  }
+
+
+  public void setPay(String pay) {
+    this.pay = pay;
   }
 
 
@@ -245,6 +590,29 @@ public class CertificateResponse {
 
   public void setPhone(String phone) {
     this.phone = phone;
+  }
+
+
+  public CertificateResponse price(Integer price) {
+    
+    this.price = price;
+    return this;
+  }
+
+   /**
+   * 官方定价
+   * @return price
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "官方定价")
+
+  public Integer getPrice() {
+    return price;
+  }
+
+
+  public void setPrice(Integer price) {
+    this.price = price;
   }
 
 
@@ -317,6 +685,52 @@ public class CertificateResponse {
   }
 
 
+  public CertificateResponse serialNumber(String serialNumber) {
+    
+    this.serialNumber = serialNumber;
+    return this;
+  }
+
+   /**
+   * Get serialNumber
+   * @return serialNumber
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSerialNumber() {
+    return serialNumber;
+  }
+
+
+  public void setSerialNumber(String serialNumber) {
+    this.serialNumber = serialNumber;
+  }
+
+
+  public CertificateResponse signed(Integer signed) {
+    
+    this.signed = signed;
+    return this;
+  }
+
+   /**
+   * 用户签名应用的次数
+   * @return signed
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "用户签名应用的次数")
+
+  public Integer getSigned() {
+    return signed;
+  }
+
+
+  public void setSigned(Integer signed) {
+    this.signed = signed;
+  }
+
+
   public CertificateResponse tag(String tag) {
     
     this.tag = tag;
@@ -360,6 +774,52 @@ public class CertificateResponse {
 
   public void setTeam(String team) {
     this.team = team;
+  }
+
+
+  public CertificateResponse teamId(String teamId) {
+    
+    this.teamId = teamId;
+    return this;
+  }
+
+   /**
+   * Get teamId
+   * @return teamId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTeamId() {
+    return teamId;
+  }
+
+
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
+  }
+
+
+  public CertificateResponse title(String title) {
+    
+    this.title = title;
+    return this;
+  }
+
+   /**
+   * 标题
+   * @return title
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "标题")
+
+  public String getTitle() {
+    return title;
+  }
+
+
+  public void setTitle(String title) {
+    this.title = title;
   }
 
 
@@ -440,18 +900,35 @@ public class CertificateResponse {
       return false;
     }
     CertificateResponse certificateResponse = (CertificateResponse) o;
-    return Objects.equals(this.certificate, certificateResponse.certificate) &&
+    return Objects.equals(this.actual, certificateResponse.actual) &&
+        Objects.equals(this.buy, certificateResponse.buy) &&
+        Objects.equals(this.certificate, certificateResponse.certificate) &&
         Objects.equals(this.code, certificateResponse.code) &&
+        Objects.equals(this.contact, certificateResponse.contact) &&
+        Objects.equals(this.create, certificateResponse.create) &&
         Objects.equals(this.description, certificateResponse.description) &&
+        Objects.equals(this.device, certificateResponse.device) &&
+        Objects.equals(this.domain, certificateResponse.domain) &&
+        Objects.equals(this.experience, certificateResponse.experience) &&
+        Objects.equals(this.invisible, certificateResponse.invisible) &&
+        Objects.equals(this.lock, certificateResponse.lock) &&
+        Objects.equals(this.mobile, certificateResponse.mobile) &&
         Objects.equals(this.mobileprovision, certificateResponse.mobileprovision) &&
         Objects.equals(this.name, certificateResponse.name) &&
+        Objects.equals(this.notAfter, certificateResponse.notAfter) &&
         Objects.equals(this.password, certificateResponse.password) &&
+        Objects.equals(this.pay, certificateResponse.pay) &&
         Objects.equals(this.phone, certificateResponse.phone) &&
+        Objects.equals(this.price, certificateResponse.price) &&
         Objects.equals(this.profile, certificateResponse.profile) &&
         Objects.equals(this.quality, certificateResponse.quality) &&
         Objects.equals(this.reserve, certificateResponse.reserve) &&
+        Objects.equals(this.serialNumber, certificateResponse.serialNumber) &&
+        Objects.equals(this.signed, certificateResponse.signed) &&
         Objects.equals(this.tag, certificateResponse.tag) &&
         Objects.equals(this.team, certificateResponse.team) &&
+        Objects.equals(this.teamId, certificateResponse.teamId) &&
+        Objects.equals(this.title, certificateResponse.title) &&
         Objects.equals(this.udid, certificateResponse.udid) &&
         Objects.equals(this.uuid, certificateResponse.uuid) &&
         Objects.equals(this.valid, certificateResponse.valid);
@@ -459,7 +936,7 @@ public class CertificateResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, code, description, mobileprovision, name, password, phone, profile, quality, reserve, tag, team, udid, uuid, valid);
+    return Objects.hash(actual, buy, certificate, code, contact, create, description, device, domain, experience, invisible, lock, mobile, mobileprovision, name, notAfter, password, pay, phone, price, profile, quality, reserve, serialNumber, signed, tag, team, teamId, title, udid, uuid, valid);
   }
 
 
@@ -467,18 +944,35 @@ public class CertificateResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CertificateResponse {\n");
+    sb.append("    actual: ").append(toIndentedString(actual)).append("\n");
+    sb.append("    buy: ").append(toIndentedString(buy)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
+    sb.append("    contact: ").append(toIndentedString(contact)).append("\n");
+    sb.append("    create: ").append(toIndentedString(create)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    device: ").append(toIndentedString(device)).append("\n");
+    sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    experience: ").append(toIndentedString(experience)).append("\n");
+    sb.append("    invisible: ").append(toIndentedString(invisible)).append("\n");
+    sb.append("    lock: ").append(toIndentedString(lock)).append("\n");
+    sb.append("    mobile: ").append(toIndentedString(mobile)).append("\n");
     sb.append("    mobileprovision: ").append(toIndentedString(mobileprovision)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    notAfter: ").append(toIndentedString(notAfter)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+    sb.append("    pay: ").append(toIndentedString(pay)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    sb.append("    price: ").append(toIndentedString(price)).append("\n");
     sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
+    sb.append("    serialNumber: ").append(toIndentedString(serialNumber)).append("\n");
+    sb.append("    signed: ").append(toIndentedString(signed)).append("\n");
     sb.append("    tag: ").append(toIndentedString(tag)).append("\n");
     sb.append("    team: ").append(toIndentedString(team)).append("\n");
+    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    valid: ").append(toIndentedString(valid)).append("\n");

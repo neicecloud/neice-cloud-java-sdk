@@ -284,4 +284,10 @@
         <junit-version>4.13.1</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>https://git.minclouds.com/nexus/content/repositories/releases</url>
+        </repository>
+    </distributionManagement>
 </project>

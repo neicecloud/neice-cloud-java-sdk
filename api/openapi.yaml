@@ -116,6 +116,45 @@ paths:
       tags:
       - device
       x-accepts: '*/*'
+  /aas/api/v1/exchange/code:
+    post:
+      description: 创建iOS设备证书兑换码
+      operationId: createExchangeCode
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CertificateCode'
+        description: request
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/OutResponseOfCertificateCode'
+          description: OK
+        "201":
+          content: {}
+          description: Created
+        "401":
+          content: {}
+          description: Unauthorized
+        "403":
+          content: {}
+          description: Forbidden
+        "404":
+          content: {}
+          description: Not Found
+      security:
+      - Authorization:
+        - global
+      summary: 创建iOS设备证书兑换码
+      tags:
+      - device
+      x-codegen-request-body-name: request
+      x-contentType: application/json
+      x-accepts: '*/*'
   /aas/api/v1/register:
     post:
       description: iOS设备注册
@@ -650,12 +689,59 @@ components:
           type: number
       title: Balance
       type: object
+    CertificateCode:
+      example:
+        code: code
+        domain: domain
+        query: query
+        reserve: true
+        exchange: 2000-01-23T04:56:07.000+00:00
+        model: model
+        udid: udid
+        quality: 6
+        token: token
+      properties:
+        code:
+          description: 证书兑换码
+          type: string
+        domain:
+          description: 证书兑换系统的域名，请先在网站配置域名及其对应的API地址
+          type: string
+        exchange:
+          description: 兑换码完成兑换的时间
+          format: date-time
+          type: string
+        model:
+          description: 设备型号:iPhone,iPad,iPod
+          type: string
+        quality:
+          description: 默认为0:不质保,最大不能超过365天，该值仅作为参考，不作为依据，具体以上游系统为准
+          format: int32
+          type: integer
+        query:
+          description: 证书查询码
+          type: string
+        reserve:
+          description: 表示该兑换码是否是兑换的预定证书，该值仅作为参考，不作为依据，具体以上游系统为准
+          type: boolean
+        token:
+          description: 请求鉴权令牌
+          type: string
+        udid:
+          description: 绑定设备的UDID，兑换时绑定
+          type: string
+      required:
+      - token
+      title: CertificateCode
+      type: object
     CertificateRequest:
       example:
         code: code
         phone: phone
+        reserve: true
         force: true
         model: model
+        id: id
         udid: udid
         version: version
       properties:
@@ -665,24 +751,29 @@ components:
         force:
           description: 强制触发证书查询刷新:证书模式下，系统如果检查该设备证书不为空，将不会触发渠道证书拉取同步，增加强制后，将强制系统查询各渠道证书
           type: boolean
+        id:
+          description: 证书的UUID
+          type: string
         model:
           description: 指定设备型号:iPhone,iPad,iPod,如不指定则使用任何设备
           type: string
         phone:
           description: 如果你兑换的预定证书，需输入手机号用以接收激活通知
           type: string
+        reserve:
+          description: 预定证书
+          type: boolean
         udid:
           description: iOS设备的UDID
           type: string
         version:
           description: 传递APP客户端的版本号
           type: string
-      required:
-      - udid
       title: CertificateRequest
       type: object
     CertificateResponse:
       example:
+        backup: true
         notAfter: 2000-01-23T04:56:07.000+00:00
         code: code
         buy: buy
@@ -700,7 +791,9 @@ components:
         reserve: true
         create: 2000-01-23T04:56:07.000+00:00
         lock: 5
+        indicate: indicate
         tag: tag
+        free: true
         udid: udid
         actual: 6
         serialNumber: serialNumber
@@ -720,6 +813,9 @@ components:
           description: 实际支付
           format: int32
           type: integer
+        backup:
+          description: 备份证书
+          type: boolean
         buy:
           description: 购买地址
           type: string
@@ -749,6 +845,12 @@ components:
           description: 允许用户体验的次数
           format: int32
           type: integer
+        free:
+          description: 自由
+          type: boolean
+        indicate:
+          description: 指示
+          type: string
         invisible:
           description: 隐形证书
           type: boolean
@@ -985,12 +1087,41 @@ components:
       - code
       title: OutResponseOfBalance
       type: object
+    OutResponseOfCertificateCode:
+      example:
+        msg: msg
+        code: 0
+        data:
+          code: code
+          domain: domain
+          query: query
+          reserve: true
+          exchange: 2000-01-23T04:56:07.000+00:00
+          model: model
+          udid: udid
+          quality: 6
+          token: token
+      properties:
+        code:
+          description: 响应代码
+          format: int32
+          type: integer
+        data:
+          $ref: '#/components/schemas/CertificateCode'
+        msg:
+          description: 错误信息:成功时为空或为success
+          type: string
+      required:
+      - code
+      title: OutResponseOfCertificateCode
+      type: object
     OutResponseOfListOfCertificateResponse:
       example:
         msg: msg
         code: 0
         data:
-        - notAfter: 2000-01-23T04:56:07.000+00:00
+        - backup: true
+          notAfter: 2000-01-23T04:56:07.000+00:00
           code: code
           buy: buy
           mobileprovision: mobileprovision
@@ -1007,7 +1138,9 @@ components:
           reserve: true
           create: 2000-01-23T04:56:07.000+00:00
           lock: 5
+          indicate: indicate
           tag: tag
+          free: true
           udid: udid
           actual: 6
           serialNumber: serialNumber
@@ -1022,7 +1155,8 @@ components:
           teamId: teamId
           name: name
           device: device
-        - notAfter: 2000-01-23T04:56:07.000+00:00
+        - backup: true
+          notAfter: 2000-01-23T04:56:07.000+00:00
           code: code
           buy: buy
           mobileprovision: mobileprovision
@@ -1039,7 +1173,9 @@ components:
           reserve: true
           create: 2000-01-23T04:56:07.000+00:00
           lock: 5
+          indicate: indicate
           tag: tag
+          free: true
           udid: udid
           actual: 6
           serialNumber: serialNumber

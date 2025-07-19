@@ -7,6 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **actual** | **Integer** | 实际支付 |  [optional]
+**backup** | **Boolean** | 备份证书 |  [optional]
 **buy** | **String** | 购买地址 |  [optional]
 **certificate** | **String** | Base64格式的证书P12文件 | 
 **code** | **String** | 证书兑换码 |  [optional]
@@ -16,6 +17,8 @@ Name | Type | Description | Notes
 **device** | **String** | 设备名 |  [optional]
 **domain** | **String** | 归属 |  [optional]
 **experience** | **Integer** | 允许用户体验的次数 |  [optional]
+**free** | **Boolean** | 自由 |  [optional]
+**indicate** | **String** | 指示 |  [optional]
 **invisible** | **Boolean** | 隐形证书 |  [optional]
 **lock** | **Integer** | 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁 |  [optional]
 **mobile** | **String** | 预定证书的手机号 |  [optional]

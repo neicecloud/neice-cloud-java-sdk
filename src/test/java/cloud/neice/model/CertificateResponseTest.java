@@ -50,6 +50,14 @@ public class CertificateResponseTest {
     }
 
     /**
+     * Test the property 'backup'
+     */
+    @Test
+    public void backupTest() {
+        // TODO: test backup
+    }
+
+    /**
      * Test the property 'buy'
      */
     @Test
@@ -119,6 +127,22 @@ public class CertificateResponseTest {
     @Test
     public void experienceTest() {
         // TODO: test experience
+    }
+
+    /**
+     * Test the property 'free'
+     */
+    @Test
+    public void freeTest() {
+        // TODO: test free
+    }
+
+    /**
+     * Test the property 'indicate'
+     */
+    @Test
+    public void indicateTest() {
+        // TODO: test indicate
     }
 
     /**

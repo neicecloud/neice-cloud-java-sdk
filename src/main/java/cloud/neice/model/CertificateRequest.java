@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CertificateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-30T12:28:02.341031+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-19T10:31:25.793563+08:00[Asia/Shanghai]")
 public class CertificateRequest {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -37,6 +37,10 @@ public class CertificateRequest {
   @SerializedName(SERIALIZED_NAME_FORCE)
   private Boolean force;
 
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private String id;
+
   public static final String SERIALIZED_NAME_MODEL = "model";
   @SerializedName(SERIALIZED_NAME_MODEL)
   private String model;
@@ -44,6 +48,10 @@ public class CertificateRequest {
   public static final String SERIALIZED_NAME_PHONE = "phone";
   @SerializedName(SERIALIZED_NAME_PHONE)
   private String phone;
+
+  public static final String SERIALIZED_NAME_RESERVE = "reserve";
+  @SerializedName(SERIALIZED_NAME_RESERVE)
+  private Boolean reserve;
 
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
@@ -100,6 +108,29 @@ public class CertificateRequest {
   }
 
 
+  public CertificateRequest id(String id) {
+    
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * 证书的UUID
+   * @return id
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "证书的UUID")
+
+  public String getId() {
+    return id;
+  }
+
+
+  public void setId(String id) {
+    this.id = id;
+  }
+
+
   public CertificateRequest model(String model) {
     
     this.model = model;
@@ -146,6 +177,29 @@ public class CertificateRequest {
   }
 
 
+  public CertificateRequest reserve(Boolean reserve) {
+    
+    this.reserve = reserve;
+    return this;
+  }
+
+   /**
+   * 预定证书
+   * @return reserve
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "预定证书")
+
+  public Boolean getReserve() {
+    return reserve;
+  }
+
+
+  public void setReserve(Boolean reserve) {
+    this.reserve = reserve;
+  }
+
+
   public CertificateRequest udid(String udid) {
     
     this.udid = udid;
@@ -156,7 +210,8 @@ public class CertificateRequest {
    * iOS设备的UDID
    * @return udid
   **/
-  @ApiModelProperty(required = true, value = "iOS设备的UDID")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "iOS设备的UDID")
 
   public String getUdid() {
     return udid;
@@ -202,15 +257,17 @@ public class CertificateRequest {
     CertificateRequest certificateRequest = (CertificateRequest) o;
     return Objects.equals(this.code, certificateRequest.code) &&
         Objects.equals(this.force, certificateRequest.force) &&
+        Objects.equals(this.id, certificateRequest.id) &&
         Objects.equals(this.model, certificateRequest.model) &&
         Objects.equals(this.phone, certificateRequest.phone) &&
+        Objects.equals(this.reserve, certificateRequest.reserve) &&
         Objects.equals(this.udid, certificateRequest.udid) &&
         Objects.equals(this.version, certificateRequest.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, force, model, phone, udid, version);
+    return Objects.hash(code, force, id, model, phone, reserve, udid, version);
   }
 
 
@@ -220,8 +277,10 @@ public class CertificateRequest {
     sb.append("class CertificateRequest {\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    force: ").append(toIndentedString(force)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    model: ").append(toIndentedString(model)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
+    sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");

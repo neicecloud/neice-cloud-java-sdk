@@ -4,12 +4,84 @@ All URIs are relative to *https://neice.cloud*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createExchangeCode**](DeviceApi.md#createExchangeCode) | **POST** /aas/api/v1/exchange/code | 创建iOS设备证书兑换码
 [**getCertificate**](DeviceApi.md#getCertificate) | **POST** /aas/api/v1/certificate | 获取iOS设备证书
 [**getCertificates**](DeviceApi.md#getCertificates) | **POST** /aas/api/v1/certificates | 获取iOS设备证书列表
 [**getStatus**](DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
 [**register**](DeviceApi.md#register) | **POST** /aas/api/v1/register | iOS设备注册
 [**registers**](DeviceApi.md#registers) | **POST** /aas/api/v1/registers | iOS设备批量提交注册
 
+
+<a name="createExchangeCode"></a>
+# **createExchangeCode**
+> OutResponseOfCertificateCode createExchangeCode(request)
+
+创建iOS设备证书兑换码
+
+创建iOS设备证书兑换码
+
+### Example
+```java
+// Import classes:
+import cloud.neice.ApiClient;
+import cloud.neice.ApiException;
+import cloud.neice.Configuration;
+import cloud.neice.auth.*;
+import cloud.neice.models.*;
+import cloud.neice.api.DeviceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://neice.cloud");
+    
+    // Configure OAuth2 access token for authorization: Authorization
+    OAuth Authorization = (OAuth) defaultClient.getAuthentication("Authorization");
+    Authorization.setAccessToken("YOUR ACCESS TOKEN");
+
+    DeviceApi apiInstance = new DeviceApi(defaultClient);
+    CertificateCode request = new CertificateCode(); // CertificateCode | request
+    try {
+      OutResponseOfCertificateCode result = apiInstance.createExchangeCode(request);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeviceApi#createExchangeCode");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**CertificateCode**](CertificateCode.md)| request |
+
+### Return type
+
+[**OutResponseOfCertificateCode**](OutResponseOfCertificateCode.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 <a name="getCertificate"></a>
 # **getCertificate**

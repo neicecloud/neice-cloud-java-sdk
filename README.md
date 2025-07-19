@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2024-11-30T12:28:02.341031+08:00[Asia/Shanghai]
+  - Build date: 2025-07-19T10:31:25.793563+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 
@@ -113,6 +113,7 @@ All URIs are relative to *https://neice.cloud*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BalanceApi* | [**getBalance**](docs/BalanceApi.md#getBalance) | **POST** /user/api/v1/balance | 获取用户余额
+*DeviceApi* | [**createExchangeCode**](docs/DeviceApi.md#createExchangeCode) | **POST** /aas/api/v1/exchange/code | 创建iOS设备证书兑换码
 *DeviceApi* | [**getCertificate**](docs/DeviceApi.md#getCertificate) | **POST** /aas/api/v1/certificate | 获取iOS设备证书
 *DeviceApi* | [**getCertificates**](docs/DeviceApi.md#getCertificates) | **POST** /aas/api/v1/certificates | 获取iOS设备证书列表
 *DeviceApi* | [**getStatus**](docs/DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
@@ -134,6 +135,7 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Balance](docs/Balance.md)
+ - [CertificateCode](docs/CertificateCode.md)
  - [CertificateRequest](docs/CertificateRequest.md)
  - [CertificateResponse](docs/CertificateResponse.md)
  - [DeviceRequest](docs/DeviceRequest.md)
@@ -141,6 +143,7 @@ Class | Method | HTTP request | Description
  - [HttpEntity](docs/HttpEntity.md)
  - [OpenEnterpriseCertificate](docs/OpenEnterpriseCertificate.md)
  - [OutResponseOfBalance](docs/OutResponseOfBalance.md)
+ - [OutResponseOfCertificateCode](docs/OutResponseOfCertificateCode.md)
  - [OutResponseOfListOfCertificateResponse](docs/OutResponseOfListOfCertificateResponse.md)
  - [OutResponseOfListOfOpenEnterpriseCertificate](docs/OutResponseOfListOfOpenEnterpriseCertificate.md)
  - [OutResponseOfListOfPersonalCertificate](docs/OutResponseOfListOfPersonalCertificate.md)

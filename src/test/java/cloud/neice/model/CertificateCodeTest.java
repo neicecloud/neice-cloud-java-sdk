@@ -21,23 +21,24 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.threeten.bp.OffsetDateTime;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for CertificateRequest
+ * Model tests for CertificateCode
  */
-public class CertificateRequestTest {
-    private final CertificateRequest model = new CertificateRequest();
+public class CertificateCodeTest {
+    private final CertificateCode model = new CertificateCode();
 
     /**
-     * Model tests for CertificateRequest
+     * Model tests for CertificateCode
      */
     @Test
-    public void testCertificateRequest() {
-        // TODO: test CertificateRequest
+    public void testCertificateCode() {
+        // TODO: test CertificateCode
     }
 
     /**
@@ -49,19 +50,19 @@ public class CertificateRequestTest {
     }
 
     /**
-     * Test the property 'force'
+     * Test the property 'domain'
      */
     @Test
-    public void forceTest() {
-        // TODO: test force
+    public void domainTest() {
+        // TODO: test domain
     }
 
     /**
-     * Test the property 'id'
+     * Test the property 'exchange'
      */
     @Test
-    public void idTest() {
-        // TODO: test id
+    public void exchangeTest() {
+        // TODO: test exchange
     }
 
     /**
@@ -73,11 +74,19 @@ public class CertificateRequestTest {
     }
 
     /**
-     * Test the property 'phone'
+     * Test the property 'quality'
      */
     @Test
-    public void phoneTest() {
-        // TODO: test phone
+    public void qualityTest() {
+        // TODO: test quality
+    }
+
+    /**
+     * Test the property 'query'
+     */
+    @Test
+    public void queryTest() {
+        // TODO: test query
     }
 
     /**
@@ -89,19 +98,19 @@ public class CertificateRequestTest {
     }
 
     /**
+     * Test the property 'token'
+     */
+    @Test
+    public void tokenTest() {
+        // TODO: test token
+    }
+
+    /**
      * Test the property 'udid'
      */
     @Test
     public void udidTest() {
         // TODO: test udid
-    }
-
-    /**
-     * Test the property 'version'
-     */
-    @Test
-    public void versionTest() {
-        // TODO: test version
     }
 
 }

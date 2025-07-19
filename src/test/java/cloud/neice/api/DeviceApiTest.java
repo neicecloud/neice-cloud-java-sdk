@@ -14,7 +14,9 @@
 package cloud.neice.api;
 
 import cloud.neice.ApiException;
+import cloud.neice.model.CertificateCode;
 import cloud.neice.model.DeviceRequest;
+import cloud.neice.model.OutResponseOfCertificateCode;
 import cloud.neice.model.OutResponseOfListOfPersonalCertificate;
 import cloud.neice.model.OutResponseOfPersonalCertificate;
 import cloud.neice.model.OutResponseOfStatus;
@@ -35,6 +37,22 @@ public class DeviceApiTest {
 
     private final DeviceApi api = new DeviceApi();
 
+    
+    /**
+     * 创建iOS设备证书兑换码
+     *
+     * 创建iOS设备证书兑换码
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createExchangeCodeTest() throws ApiException {
+        CertificateCode request = null;
+        OutResponseOfCertificateCode response = api.createExchangeCode(request);
+
+        // TODO: test validations
+    }
     
     /**
      * 获取iOS设备证书

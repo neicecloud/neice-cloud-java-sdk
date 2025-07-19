@@ -28,11 +28,15 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * CertificateResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-11-30T12:28:02.341031+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-19T10:31:25.793563+08:00[Asia/Shanghai]")
 public class CertificateResponse {
   public static final String SERIALIZED_NAME_ACTUAL = "actual";
   @SerializedName(SERIALIZED_NAME_ACTUAL)
   private Integer actual;
+
+  public static final String SERIALIZED_NAME_BACKUP = "backup";
+  @SerializedName(SERIALIZED_NAME_BACKUP)
+  private Boolean backup;
 
   public static final String SERIALIZED_NAME_BUY = "buy";
   @SerializedName(SERIALIZED_NAME_BUY)
@@ -69,6 +73,14 @@ public class CertificateResponse {
   public static final String SERIALIZED_NAME_EXPERIENCE = "experience";
   @SerializedName(SERIALIZED_NAME_EXPERIENCE)
   private Integer experience;
+
+  public static final String SERIALIZED_NAME_FREE = "free";
+  @SerializedName(SERIALIZED_NAME_FREE)
+  private Boolean free;
+
+  public static final String SERIALIZED_NAME_INDICATE = "indicate";
+  @SerializedName(SERIALIZED_NAME_INDICATE)
+  private String indicate;
 
   public static final String SERIALIZED_NAME_INVISIBLE = "invisible";
   @SerializedName(SERIALIZED_NAME_INVISIBLE)
@@ -179,6 +191,29 @@ public class CertificateResponse {
 
   public void setActual(Integer actual) {
     this.actual = actual;
+  }
+
+
+  public CertificateResponse backup(Boolean backup) {
+    
+    this.backup = backup;
+    return this;
+  }
+
+   /**
+   * 备份证书
+   * @return backup
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "备份证书")
+
+  public Boolean getBackup() {
+    return backup;
+  }
+
+
+  public void setBackup(Boolean backup) {
+    this.backup = backup;
   }
 
 
@@ -385,6 +420,52 @@ public class CertificateResponse {
 
   public void setExperience(Integer experience) {
     this.experience = experience;
+  }
+
+
+  public CertificateResponse free(Boolean free) {
+    
+    this.free = free;
+    return this;
+  }
+
+   /**
+   * 自由
+   * @return free
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "自由")
+
+  public Boolean getFree() {
+    return free;
+  }
+
+
+  public void setFree(Boolean free) {
+    this.free = free;
+  }
+
+
+  public CertificateResponse indicate(String indicate) {
+    
+    this.indicate = indicate;
+    return this;
+  }
+
+   /**
+   * 指示
+   * @return indicate
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "指示")
+
+  public String getIndicate() {
+    return indicate;
+  }
+
+
+  public void setIndicate(String indicate) {
+    this.indicate = indicate;
   }
 
 
@@ -901,6 +982,7 @@ public class CertificateResponse {
     }
     CertificateResponse certificateResponse = (CertificateResponse) o;
     return Objects.equals(this.actual, certificateResponse.actual) &&
+        Objects.equals(this.backup, certificateResponse.backup) &&
         Objects.equals(this.buy, certificateResponse.buy) &&
         Objects.equals(this.certificate, certificateResponse.certificate) &&
         Objects.equals(this.code, certificateResponse.code) &&
@@ -910,6 +992,8 @@ public class CertificateResponse {
         Objects.equals(this.device, certificateResponse.device) &&
         Objects.equals(this.domain, certificateResponse.domain) &&
         Objects.equals(this.experience, certificateResponse.experience) &&
+        Objects.equals(this.free, certificateResponse.free) &&
+        Objects.equals(this.indicate, certificateResponse.indicate) &&
         Objects.equals(this.invisible, certificateResponse.invisible) &&
         Objects.equals(this.lock, certificateResponse.lock) &&
         Objects.equals(this.mobile, certificateResponse.mobile) &&
@@ -936,7 +1020,7 @@ public class CertificateResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actual, buy, certificate, code, contact, create, description, device, domain, experience, invisible, lock, mobile, mobileprovision, name, notAfter, password, pay, phone, price, profile, quality, reserve, serialNumber, signed, tag, team, teamId, title, udid, uuid, valid);
+    return Objects.hash(actual, backup, buy, certificate, code, contact, create, description, device, domain, experience, free, indicate, invisible, lock, mobile, mobileprovision, name, notAfter, password, pay, phone, price, profile, quality, reserve, serialNumber, signed, tag, team, teamId, title, udid, uuid, valid);
   }
 
 
@@ -945,6 +1029,7 @@ public class CertificateResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class CertificateResponse {\n");
     sb.append("    actual: ").append(toIndentedString(actual)).append("\n");
+    sb.append("    backup: ").append(toIndentedString(backup)).append("\n");
     sb.append("    buy: ").append(toIndentedString(buy)).append("\n");
     sb.append("    certificate: ").append(toIndentedString(certificate)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
@@ -954,6 +1039,8 @@ public class CertificateResponse {
     sb.append("    device: ").append(toIndentedString(device)).append("\n");
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
     sb.append("    experience: ").append(toIndentedString(experience)).append("\n");
+    sb.append("    free: ").append(toIndentedString(free)).append("\n");
+    sb.append("    indicate: ").append(toIndentedString(indicate)).append("\n");
     sb.append("    invisible: ").append(toIndentedString(invisible)).append("\n");
     sb.append("    lock: ").append(toIndentedString(lock)).append("\n");
     sb.append("    mobile: ").append(toIndentedString(mobile)).append("\n");

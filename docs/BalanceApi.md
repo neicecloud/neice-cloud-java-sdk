@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getBalance"></a>
 # **getBalance**
-> OutResponseOfBalance getBalance()
+> ResponseOfBalance getBalance()
 
 获取用户余额
 
@@ -36,7 +36,7 @@ public class Example {
 
     BalanceApi apiInstance = new BalanceApi(defaultClient);
     try {
-      OutResponseOfBalance result = apiInstance.getBalance();
+      ResponseOfBalance result = apiInstance.getBalance();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BalanceApi#getBalance");
@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OutResponseOfBalance**](OutResponseOfBalance.md)
+[**ResponseOfBalance**](ResponseOfBalance.md)
 
 ### Authorization
 

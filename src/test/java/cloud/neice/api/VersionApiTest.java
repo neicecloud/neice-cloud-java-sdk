@@ -14,7 +14,7 @@
 package cloud.neice.api;
 
 import cloud.neice.ApiException;
-import cloud.neice.model.OutResponseOfVersion;
+import cloud.neice.model.ResponseOfVersion;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -42,7 +42,7 @@ public class VersionApiTest {
      */
     @Test
     public void getVersionTest() throws ApiException {
-        OutResponseOfVersion response = api.getVersion();
+        ResponseOfVersion response = api.getVersion();
 
         // TODO: test validations
     }

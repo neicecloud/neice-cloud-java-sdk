@@ -14,7 +14,6 @@
 package cloud.neice.api;
 
 import cloud.neice.ApiException;
-import cloud.neice.model.HttpEntity;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -59,7 +58,7 @@ public class OauthApiTest {
      */
     @Test
     public void getUserInfoTest() throws ApiException {
-        HttpEntity response = api.getUserInfo();
+        Object response = api.getUserInfo();
 
         // TODO: test validations
     }
@@ -74,7 +73,7 @@ public class OauthApiTest {
      */
     @Test
     public void getUserInfo1Test() throws ApiException {
-        HttpEntity response = api.getUserInfo1();
+        Object response = api.getUserInfo1();
 
         // TODO: test validations
     }

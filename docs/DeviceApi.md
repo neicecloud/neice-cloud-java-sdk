@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="createExchangeCode"></a>
 # **createExchangeCode**
-> OutResponseOfCertificateCode createExchangeCode(request)
+> ResponseOfCertificateCode createExchangeCode(request)
 
 创建iOS设备证书兑换码
 
@@ -42,7 +42,7 @@ public class Example {
     DeviceApi apiInstance = new DeviceApi(defaultClient);
     CertificateCode request = new CertificateCode(); // CertificateCode | request
     try {
-      OutResponseOfCertificateCode result = apiInstance.createExchangeCode(request);
+      ResponseOfCertificateCode result = apiInstance.createExchangeCode(request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#createExchangeCode");
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutResponseOfCertificateCode**](OutResponseOfCertificateCode.md)
+[**ResponseOfCertificateCode**](ResponseOfCertificateCode.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificate"></a>
 # **getCertificate**
-> OutResponseOfPersonalCertificate getCertificate(udid)
+> ResponseOfPersonalCertificate getCertificate(udid)
 
 获取iOS设备证书
 
@@ -113,7 +113,7 @@ public class Example {
     DeviceApi apiInstance = new DeviceApi(defaultClient);
     String udid = "udid_example"; // String | udid
     try {
-      OutResponseOfPersonalCertificate result = apiInstance.getCertificate(udid);
+      ResponseOfPersonalCertificate result = apiInstance.getCertificate(udid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#getCertificate");
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutResponseOfPersonalCertificate**](OutResponseOfPersonalCertificate.md)
+[**ResponseOfPersonalCertificate**](ResponseOfPersonalCertificate.md)
 
 ### Authorization
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificates"></a>
 # **getCertificates**
-> OutResponseOfListOfPersonalCertificate getCertificates(limit, page, asc)
+> ResponseOfListOfPersonalCertificate getCertificates(limit, page, asc)
 
 获取iOS设备证书列表
 
@@ -186,7 +186,7 @@ public class Example {
     Integer page = 56; // Integer | page
     Boolean asc = true; // Boolean | asc
     try {
-      OutResponseOfListOfPersonalCertificate result = apiInstance.getCertificates(limit, page, asc);
+      ResponseOfListOfPersonalCertificate result = apiInstance.getCertificates(limit, page, asc);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#getCertificates");
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutResponseOfListOfPersonalCertificate**](OutResponseOfListOfPersonalCertificate.md)
+[**ResponseOfListOfPersonalCertificate**](ResponseOfListOfPersonalCertificate.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 <a name="getStatus"></a>
 # **getStatus**
-> OutResponseOfStatus getStatus()
+> ResponseOfStatus getStatus()
 
 获取证书支持类型
 
@@ -258,7 +258,7 @@ public class Example {
 
     DeviceApi apiInstance = new DeviceApi(defaultClient);
     try {
-      OutResponseOfStatus result = apiInstance.getStatus();
+      ResponseOfStatus result = apiInstance.getStatus();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#getStatus");
@@ -276,7 +276,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OutResponseOfStatus**](OutResponseOfStatus.md)
+[**ResponseOfStatus**](ResponseOfStatus.md)
 
 ### Authorization
 
@@ -298,7 +298,7 @@ This endpoint does not need any parameter.
 
 <a name="register"></a>
 # **register**
-> OutResponseOfPersonalCertificate register(request)
+> ResponseOfPersonalCertificate register(request)
 
 iOS设备注册
 
@@ -326,7 +326,7 @@ public class Example {
     DeviceApi apiInstance = new DeviceApi(defaultClient);
     DeviceRequest request = new DeviceRequest(); // DeviceRequest | request
     try {
-      OutResponseOfPersonalCertificate result = apiInstance.register(request);
+      ResponseOfPersonalCertificate result = apiInstance.register(request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#register");
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutResponseOfPersonalCertificate**](OutResponseOfPersonalCertificate.md)
+[**ResponseOfPersonalCertificate**](ResponseOfPersonalCertificate.md)
 
 ### Authorization
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 <a name="registers"></a>
 # **registers**
-> OutResponseOfstring registers(deviceRequests)
+> ResponseOfstring registers(deviceRequests)
 
 iOS设备批量提交注册
 
@@ -397,7 +397,7 @@ public class Example {
     DeviceApi apiInstance = new DeviceApi(defaultClient);
     List<DeviceRequest> deviceRequests = Arrays.asList(); // List<DeviceRequest> | deviceRequests
     try {
-      OutResponseOfstring result = apiInstance.registers(deviceRequests);
+      ResponseOfstring result = apiInstance.registers(deviceRequests);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#registers");
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutResponseOfstring**](OutResponseOfstring.md)
+[**ResponseOfstring**](ResponseOfstring.md)
 
 ### Authorization
 

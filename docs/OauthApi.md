@@ -79,7 +79,7 @@ No authorization required
 
 <a name="getUserInfo"></a>
 # **getUserInfo**
-> HttpEntity getUserInfo()
+> Object getUserInfo()
 
 获取用户信息
 
@@ -106,7 +106,7 @@ public class Example {
 
     OauthApi apiInstance = new OauthApi(defaultClient);
     try {
-      HttpEntity result = apiInstance.getUserInfo();
+      Object result = apiInstance.getUserInfo();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OauthApi#getUserInfo");
@@ -124,7 +124,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**HttpEntity**](HttpEntity.md)
+**Object**
 
 ### Authorization
 
@@ -145,7 +145,7 @@ This endpoint does not need any parameter.
 
 <a name="getUserInfo1"></a>
 # **getUserInfo1**
-> HttpEntity getUserInfo1()
+> Object getUserInfo1()
 
 获取用户信息
 
@@ -172,7 +172,7 @@ public class Example {
 
     OauthApi apiInstance = new OauthApi(defaultClient);
     try {
-      HttpEntity result = apiInstance.getUserInfo1();
+      Object result = apiInstance.getUserInfo1();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OauthApi#getUserInfo1");
@@ -190,7 +190,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**HttpEntity**](HttpEntity.md)
+**Object**
 
 ### Authorization
 

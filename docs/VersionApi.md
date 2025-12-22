@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getVersion"></a>
 # **getVersion**
-> OutResponseOfVersion getVersion()
+> ResponseOfVersion getVersion()
 
 获取接口系统版本
 
@@ -36,7 +36,7 @@ public class Example {
 
     VersionApi apiInstance = new VersionApi(defaultClient);
     try {
-      OutResponseOfVersion result = apiInstance.getVersion();
+      ResponseOfVersion result = apiInstance.getVersion();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling VersionApi#getVersion");
@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OutResponseOfVersion**](OutResponseOfVersion.md)
+[**ResponseOfVersion**](ResponseOfVersion.md)
 
 ### Authorization
 

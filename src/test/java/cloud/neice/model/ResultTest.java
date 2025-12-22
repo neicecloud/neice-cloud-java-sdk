@@ -27,25 +27,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for HttpEntity
+ * Model tests for Result
  */
-public class HttpEntityTest {
-    private final HttpEntity model = new HttpEntity();
+public class ResultTest {
+    private final Result model = new Result();
 
     /**
-     * Model tests for HttpEntity
+     * Model tests for Result
      */
     @Test
-    public void testHttpEntity() {
-        // TODO: test HttpEntity
+    public void testResult() {
+        // TODO: test Result
     }
 
     /**
-     * Test the property 'body'
+     * Test the property 'type'
      */
     @Test
-    public void bodyTest() {
-        // TODO: test body
+    public void typeTest() {
+        // TODO: test type
     }
 
 }

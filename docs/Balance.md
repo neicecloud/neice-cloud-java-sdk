@@ -7,6 +7,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **balance** | **BigDecimal** |  |  [optional]
+**escrow** | **BigDecimal** |  |  [optional]
 **reward** | **BigDecimal** |  |  [optional]
 **total** | **BigDecimal** |  |  [optional]
 **userUuid** | **String** |  |  [optional]

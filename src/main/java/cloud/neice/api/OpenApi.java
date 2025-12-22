@@ -28,8 +28,8 @@ import java.io.IOException;
 
 
 import cloud.neice.model.CertificateRequest;
-import cloud.neice.model.OutResponseOfListOfCertificateResponse;
-import cloud.neice.model.OutResponseOfListOfOpenEnterpriseCertificate;
+import cloud.neice.model.ResponseOfListOfCertificateResponse;
+import cloud.neice.model.ResponseOfListOfOpenEnterpriseCertificate;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -129,7 +129,7 @@ public class OpenApi {
      * 获取开发的iOS设备证书
      * @param udid udid (required)
      * @param code code (optional)
-     * @return OutResponseOfListOfCertificateResponse
+     * @return ResponseOfListOfCertificateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -140,8 +140,8 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfCertificateResponse getCertificate1(String udid, String code) throws ApiException {
-        ApiResponse<OutResponseOfListOfCertificateResponse> localVarResp = getCertificate1WithHttpInfo(udid, code);
+    public ResponseOfListOfCertificateResponse getCertificate1(String udid, String code) throws ApiException {
+        ApiResponse<ResponseOfListOfCertificateResponse> localVarResp = getCertificate1WithHttpInfo(udid, code);
         return localVarResp.getData();
     }
 
@@ -150,7 +150,7 @@ public class OpenApi {
      * 获取开发的iOS设备证书
      * @param udid udid (required)
      * @param code code (optional)
-     * @return ApiResponse&lt;OutResponseOfListOfCertificateResponse&gt;
+     * @return ApiResponse&lt;ResponseOfListOfCertificateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -161,9 +161,9 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfCertificateResponse> getCertificate1WithHttpInfo(String udid, String code) throws ApiException {
+    public ApiResponse<ResponseOfListOfCertificateResponse> getCertificate1WithHttpInfo(String udid, String code) throws ApiException {
         okhttp3.Call localVarCall = getCertificate1ValidateBeforeCall(udid, code, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfCertificateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -184,10 +184,10 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificate1Async(String udid, String code, final ApiCallback<OutResponseOfListOfCertificateResponse> _callback) throws ApiException {
+    public okhttp3.Call getCertificate1Async(String udid, String code, final ApiCallback<ResponseOfListOfCertificateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCertificate1ValidateBeforeCall(udid, code, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfCertificateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -256,7 +256,7 @@ public class OpenApi {
      * 获取开发的iOS设备证书
      * 获取开发的iOS设备证书
      * @param udid udid (required)
-     * @return OutResponseOfListOfCertificateResponse
+     * @return ResponseOfListOfCertificateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -268,8 +268,8 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfCertificateResponse getCertificate2(String udid) throws ApiException {
-        ApiResponse<OutResponseOfListOfCertificateResponse> localVarResp = getCertificate2WithHttpInfo(udid);
+    public ResponseOfListOfCertificateResponse getCertificate2(String udid) throws ApiException {
+        ApiResponse<ResponseOfListOfCertificateResponse> localVarResp = getCertificate2WithHttpInfo(udid);
         return localVarResp.getData();
     }
 
@@ -277,7 +277,7 @@ public class OpenApi {
      * 获取开发的iOS设备证书
      * 获取开发的iOS设备证书
      * @param udid udid (required)
-     * @return ApiResponse&lt;OutResponseOfListOfCertificateResponse&gt;
+     * @return ApiResponse&lt;ResponseOfListOfCertificateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -289,9 +289,9 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfCertificateResponse> getCertificate2WithHttpInfo(String udid) throws ApiException {
+    public ApiResponse<ResponseOfListOfCertificateResponse> getCertificate2WithHttpInfo(String udid) throws ApiException {
         okhttp3.Call localVarCall = getCertificate2ValidateBeforeCall(udid, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfCertificateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -312,10 +312,10 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificate2Async(String udid, final ApiCallback<OutResponseOfListOfCertificateResponse> _callback) throws ApiException {
+    public okhttp3.Call getCertificate2Async(String udid, final ApiCallback<ResponseOfListOfCertificateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCertificate2ValidateBeforeCall(udid, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfCertificateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -383,7 +383,7 @@ public class OpenApi {
      * 获取开发的iOS设备证书
      * 获取开发的iOS设备证书
      * @param udid udid (required)
-     * @return OutResponseOfListOfCertificateResponse
+     * @return ResponseOfListOfCertificateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -394,8 +394,8 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfCertificateResponse getCertificate3(String udid) throws ApiException {
-        ApiResponse<OutResponseOfListOfCertificateResponse> localVarResp = getCertificate3WithHttpInfo(udid);
+    public ResponseOfListOfCertificateResponse getCertificate3(String udid) throws ApiException {
+        ApiResponse<ResponseOfListOfCertificateResponse> localVarResp = getCertificate3WithHttpInfo(udid);
         return localVarResp.getData();
     }
 
@@ -403,7 +403,7 @@ public class OpenApi {
      * 获取开发的iOS设备证书
      * 获取开发的iOS设备证书
      * @param udid udid (required)
-     * @return ApiResponse&lt;OutResponseOfListOfCertificateResponse&gt;
+     * @return ApiResponse&lt;ResponseOfListOfCertificateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -414,9 +414,9 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfCertificateResponse> getCertificate3WithHttpInfo(String udid) throws ApiException {
+    public ApiResponse<ResponseOfListOfCertificateResponse> getCertificate3WithHttpInfo(String udid) throws ApiException {
         okhttp3.Call localVarCall = getCertificate3ValidateBeforeCall(udid, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfCertificateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -436,16 +436,16 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificate3Async(String udid, final ApiCallback<OutResponseOfListOfCertificateResponse> _callback) throws ApiException {
+    public okhttp3.Call getCertificate3Async(String udid, final ApiCallback<ResponseOfListOfCertificateResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCertificate3ValidateBeforeCall(udid, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfCertificateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getCertificate4
-     * @param certificateRequest certificateRequest (required)
+     * @param request request (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -459,8 +459,8 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificate4Call(CertificateRequest certificateRequest, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = certificateRequest;
+    public okhttp3.Call getCertificate4Call(CertificateRequest request, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = request;
 
         // create path and map variables
         String localVarPath = "/open/api/v1/certificate";
@@ -490,15 +490,15 @@ public class OpenApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCertificate4ValidateBeforeCall(CertificateRequest certificateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCertificate4ValidateBeforeCall(CertificateRequest request, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'certificateRequest' is set
-        if (certificateRequest == null) {
-            throw new ApiException("Missing the required parameter 'certificateRequest' when calling getCertificate4(Async)");
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling getCertificate4(Async)");
         }
         
 
-        okhttp3.Call localVarCall = getCertificate4Call(certificateRequest, _callback);
+        okhttp3.Call localVarCall = getCertificate4Call(request, _callback);
         return localVarCall;
 
     }
@@ -506,8 +506,8 @@ public class OpenApi {
     /**
      * 获取开发的iOS设备证书
      * 获取开发的iOS设备证书
-     * @param certificateRequest certificateRequest (required)
-     * @return OutResponseOfListOfCertificateResponse
+     * @param request request (required)
+     * @return ResponseOfListOfCertificateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -519,16 +519,16 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfCertificateResponse getCertificate4(CertificateRequest certificateRequest) throws ApiException {
-        ApiResponse<OutResponseOfListOfCertificateResponse> localVarResp = getCertificate4WithHttpInfo(certificateRequest);
+    public ResponseOfListOfCertificateResponse getCertificate4(CertificateRequest request) throws ApiException {
+        ApiResponse<ResponseOfListOfCertificateResponse> localVarResp = getCertificate4WithHttpInfo(request);
         return localVarResp.getData();
     }
 
     /**
      * 获取开发的iOS设备证书
      * 获取开发的iOS设备证书
-     * @param certificateRequest certificateRequest (required)
-     * @return ApiResponse&lt;OutResponseOfListOfCertificateResponse&gt;
+     * @param request request (required)
+     * @return ApiResponse&lt;ResponseOfListOfCertificateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -540,16 +540,16 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfCertificateResponse> getCertificate4WithHttpInfo(CertificateRequest certificateRequest) throws ApiException {
-        okhttp3.Call localVarCall = getCertificate4ValidateBeforeCall(certificateRequest, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
+    public ApiResponse<ResponseOfListOfCertificateResponse> getCertificate4WithHttpInfo(CertificateRequest request) throws ApiException {
+        okhttp3.Call localVarCall = getCertificate4ValidateBeforeCall(request, null);
+        Type localVarReturnType = new TypeToken<ResponseOfListOfCertificateResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * 获取开发的iOS设备证书 (asynchronously)
      * 获取开发的iOS设备证书
-     * @param certificateRequest certificateRequest (required)
+     * @param request request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -563,10 +563,10 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificate4Async(CertificateRequest certificateRequest, final ApiCallback<OutResponseOfListOfCertificateResponse> _callback) throws ApiException {
+    public okhttp3.Call getCertificate4Async(CertificateRequest request, final ApiCallback<ResponseOfListOfCertificateResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCertificate4ValidateBeforeCall(certificateRequest, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfCertificateResponse>(){}.getType();
+        okhttp3.Call localVarCall = getCertificate4ValidateBeforeCall(request, _callback);
+        Type localVarReturnType = new TypeToken<ResponseOfListOfCertificateResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -626,7 +626,7 @@ public class OpenApi {
     /**
      * 获取企业开发者证书
      * 获取企业开发者证书
-     * @return OutResponseOfListOfOpenEnterpriseCertificate
+     * @return ResponseOfListOfOpenEnterpriseCertificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -637,15 +637,15 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfOpenEnterpriseCertificate getEnterpriseCertificates() throws ApiException {
-        ApiResponse<OutResponseOfListOfOpenEnterpriseCertificate> localVarResp = getEnterpriseCertificatesWithHttpInfo();
+    public ResponseOfListOfOpenEnterpriseCertificate getEnterpriseCertificates() throws ApiException {
+        ApiResponse<ResponseOfListOfOpenEnterpriseCertificate> localVarResp = getEnterpriseCertificatesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * 获取企业开发者证书
      * 获取企业开发者证书
-     * @return ApiResponse&lt;OutResponseOfListOfOpenEnterpriseCertificate&gt;
+     * @return ApiResponse&lt;ResponseOfListOfOpenEnterpriseCertificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -656,9 +656,9 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfOpenEnterpriseCertificate> getEnterpriseCertificatesWithHttpInfo() throws ApiException {
+    public ApiResponse<ResponseOfListOfOpenEnterpriseCertificate> getEnterpriseCertificatesWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getEnterpriseCertificatesValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfOpenEnterpriseCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfOpenEnterpriseCertificate>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -677,10 +677,10 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnterpriseCertificatesAsync(final ApiCallback<OutResponseOfListOfOpenEnterpriseCertificate> _callback) throws ApiException {
+    public okhttp3.Call getEnterpriseCertificatesAsync(final ApiCallback<ResponseOfListOfOpenEnterpriseCertificate> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEnterpriseCertificatesValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfOpenEnterpriseCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfOpenEnterpriseCertificate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -741,7 +741,7 @@ public class OpenApi {
     /**
      * 获取企业开发者证书
      * 获取企业开发者证书
-     * @return OutResponseOfListOfOpenEnterpriseCertificate
+     * @return ResponseOfListOfOpenEnterpriseCertificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -753,15 +753,15 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfOpenEnterpriseCertificate getEnterpriseCertificates1() throws ApiException {
-        ApiResponse<OutResponseOfListOfOpenEnterpriseCertificate> localVarResp = getEnterpriseCertificates1WithHttpInfo();
+    public ResponseOfListOfOpenEnterpriseCertificate getEnterpriseCertificates1() throws ApiException {
+        ApiResponse<ResponseOfListOfOpenEnterpriseCertificate> localVarResp = getEnterpriseCertificates1WithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * 获取企业开发者证书
      * 获取企业开发者证书
-     * @return ApiResponse&lt;OutResponseOfListOfOpenEnterpriseCertificate&gt;
+     * @return ApiResponse&lt;ResponseOfListOfOpenEnterpriseCertificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -773,9 +773,9 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfOpenEnterpriseCertificate> getEnterpriseCertificates1WithHttpInfo() throws ApiException {
+    public ApiResponse<ResponseOfListOfOpenEnterpriseCertificate> getEnterpriseCertificates1WithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getEnterpriseCertificates1ValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfOpenEnterpriseCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfOpenEnterpriseCertificate>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -795,10 +795,10 @@ public class OpenApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getEnterpriseCertificates1Async(final ApiCallback<OutResponseOfListOfOpenEnterpriseCertificate> _callback) throws ApiException {
+    public okhttp3.Call getEnterpriseCertificates1Async(final ApiCallback<ResponseOfListOfOpenEnterpriseCertificate> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getEnterpriseCertificates1ValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfOpenEnterpriseCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfOpenEnterpriseCertificate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

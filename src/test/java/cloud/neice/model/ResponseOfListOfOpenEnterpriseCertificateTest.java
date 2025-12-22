@@ -14,6 +14,7 @@
 package cloud.neice.model;
 
 import cloud.neice.model.OpenEnterpriseCertificate;
+import cloud.neice.model.Result;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -30,17 +31,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for OutResponseOfListOfOpenEnterpriseCertificate
+ * Model tests for ResponseOfListOfOpenEnterpriseCertificate
  */
-public class OutResponseOfListOfOpenEnterpriseCertificateTest {
-    private final OutResponseOfListOfOpenEnterpriseCertificate model = new OutResponseOfListOfOpenEnterpriseCertificate();
+public class ResponseOfListOfOpenEnterpriseCertificateTest {
+    private final ResponseOfListOfOpenEnterpriseCertificate model = new ResponseOfListOfOpenEnterpriseCertificate();
 
     /**
-     * Model tests for OutResponseOfListOfOpenEnterpriseCertificate
+     * Model tests for ResponseOfListOfOpenEnterpriseCertificate
      */
     @Test
-    public void testOutResponseOfListOfOpenEnterpriseCertificate() {
-        // TODO: test OutResponseOfListOfOpenEnterpriseCertificate
+    public void testResponseOfListOfOpenEnterpriseCertificate() {
+        // TODO: test ResponseOfListOfOpenEnterpriseCertificate
+    }
+
+    /**
+     * Test the property 'action'
+     */
+    @Test
+    public void actionTest() {
+        // TODO: test action
     }
 
     /**
@@ -60,11 +69,51 @@ public class OutResponseOfListOfOpenEnterpriseCertificateTest {
     }
 
     /**
+     * Test the property 'encrypt'
+     */
+    @Test
+    public void encryptTest() {
+        // TODO: test encrypt
+    }
+
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
+    }
+
+    /**
      * Test the property 'msg'
      */
     @Test
     public void msgTest() {
         // TODO: test msg
+    }
+
+    /**
+     * Test the property 'result'
+     */
+    @Test
+    public void resultTest() {
+        // TODO: test result
+    }
+
+    /**
+     * Test the property 'success'
+     */
+    @Test
+    public void successTest() {
+        // TODO: test success
+    }
+
+    /**
+     * Test the property 'uuid'
+     */
+    @Test
+    public void uuidTest() {
+        // TODO: test uuid
     }
 
 }

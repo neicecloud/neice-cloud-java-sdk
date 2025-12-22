@@ -14,6 +14,7 @@
 package cloud.neice.model;
 
 import cloud.neice.model.Balance;
+import cloud.neice.model.Result;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,17 +29,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for OutResponseOfBalance
+ * Model tests for ResponseOfBalance
  */
-public class OutResponseOfBalanceTest {
-    private final OutResponseOfBalance model = new OutResponseOfBalance();
+public class ResponseOfBalanceTest {
+    private final ResponseOfBalance model = new ResponseOfBalance();
 
     /**
-     * Model tests for OutResponseOfBalance
+     * Model tests for ResponseOfBalance
      */
     @Test
-    public void testOutResponseOfBalance() {
-        // TODO: test OutResponseOfBalance
+    public void testResponseOfBalance() {
+        // TODO: test ResponseOfBalance
+    }
+
+    /**
+     * Test the property 'action'
+     */
+    @Test
+    public void actionTest() {
+        // TODO: test action
     }
 
     /**
@@ -58,11 +67,51 @@ public class OutResponseOfBalanceTest {
     }
 
     /**
+     * Test the property 'encrypt'
+     */
+    @Test
+    public void encryptTest() {
+        // TODO: test encrypt
+    }
+
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
+    }
+
+    /**
      * Test the property 'msg'
      */
     @Test
     public void msgTest() {
         // TODO: test msg
+    }
+
+    /**
+     * Test the property 'result'
+     */
+    @Test
+    public void resultTest() {
+        // TODO: test result
+    }
+
+    /**
+     * Test the property 'success'
+     */
+    @Test
+    public void successTest() {
+        // TODO: test success
+    }
+
+    /**
+     * Test the property 'uuid'
+     */
+    @Test
+    public void uuidTest() {
+        // TODO: test uuid
     }
 
 }

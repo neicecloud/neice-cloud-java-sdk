@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import cloud.neice.model.OutResponseOfVersion;
+import cloud.neice.model.ResponseOfVersion;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -111,7 +111,7 @@ public class VersionApi {
     /**
      * 获取接口系统版本
      * 获取接口系统版本
-     * @return OutResponseOfVersion
+     * @return ResponseOfVersion
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -123,15 +123,15 @@ public class VersionApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfVersion getVersion() throws ApiException {
-        ApiResponse<OutResponseOfVersion> localVarResp = getVersionWithHttpInfo();
+    public ResponseOfVersion getVersion() throws ApiException {
+        ApiResponse<ResponseOfVersion> localVarResp = getVersionWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * 获取接口系统版本
      * 获取接口系统版本
-     * @return ApiResponse&lt;OutResponseOfVersion&gt;
+     * @return ApiResponse&lt;ResponseOfVersion&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -143,9 +143,9 @@ public class VersionApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfVersion> getVersionWithHttpInfo() throws ApiException {
+    public ApiResponse<ResponseOfVersion> getVersionWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getVersionValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<OutResponseOfVersion>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfVersion>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -165,10 +165,10 @@ public class VersionApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getVersionAsync(final ApiCallback<OutResponseOfVersion> _callback) throws ApiException {
+    public okhttp3.Call getVersionAsync(final ApiCallback<ResponseOfVersion> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getVersionValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfVersion>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfVersion>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

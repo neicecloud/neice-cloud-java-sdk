@@ -28,11 +28,15 @@ import java.math.BigDecimal;
 /**
  * Balance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-07-19T10:31:25.793563+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-22T11:55:22.845084+08:00[Asia/Shanghai]")
 public class Balance {
   public static final String SERIALIZED_NAME_BALANCE = "balance";
   @SerializedName(SERIALIZED_NAME_BALANCE)
   private BigDecimal balance;
+
+  public static final String SERIALIZED_NAME_ESCROW = "escrow";
+  @SerializedName(SERIALIZED_NAME_ESCROW)
+  private BigDecimal escrow;
 
   public static final String SERIALIZED_NAME_REWARD = "reward";
   @SerializedName(SERIALIZED_NAME_REWARD)
@@ -71,6 +75,29 @@ public class Balance {
 
   public void setBalance(BigDecimal balance) {
     this.balance = balance;
+  }
+
+
+  public Balance escrow(BigDecimal escrow) {
+    
+    this.escrow = escrow;
+    return this;
+  }
+
+   /**
+   * Get escrow
+   * @return escrow
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getEscrow() {
+    return escrow;
+  }
+
+
+  public void setEscrow(BigDecimal escrow) {
+    this.escrow = escrow;
   }
 
 
@@ -176,6 +203,7 @@ public class Balance {
     }
     Balance balance = (Balance) o;
     return Objects.equals(this.balance, balance.balance) &&
+        Objects.equals(this.escrow, balance.escrow) &&
         Objects.equals(this.reward, balance.reward) &&
         Objects.equals(this.total, balance.total) &&
         Objects.equals(this.userUuid, balance.userUuid) &&
@@ -184,7 +212,7 @@ public class Balance {
 
   @Override
   public int hashCode() {
-    return Objects.hash(balance, reward, total, userUuid, voucher);
+    return Objects.hash(balance, escrow, reward, total, userUuid, voucher);
   }
 
 
@@ -193,6 +221,7 @@ public class Balance {
     StringBuilder sb = new StringBuilder();
     sb.append("class Balance {\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
+    sb.append("    escrow: ").append(toIndentedString(escrow)).append("\n");
     sb.append("    reward: ").append(toIndentedString(reward)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    userUuid: ").append(toIndentedString(userUuid)).append("\n");

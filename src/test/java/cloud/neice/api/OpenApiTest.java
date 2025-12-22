@@ -15,8 +15,8 @@ package cloud.neice.api;
 
 import cloud.neice.ApiException;
 import cloud.neice.model.CertificateRequest;
-import cloud.neice.model.OutResponseOfListOfCertificateResponse;
-import cloud.neice.model.OutResponseOfListOfOpenEnterpriseCertificate;
+import cloud.neice.model.ResponseOfListOfCertificateResponse;
+import cloud.neice.model.ResponseOfListOfOpenEnterpriseCertificate;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -46,7 +46,7 @@ public class OpenApiTest {
     public void getCertificate1Test() throws ApiException {
         String udid = null;
         String code = null;
-        OutResponseOfListOfCertificateResponse response = api.getCertificate1(udid, code);
+        ResponseOfListOfCertificateResponse response = api.getCertificate1(udid, code);
 
         // TODO: test validations
     }
@@ -62,7 +62,7 @@ public class OpenApiTest {
     @Test
     public void getCertificate2Test() throws ApiException {
         String udid = null;
-        OutResponseOfListOfCertificateResponse response = api.getCertificate2(udid);
+        ResponseOfListOfCertificateResponse response = api.getCertificate2(udid);
 
         // TODO: test validations
     }
@@ -78,7 +78,7 @@ public class OpenApiTest {
     @Test
     public void getCertificate3Test() throws ApiException {
         String udid = null;
-        OutResponseOfListOfCertificateResponse response = api.getCertificate3(udid);
+        ResponseOfListOfCertificateResponse response = api.getCertificate3(udid);
 
         // TODO: test validations
     }
@@ -93,8 +93,8 @@ public class OpenApiTest {
      */
     @Test
     public void getCertificate4Test() throws ApiException {
-        CertificateRequest certificateRequest = null;
-        OutResponseOfListOfCertificateResponse response = api.getCertificate4(certificateRequest);
+        CertificateRequest request = null;
+        ResponseOfListOfCertificateResponse response = api.getCertificate4(request);
 
         // TODO: test validations
     }
@@ -109,7 +109,7 @@ public class OpenApiTest {
      */
     @Test
     public void getEnterpriseCertificatesTest() throws ApiException {
-        OutResponseOfListOfOpenEnterpriseCertificate response = api.getEnterpriseCertificates();
+        ResponseOfListOfOpenEnterpriseCertificate response = api.getEnterpriseCertificates();
 
         // TODO: test validations
     }
@@ -124,7 +124,7 @@ public class OpenApiTest {
      */
     @Test
     public void getEnterpriseCertificates1Test() throws ApiException {
-        OutResponseOfListOfOpenEnterpriseCertificate response = api.getEnterpriseCertificates1();
+        ResponseOfListOfOpenEnterpriseCertificate response = api.getEnterpriseCertificates1();
 
         // TODO: test validations
     }

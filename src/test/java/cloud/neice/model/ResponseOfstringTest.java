@@ -13,6 +13,7 @@
 
 package cloud.neice.model;
 
+import cloud.neice.model.Result;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,17 +28,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for OutResponseOfstring
+ * Model tests for ResponseOfstring
  */
-public class OutResponseOfstringTest {
-    private final OutResponseOfstring model = new OutResponseOfstring();
+public class ResponseOfstringTest {
+    private final ResponseOfstring model = new ResponseOfstring();
 
     /**
-     * Model tests for OutResponseOfstring
+     * Model tests for ResponseOfstring
      */
     @Test
-    public void testOutResponseOfstring() {
-        // TODO: test OutResponseOfstring
+    public void testResponseOfstring() {
+        // TODO: test ResponseOfstring
+    }
+
+    /**
+     * Test the property 'action'
+     */
+    @Test
+    public void actionTest() {
+        // TODO: test action
     }
 
     /**
@@ -57,11 +66,51 @@ public class OutResponseOfstringTest {
     }
 
     /**
+     * Test the property 'encrypt'
+     */
+    @Test
+    public void encryptTest() {
+        // TODO: test encrypt
+    }
+
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
+    }
+
+    /**
      * Test the property 'msg'
      */
     @Test
     public void msgTest() {
         // TODO: test msg
+    }
+
+    /**
+     * Test the property 'result'
+     */
+    @Test
+    public void resultTest() {
+        // TODO: test result
+    }
+
+    /**
+     * Test the property 'success'
+     */
+    @Test
+    public void successTest() {
+        // TODO: test success
+    }
+
+    /**
+     * Test the property 'uuid'
+     */
+    @Test
+    public void uuidTest() {
+        // TODO: test uuid
     }
 
 }

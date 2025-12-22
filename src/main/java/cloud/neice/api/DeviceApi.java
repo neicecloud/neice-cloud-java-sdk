@@ -29,11 +29,11 @@ import java.io.IOException;
 
 import cloud.neice.model.CertificateCode;
 import cloud.neice.model.DeviceRequest;
-import cloud.neice.model.OutResponseOfCertificateCode;
-import cloud.neice.model.OutResponseOfListOfPersonalCertificate;
-import cloud.neice.model.OutResponseOfPersonalCertificate;
-import cloud.neice.model.OutResponseOfStatus;
-import cloud.neice.model.OutResponseOfstring;
+import cloud.neice.model.ResponseOfCertificateCode;
+import cloud.neice.model.ResponseOfListOfPersonalCertificate;
+import cloud.neice.model.ResponseOfPersonalCertificate;
+import cloud.neice.model.ResponseOfStatus;
+import cloud.neice.model.ResponseOfstring;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -124,7 +124,7 @@ public class DeviceApi {
      * 创建iOS设备证书兑换码
      * 创建iOS设备证书兑换码
      * @param request request (required)
-     * @return OutResponseOfCertificateCode
+     * @return ResponseOfCertificateCode
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -136,8 +136,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfCertificateCode createExchangeCode(CertificateCode request) throws ApiException {
-        ApiResponse<OutResponseOfCertificateCode> localVarResp = createExchangeCodeWithHttpInfo(request);
+    public ResponseOfCertificateCode createExchangeCode(CertificateCode request) throws ApiException {
+        ApiResponse<ResponseOfCertificateCode> localVarResp = createExchangeCodeWithHttpInfo(request);
         return localVarResp.getData();
     }
 
@@ -145,7 +145,7 @@ public class DeviceApi {
      * 创建iOS设备证书兑换码
      * 创建iOS设备证书兑换码
      * @param request request (required)
-     * @return ApiResponse&lt;OutResponseOfCertificateCode&gt;
+     * @return ApiResponse&lt;ResponseOfCertificateCode&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -157,9 +157,9 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfCertificateCode> createExchangeCodeWithHttpInfo(CertificateCode request) throws ApiException {
+    public ApiResponse<ResponseOfCertificateCode> createExchangeCodeWithHttpInfo(CertificateCode request) throws ApiException {
         okhttp3.Call localVarCall = createExchangeCodeValidateBeforeCall(request, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfCertificateCode>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfCertificateCode>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -180,10 +180,10 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createExchangeCodeAsync(CertificateCode request, final ApiCallback<OutResponseOfCertificateCode> _callback) throws ApiException {
+    public okhttp3.Call createExchangeCodeAsync(CertificateCode request, final ApiCallback<ResponseOfCertificateCode> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createExchangeCodeValidateBeforeCall(request, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfCertificateCode>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfCertificateCode>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -251,7 +251,7 @@ public class DeviceApi {
      * 获取iOS设备证书
      * 获取iOS设备证书
      * @param udid udid (required)
-     * @return OutResponseOfPersonalCertificate
+     * @return ResponseOfPersonalCertificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -263,8 +263,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfPersonalCertificate getCertificate(String udid) throws ApiException {
-        ApiResponse<OutResponseOfPersonalCertificate> localVarResp = getCertificateWithHttpInfo(udid);
+    public ResponseOfPersonalCertificate getCertificate(String udid) throws ApiException {
+        ApiResponse<ResponseOfPersonalCertificate> localVarResp = getCertificateWithHttpInfo(udid);
         return localVarResp.getData();
     }
 
@@ -272,7 +272,7 @@ public class DeviceApi {
      * 获取iOS设备证书
      * 获取iOS设备证书
      * @param udid udid (required)
-     * @return ApiResponse&lt;OutResponseOfPersonalCertificate&gt;
+     * @return ApiResponse&lt;ResponseOfPersonalCertificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -284,9 +284,9 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfPersonalCertificate> getCertificateWithHttpInfo(String udid) throws ApiException {
+    public ApiResponse<ResponseOfPersonalCertificate> getCertificateWithHttpInfo(String udid) throws ApiException {
         okhttp3.Call localVarCall = getCertificateValidateBeforeCall(udid, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfPersonalCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfPersonalCertificate>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -307,10 +307,10 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificateAsync(String udid, final ApiCallback<OutResponseOfPersonalCertificate> _callback) throws ApiException {
+    public okhttp3.Call getCertificateAsync(String udid, final ApiCallback<ResponseOfPersonalCertificate> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCertificateValidateBeforeCall(udid, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfPersonalCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfPersonalCertificate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -399,7 +399,7 @@ public class DeviceApi {
      * @param limit limit (required)
      * @param page page (required)
      * @param asc asc (optional)
-     * @return OutResponseOfListOfPersonalCertificate
+     * @return ResponseOfListOfPersonalCertificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -411,8 +411,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfListOfPersonalCertificate getCertificates(Integer limit, Integer page, Boolean asc) throws ApiException {
-        ApiResponse<OutResponseOfListOfPersonalCertificate> localVarResp = getCertificatesWithHttpInfo(limit, page, asc);
+    public ResponseOfListOfPersonalCertificate getCertificates(Integer limit, Integer page, Boolean asc) throws ApiException {
+        ApiResponse<ResponseOfListOfPersonalCertificate> localVarResp = getCertificatesWithHttpInfo(limit, page, asc);
         return localVarResp.getData();
     }
 
@@ -422,7 +422,7 @@ public class DeviceApi {
      * @param limit limit (required)
      * @param page page (required)
      * @param asc asc (optional)
-     * @return ApiResponse&lt;OutResponseOfListOfPersonalCertificate&gt;
+     * @return ApiResponse&lt;ResponseOfListOfPersonalCertificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -434,9 +434,9 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfListOfPersonalCertificate> getCertificatesWithHttpInfo(Integer limit, Integer page, Boolean asc) throws ApiException {
+    public ApiResponse<ResponseOfListOfPersonalCertificate> getCertificatesWithHttpInfo(Integer limit, Integer page, Boolean asc) throws ApiException {
         okhttp3.Call localVarCall = getCertificatesValidateBeforeCall(limit, page, asc, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfPersonalCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfPersonalCertificate>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -459,10 +459,10 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCertificatesAsync(Integer limit, Integer page, Boolean asc, final ApiCallback<OutResponseOfListOfPersonalCertificate> _callback) throws ApiException {
+    public okhttp3.Call getCertificatesAsync(Integer limit, Integer page, Boolean asc, final ApiCallback<ResponseOfListOfPersonalCertificate> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCertificatesValidateBeforeCall(limit, page, asc, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfListOfPersonalCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfPersonalCertificate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -523,7 +523,7 @@ public class DeviceApi {
     /**
      * 获取证书支持类型
      * 获取证书支持类型
-     * @return OutResponseOfStatus
+     * @return ResponseOfStatus
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -535,15 +535,15 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfStatus getStatus() throws ApiException {
-        ApiResponse<OutResponseOfStatus> localVarResp = getStatusWithHttpInfo();
+    public ResponseOfStatus getStatus() throws ApiException {
+        ApiResponse<ResponseOfStatus> localVarResp = getStatusWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * 获取证书支持类型
      * 获取证书支持类型
-     * @return ApiResponse&lt;OutResponseOfStatus&gt;
+     * @return ApiResponse&lt;ResponseOfStatus&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -555,9 +555,9 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfStatus> getStatusWithHttpInfo() throws ApiException {
+    public ApiResponse<ResponseOfStatus> getStatusWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getStatusValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<OutResponseOfStatus>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfStatus>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -577,10 +577,10 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getStatusAsync(final ApiCallback<OutResponseOfStatus> _callback) throws ApiException {
+    public okhttp3.Call getStatusAsync(final ApiCallback<ResponseOfStatus> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getStatusValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfStatus>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfStatus>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -648,7 +648,7 @@ public class DeviceApi {
      * iOS设备注册
      * iOS设备注册
      * @param request request (required)
-     * @return OutResponseOfPersonalCertificate
+     * @return ResponseOfPersonalCertificate
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -660,8 +660,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfPersonalCertificate register(DeviceRequest request) throws ApiException {
-        ApiResponse<OutResponseOfPersonalCertificate> localVarResp = registerWithHttpInfo(request);
+    public ResponseOfPersonalCertificate register(DeviceRequest request) throws ApiException {
+        ApiResponse<ResponseOfPersonalCertificate> localVarResp = registerWithHttpInfo(request);
         return localVarResp.getData();
     }
 
@@ -669,7 +669,7 @@ public class DeviceApi {
      * iOS设备注册
      * iOS设备注册
      * @param request request (required)
-     * @return ApiResponse&lt;OutResponseOfPersonalCertificate&gt;
+     * @return ApiResponse&lt;ResponseOfPersonalCertificate&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -681,9 +681,9 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfPersonalCertificate> registerWithHttpInfo(DeviceRequest request) throws ApiException {
+    public ApiResponse<ResponseOfPersonalCertificate> registerWithHttpInfo(DeviceRequest request) throws ApiException {
         okhttp3.Call localVarCall = registerValidateBeforeCall(request, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfPersonalCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfPersonalCertificate>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -704,10 +704,10 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerAsync(DeviceRequest request, final ApiCallback<OutResponseOfPersonalCertificate> _callback) throws ApiException {
+    public okhttp3.Call registerAsync(DeviceRequest request, final ApiCallback<ResponseOfPersonalCertificate> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = registerValidateBeforeCall(request, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfPersonalCertificate>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfPersonalCertificate>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -775,7 +775,7 @@ public class DeviceApi {
      * iOS设备批量提交注册
      * 请确保批量提交的数据的准性，提交后不可撤销，批量提交注册将不直接返回证书，请通过回调接口接收证书，如果没提供回调接口，可使用查询接口查询
      * @param deviceRequests deviceRequests (required)
-     * @return OutResponseOfstring
+     * @return ResponseOfstring
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -787,8 +787,8 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfstring registers(List<DeviceRequest> deviceRequests) throws ApiException {
-        ApiResponse<OutResponseOfstring> localVarResp = registersWithHttpInfo(deviceRequests);
+    public ResponseOfstring registers(List<DeviceRequest> deviceRequests) throws ApiException {
+        ApiResponse<ResponseOfstring> localVarResp = registersWithHttpInfo(deviceRequests);
         return localVarResp.getData();
     }
 
@@ -796,7 +796,7 @@ public class DeviceApi {
      * iOS设备批量提交注册
      * 请确保批量提交的数据的准性，提交后不可撤销，批量提交注册将不直接返回证书，请通过回调接口接收证书，如果没提供回调接口，可使用查询接口查询
      * @param deviceRequests deviceRequests (required)
-     * @return ApiResponse&lt;OutResponseOfstring&gt;
+     * @return ApiResponse&lt;ResponseOfstring&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -808,9 +808,9 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfstring> registersWithHttpInfo(List<DeviceRequest> deviceRequests) throws ApiException {
+    public ApiResponse<ResponseOfstring> registersWithHttpInfo(List<DeviceRequest> deviceRequests) throws ApiException {
         okhttp3.Call localVarCall = registersValidateBeforeCall(deviceRequests, null);
-        Type localVarReturnType = new TypeToken<OutResponseOfstring>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfstring>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -831,10 +831,10 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registersAsync(List<DeviceRequest> deviceRequests, final ApiCallback<OutResponseOfstring> _callback) throws ApiException {
+    public okhttp3.Call registersAsync(List<DeviceRequest> deviceRequests, final ApiCallback<ResponseOfstring> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = registersValidateBeforeCall(deviceRequests, _callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfstring>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfstring>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

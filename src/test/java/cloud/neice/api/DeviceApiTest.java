@@ -16,11 +16,11 @@ package cloud.neice.api;
 import cloud.neice.ApiException;
 import cloud.neice.model.CertificateCode;
 import cloud.neice.model.DeviceRequest;
-import cloud.neice.model.OutResponseOfCertificateCode;
-import cloud.neice.model.OutResponseOfListOfPersonalCertificate;
-import cloud.neice.model.OutResponseOfPersonalCertificate;
-import cloud.neice.model.OutResponseOfStatus;
-import cloud.neice.model.OutResponseOfstring;
+import cloud.neice.model.ResponseOfCertificateCode;
+import cloud.neice.model.ResponseOfListOfPersonalCertificate;
+import cloud.neice.model.ResponseOfPersonalCertificate;
+import cloud.neice.model.ResponseOfStatus;
+import cloud.neice.model.ResponseOfstring;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -49,7 +49,7 @@ public class DeviceApiTest {
     @Test
     public void createExchangeCodeTest() throws ApiException {
         CertificateCode request = null;
-        OutResponseOfCertificateCode response = api.createExchangeCode(request);
+        ResponseOfCertificateCode response = api.createExchangeCode(request);
 
         // TODO: test validations
     }
@@ -65,7 +65,7 @@ public class DeviceApiTest {
     @Test
     public void getCertificateTest() throws ApiException {
         String udid = null;
-        OutResponseOfPersonalCertificate response = api.getCertificate(udid);
+        ResponseOfPersonalCertificate response = api.getCertificate(udid);
 
         // TODO: test validations
     }
@@ -83,7 +83,7 @@ public class DeviceApiTest {
         Integer limit = null;
         Integer page = null;
         Boolean asc = null;
-        OutResponseOfListOfPersonalCertificate response = api.getCertificates(limit, page, asc);
+        ResponseOfListOfPersonalCertificate response = api.getCertificates(limit, page, asc);
 
         // TODO: test validations
     }
@@ -98,7 +98,7 @@ public class DeviceApiTest {
      */
     @Test
     public void getStatusTest() throws ApiException {
-        OutResponseOfStatus response = api.getStatus();
+        ResponseOfStatus response = api.getStatus();
 
         // TODO: test validations
     }
@@ -114,7 +114,7 @@ public class DeviceApiTest {
     @Test
     public void registerTest() throws ApiException {
         DeviceRequest request = null;
-        OutResponseOfPersonalCertificate response = api.register(request);
+        ResponseOfPersonalCertificate response = api.register(request);
 
         // TODO: test validations
     }
@@ -130,7 +130,7 @@ public class DeviceApiTest {
     @Test
     public void registersTest() throws ApiException {
         List<DeviceRequest> deviceRequests = null;
-        OutResponseOfstring response = api.registers(deviceRequests);
+        ResponseOfstring response = api.registers(deviceRequests);
 
         // TODO: test validations
     }

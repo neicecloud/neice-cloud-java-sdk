@@ -1,12 +1,12 @@
 
 
-# HttpEntity
+# Result
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**body** | **Object** |  |  [optional]
+**type** | **String** |  |  [optional]
 
 
 

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import cloud.neice.model.OutResponseOfBalance;
+import cloud.neice.model.ResponseOfBalance;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -111,7 +111,7 @@ public class BalanceApi {
     /**
      * 获取用户余额
      * 获取用户余额
-     * @return OutResponseOfBalance
+     * @return ResponseOfBalance
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -123,15 +123,15 @@ public class BalanceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public OutResponseOfBalance getBalance() throws ApiException {
-        ApiResponse<OutResponseOfBalance> localVarResp = getBalanceWithHttpInfo();
+    public ResponseOfBalance getBalance() throws ApiException {
+        ApiResponse<ResponseOfBalance> localVarResp = getBalanceWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * 获取用户余额
      * 获取用户余额
-     * @return ApiResponse&lt;OutResponseOfBalance&gt;
+     * @return ApiResponse&lt;ResponseOfBalance&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -143,9 +143,9 @@ public class BalanceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<OutResponseOfBalance> getBalanceWithHttpInfo() throws ApiException {
+    public ApiResponse<ResponseOfBalance> getBalanceWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getBalanceValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<OutResponseOfBalance>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfBalance>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -165,10 +165,10 @@ public class BalanceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getBalanceAsync(final ApiCallback<OutResponseOfBalance> _callback) throws ApiException {
+    public okhttp3.Call getBalanceAsync(final ApiCallback<ResponseOfBalance> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getBalanceValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<OutResponseOfBalance>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfBalance>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

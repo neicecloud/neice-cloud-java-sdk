@@ -14,7 +14,7 @@
 package cloud.neice.api;
 
 import cloud.neice.ApiException;
-import cloud.neice.model.OutResponseOfBalance;
+import cloud.neice.model.ResponseOfBalance;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -42,7 +42,7 @@ public class BalanceApiTest {
      */
     @Test
     public void getBalanceTest() throws ApiException {
-        OutResponseOfBalance response = api.getBalance();
+        ResponseOfBalance response = api.getBalance();
 
         // TODO: test validations
     }

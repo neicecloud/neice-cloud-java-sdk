@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2025-07-19T10:31:25.793563+08:00[Asia/Shanghai]
+  - Build date: 2025-12-22T11:55:22.845084+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 
@@ -92,7 +92,7 @@ public class Example {
 
     BalanceApi apiInstance = new BalanceApi(defaultClient);
     try {
-      OutResponseOfBalance result = apiInstance.getBalance();
+      ResponseOfBalance result = apiInstance.getBalance();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BalanceApi#getBalance");
@@ -140,18 +140,18 @@ Class | Method | HTTP request | Description
  - [CertificateResponse](docs/CertificateResponse.md)
  - [DeviceRequest](docs/DeviceRequest.md)
  - [Endpoint](docs/Endpoint.md)
- - [HttpEntity](docs/HttpEntity.md)
  - [OpenEnterpriseCertificate](docs/OpenEnterpriseCertificate.md)
- - [OutResponseOfBalance](docs/OutResponseOfBalance.md)
- - [OutResponseOfCertificateCode](docs/OutResponseOfCertificateCode.md)
- - [OutResponseOfListOfCertificateResponse](docs/OutResponseOfListOfCertificateResponse.md)
- - [OutResponseOfListOfOpenEnterpriseCertificate](docs/OutResponseOfListOfOpenEnterpriseCertificate.md)
- - [OutResponseOfListOfPersonalCertificate](docs/OutResponseOfListOfPersonalCertificate.md)
- - [OutResponseOfPersonalCertificate](docs/OutResponseOfPersonalCertificate.md)
- - [OutResponseOfStatus](docs/OutResponseOfStatus.md)
- - [OutResponseOfVersion](docs/OutResponseOfVersion.md)
- - [OutResponseOfstring](docs/OutResponseOfstring.md)
  - [PersonalCertificate](docs/PersonalCertificate.md)
+ - [ResponseOfBalance](docs/ResponseOfBalance.md)
+ - [ResponseOfCertificateCode](docs/ResponseOfCertificateCode.md)
+ - [ResponseOfListOfCertificateResponse](docs/ResponseOfListOfCertificateResponse.md)
+ - [ResponseOfListOfOpenEnterpriseCertificate](docs/ResponseOfListOfOpenEnterpriseCertificate.md)
+ - [ResponseOfListOfPersonalCertificate](docs/ResponseOfListOfPersonalCertificate.md)
+ - [ResponseOfPersonalCertificate](docs/ResponseOfPersonalCertificate.md)
+ - [ResponseOfStatus](docs/ResponseOfStatus.md)
+ - [ResponseOfVersion](docs/ResponseOfVersion.md)
+ - [ResponseOfstring](docs/ResponseOfstring.md)
+ - [Result](docs/Result.md)
  - [Status](docs/Status.md)
  - [Version](docs/Version.md)
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="getCertificate1"></a>
 # **getCertificate1**
-> OutResponseOfListOfCertificateResponse getCertificate1(udid, code)
+> ResponseOfListOfCertificateResponse getCertificate1(udid, code)
 
 获取开发的iOS设备证书
 
@@ -43,7 +43,7 @@ public class Example {
     String udid = "udid_example"; // String | udid
     String code = "code_example"; // String | code
     try {
-      OutResponseOfListOfCertificateResponse result = apiInstance.getCertificate1(udid, code);
+      ResponseOfListOfCertificateResponse result = apiInstance.getCertificate1(udid, code);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenApi#getCertificate1");
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutResponseOfListOfCertificateResponse**](OutResponseOfListOfCertificateResponse.md)
+[**ResponseOfListOfCertificateResponse**](ResponseOfListOfCertificateResponse.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificate2"></a>
 # **getCertificate2**
-> OutResponseOfListOfCertificateResponse getCertificate2(udid)
+> ResponseOfListOfCertificateResponse getCertificate2(udid)
 
 获取开发的iOS设备证书
 
@@ -114,7 +114,7 @@ public class Example {
     OpenApi apiInstance = new OpenApi(defaultClient);
     String udid = "udid_example"; // String | udid
     try {
-      OutResponseOfListOfCertificateResponse result = apiInstance.getCertificate2(udid);
+      ResponseOfListOfCertificateResponse result = apiInstance.getCertificate2(udid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenApi#getCertificate2");
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutResponseOfListOfCertificateResponse**](OutResponseOfListOfCertificateResponse.md)
+[**ResponseOfListOfCertificateResponse**](ResponseOfListOfCertificateResponse.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificate3"></a>
 # **getCertificate3**
-> OutResponseOfListOfCertificateResponse getCertificate3(udid)
+> ResponseOfListOfCertificateResponse getCertificate3(udid)
 
 获取开发的iOS设备证书
 
@@ -185,7 +185,7 @@ public class Example {
     OpenApi apiInstance = new OpenApi(defaultClient);
     String udid = "udid_example"; // String | udid
     try {
-      OutResponseOfListOfCertificateResponse result = apiInstance.getCertificate3(udid);
+      ResponseOfListOfCertificateResponse result = apiInstance.getCertificate3(udid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenApi#getCertificate3");
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OutResponseOfListOfCertificateResponse**](OutResponseOfListOfCertificateResponse.md)
+[**ResponseOfListOfCertificateResponse**](ResponseOfListOfCertificateResponse.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 <a name="getCertificate4"></a>
 # **getCertificate4**
-> OutResponseOfListOfCertificateResponse getCertificate4(certificateRequest)
+> ResponseOfListOfCertificateResponse getCertificate4(request)
 
 获取开发的iOS设备证书
 
@@ -253,9 +253,9 @@ public class Example {
     Authorization.setAccessToken("YOUR ACCESS TOKEN");
 
     OpenApi apiInstance = new OpenApi(defaultClient);
-    CertificateRequest certificateRequest = new CertificateRequest(); // CertificateRequest | certificateRequest
+    CertificateRequest request = new CertificateRequest(); // CertificateRequest | request
     try {
-      OutResponseOfListOfCertificateResponse result = apiInstance.getCertificate4(certificateRequest);
+      ResponseOfListOfCertificateResponse result = apiInstance.getCertificate4(request);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenApi#getCertificate4");
@@ -272,11 +272,11 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificateRequest** | [**CertificateRequest**](CertificateRequest.md)| certificateRequest |
+ **request** | [**CertificateRequest**](CertificateRequest.md)| request |
 
 ### Return type
 
-[**OutResponseOfListOfCertificateResponse**](OutResponseOfListOfCertificateResponse.md)
+[**ResponseOfListOfCertificateResponse**](ResponseOfListOfCertificateResponse.md)
 
 ### Authorization
 
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 <a name="getEnterpriseCertificates"></a>
 # **getEnterpriseCertificates**
-> OutResponseOfListOfOpenEnterpriseCertificate getEnterpriseCertificates()
+> ResponseOfListOfOpenEnterpriseCertificate getEnterpriseCertificates()
 
 获取企业开发者证书
 
@@ -325,7 +325,7 @@ public class Example {
 
     OpenApi apiInstance = new OpenApi(defaultClient);
     try {
-      OutResponseOfListOfOpenEnterpriseCertificate result = apiInstance.getEnterpriseCertificates();
+      ResponseOfListOfOpenEnterpriseCertificate result = apiInstance.getEnterpriseCertificates();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenApi#getEnterpriseCertificates");
@@ -343,7 +343,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OutResponseOfListOfOpenEnterpriseCertificate**](OutResponseOfListOfOpenEnterpriseCertificate.md)
+[**ResponseOfListOfOpenEnterpriseCertificate**](ResponseOfListOfOpenEnterpriseCertificate.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ This endpoint does not need any parameter.
 
 <a name="getEnterpriseCertificates1"></a>
 # **getEnterpriseCertificates1**
-> OutResponseOfListOfOpenEnterpriseCertificate getEnterpriseCertificates1()
+> ResponseOfListOfOpenEnterpriseCertificate getEnterpriseCertificates1()
 
 获取企业开发者证书
 
@@ -391,7 +391,7 @@ public class Example {
 
     OpenApi apiInstance = new OpenApi(defaultClient);
     try {
-      OutResponseOfListOfOpenEnterpriseCertificate result = apiInstance.getEnterpriseCertificates1();
+      ResponseOfListOfOpenEnterpriseCertificate result = apiInstance.getEnterpriseCertificates1();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OpenApi#getEnterpriseCertificates1");
@@ -409,7 +409,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OutResponseOfListOfOpenEnterpriseCertificate**](OutResponseOfListOfOpenEnterpriseCertificate.md)
+[**ResponseOfListOfOpenEnterpriseCertificate**](ResponseOfListOfOpenEnterpriseCertificate.md)
 
 ### Authorization
 

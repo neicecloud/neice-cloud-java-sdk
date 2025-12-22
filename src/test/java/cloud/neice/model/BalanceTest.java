@@ -50,6 +50,14 @@ public class BalanceTest {
     }
 
     /**
+     * Test the property 'escrow'
+     */
+    @Test
+    public void escrowTest() {
+        // TODO: test escrow
+    }
+
+    /**
      * Test the property 'reward'
      */
     @Test

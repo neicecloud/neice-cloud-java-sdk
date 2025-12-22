@@ -13,7 +13,8 @@
 
 package cloud.neice.model;
 
-import cloud.neice.model.Status;
+import cloud.neice.model.CertificateCode;
+import cloud.neice.model.Result;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,17 +29,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for OutResponseOfStatus
+ * Model tests for ResponseOfCertificateCode
  */
-public class OutResponseOfStatusTest {
-    private final OutResponseOfStatus model = new OutResponseOfStatus();
+public class ResponseOfCertificateCodeTest {
+    private final ResponseOfCertificateCode model = new ResponseOfCertificateCode();
 
     /**
-     * Model tests for OutResponseOfStatus
+     * Model tests for ResponseOfCertificateCode
      */
     @Test
-    public void testOutResponseOfStatus() {
-        // TODO: test OutResponseOfStatus
+    public void testResponseOfCertificateCode() {
+        // TODO: test ResponseOfCertificateCode
+    }
+
+    /**
+     * Test the property 'action'
+     */
+    @Test
+    public void actionTest() {
+        // TODO: test action
     }
 
     /**
@@ -58,11 +67,51 @@ public class OutResponseOfStatusTest {
     }
 
     /**
+     * Test the property 'encrypt'
+     */
+    @Test
+    public void encryptTest() {
+        // TODO: test encrypt
+    }
+
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
+    }
+
+    /**
      * Test the property 'msg'
      */
     @Test
     public void msgTest() {
         // TODO: test msg
+    }
+
+    /**
+     * Test the property 'result'
+     */
+    @Test
+    public void resultTest() {
+        // TODO: test result
+    }
+
+    /**
+     * Test the property 'success'
+     */
+    @Test
+    public void successTest() {
+        // TODO: test success
+    }
+
+    /**
+     * Test the property 'uuid'
+     */
+    @Test
+    public void uuidTest() {
+        // TODO: test uuid
     }
 
 }

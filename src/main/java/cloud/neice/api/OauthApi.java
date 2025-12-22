@@ -27,7 +27,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import cloud.neice.model.HttpEntity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -254,7 +253,7 @@ public class OauthApi {
     /**
      * 获取用户信息
      * 获取用户信息
-     * @return HttpEntity
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -265,15 +264,15 @@ public class OauthApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public HttpEntity getUserInfo() throws ApiException {
-        ApiResponse<HttpEntity> localVarResp = getUserInfoWithHttpInfo();
+    public Object getUserInfo() throws ApiException {
+        ApiResponse<Object> localVarResp = getUserInfoWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * 获取用户信息
      * 获取用户信息
-     * @return ApiResponse&lt;HttpEntity&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -284,9 +283,9 @@ public class OauthApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HttpEntity> getUserInfoWithHttpInfo() throws ApiException {
+    public ApiResponse<Object> getUserInfoWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getUserInfoValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<HttpEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -305,10 +304,10 @@ public class OauthApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserInfoAsync(final ApiCallback<HttpEntity> _callback) throws ApiException {
+    public okhttp3.Call getUserInfoAsync(final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserInfoValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<HttpEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -369,7 +368,7 @@ public class OauthApi {
     /**
      * 获取用户信息
      * 获取用户信息
-     * @return HttpEntity
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -381,15 +380,15 @@ public class OauthApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public HttpEntity getUserInfo1() throws ApiException {
-        ApiResponse<HttpEntity> localVarResp = getUserInfo1WithHttpInfo();
+    public Object getUserInfo1() throws ApiException {
+        ApiResponse<Object> localVarResp = getUserInfo1WithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * 获取用户信息
      * 获取用户信息
-     * @return ApiResponse&lt;HttpEntity&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -401,9 +400,9 @@ public class OauthApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<HttpEntity> getUserInfo1WithHttpInfo() throws ApiException {
+    public ApiResponse<Object> getUserInfo1WithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = getUserInfo1ValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<HttpEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -423,10 +422,10 @@ public class OauthApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserInfo1Async(final ApiCallback<HttpEntity> _callback) throws ApiException {
+    public okhttp3.Call getUserInfo1Async(final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getUserInfo1ValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<HttpEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

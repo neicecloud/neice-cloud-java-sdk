@@ -13,6 +13,7 @@
 
 package cloud.neice.model;
 
+import cloud.neice.model.Result;
 import cloud.neice.model.Version;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -28,17 +29,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for OutResponseOfVersion
+ * Model tests for ResponseOfVersion
  */
-public class OutResponseOfVersionTest {
-    private final OutResponseOfVersion model = new OutResponseOfVersion();
+public class ResponseOfVersionTest {
+    private final ResponseOfVersion model = new ResponseOfVersion();
 
     /**
-     * Model tests for OutResponseOfVersion
+     * Model tests for ResponseOfVersion
      */
     @Test
-    public void testOutResponseOfVersion() {
-        // TODO: test OutResponseOfVersion
+    public void testResponseOfVersion() {
+        // TODO: test ResponseOfVersion
+    }
+
+    /**
+     * Test the property 'action'
+     */
+    @Test
+    public void actionTest() {
+        // TODO: test action
     }
 
     /**
@@ -58,11 +67,51 @@ public class OutResponseOfVersionTest {
     }
 
     /**
+     * Test the property 'encrypt'
+     */
+    @Test
+    public void encryptTest() {
+        // TODO: test encrypt
+    }
+
+    /**
+     * Test the property 'error'
+     */
+    @Test
+    public void errorTest() {
+        // TODO: test error
+    }
+
+    /**
      * Test the property 'msg'
      */
     @Test
     public void msgTest() {
         // TODO: test msg
+    }
+
+    /**
+     * Test the property 'result'
+     */
+    @Test
+    public void resultTest() {
+        // TODO: test result
+    }
+
+    /**
+     * Test the property 'success'
+     */
+    @Test
+    public void successTest() {
+        // TODO: test success
+    }
+
+    /**
+     * Test the property 'uuid'
+     */
+    @Test
+    public void uuidTest() {
+        // TODO: test uuid
     }
 
 }

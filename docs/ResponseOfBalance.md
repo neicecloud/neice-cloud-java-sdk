@@ -7,14 +7,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **action** | [**ActionEnum**](#ActionEnum) |  |  [optional]
+**algorithm** | **String** |  |  [optional]
+**ciphertext** | **String** |  |  [optional]
 **code** | **Integer** | 响应代码 | 
 **data** | [**Balance**](Balance.md) |  |  [optional]
-**encrypt** | **String** |  |  [optional]
 **error** | [**ErrorEnum**](#ErrorEnum) |  |  [optional]
 **msg** | **String** | 错误信息:成功时为空或为success |  [optional]
 **result** | [**Result**](Result.md) |  |  [optional]
+**session** | **String** |  |  [optional]
 **success** | **Boolean** |  |  [optional]
-**uuid** | **String** |  |  [optional]
 
 
 
@@ -103,6 +104,8 @@ EXPECTATION_FAILED | &quot;EXPECTATION_FAILED&quot;
 FAILED_DEPENDENCY | &quot;FAILED_DEPENDENCY&quot;
 FEATURE_NOT_AVAILABLE | &quot;FEATURE_NOT_AVAILABLE&quot;
 FORBIDDEN | &quot;FORBIDDEN&quot;
+FORCE_ENCRYPT_REQUEST_REQUIRED | &quot;FORCE_ENCRYPT_REQUEST_REQUIRED&quot;
+FORCE_ENCRYPT_SESSION_REQUIRED | &quot;FORCE_ENCRYPT_SESSION_REQUIRED&quot;
 FOUND | &quot;FOUND&quot;
 GATEWAY_TIMEOUT | &quot;GATEWAY_TIMEOUT&quot;
 GONE | &quot;GONE&quot;
@@ -162,8 +165,8 @@ RSA_KEY_PAIR_NOT_FOUND | &quot;RSA_KEY_PAIR_NOT_FOUND&quot;
 RSA_PRIVATE_KEY_NOT_FOUND | &quot;RSA_PRIVATE_KEY_NOT_FOUND&quot;
 RSA_PRIVATE_KEY_PARSE_ERROR | &quot;RSA_PRIVATE_KEY_PARSE_ERROR&quot;
 RSA_PUBLIC_KEY_PARSE_ERROR | &quot;RSA_PUBLIC_KEY_PARSE_ERROR&quot;
-RSA_UUID_INVALID | &quot;RSA_UUID_INVALID&quot;
-RSA_UUID_REQUIRED | &quot;RSA_UUID_REQUIRED&quot;
+RSA_SESSION_INVALID | &quot;RSA_SESSION_INVALID&quot;
+RSA_SESSION_REQUIRED | &quot;RSA_SESSION_REQUIRED&quot;
 SEE_OTHER | &quot;SEE_OTHER&quot;
 SERVICE_UNAVAILABLE | &quot;SERVICE_UNAVAILABLE&quot;
 SESSION_EXPIRED | &quot;SESSION_EXPIRED&quot;

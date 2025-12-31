@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * ResponseOfCertificateCode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-22T11:55:22.845084+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-31T09:30:11.322380+08:00[Asia/Shanghai]")
 public class ResponseOfCertificateCode {
   /**
    * Gets or Sets action
@@ -92,6 +92,14 @@ public class ResponseOfCertificateCode {
   @SerializedName(SERIALIZED_NAME_ACTION)
   private ActionEnum action;
 
+  public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
+  @SerializedName(SERIALIZED_NAME_ALGORITHM)
+  private String algorithm;
+
+  public static final String SERIALIZED_NAME_CIPHERTEXT = "ciphertext";
+  @SerializedName(SERIALIZED_NAME_CIPHERTEXT)
+  private String ciphertext;
+
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
@@ -99,10 +107,6 @@ public class ResponseOfCertificateCode {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   private CertificateCode data;
-
-  public static final String SERIALIZED_NAME_ENCRYPT = "encrypt";
-  @SerializedName(SERIALIZED_NAME_ENCRYPT)
-  private String encrypt;
 
   /**
    * Gets or Sets error
@@ -243,6 +247,10 @@ public class ResponseOfCertificateCode {
     
     FORBIDDEN("FORBIDDEN"),
     
+    FORCE_ENCRYPT_REQUEST_REQUIRED("FORCE_ENCRYPT_REQUEST_REQUIRED"),
+    
+    FORCE_ENCRYPT_SESSION_REQUIRED("FORCE_ENCRYPT_SESSION_REQUIRED"),
+    
     FOUND("FOUND"),
     
     GATEWAY_TIMEOUT("GATEWAY_TIMEOUT"),
@@ -361,9 +369,9 @@ public class ResponseOfCertificateCode {
     
     RSA_PUBLIC_KEY_PARSE_ERROR("RSA_PUBLIC_KEY_PARSE_ERROR"),
     
-    RSA_UUID_INVALID("RSA_UUID_INVALID"),
+    RSA_SESSION_INVALID("RSA_SESSION_INVALID"),
     
-    RSA_UUID_REQUIRED("RSA_UUID_REQUIRED"),
+    RSA_SESSION_REQUIRED("RSA_SESSION_REQUIRED"),
     
     SEE_OTHER("SEE_OTHER"),
     
@@ -463,13 +471,13 @@ public class ResponseOfCertificateCode {
   @SerializedName(SERIALIZED_NAME_RESULT)
   private Result result;
 
+  public static final String SERIALIZED_NAME_SESSION = "session";
+  @SerializedName(SERIALIZED_NAME_SESSION)
+  private String session;
+
   public static final String SERIALIZED_NAME_SUCCESS = "success";
   @SerializedName(SERIALIZED_NAME_SUCCESS)
   private Boolean success;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  private String uuid;
 
 
   public ResponseOfCertificateCode action(ActionEnum action) {
@@ -492,6 +500,52 @@ public class ResponseOfCertificateCode {
 
   public void setAction(ActionEnum action) {
     this.action = action;
+  }
+
+
+  public ResponseOfCertificateCode algorithm(String algorithm) {
+    
+    this.algorithm = algorithm;
+    return this;
+  }
+
+   /**
+   * Get algorithm
+   * @return algorithm
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getAlgorithm() {
+    return algorithm;
+  }
+
+
+  public void setAlgorithm(String algorithm) {
+    this.algorithm = algorithm;
+  }
+
+
+  public ResponseOfCertificateCode ciphertext(String ciphertext) {
+    
+    this.ciphertext = ciphertext;
+    return this;
+  }
+
+   /**
+   * Get ciphertext
+   * @return ciphertext
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getCiphertext() {
+    return ciphertext;
+  }
+
+
+  public void setCiphertext(String ciphertext) {
+    this.ciphertext = ciphertext;
   }
 
 
@@ -537,29 +591,6 @@ public class ResponseOfCertificateCode {
 
   public void setData(CertificateCode data) {
     this.data = data;
-  }
-
-
-  public ResponseOfCertificateCode encrypt(String encrypt) {
-    
-    this.encrypt = encrypt;
-    return this;
-  }
-
-   /**
-   * Get encrypt
-   * @return encrypt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getEncrypt() {
-    return encrypt;
-  }
-
-
-  public void setEncrypt(String encrypt) {
-    this.encrypt = encrypt;
   }
 
 
@@ -632,6 +663,29 @@ public class ResponseOfCertificateCode {
   }
 
 
+  public ResponseOfCertificateCode session(String session) {
+    
+    this.session = session;
+    return this;
+  }
+
+   /**
+   * Get session
+   * @return session
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSession() {
+    return session;
+  }
+
+
+  public void setSession(String session) {
+    this.session = session;
+  }
+
+
   public ResponseOfCertificateCode success(Boolean success) {
     
     this.success = success;
@@ -655,29 +709,6 @@ public class ResponseOfCertificateCode {
   }
 
 
-  public ResponseOfCertificateCode uuid(String uuid) {
-    
-    this.uuid = uuid;
-    return this;
-  }
-
-   /**
-   * Get uuid
-   * @return uuid
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getUuid() {
-    return uuid;
-  }
-
-
-  public void setUuid(String uuid) {
-    this.uuid = uuid;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -688,19 +719,20 @@ public class ResponseOfCertificateCode {
     }
     ResponseOfCertificateCode responseOfCertificateCode = (ResponseOfCertificateCode) o;
     return Objects.equals(this.action, responseOfCertificateCode.action) &&
+        Objects.equals(this.algorithm, responseOfCertificateCode.algorithm) &&
+        Objects.equals(this.ciphertext, responseOfCertificateCode.ciphertext) &&
         Objects.equals(this.code, responseOfCertificateCode.code) &&
         Objects.equals(this.data, responseOfCertificateCode.data) &&
-        Objects.equals(this.encrypt, responseOfCertificateCode.encrypt) &&
         Objects.equals(this.error, responseOfCertificateCode.error) &&
         Objects.equals(this.msg, responseOfCertificateCode.msg) &&
         Objects.equals(this.result, responseOfCertificateCode.result) &&
-        Objects.equals(this.success, responseOfCertificateCode.success) &&
-        Objects.equals(this.uuid, responseOfCertificateCode.uuid);
+        Objects.equals(this.session, responseOfCertificateCode.session) &&
+        Objects.equals(this.success, responseOfCertificateCode.success);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, code, data, encrypt, error, msg, result, success, uuid);
+    return Objects.hash(action, algorithm, ciphertext, code, data, error, msg, result, session, success);
   }
 
 
@@ -709,14 +741,15 @@ public class ResponseOfCertificateCode {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResponseOfCertificateCode {\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
+    sb.append("    ciphertext: ").append(toIndentedString(ciphertext)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
-    sb.append("    encrypt: ").append(toIndentedString(encrypt)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

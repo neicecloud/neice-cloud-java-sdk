@@ -22,8 +22,6 @@ tags:
   name: endpoint
 - description: 客户端授权登录认证获取Token接口
   name: oauth
-- description: 开放设备证书，提供设备证书提取和查询功能
-  name: open
 - description: 系统接口版本
   name: version
 paths:
@@ -434,209 +432,6 @@ paths:
       tags:
       - oauth
       x-accepts: application/json;charset=UTF-8
-  /open/api/v1/certificate:
-    get:
-      description: 获取开发的iOS设备证书
-      operationId: getCertificate_1
-      parameters:
-      - description: code
-        in: query
-        name: code
-        schema:
-          type: string
-      - description: udid
-        in: query
-        name: udid
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ResponseOfListOfCertificateResponse'
-          description: OK
-        "401":
-          content: {}
-          description: Unauthorized
-        "403":
-          content: {}
-          description: Forbidden
-        "404":
-          content: {}
-          description: Not Found
-      security:
-      - Authorization:
-        - global
-      summary: 获取开发的iOS设备证书
-      tags:
-      - open
-      x-accepts: '*/*'
-    post:
-      description: 获取开发的iOS设备证书
-      operationId: getCertificate_4
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CertificateRequest'
-        description: request
-        required: true
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ResponseOfListOfCertificateResponse'
-          description: OK
-        "201":
-          content: {}
-          description: Created
-        "401":
-          content: {}
-          description: Unauthorized
-        "403":
-          content: {}
-          description: Forbidden
-        "404":
-          content: {}
-          description: Not Found
-      security:
-      - Authorization:
-        - global
-      summary: 获取开发的iOS设备证书
-      tags:
-      - open
-      x-codegen-request-body-name: request
-      x-contentType: application/json
-      x-accepts: '*/*'
-  /open/api/v1/certificate/{udid}:
-    get:
-      description: 获取开发的iOS设备证书
-      operationId: getCertificate_3
-      parameters:
-      - description: udid
-        in: path
-        name: udid
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ResponseOfListOfCertificateResponse'
-          description: OK
-        "401":
-          content: {}
-          description: Unauthorized
-        "403":
-          content: {}
-          description: Forbidden
-        "404":
-          content: {}
-          description: Not Found
-      security:
-      - Authorization:
-        - global
-      summary: 获取开发的iOS设备证书
-      tags:
-      - open
-      x-accepts: '*/*'
-    post:
-      description: 获取开发的iOS设备证书
-      operationId: getCertificate_2
-      parameters:
-      - description: udid
-        in: path
-        name: udid
-        required: true
-        schema:
-          type: string
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ResponseOfListOfCertificateResponse'
-          description: OK
-        "201":
-          content: {}
-          description: Created
-        "401":
-          content: {}
-          description: Unauthorized
-        "403":
-          content: {}
-          description: Forbidden
-        "404":
-          content: {}
-          description: Not Found
-      security:
-      - Authorization:
-        - global
-      summary: 获取开发的iOS设备证书
-      tags:
-      - open
-      x-accepts: '*/*'
-  /open/api/v1/enterprise/certificates:
-    get:
-      description: 获取企业开发者证书
-      operationId: getEnterpriseCertificates
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ResponseOfListOfOpenEnterpriseCertificate'
-          description: OK
-        "401":
-          content: {}
-          description: Unauthorized
-        "403":
-          content: {}
-          description: Forbidden
-        "404":
-          content: {}
-          description: Not Found
-      security:
-      - Authorization:
-        - global
-      summary: 获取企业开发者证书
-      tags:
-      - open
-      x-accepts: '*/*'
-    post:
-      description: 获取企业开发者证书
-      operationId: getEnterpriseCertificates_1
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/ResponseOfListOfOpenEnterpriseCertificate'
-          description: OK
-        "201":
-          content: {}
-          description: Created
-        "401":
-          content: {}
-          description: Unauthorized
-        "403":
-          content: {}
-          description: Forbidden
-        "404":
-          content: {}
-          description: Not Found
-      security:
-      - Authorization:
-        - global
-      summary: 获取企业开发者证书
-      tags:
-      - open
-      x-accepts: '*/*'
   /user/api/v1/balance:
     post:
       description: 获取用户余额
@@ -672,18 +467,27 @@ components:
     Balance:
       example:
         reward: 5.962133916683182
+        ciphertext: ciphertext
         total: 5.637376656633329
         balance: 6.027456183070403
+        session: session
         voucher: 2.3021358869347655
         userUuid: userUuid
         escrow: 1.4658129805029452
+        algorithm: algorithm
       properties:
+        algorithm:
+          type: string
         balance:
           type: number
+        ciphertext:
+          type: string
         escrow:
           type: number
         reward:
           type: number
+        session:
+          type: string
         total:
           type: number
         userUuid:
@@ -736,199 +540,6 @@ components:
       required:
       - token
       title: CertificateCode
-      type: object
-    CertificateRequest:
-      example:
-        code: code
-        phone: phone
-        reserve: true
-        force: true
-        model: model
-        id: id
-        udid: udid
-        version: version
-      properties:
-        code:
-          description: 通过设备证书兑换码可以兑换设备证书
-          type: string
-        force:
-          description: 强制触发证书查询刷新:证书模式下，系统如果检查该设备证书不为空，将不会触发渠道证书拉取同步，增加强制后，将强制系统查询各渠道证书
-          type: boolean
-        id:
-          description: 证书的UUID
-          type: string
-        model:
-          description: 指定设备型号:iPhone,iPad,iPod,如不指定则使用任何设备
-          type: string
-        phone:
-          description: 如果你兑换的预定证书，需输入手机号用以接收激活通知
-          type: string
-        reserve:
-          description: 预定证书
-          type: boolean
-        udid:
-          description: iOS设备的UDID
-          type: string
-        version:
-          description: 传递APP客户端的版本号
-          type: string
-      title: CertificateRequest
-      type: object
-    CertificateResponse:
-      example:
-        backup: true
-        notAfter: 2000-01-23T04:56:07.000+00:00
-        code: code
-        buy: buy
-        mobileprovision: mobileprovision
-        certificate: certificate
-        description: description
-        invisible: true
-        experience: 1
-        title: title
-        uuid: uuid
-        valid: true
-        password: password
-        price: 5
-        contact: contact
-        reserve: true
-        create: 2000-01-23T04:56:07.000+00:00
-        lock: 5
-        indicate: indicate
-        tag: tag
-        free: true
-        udid: udid
-        actual: 6
-        serialNumber: serialNumber
-        profile: profile
-        mobile: mobile
-        pay: pay
-        signed: 7
-        team: team
-        quality: 2
-        phone: phone
-        domain: domain
-        teamId: teamId
-        name: name
-        device: device
-      properties:
-        actual:
-          description: 实际支付
-          format: int32
-          type: integer
-        backup:
-          description: 备份证书
-          type: boolean
-        buy:
-          description: 购买地址
-          type: string
-        certificate:
-          description: Base64格式的证书P12文件
-          type: string
-        code:
-          description: 证书兑换码
-          type: string
-        contact:
-          description: 联系人
-          type: string
-        create:
-          description: 创建时间
-          format: date-time
-          type: string
-        description:
-          description: 证书说明
-          type: string
-        device:
-          description: 设备名
-          type: string
-        domain:
-          description: 归属
-          type: string
-        experience:
-          description: 允许用户体验的次数
-          format: int32
-          type: integer
-        free:
-          description: 自由
-          type: boolean
-        indicate:
-          description: 指示
-          type: string
-        invisible:
-          description: 隐形证书
-          type: boolean
-        lock:
-          description: 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁
-          format: int32
-          type: integer
-        mobile:
-          description: 预定证书的手机号
-          type: string
-        mobileprovision:
-          description: Base64格式的证书描述文件
-          type: string
-        name:
-          description: 证书名
-          type: string
-        notAfter:
-          description: 过期时间
-          format: date-time
-          type: string
-        password:
-          description: 证书P12对应的密码
-          type: string
-        pay:
-          description: 购买
-          type: string
-        phone:
-          description: 预定证书的手机号
-          type: string
-        price:
-          description: 官方定价
-          format: int32
-          type: integer
-        profile:
-          description: 证书描述文件ID
-          type: string
-        quality:
-          description: 证书质保天数
-          format: int32
-          type: integer
-        reserve:
-          description: 是否为预定的证书
-          type: boolean
-        serialNumber:
-          type: string
-        signed:
-          description: 用户签名应用的次数
-          format: int32
-          type: integer
-        tag:
-          description: 标记
-          type: string
-        team:
-          description: 证书TEAM
-          type: string
-        teamId:
-          type: string
-        title:
-          description: 标题
-          type: string
-        udid:
-          description: 证书的UDID
-          type: string
-        uuid:
-          description: 上游渠道生成的证书的UUID
-          type: string
-        valid:
-          description: 证书是否有效
-          type: boolean
-      required:
-      - certificate
-      - mobileprovision
-      - password
-      - udid
-      title: CertificateResponse
       type: object
     DeviceRequest:
       example:
@@ -999,63 +610,6 @@ components:
         name:
           type: string
       title: Endpoint
-      type: object
-    OpenEnterpriseCertificate:
-      example:
-        notAfter: 2000-01-23T04:56:07.000+00:00
-        serialNumber: serialNumber
-        issuerDn: issuerDn
-        mobileprovision: mobileprovision
-        revocationTime: 2000-01-23T04:56:07.000+00:00
-        certificate: certificate
-        certificateName: certificateName
-        uuid: uuid
-        notBefore: 2000-01-23T04:56:07.000+00:00
-        valid: true
-        password: password
-        createTime: 2000-01-23T04:56:07.000+00:00
-        teamId: teamId
-        revocationReason: revocationReason
-        md5: md5
-        subjectDn: subjectDn
-      properties:
-        certificate:
-          type: string
-        certificateName:
-          type: string
-        createTime:
-          format: date-time
-          type: string
-        issuerDn:
-          type: string
-        md5:
-          type: string
-        mobileprovision:
-          type: string
-        notAfter:
-          format: date-time
-          type: string
-        notBefore:
-          format: date-time
-          type: string
-        password:
-          type: string
-        revocationReason:
-          type: string
-        revocationTime:
-          format: date-time
-          type: string
-        serialNumber:
-          type: string
-        subjectDn:
-          type: string
-        teamId:
-          type: string
-        uuid:
-          type: string
-        valid:
-          type: boolean
-      title: OpenEnterpriseCertificate
       type: object
     PersonalCertificate:
       example:
@@ -1177,19 +731,23 @@ components:
         msg: msg
         result:
           type: type
+        ciphertext: ciphertext
         code: 0
         data:
           reward: 5.962133916683182
+          ciphertext: ciphertext
           total: 5.637376656633329
           balance: 6.027456183070403
+          session: session
           voucher: 2.3021358869347655
           userUuid: userUuid
           escrow: 1.4658129805029452
-        encrypt: encrypt
+          algorithm: algorithm
+        session: session
         success: true
         action: GET_AES_KEY
         error: ACCEPTED
-        uuid: uuid
+        algorithm: algorithm
       properties:
         action:
           enum:
@@ -1201,14 +759,16 @@ components:
           - UPDATE_CLIENT_VERSION
           - UPLOAD_CLIENT_PUBLIC_KEY
           type: string
+        algorithm:
+          type: string
+        ciphertext:
+          type: string
         code:
           description: 响应代码
           format: int32
           type: integer
         data:
           $ref: '#/components/schemas/Balance'
-        encrypt:
-          type: string
         error:
           enum:
           - ACCEPTED
@@ -1278,6 +838,8 @@ components:
           - FAILED_DEPENDENCY
           - FEATURE_NOT_AVAILABLE
           - FORBIDDEN
+          - FORCE_ENCRYPT_REQUEST_REQUIRED
+          - FORCE_ENCRYPT_SESSION_REQUIRED
           - FOUND
           - GATEWAY_TIMEOUT
           - GONE
@@ -1337,8 +899,8 @@ components:
           - RSA_PRIVATE_KEY_NOT_FOUND
           - RSA_PRIVATE_KEY_PARSE_ERROR
           - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
+          - RSA_SESSION_INVALID
+          - RSA_SESSION_REQUIRED
           - SEE_OTHER
           - SERVICE_UNAVAILABLE
           - SESSION_EXPIRED
@@ -1369,10 +931,10 @@ components:
           type: string
         result:
           $ref: '#/components/schemas/Result'
+        session:
+          type: string
         success:
           type: boolean
-        uuid:
-          type: string
       required:
       - code
       title: ResponseOfBalance
@@ -1382,6 +944,7 @@ components:
         msg: msg
         result:
           type: type
+        ciphertext: ciphertext
         code: 0
         data:
           code: code
@@ -1393,11 +956,11 @@ components:
           udid: udid
           quality: 6
           token: token
-        encrypt: encrypt
+        session: session
         success: true
         action: GET_AES_KEY
         error: ACCEPTED
-        uuid: uuid
+        algorithm: algorithm
       properties:
         action:
           enum:
@@ -1408,6 +971,10 @@ components:
           - RE_LOGIN
           - UPDATE_CLIENT_VERSION
           - UPLOAD_CLIENT_PUBLIC_KEY
+          type: string
+        algorithm:
+          type: string
+        ciphertext:
           type: string
         code:
           description: 响应代码
@@ -1415,8 +982,6 @@ components:
           type: integer
         data:
           $ref: '#/components/schemas/CertificateCode'
-        encrypt:
-          type: string
         error:
           enum:
           - ACCEPTED
@@ -1486,6 +1051,8 @@ components:
           - FAILED_DEPENDENCY
           - FEATURE_NOT_AVAILABLE
           - FORBIDDEN
+          - FORCE_ENCRYPT_REQUEST_REQUIRED
+          - FORCE_ENCRYPT_SESSION_REQUIRED
           - FOUND
           - GATEWAY_TIMEOUT
           - GONE
@@ -1545,8 +1112,8 @@ components:
           - RSA_PRIVATE_KEY_NOT_FOUND
           - RSA_PRIVATE_KEY_PARSE_ERROR
           - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
+          - RSA_SESSION_INVALID
+          - RSA_SESSION_REQUIRED
           - SEE_OTHER
           - SERVICE_UNAVAILABLE
           - SESSION_EXPIRED
@@ -1577,525 +1144,20 @@ components:
           type: string
         result:
           $ref: '#/components/schemas/Result'
+        session:
+          type: string
         success:
           type: boolean
-        uuid:
-          type: string
       required:
       - code
       title: ResponseOfCertificateCode
-      type: object
-    ResponseOfListOfCertificateResponse:
-      example:
-        msg: msg
-        result:
-          type: type
-        code: 0
-        data:
-        - backup: true
-          notAfter: 2000-01-23T04:56:07.000+00:00
-          code: code
-          buy: buy
-          mobileprovision: mobileprovision
-          certificate: certificate
-          description: description
-          invisible: true
-          experience: 1
-          title: title
-          uuid: uuid
-          valid: true
-          password: password
-          price: 5
-          contact: contact
-          reserve: true
-          create: 2000-01-23T04:56:07.000+00:00
-          lock: 5
-          indicate: indicate
-          tag: tag
-          free: true
-          udid: udid
-          actual: 6
-          serialNumber: serialNumber
-          profile: profile
-          mobile: mobile
-          pay: pay
-          signed: 7
-          team: team
-          quality: 2
-          phone: phone
-          domain: domain
-          teamId: teamId
-          name: name
-          device: device
-        - backup: true
-          notAfter: 2000-01-23T04:56:07.000+00:00
-          code: code
-          buy: buy
-          mobileprovision: mobileprovision
-          certificate: certificate
-          description: description
-          invisible: true
-          experience: 1
-          title: title
-          uuid: uuid
-          valid: true
-          password: password
-          price: 5
-          contact: contact
-          reserve: true
-          create: 2000-01-23T04:56:07.000+00:00
-          lock: 5
-          indicate: indicate
-          tag: tag
-          free: true
-          udid: udid
-          actual: 6
-          serialNumber: serialNumber
-          profile: profile
-          mobile: mobile
-          pay: pay
-          signed: 7
-          team: team
-          quality: 2
-          phone: phone
-          domain: domain
-          teamId: teamId
-          name: name
-          device: device
-        encrypt: encrypt
-        success: true
-        action: GET_AES_KEY
-        error: ACCEPTED
-        uuid: uuid
-      properties:
-        action:
-          enum:
-          - GET_AES_KEY
-          - NONE
-          - REFRESH_SERVER_PUBLIC_KEY
-          - RETRY_LATER
-          - RE_LOGIN
-          - UPDATE_CLIENT_VERSION
-          - UPLOAD_CLIENT_PUBLIC_KEY
-          type: string
-        code:
-          description: 响应代码
-          format: int32
-          type: integer
-        data:
-          description: 响应数据
-          items:
-            $ref: '#/components/schemas/CertificateResponse'
-          type: array
-        encrypt:
-          type: string
-        error:
-          enum:
-          - ACCEPTED
-          - ACCESS_RATE_LIMIT
-          - ACCOUNT_CANCELLED
-          - ACCOUNT_DISABLED
-          - ACCOUNT_LOCKED
-          - ACCOUNT_NOT_ACTIVATED
-          - AES_DECRYPTED_DATA_EMPTY
-          - AES_DECRYPT_FAILED
-          - AES_ENCRYPTED_DATA_EMPTY
-          - AES_ENCRYPT_FAILED
-          - AES_KEY_EXPIRED
-          - AES_KEY_EXPIRING_SOON
-          - AES_KEY_FORMAT_ERROR
-          - AES_KEY_GENERATE_FAILED
-          - AES_KEY_LENGTH_ERROR
-          - AES_KEY_NOT_FOUND
-          - AES_MODE_NOT_SUPPORTED
-          - AES_PADDING_NOT_SUPPORTED
-          - AES_VECTOR_FORMAT_ERROR
-          - AES_VECTOR_LENGTH_ERROR
-          - ALREADY_REPORTED
-          - BAD_GATEWAY
-          - BAD_REQUEST
-          - BUSINESS_ERROR
-          - CAPTCHA_ERROR
-          - CAPTCHA_EXPIRED
-          - CONFLICT
-          - CONTINUE
-          - CREATED
-          - DATABASE_BACKUP_FAILED
-          - DATABASE_CHECK_CONSTRAINT_VIOLATION
-          - DATABASE_COLUMN_NOT_FOUND
-          - DATABASE_CONNECTION_FAILED
-          - DATABASE_CONNECTION_POOL_EXHAUSTED
-          - DATABASE_DEADLOCK
-          - DATABASE_DELETE_FAILED
-          - DATABASE_DUPLICATE_KEY
-          - DATABASE_FOREIGN_KEY_VIOLATION
-          - DATABASE_INDEX_NOT_FOUND
-          - DATABASE_INSERT_FAILED
-          - DATABASE_NOT_NULL_VIOLATION
-          - DATABASE_OPERATION_FAILED
-          - DATABASE_PERMISSION_DENIED
-          - DATABASE_QUERY_FAILED
-          - DATABASE_READ_ONLY
-          - DATABASE_RESTORE_FAILED
-          - DATABASE_SQL_SYNTAX_ERROR
-          - DATABASE_TABLE_NOT_FOUND
-          - DATABASE_TIMEOUT
-          - DATABASE_TRANSACTION_FAILED
-          - DATABASE_UNIQUE_CONSTRAINT_VIOLATION
-          - DATABASE_UPDATE_FAILED
-          - DATABASE_VERSION_INCOMPATIBLE
-          - DATA_ALREADY_EXISTS
-          - DATA_CONSTRAINT_VIOLATION
-          - DATA_FORMAT_ERROR
-          - DATA_INTEGRITY_ERROR
-          - DATA_NOT_FOUND
-          - DATA_RANGE_ERROR
-          - DATA_RELATION_ERROR
-          - DATA_STATUS_ERROR
-          - DATA_VERSION_CONFLICT
-          - EARLY_HINTS
-          - EXPECTATION_FAILED
-          - FAILED_DEPENDENCY
-          - FEATURE_NOT_AVAILABLE
-          - FORBIDDEN
-          - FOUND
-          - GATEWAY_TIMEOUT
-          - GONE
-          - HTTP_VERSION_NOT_SUPPORTED
-          - IM_USED
-          - INSUFFICIENT_STORAGE
-          - INTERNAL_SERVER_ERROR
-          - IP_FORBIDDEN
-          - LENGTH_REQUIRED
-          - LOCKED
-          - LOGIN_EXPIRED
-          - LOGIN_FAILED
-          - LOOP_DETECTED
-          - METHOD_NOT_ALLOWED
-          - MOVED_PERMANENTLY
-          - MULTIPLE_CHOICES
-          - MULTI_STATUS
-          - NETWORK_AUTHENTICATION_REQUIRED
-          - NON_AUTHORITATIVE_INFORMATION
-          - NOT_ACCEPTABLE
-          - NOT_EXTENDED
-          - NOT_FOUND
-          - NOT_IMPLEMENTED
-          - NOT_MODIFIED
-          - NO_CONTENT
-          - OK
-          - OPERATION_NOT_ALLOWED
-          - OPERATION_TIMEOUT
-          - PARTIAL_CONTENT
-          - PASSWORD_EXPIRED
-          - PASSWORD_WEAK
-          - PAYLOAD_TOO_LARGE
-          - PAYMENT_REQUIRED
-          - PERMANENT_REDIRECT
-          - PERMISSION_DENIED
-          - PRECONDITION_FAILED
-          - PRECONDITION_REQUIRED
-          - PROCESSING
-          - PROXY_AUTHENTICATION_REQUIRED
-          - RANGE_NOT_SATISFIABLE
-          - REFRESH_TOKEN_EXPIRED
-          - REFRESH_TOKEN_INVALID
-          - REQUEST_HEADER_FIELDS_TOO_LARGE
-          - REQUEST_TIMEOUT
-          - RESET_CONTENT
-          - RESOURCE_LOCKED
-          - RSA_CLIENT_PUBLIC_KEY_EXPIRING_SOON
-          - RSA_CLIENT_PUBLIC_KEY_NOT_FOUND
-          - RSA_DECRYPT_FAILED
-          - RSA_ENCRYPT_FAILED
-          - RSA_KEY_FORMAT_ERROR
-          - RSA_KEY_GENERATE_FAILED
-          - RSA_KEY_LENGTH_ERROR
-          - RSA_KEY_PAIR_EXPIRING_SOON
-          - RSA_KEY_PAIR_MISMATCH
-          - RSA_KEY_PAIR_NOT_FOUND
-          - RSA_PRIVATE_KEY_NOT_FOUND
-          - RSA_PRIVATE_KEY_PARSE_ERROR
-          - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
-          - SEE_OTHER
-          - SERVICE_UNAVAILABLE
-          - SESSION_EXPIRED
-          - SESSION_INVALID
-          - SUCCESS
-          - SWITCHING_PROTOCOLS
-          - SYSTEM_MAINTENANCE
-          - TEMPORARY_REDIRECT
-          - THIRD_PARTY_LOGIN_FAILED
-          - TOKEN_EXPIRED
-          - TOKEN_INVALID
-          - TOO_EARLY
-          - TOO_MANY_REQUESTS
-          - UNAUTHORIZED
-          - UNAVAILABLE_FOR_LEGAL_REASONS
-          - UNKNOWN_ERROR
-          - UNPROCESSABLE_ENTITY
-          - UNSUPPORTED_MEDIA_TYPE
-          - UPGRADE_REQUIRED
-          - URI_TOO_LONG
-          - USER_NOT_LOGIN
-          - USE_PROXY
-          - VARIANT_ALSO_NEGOTIATES
-          - VERSION_INCOMPATIBLE
-          type: string
-        msg:
-          description: 错误信息:成功时为空或为success
-          type: string
-        result:
-          $ref: '#/components/schemas/Result'
-        success:
-          type: boolean
-        uuid:
-          type: string
-      required:
-      - code
-      title: ResponseOfListOfCertificateResponse
-      type: object
-    ResponseOfListOfOpenEnterpriseCertificate:
-      example:
-        msg: msg
-        result:
-          type: type
-        code: 0
-        data:
-        - notAfter: 2000-01-23T04:56:07.000+00:00
-          serialNumber: serialNumber
-          issuerDn: issuerDn
-          mobileprovision: mobileprovision
-          revocationTime: 2000-01-23T04:56:07.000+00:00
-          certificate: certificate
-          certificateName: certificateName
-          uuid: uuid
-          notBefore: 2000-01-23T04:56:07.000+00:00
-          valid: true
-          password: password
-          createTime: 2000-01-23T04:56:07.000+00:00
-          teamId: teamId
-          revocationReason: revocationReason
-          md5: md5
-          subjectDn: subjectDn
-        - notAfter: 2000-01-23T04:56:07.000+00:00
-          serialNumber: serialNumber
-          issuerDn: issuerDn
-          mobileprovision: mobileprovision
-          revocationTime: 2000-01-23T04:56:07.000+00:00
-          certificate: certificate
-          certificateName: certificateName
-          uuid: uuid
-          notBefore: 2000-01-23T04:56:07.000+00:00
-          valid: true
-          password: password
-          createTime: 2000-01-23T04:56:07.000+00:00
-          teamId: teamId
-          revocationReason: revocationReason
-          md5: md5
-          subjectDn: subjectDn
-        encrypt: encrypt
-        success: true
-        action: GET_AES_KEY
-        error: ACCEPTED
-        uuid: uuid
-      properties:
-        action:
-          enum:
-          - GET_AES_KEY
-          - NONE
-          - REFRESH_SERVER_PUBLIC_KEY
-          - RETRY_LATER
-          - RE_LOGIN
-          - UPDATE_CLIENT_VERSION
-          - UPLOAD_CLIENT_PUBLIC_KEY
-          type: string
-        code:
-          description: 响应代码
-          format: int32
-          type: integer
-        data:
-          description: 响应数据
-          items:
-            $ref: '#/components/schemas/OpenEnterpriseCertificate'
-          type: array
-        encrypt:
-          type: string
-        error:
-          enum:
-          - ACCEPTED
-          - ACCESS_RATE_LIMIT
-          - ACCOUNT_CANCELLED
-          - ACCOUNT_DISABLED
-          - ACCOUNT_LOCKED
-          - ACCOUNT_NOT_ACTIVATED
-          - AES_DECRYPTED_DATA_EMPTY
-          - AES_DECRYPT_FAILED
-          - AES_ENCRYPTED_DATA_EMPTY
-          - AES_ENCRYPT_FAILED
-          - AES_KEY_EXPIRED
-          - AES_KEY_EXPIRING_SOON
-          - AES_KEY_FORMAT_ERROR
-          - AES_KEY_GENERATE_FAILED
-          - AES_KEY_LENGTH_ERROR
-          - AES_KEY_NOT_FOUND
-          - AES_MODE_NOT_SUPPORTED
-          - AES_PADDING_NOT_SUPPORTED
-          - AES_VECTOR_FORMAT_ERROR
-          - AES_VECTOR_LENGTH_ERROR
-          - ALREADY_REPORTED
-          - BAD_GATEWAY
-          - BAD_REQUEST
-          - BUSINESS_ERROR
-          - CAPTCHA_ERROR
-          - CAPTCHA_EXPIRED
-          - CONFLICT
-          - CONTINUE
-          - CREATED
-          - DATABASE_BACKUP_FAILED
-          - DATABASE_CHECK_CONSTRAINT_VIOLATION
-          - DATABASE_COLUMN_NOT_FOUND
-          - DATABASE_CONNECTION_FAILED
-          - DATABASE_CONNECTION_POOL_EXHAUSTED
-          - DATABASE_DEADLOCK
-          - DATABASE_DELETE_FAILED
-          - DATABASE_DUPLICATE_KEY
-          - DATABASE_FOREIGN_KEY_VIOLATION
-          - DATABASE_INDEX_NOT_FOUND
-          - DATABASE_INSERT_FAILED
-          - DATABASE_NOT_NULL_VIOLATION
-          - DATABASE_OPERATION_FAILED
-          - DATABASE_PERMISSION_DENIED
-          - DATABASE_QUERY_FAILED
-          - DATABASE_READ_ONLY
-          - DATABASE_RESTORE_FAILED
-          - DATABASE_SQL_SYNTAX_ERROR
-          - DATABASE_TABLE_NOT_FOUND
-          - DATABASE_TIMEOUT
-          - DATABASE_TRANSACTION_FAILED
-          - DATABASE_UNIQUE_CONSTRAINT_VIOLATION
-          - DATABASE_UPDATE_FAILED
-          - DATABASE_VERSION_INCOMPATIBLE
-          - DATA_ALREADY_EXISTS
-          - DATA_CONSTRAINT_VIOLATION
-          - DATA_FORMAT_ERROR
-          - DATA_INTEGRITY_ERROR
-          - DATA_NOT_FOUND
-          - DATA_RANGE_ERROR
-          - DATA_RELATION_ERROR
-          - DATA_STATUS_ERROR
-          - DATA_VERSION_CONFLICT
-          - EARLY_HINTS
-          - EXPECTATION_FAILED
-          - FAILED_DEPENDENCY
-          - FEATURE_NOT_AVAILABLE
-          - FORBIDDEN
-          - FOUND
-          - GATEWAY_TIMEOUT
-          - GONE
-          - HTTP_VERSION_NOT_SUPPORTED
-          - IM_USED
-          - INSUFFICIENT_STORAGE
-          - INTERNAL_SERVER_ERROR
-          - IP_FORBIDDEN
-          - LENGTH_REQUIRED
-          - LOCKED
-          - LOGIN_EXPIRED
-          - LOGIN_FAILED
-          - LOOP_DETECTED
-          - METHOD_NOT_ALLOWED
-          - MOVED_PERMANENTLY
-          - MULTIPLE_CHOICES
-          - MULTI_STATUS
-          - NETWORK_AUTHENTICATION_REQUIRED
-          - NON_AUTHORITATIVE_INFORMATION
-          - NOT_ACCEPTABLE
-          - NOT_EXTENDED
-          - NOT_FOUND
-          - NOT_IMPLEMENTED
-          - NOT_MODIFIED
-          - NO_CONTENT
-          - OK
-          - OPERATION_NOT_ALLOWED
-          - OPERATION_TIMEOUT
-          - PARTIAL_CONTENT
-          - PASSWORD_EXPIRED
-          - PASSWORD_WEAK
-          - PAYLOAD_TOO_LARGE
-          - PAYMENT_REQUIRED
-          - PERMANENT_REDIRECT
-          - PERMISSION_DENIED
-          - PRECONDITION_FAILED
-          - PRECONDITION_REQUIRED
-          - PROCESSING
-          - PROXY_AUTHENTICATION_REQUIRED
-          - RANGE_NOT_SATISFIABLE
-          - REFRESH_TOKEN_EXPIRED
-          - REFRESH_TOKEN_INVALID
-          - REQUEST_HEADER_FIELDS_TOO_LARGE
-          - REQUEST_TIMEOUT
-          - RESET_CONTENT
-          - RESOURCE_LOCKED
-          - RSA_CLIENT_PUBLIC_KEY_EXPIRING_SOON
-          - RSA_CLIENT_PUBLIC_KEY_NOT_FOUND
-          - RSA_DECRYPT_FAILED
-          - RSA_ENCRYPT_FAILED
-          - RSA_KEY_FORMAT_ERROR
-          - RSA_KEY_GENERATE_FAILED
-          - RSA_KEY_LENGTH_ERROR
-          - RSA_KEY_PAIR_EXPIRING_SOON
-          - RSA_KEY_PAIR_MISMATCH
-          - RSA_KEY_PAIR_NOT_FOUND
-          - RSA_PRIVATE_KEY_NOT_FOUND
-          - RSA_PRIVATE_KEY_PARSE_ERROR
-          - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
-          - SEE_OTHER
-          - SERVICE_UNAVAILABLE
-          - SESSION_EXPIRED
-          - SESSION_INVALID
-          - SUCCESS
-          - SWITCHING_PROTOCOLS
-          - SYSTEM_MAINTENANCE
-          - TEMPORARY_REDIRECT
-          - THIRD_PARTY_LOGIN_FAILED
-          - TOKEN_EXPIRED
-          - TOKEN_INVALID
-          - TOO_EARLY
-          - TOO_MANY_REQUESTS
-          - UNAUTHORIZED
-          - UNAVAILABLE_FOR_LEGAL_REASONS
-          - UNKNOWN_ERROR
-          - UNPROCESSABLE_ENTITY
-          - UNSUPPORTED_MEDIA_TYPE
-          - UPGRADE_REQUIRED
-          - URI_TOO_LONG
-          - USER_NOT_LOGIN
-          - USE_PROXY
-          - VARIANT_ALSO_NEGOTIATES
-          - VERSION_INCOMPATIBLE
-          type: string
-        msg:
-          description: 错误信息:成功时为空或为success
-          type: string
-        result:
-          $ref: '#/components/schemas/Result'
-        success:
-          type: boolean
-        uuid:
-          type: string
-      required:
-      - code
-      title: ResponseOfListOfOpenEnterpriseCertificate
       type: object
     ResponseOfListOfPersonalCertificate:
       example:
         msg: msg
         result:
           type: type
+        ciphertext: ciphertext
         code: 0
         data:
         - repair: true
@@ -2154,11 +1216,11 @@ components:
           profileId: profileId
           teamId: teamId
           name: name
-        encrypt: encrypt
+        session: session
         success: true
         action: GET_AES_KEY
         error: ACCEPTED
-        uuid: uuid
+        algorithm: algorithm
       properties:
         action:
           enum:
@@ -2169,6 +1231,10 @@ components:
           - RE_LOGIN
           - UPDATE_CLIENT_VERSION
           - UPLOAD_CLIENT_PUBLIC_KEY
+          type: string
+        algorithm:
+          type: string
+        ciphertext:
           type: string
         code:
           description: 响应代码
@@ -2179,8 +1245,6 @@ components:
           items:
             $ref: '#/components/schemas/PersonalCertificate'
           type: array
-        encrypt:
-          type: string
         error:
           enum:
           - ACCEPTED
@@ -2250,6 +1314,8 @@ components:
           - FAILED_DEPENDENCY
           - FEATURE_NOT_AVAILABLE
           - FORBIDDEN
+          - FORCE_ENCRYPT_REQUEST_REQUIRED
+          - FORCE_ENCRYPT_SESSION_REQUIRED
           - FOUND
           - GATEWAY_TIMEOUT
           - GONE
@@ -2309,8 +1375,8 @@ components:
           - RSA_PRIVATE_KEY_NOT_FOUND
           - RSA_PRIVATE_KEY_PARSE_ERROR
           - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
+          - RSA_SESSION_INVALID
+          - RSA_SESSION_REQUIRED
           - SEE_OTHER
           - SERVICE_UNAVAILABLE
           - SESSION_EXPIRED
@@ -2341,10 +1407,10 @@ components:
           type: string
         result:
           $ref: '#/components/schemas/Result'
+        session:
+          type: string
         success:
           type: boolean
-        uuid:
-          type: string
       required:
       - code
       title: ResponseOfListOfPersonalCertificate
@@ -2354,6 +1420,7 @@ components:
         msg: msg
         result:
           type: type
+        ciphertext: ciphertext
         code: 0
         data:
           repair: true
@@ -2384,11 +1451,11 @@ components:
           profileId: profileId
           teamId: teamId
           name: name
-        encrypt: encrypt
+        session: session
         success: true
         action: GET_AES_KEY
         error: ACCEPTED
-        uuid: uuid
+        algorithm: algorithm
       properties:
         action:
           enum:
@@ -2400,14 +1467,16 @@ components:
           - UPDATE_CLIENT_VERSION
           - UPLOAD_CLIENT_PUBLIC_KEY
           type: string
+        algorithm:
+          type: string
+        ciphertext:
+          type: string
         code:
           description: 响应代码
           format: int32
           type: integer
         data:
           $ref: '#/components/schemas/PersonalCertificate'
-        encrypt:
-          type: string
         error:
           enum:
           - ACCEPTED
@@ -2477,6 +1546,8 @@ components:
           - FAILED_DEPENDENCY
           - FEATURE_NOT_AVAILABLE
           - FORBIDDEN
+          - FORCE_ENCRYPT_REQUEST_REQUIRED
+          - FORCE_ENCRYPT_SESSION_REQUIRED
           - FOUND
           - GATEWAY_TIMEOUT
           - GONE
@@ -2536,8 +1607,8 @@ components:
           - RSA_PRIVATE_KEY_NOT_FOUND
           - RSA_PRIVATE_KEY_PARSE_ERROR
           - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
+          - RSA_SESSION_INVALID
+          - RSA_SESSION_REQUIRED
           - SEE_OTHER
           - SERVICE_UNAVAILABLE
           - SESSION_EXPIRED
@@ -2568,10 +1639,10 @@ components:
           type: string
         result:
           $ref: '#/components/schemas/Result'
+        session:
+          type: string
         success:
           type: boolean
-        uuid:
-          type: string
       required:
       - code
       title: ResponseOfPersonalCertificate
@@ -2581,6 +1652,7 @@ components:
         msg: msg
         result:
           type: type
+        ciphertext: ciphertext
         code: 0
         data:
           magic: true
@@ -2593,11 +1665,11 @@ components:
           quickUnit: 5.637376656633329
           magicUnit: 5.962133916683182
           reserveUnit: 2.3021358869347655
-        encrypt: encrypt
+        session: session
         success: true
         action: GET_AES_KEY
         error: ACCEPTED
-        uuid: uuid
+        algorithm: algorithm
       properties:
         action:
           enum:
@@ -2609,14 +1681,16 @@ components:
           - UPDATE_CLIENT_VERSION
           - UPLOAD_CLIENT_PUBLIC_KEY
           type: string
+        algorithm:
+          type: string
+        ciphertext:
+          type: string
         code:
           description: 响应代码
           format: int32
           type: integer
         data:
           $ref: '#/components/schemas/Status'
-        encrypt:
-          type: string
         error:
           enum:
           - ACCEPTED
@@ -2686,6 +1760,8 @@ components:
           - FAILED_DEPENDENCY
           - FEATURE_NOT_AVAILABLE
           - FORBIDDEN
+          - FORCE_ENCRYPT_REQUEST_REQUIRED
+          - FORCE_ENCRYPT_SESSION_REQUIRED
           - FOUND
           - GATEWAY_TIMEOUT
           - GONE
@@ -2745,8 +1821,8 @@ components:
           - RSA_PRIVATE_KEY_NOT_FOUND
           - RSA_PRIVATE_KEY_PARSE_ERROR
           - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
+          - RSA_SESSION_INVALID
+          - RSA_SESSION_REQUIRED
           - SEE_OTHER
           - SERVICE_UNAVAILABLE
           - SESSION_EXPIRED
@@ -2777,10 +1853,10 @@ components:
           type: string
         result:
           $ref: '#/components/schemas/Result'
+        session:
+          type: string
         success:
           type: boolean
-        uuid:
-          type: string
       required:
       - code
       title: ResponseOfStatus
@@ -2790,17 +1866,18 @@ components:
         msg: msg
         result:
           type: type
+        ciphertext: ciphertext
         code: 0
         data:
           major: 1
           minor: 5
           build: 6
           revision: 5
-        encrypt: encrypt
+        session: session
         success: true
         action: GET_AES_KEY
         error: ACCEPTED
-        uuid: uuid
+        algorithm: algorithm
       properties:
         action:
           enum:
@@ -2812,14 +1889,16 @@ components:
           - UPDATE_CLIENT_VERSION
           - UPLOAD_CLIENT_PUBLIC_KEY
           type: string
+        algorithm:
+          type: string
+        ciphertext:
+          type: string
         code:
           description: 响应代码
           format: int32
           type: integer
         data:
           $ref: '#/components/schemas/Version'
-        encrypt:
-          type: string
         error:
           enum:
           - ACCEPTED
@@ -2889,6 +1968,8 @@ components:
           - FAILED_DEPENDENCY
           - FEATURE_NOT_AVAILABLE
           - FORBIDDEN
+          - FORCE_ENCRYPT_REQUEST_REQUIRED
+          - FORCE_ENCRYPT_SESSION_REQUIRED
           - FOUND
           - GATEWAY_TIMEOUT
           - GONE
@@ -2948,8 +2029,8 @@ components:
           - RSA_PRIVATE_KEY_NOT_FOUND
           - RSA_PRIVATE_KEY_PARSE_ERROR
           - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
+          - RSA_SESSION_INVALID
+          - RSA_SESSION_REQUIRED
           - SEE_OTHER
           - SERVICE_UNAVAILABLE
           - SESSION_EXPIRED
@@ -2980,10 +2061,10 @@ components:
           type: string
         result:
           $ref: '#/components/schemas/Result'
+        session:
+          type: string
         success:
           type: boolean
-        uuid:
-          type: string
       required:
       - code
       title: ResponseOfVersion
@@ -2993,13 +2074,14 @@ components:
         msg: msg
         result:
           type: type
+        ciphertext: ciphertext
         code: 0
         data: data
-        encrypt: encrypt
+        session: session
         success: true
         action: GET_AES_KEY
         error: ACCEPTED
-        uuid: uuid
+        algorithm: algorithm
       properties:
         action:
           enum:
@@ -3011,14 +2093,16 @@ components:
           - UPDATE_CLIENT_VERSION
           - UPLOAD_CLIENT_PUBLIC_KEY
           type: string
+        algorithm:
+          type: string
+        ciphertext:
+          type: string
         code:
           description: 响应代码
           format: int32
           type: integer
         data:
           description: 响应数据
-          type: string
-        encrypt:
           type: string
         error:
           enum:
@@ -3089,6 +2173,8 @@ components:
           - FAILED_DEPENDENCY
           - FEATURE_NOT_AVAILABLE
           - FORBIDDEN
+          - FORCE_ENCRYPT_REQUEST_REQUIRED
+          - FORCE_ENCRYPT_SESSION_REQUIRED
           - FOUND
           - GATEWAY_TIMEOUT
           - GONE
@@ -3148,8 +2234,8 @@ components:
           - RSA_PRIVATE_KEY_NOT_FOUND
           - RSA_PRIVATE_KEY_PARSE_ERROR
           - RSA_PUBLIC_KEY_PARSE_ERROR
-          - RSA_UUID_INVALID
-          - RSA_UUID_REQUIRED
+          - RSA_SESSION_INVALID
+          - RSA_SESSION_REQUIRED
           - SEE_OTHER
           - SERVICE_UNAVAILABLE
           - SESSION_EXPIRED
@@ -3180,10 +2266,10 @@ components:
           type: string
         result:
           $ref: '#/components/schemas/Result'
+        session:
+          type: string
         success:
           type: boolean
-        uuid:
-          type: string
       required:
       - code
       title: ResponseOfstring

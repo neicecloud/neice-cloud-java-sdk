@@ -18,7 +18,7 @@ import cloud.neice.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-22T11:55:22.845084+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-31T09:30:11.322380+08:00[Asia/Shanghai]")
 public class OAuth implements Authentication {
   private String accessToken;
 

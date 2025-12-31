@@ -28,11 +28,19 @@ import java.math.BigDecimal;
 /**
  * Balance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-22T11:55:22.845084+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-31T09:30:11.322380+08:00[Asia/Shanghai]")
 public class Balance {
+  public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
+  @SerializedName(SERIALIZED_NAME_ALGORITHM)
+  private String algorithm;
+
   public static final String SERIALIZED_NAME_BALANCE = "balance";
   @SerializedName(SERIALIZED_NAME_BALANCE)
   private BigDecimal balance;
+
+  public static final String SERIALIZED_NAME_CIPHERTEXT = "ciphertext";
+  @SerializedName(SERIALIZED_NAME_CIPHERTEXT)
+  private String ciphertext;
 
   public static final String SERIALIZED_NAME_ESCROW = "escrow";
   @SerializedName(SERIALIZED_NAME_ESCROW)
@@ -41,6 +49,10 @@ public class Balance {
   public static final String SERIALIZED_NAME_REWARD = "reward";
   @SerializedName(SERIALIZED_NAME_REWARD)
   private BigDecimal reward;
+
+  public static final String SERIALIZED_NAME_SESSION = "session";
+  @SerializedName(SERIALIZED_NAME_SESSION)
+  private String session;
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
@@ -53,6 +65,29 @@ public class Balance {
   public static final String SERIALIZED_NAME_VOUCHER = "voucher";
   @SerializedName(SERIALIZED_NAME_VOUCHER)
   private BigDecimal voucher;
+
+
+  public Balance algorithm(String algorithm) {
+    
+    this.algorithm = algorithm;
+    return this;
+  }
+
+   /**
+   * Get algorithm
+   * @return algorithm
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getAlgorithm() {
+    return algorithm;
+  }
+
+
+  public void setAlgorithm(String algorithm) {
+    this.algorithm = algorithm;
+  }
 
 
   public Balance balance(BigDecimal balance) {
@@ -75,6 +110,29 @@ public class Balance {
 
   public void setBalance(BigDecimal balance) {
     this.balance = balance;
+  }
+
+
+  public Balance ciphertext(String ciphertext) {
+    
+    this.ciphertext = ciphertext;
+    return this;
+  }
+
+   /**
+   * Get ciphertext
+   * @return ciphertext
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getCiphertext() {
+    return ciphertext;
+  }
+
+
+  public void setCiphertext(String ciphertext) {
+    this.ciphertext = ciphertext;
   }
 
 
@@ -121,6 +179,29 @@ public class Balance {
 
   public void setReward(BigDecimal reward) {
     this.reward = reward;
+  }
+
+
+  public Balance session(String session) {
+    
+    this.session = session;
+    return this;
+  }
+
+   /**
+   * Get session
+   * @return session
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSession() {
+    return session;
+  }
+
+
+  public void setSession(String session) {
+    this.session = session;
   }
 
 
@@ -202,9 +283,12 @@ public class Balance {
       return false;
     }
     Balance balance = (Balance) o;
-    return Objects.equals(this.balance, balance.balance) &&
+    return Objects.equals(this.algorithm, balance.algorithm) &&
+        Objects.equals(this.balance, balance.balance) &&
+        Objects.equals(this.ciphertext, balance.ciphertext) &&
         Objects.equals(this.escrow, balance.escrow) &&
         Objects.equals(this.reward, balance.reward) &&
+        Objects.equals(this.session, balance.session) &&
         Objects.equals(this.total, balance.total) &&
         Objects.equals(this.userUuid, balance.userUuid) &&
         Objects.equals(this.voucher, balance.voucher);
@@ -212,7 +296,7 @@ public class Balance {
 
   @Override
   public int hashCode() {
-    return Objects.hash(balance, escrow, reward, total, userUuid, voucher);
+    return Objects.hash(algorithm, balance, ciphertext, escrow, reward, session, total, userUuid, voucher);
   }
 
 
@@ -220,9 +304,12 @@ public class Balance {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Balance {\n");
+    sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
+    sb.append("    ciphertext: ").append(toIndentedString(ciphertext)).append("\n");
     sb.append("    escrow: ").append(toIndentedString(escrow)).append("\n");
     sb.append("    reward: ").append(toIndentedString(reward)).append("\n");
+    sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    userUuid: ").append(toIndentedString(userUuid)).append("\n");
     sb.append("    voucher: ").append(toIndentedString(voucher)).append("\n");

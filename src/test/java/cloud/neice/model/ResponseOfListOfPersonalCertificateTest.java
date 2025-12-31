@@ -53,6 +53,22 @@ public class ResponseOfListOfPersonalCertificateTest {
     }
 
     /**
+     * Test the property 'algorithm'
+     */
+    @Test
+    public void algorithmTest() {
+        // TODO: test algorithm
+    }
+
+    /**
+     * Test the property 'ciphertext'
+     */
+    @Test
+    public void ciphertextTest() {
+        // TODO: test ciphertext
+    }
+
+    /**
      * Test the property 'code'
      */
     @Test
@@ -66,14 +82,6 @@ public class ResponseOfListOfPersonalCertificateTest {
     @Test
     public void dataTest() {
         // TODO: test data
-    }
-
-    /**
-     * Test the property 'encrypt'
-     */
-    @Test
-    public void encryptTest() {
-        // TODO: test encrypt
     }
 
     /**
@@ -101,19 +109,19 @@ public class ResponseOfListOfPersonalCertificateTest {
     }
 
     /**
+     * Test the property 'session'
+     */
+    @Test
+    public void sessionTest() {
+        // TODO: test session
+    }
+
+    /**
      * Test the property 'success'
      */
     @Test
     public void successTest() {
         // TODO: test success
-    }
-
-    /**
-     * Test the property 'uuid'
-     */
-    @Test
-    public void uuidTest() {
-        // TODO: test uuid
     }
 
 }

@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * ResponseOfstring
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-22T11:55:22.845084+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-31T09:30:11.322380+08:00[Asia/Shanghai]")
 public class ResponseOfstring {
   /**
    * Gets or Sets action
@@ -91,6 +91,14 @@ public class ResponseOfstring {
   @SerializedName(SERIALIZED_NAME_ACTION)
   private ActionEnum action;
 
+  public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
+  @SerializedName(SERIALIZED_NAME_ALGORITHM)
+  private String algorithm;
+
+  public static final String SERIALIZED_NAME_CIPHERTEXT = "ciphertext";
+  @SerializedName(SERIALIZED_NAME_CIPHERTEXT)
+  private String ciphertext;
+
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
   private Integer code;
@@ -98,10 +106,6 @@ public class ResponseOfstring {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
   private String data;
-
-  public static final String SERIALIZED_NAME_ENCRYPT = "encrypt";
-  @SerializedName(SERIALIZED_NAME_ENCRYPT)
-  private String encrypt;
 
   /**
    * Gets or Sets error
@@ -242,6 +246,10 @@ public class ResponseOfstring {
     
     FORBIDDEN("FORBIDDEN"),
     
+    FORCE_ENCRYPT_REQUEST_REQUIRED("FORCE_ENCRYPT_REQUEST_REQUIRED"),
+    
+    FORCE_ENCRYPT_SESSION_REQUIRED("FORCE_ENCRYPT_SESSION_REQUIRED"),
+    
     FOUND("FOUND"),
     
     GATEWAY_TIMEOUT("GATEWAY_TIMEOUT"),
@@ -360,9 +368,9 @@ public class ResponseOfstring {
     
     RSA_PUBLIC_KEY_PARSE_ERROR("RSA_PUBLIC_KEY_PARSE_ERROR"),
     
-    RSA_UUID_INVALID("RSA_UUID_INVALID"),
+    RSA_SESSION_INVALID("RSA_SESSION_INVALID"),
     
-    RSA_UUID_REQUIRED("RSA_UUID_REQUIRED"),
+    RSA_SESSION_REQUIRED("RSA_SESSION_REQUIRED"),
     
     SEE_OTHER("SEE_OTHER"),
     
@@ -462,13 +470,13 @@ public class ResponseOfstring {
   @SerializedName(SERIALIZED_NAME_RESULT)
   private Result result;
 
+  public static final String SERIALIZED_NAME_SESSION = "session";
+  @SerializedName(SERIALIZED_NAME_SESSION)
+  private String session;
+
   public static final String SERIALIZED_NAME_SUCCESS = "success";
   @SerializedName(SERIALIZED_NAME_SUCCESS)
   private Boolean success;
-
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
-  private String uuid;
 
 
   public ResponseOfstring action(ActionEnum action) {
@@ -491,6 +499,52 @@ public class ResponseOfstring {
 
   public void setAction(ActionEnum action) {
     this.action = action;
+  }
+
+
+  public ResponseOfstring algorithm(String algorithm) {
+    
+    this.algorithm = algorithm;
+    return this;
+  }
+
+   /**
+   * Get algorithm
+   * @return algorithm
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getAlgorithm() {
+    return algorithm;
+  }
+
+
+  public void setAlgorithm(String algorithm) {
+    this.algorithm = algorithm;
+  }
+
+
+  public ResponseOfstring ciphertext(String ciphertext) {
+    
+    this.ciphertext = ciphertext;
+    return this;
+  }
+
+   /**
+   * Get ciphertext
+   * @return ciphertext
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getCiphertext() {
+    return ciphertext;
+  }
+
+
+  public void setCiphertext(String ciphertext) {
+    this.ciphertext = ciphertext;
   }
 
 
@@ -536,29 +590,6 @@ public class ResponseOfstring {
 
   public void setData(String data) {
     this.data = data;
-  }
-
-
-  public ResponseOfstring encrypt(String encrypt) {
-    
-    this.encrypt = encrypt;
-    return this;
-  }
-
-   /**
-   * Get encrypt
-   * @return encrypt
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getEncrypt() {
-    return encrypt;
-  }
-
-
-  public void setEncrypt(String encrypt) {
-    this.encrypt = encrypt;
   }
 
 
@@ -631,6 +662,29 @@ public class ResponseOfstring {
   }
 
 
+  public ResponseOfstring session(String session) {
+    
+    this.session = session;
+    return this;
+  }
+
+   /**
+   * Get session
+   * @return session
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSession() {
+    return session;
+  }
+
+
+  public void setSession(String session) {
+    this.session = session;
+  }
+
+
   public ResponseOfstring success(Boolean success) {
     
     this.success = success;
@@ -654,29 +708,6 @@ public class ResponseOfstring {
   }
 
 
-  public ResponseOfstring uuid(String uuid) {
-    
-    this.uuid = uuid;
-    return this;
-  }
-
-   /**
-   * Get uuid
-   * @return uuid
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getUuid() {
-    return uuid;
-  }
-
-
-  public void setUuid(String uuid) {
-    this.uuid = uuid;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -687,19 +718,20 @@ public class ResponseOfstring {
     }
     ResponseOfstring responseOfstring = (ResponseOfstring) o;
     return Objects.equals(this.action, responseOfstring.action) &&
+        Objects.equals(this.algorithm, responseOfstring.algorithm) &&
+        Objects.equals(this.ciphertext, responseOfstring.ciphertext) &&
         Objects.equals(this.code, responseOfstring.code) &&
         Objects.equals(this.data, responseOfstring.data) &&
-        Objects.equals(this.encrypt, responseOfstring.encrypt) &&
         Objects.equals(this.error, responseOfstring.error) &&
         Objects.equals(this.msg, responseOfstring.msg) &&
         Objects.equals(this.result, responseOfstring.result) &&
-        Objects.equals(this.success, responseOfstring.success) &&
-        Objects.equals(this.uuid, responseOfstring.uuid);
+        Objects.equals(this.session, responseOfstring.session) &&
+        Objects.equals(this.success, responseOfstring.success);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, code, data, encrypt, error, msg, result, success, uuid);
+    return Objects.hash(action, algorithm, ciphertext, code, data, error, msg, result, session, success);
   }
 
 
@@ -708,14 +740,15 @@ public class ResponseOfstring {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResponseOfstring {\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
+    sb.append("    ciphertext: ").append(toIndentedString(ciphertext)).append("\n");
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
-    sb.append("    encrypt: ").append(toIndentedString(encrypt)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    success: ").append(toIndentedString(success)).append("\n");
-    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

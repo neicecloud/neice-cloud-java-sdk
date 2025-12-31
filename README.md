@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2025-12-22T11:55:22.845084+08:00[Asia/Shanghai]
+  - Build date: 2025-12-31T09:30:11.322380+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 
@@ -123,12 +123,6 @@ Class | Method | HTTP request | Description
 *OauthApi* | [**getToken**](docs/OauthApi.md#getToken) | **POST** /oauth2/token | 获取Token
 *OauthApi* | [**getUserInfo**](docs/OauthApi.md#getUserInfo) | **GET** /oauth2/userInfo | 获取用户信息
 *OauthApi* | [**getUserInfo1**](docs/OauthApi.md#getUserInfo1) | **POST** /oauth2/userInfo | 获取用户信息
-*OpenApi* | [**getCertificate1**](docs/OpenApi.md#getCertificate1) | **GET** /open/api/v1/certificate | 获取开发的iOS设备证书
-*OpenApi* | [**getCertificate2**](docs/OpenApi.md#getCertificate2) | **POST** /open/api/v1/certificate/{udid} | 获取开发的iOS设备证书
-*OpenApi* | [**getCertificate3**](docs/OpenApi.md#getCertificate3) | **GET** /open/api/v1/certificate/{udid} | 获取开发的iOS设备证书
-*OpenApi* | [**getCertificate4**](docs/OpenApi.md#getCertificate4) | **POST** /open/api/v1/certificate | 获取开发的iOS设备证书
-*OpenApi* | [**getEnterpriseCertificates**](docs/OpenApi.md#getEnterpriseCertificates) | **GET** /open/api/v1/enterprise/certificates | 获取企业开发者证书
-*OpenApi* | [**getEnterpriseCertificates1**](docs/OpenApi.md#getEnterpriseCertificates1) | **POST** /open/api/v1/enterprise/certificates | 获取企业开发者证书
 *VersionApi* | [**getVersion**](docs/VersionApi.md#getVersion) | **POST** /aas/api/v1/version | 获取接口系统版本
 
 
@@ -136,16 +130,11 @@ Class | Method | HTTP request | Description
 
  - [Balance](docs/Balance.md)
  - [CertificateCode](docs/CertificateCode.md)
- - [CertificateRequest](docs/CertificateRequest.md)
- - [CertificateResponse](docs/CertificateResponse.md)
  - [DeviceRequest](docs/DeviceRequest.md)
  - [Endpoint](docs/Endpoint.md)
- - [OpenEnterpriseCertificate](docs/OpenEnterpriseCertificate.md)
  - [PersonalCertificate](docs/PersonalCertificate.md)
  - [ResponseOfBalance](docs/ResponseOfBalance.md)
  - [ResponseOfCertificateCode](docs/ResponseOfCertificateCode.md)
- - [ResponseOfListOfCertificateResponse](docs/ResponseOfListOfCertificateResponse.md)
- - [ResponseOfListOfOpenEnterpriseCertificate](docs/ResponseOfListOfOpenEnterpriseCertificate.md)
  - [ResponseOfListOfPersonalCertificate](docs/ResponseOfListOfPersonalCertificate.md)
  - [ResponseOfPersonalCertificate](docs/ResponseOfPersonalCertificate.md)
  - [ResponseOfStatus](docs/ResponseOfStatus.md)

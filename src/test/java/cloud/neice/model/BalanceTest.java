@@ -42,11 +42,27 @@ public class BalanceTest {
     }
 
     /**
+     * Test the property 'algorithm'
+     */
+    @Test
+    public void algorithmTest() {
+        // TODO: test algorithm
+    }
+
+    /**
      * Test the property 'balance'
      */
     @Test
     public void balanceTest() {
         // TODO: test balance
+    }
+
+    /**
+     * Test the property 'ciphertext'
+     */
+    @Test
+    public void ciphertextTest() {
+        // TODO: test ciphertext
     }
 
     /**
@@ -63,6 +79,14 @@ public class BalanceTest {
     @Test
     public void rewardTest() {
         // TODO: test reward
+    }
+
+    /**
+     * Test the property 'session'
+     */
+    @Test
+    public void sessionTest() {
+        // TODO: test session
     }
 
     /**

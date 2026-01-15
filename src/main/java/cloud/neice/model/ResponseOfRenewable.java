@@ -15,7 +15,7 @@ package cloud.neice.model;
 
 import java.util.Objects;
 import java.util.Arrays;
-import cloud.neice.model.Balance;
+import cloud.neice.model.Renewable;
 import cloud.neice.model.Result;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -27,10 +27,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ResponseOfBalance
+ * ResponseOfRenewable
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T16:53:05.039237+08:00[Asia/Shanghai]")
-public class ResponseOfBalance {
+public class ResponseOfRenewable {
   /**
    * Gets or Sets action
    */
@@ -106,7 +106,7 @@ public class ResponseOfBalance {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private Balance data;
+  private Renewable data;
 
   /**
    * Gets or Sets error
@@ -480,7 +480,7 @@ public class ResponseOfBalance {
   private Boolean success;
 
 
-  public ResponseOfBalance action(ActionEnum action) {
+  public ResponseOfRenewable action(ActionEnum action) {
     
     this.action = action;
     return this;
@@ -503,7 +503,7 @@ public class ResponseOfBalance {
   }
 
 
-  public ResponseOfBalance algorithm(String algorithm) {
+  public ResponseOfRenewable algorithm(String algorithm) {
     
     this.algorithm = algorithm;
     return this;
@@ -526,7 +526,7 @@ public class ResponseOfBalance {
   }
 
 
-  public ResponseOfBalance ciphertext(String ciphertext) {
+  public ResponseOfRenewable ciphertext(String ciphertext) {
     
     this.ciphertext = ciphertext;
     return this;
@@ -549,7 +549,7 @@ public class ResponseOfBalance {
   }
 
 
-  public ResponseOfBalance code(Integer code) {
+  public ResponseOfRenewable code(Integer code) {
     
     this.code = code;
     return this;
@@ -571,7 +571,7 @@ public class ResponseOfBalance {
   }
 
 
-  public ResponseOfBalance data(Balance data) {
+  public ResponseOfRenewable data(Renewable data) {
     
     this.data = data;
     return this;
@@ -584,17 +584,17 @@ public class ResponseOfBalance {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Balance getData() {
+  public Renewable getData() {
     return data;
   }
 
 
-  public void setData(Balance data) {
+  public void setData(Renewable data) {
     this.data = data;
   }
 
 
-  public ResponseOfBalance error(ErrorEnum error) {
+  public ResponseOfRenewable error(ErrorEnum error) {
     
     this.error = error;
     return this;
@@ -617,7 +617,7 @@ public class ResponseOfBalance {
   }
 
 
-  public ResponseOfBalance msg(String msg) {
+  public ResponseOfRenewable msg(String msg) {
     
     this.msg = msg;
     return this;
@@ -640,7 +640,7 @@ public class ResponseOfBalance {
   }
 
 
-  public ResponseOfBalance result(Result result) {
+  public ResponseOfRenewable result(Result result) {
     
     this.result = result;
     return this;
@@ -663,7 +663,7 @@ public class ResponseOfBalance {
   }
 
 
-  public ResponseOfBalance session(String session) {
+  public ResponseOfRenewable session(String session) {
     
     this.session = session;
     return this;
@@ -686,7 +686,7 @@ public class ResponseOfBalance {
   }
 
 
-  public ResponseOfBalance success(Boolean success) {
+  public ResponseOfRenewable success(Boolean success) {
     
     this.success = success;
     return this;
@@ -717,17 +717,17 @@ public class ResponseOfBalance {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseOfBalance responseOfBalance = (ResponseOfBalance) o;
-    return Objects.equals(this.action, responseOfBalance.action) &&
-        Objects.equals(this.algorithm, responseOfBalance.algorithm) &&
-        Objects.equals(this.ciphertext, responseOfBalance.ciphertext) &&
-        Objects.equals(this.code, responseOfBalance.code) &&
-        Objects.equals(this.data, responseOfBalance.data) &&
-        Objects.equals(this.error, responseOfBalance.error) &&
-        Objects.equals(this.msg, responseOfBalance.msg) &&
-        Objects.equals(this.result, responseOfBalance.result) &&
-        Objects.equals(this.session, responseOfBalance.session) &&
-        Objects.equals(this.success, responseOfBalance.success);
+    ResponseOfRenewable responseOfRenewable = (ResponseOfRenewable) o;
+    return Objects.equals(this.action, responseOfRenewable.action) &&
+        Objects.equals(this.algorithm, responseOfRenewable.algorithm) &&
+        Objects.equals(this.ciphertext, responseOfRenewable.ciphertext) &&
+        Objects.equals(this.code, responseOfRenewable.code) &&
+        Objects.equals(this.data, responseOfRenewable.data) &&
+        Objects.equals(this.error, responseOfRenewable.error) &&
+        Objects.equals(this.msg, responseOfRenewable.msg) &&
+        Objects.equals(this.result, responseOfRenewable.result) &&
+        Objects.equals(this.session, responseOfRenewable.session) &&
+        Objects.equals(this.success, responseOfRenewable.success);
   }
 
   @Override
@@ -739,7 +739,7 @@ public class ResponseOfBalance {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseOfBalance {\n");
+    sb.append("class ResponseOfRenewable {\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
     sb.append("    ciphertext: ").append(toIndentedString(ciphertext)).append("\n");

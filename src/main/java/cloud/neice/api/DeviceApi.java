@@ -32,6 +32,7 @@ import cloud.neice.model.DeviceRequest;
 import cloud.neice.model.ResponseOfCertificateCode;
 import cloud.neice.model.ResponseOfListOfPersonalCertificate;
 import cloud.neice.model.ResponseOfPersonalCertificate;
+import cloud.neice.model.ResponseOfRenewable;
 import cloud.neice.model.ResponseOfStatus;
 import cloud.neice.model.ResponseOfstring;
 
@@ -835,6 +836,133 @@ public class DeviceApi {
 
         okhttp3.Call localVarCall = registersValidateBeforeCall(deviceRequests, _callback);
         Type localVarReturnType = new TypeToken<ResponseOfstring>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for renewable
+     * @param udid udid (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call renewableCall(String udid, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = udid;
+
+        // create path and map variables
+        String localVarPath = "/aas/api/v1/renewable";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "Authorization" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call renewableValidateBeforeCall(String udid, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'udid' is set
+        if (udid == null) {
+            throw new ApiException("Missing the required parameter 'udid' when calling renewable(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = renewableCall(udid, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * 查询设备是否可以补签
+     * 查询指定UDID的设备是否可以免费补签
+     * @param udid udid (required)
+     * @return ResponseOfRenewable
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ResponseOfRenewable renewable(String udid) throws ApiException {
+        ApiResponse<ResponseOfRenewable> localVarResp = renewableWithHttpInfo(udid);
+        return localVarResp.getData();
+    }
+
+    /**
+     * 查询设备是否可以补签
+     * 查询指定UDID的设备是否可以免费补签
+     * @param udid udid (required)
+     * @return ApiResponse&lt;ResponseOfRenewable&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ResponseOfRenewable> renewableWithHttpInfo(String udid) throws ApiException {
+        okhttp3.Call localVarCall = renewableValidateBeforeCall(udid, null);
+        Type localVarReturnType = new TypeToken<ResponseOfRenewable>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * 查询设备是否可以补签 (asynchronously)
+     * 查询指定UDID的设备是否可以免费补签
+     * @param udid udid (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Unauthorized </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Forbidden </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call renewableAsync(String udid, final ApiCallback<ResponseOfRenewable> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = renewableValidateBeforeCall(udid, _callback);
+        Type localVarReturnType = new TypeToken<ResponseOfRenewable>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

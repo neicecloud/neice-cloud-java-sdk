@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getStatus**](DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
 [**register**](DeviceApi.md#register) | **POST** /aas/api/v1/register | iOS设备注册
 [**registers**](DeviceApi.md#registers) | **POST** /aas/api/v1/registers | iOS设备批量提交注册
+[**renewable**](DeviceApi.md#renewable) | **POST** /aas/api/v1/renewable | 查询设备是否可以补签
 
 
 <a name="createExchangeCode"></a>
@@ -419,6 +420,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ResponseOfstring**](ResponseOfstring.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**201** | Created |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+
+<a name="renewable"></a>
+# **renewable**
+> ResponseOfRenewable renewable(udid)
+
+查询设备是否可以补签
+
+查询指定UDID的设备是否可以免费补签
+
+### Example
+```java
+// Import classes:
+import cloud.neice.ApiClient;
+import cloud.neice.ApiException;
+import cloud.neice.Configuration;
+import cloud.neice.auth.*;
+import cloud.neice.models.*;
+import cloud.neice.api.DeviceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://neice.cloud");
+    
+    // Configure OAuth2 access token for authorization: Authorization
+    OAuth Authorization = (OAuth) defaultClient.getAuthentication("Authorization");
+    Authorization.setAccessToken("YOUR ACCESS TOKEN");
+
+    DeviceApi apiInstance = new DeviceApi(defaultClient);
+    String udid = "udid_example"; // String | udid
+    try {
+      ResponseOfRenewable result = apiInstance.renewable(udid);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeviceApi#renewable");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **udid** | **String**| udid |
+
+### Return type
+
+[**ResponseOfRenewable**](ResponseOfRenewable.md)
 
 ### Authorization
 

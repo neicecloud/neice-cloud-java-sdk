@@ -25,89 +25,89 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Endpoint
+ * Renewable
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T16:53:05.039237+08:00[Asia/Shanghai]")
-public class Endpoint {
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  private String description;
+public class Renewable {
+  public static final String SERIALIZED_NAME_RENEWABLE = "renewable";
+  @SerializedName(SERIALIZED_NAME_RENEWABLE)
+  private Boolean renewable;
 
-  public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
-  @SerializedName(SERIALIZED_NAME_ENDPOINT)
-  private String endpoint;
+  public static final String SERIALIZED_NAME_UDID = "udid";
+  @SerializedName(SERIALIZED_NAME_UDID)
+  private String udid;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
+  private String uuid;
 
 
-  public Endpoint description(String description) {
+  public Renewable renewable(Boolean renewable) {
     
-    this.description = description;
+    this.renewable = renewable;
     return this;
   }
 
    /**
-   * Get description
-   * @return description
+   * Get renewable
+   * @return renewable
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getDescription() {
-    return description;
+  public Boolean getRenewable() {
+    return renewable;
   }
 
 
-  public void setDescription(String description) {
-    this.description = description;
+  public void setRenewable(Boolean renewable) {
+    this.renewable = renewable;
   }
 
 
-  public Endpoint endpoint(String endpoint) {
+  public Renewable udid(String udid) {
     
-    this.endpoint = endpoint;
+    this.udid = udid;
     return this;
   }
 
    /**
-   * Get endpoint
-   * @return endpoint
+   * Get udid
+   * @return udid
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getEndpoint() {
-    return endpoint;
+  public String getUdid() {
+    return udid;
   }
 
 
-  public void setEndpoint(String endpoint) {
-    this.endpoint = endpoint;
+  public void setUdid(String udid) {
+    this.udid = udid;
   }
 
 
-  public Endpoint name(String name) {
+  public Renewable uuid(String uuid) {
     
-    this.name = name;
+    this.uuid = uuid;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get uuid
+   * @return uuid
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getName() {
-    return name;
+  public String getUuid() {
+    return uuid;
   }
 
 
-  public void setName(String name) {
-    this.name = name;
+  public void setUuid(String uuid) {
+    this.uuid = uuid;
   }
 
 
@@ -119,25 +119,25 @@ public class Endpoint {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Endpoint endpoint = (Endpoint) o;
-    return Objects.equals(this.description, endpoint.description) &&
-        Objects.equals(this.endpoint, endpoint.endpoint) &&
-        Objects.equals(this.name, endpoint.name);
+    Renewable renewable = (Renewable) o;
+    return Objects.equals(this.renewable, renewable.renewable) &&
+        Objects.equals(this.udid, renewable.udid) &&
+        Objects.equals(this.uuid, renewable.uuid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, endpoint, name);
+    return Objects.hash(renewable, udid, uuid);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Endpoint {\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("class Renewable {\n");
+    sb.append("    renewable: ").append(toIndentedString(renewable)).append("\n");
+    sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("}");
     return sb.toString();
   }

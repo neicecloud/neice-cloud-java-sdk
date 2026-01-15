@@ -2,7 +2,7 @@
 
 内测云分发开发者API接口
 - API version: 1.0.0
-  - Build date: 2025-12-31T09:30:11.322380+08:00[Asia/Shanghai]
+  - Build date: 2026-01-15T16:53:05.039237+08:00[Asia/Shanghai]
 
 内测云开发者服务平台应用程序接口文档
 
@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**getStatus**](docs/DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
 *DeviceApi* | [**register**](docs/DeviceApi.md#register) | **POST** /aas/api/v1/register | iOS设备注册
 *DeviceApi* | [**registers**](docs/DeviceApi.md#registers) | **POST** /aas/api/v1/registers | iOS设备批量提交注册
+*DeviceApi* | [**renewable**](docs/DeviceApi.md#renewable) | **POST** /aas/api/v1/renewable | 查询设备是否可以补签
 *EndpointApi* | [**getEndpoint**](docs/EndpointApi.md#getEndpoint) | **POST** /endpoint/getEndpoint | 获取签名节点入口
 *OauthApi* | [**getToken**](docs/OauthApi.md#getToken) | **POST** /oauth2/token | 获取Token
 *OauthApi* | [**getUserInfo**](docs/OauthApi.md#getUserInfo) | **GET** /oauth2/userInfo | 获取用户信息
@@ -133,10 +134,12 @@ Class | Method | HTTP request | Description
  - [DeviceRequest](docs/DeviceRequest.md)
  - [Endpoint](docs/Endpoint.md)
  - [PersonalCertificate](docs/PersonalCertificate.md)
+ - [Renewable](docs/Renewable.md)
  - [ResponseOfBalance](docs/ResponseOfBalance.md)
  - [ResponseOfCertificateCode](docs/ResponseOfCertificateCode.md)
  - [ResponseOfListOfPersonalCertificate](docs/ResponseOfListOfPersonalCertificate.md)
  - [ResponseOfPersonalCertificate](docs/ResponseOfPersonalCertificate.md)
+ - [ResponseOfRenewable](docs/ResponseOfRenewable.md)
  - [ResponseOfStatus](docs/ResponseOfStatus.md)
  - [ResponseOfVersion](docs/ResponseOfVersion.md)
  - [ResponseOfstring](docs/ResponseOfstring.md)

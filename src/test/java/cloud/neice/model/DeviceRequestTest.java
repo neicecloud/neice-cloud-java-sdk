@@ -105,6 +105,14 @@ public class DeviceRequestTest {
     }
 
     /**
+     * Test the property 'renew'
+     */
+    @Test
+    public void renewTest() {
+        // TODO: test renew
+    }
+
+    /**
      * Test the property 'reserve'
      */
     @Test
@@ -126,6 +134,14 @@ public class DeviceRequestTest {
     @Test
     public void udidTest() {
         // TODO: test udid
+    }
+
+    /**
+     * Test the property 'uuid'
+     */
+    @Test
+    public void uuidTest() {
+        // TODO: test uuid
     }
 
     /**

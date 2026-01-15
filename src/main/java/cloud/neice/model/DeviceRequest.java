@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DeviceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-31T09:30:11.322380+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T16:53:05.039237+08:00[Asia/Shanghai]")
 public class DeviceRequest {
   public static final String SERIALIZED_NAME_CALLBACK = "callback";
   @SerializedName(SERIALIZED_NAME_CALLBACK)
@@ -61,6 +61,10 @@ public class DeviceRequest {
   @SerializedName(SERIALIZED_NAME_REFER)
   private String refer;
 
+  public static final String SERIALIZED_NAME_RENEW = "renew";
+  @SerializedName(SERIALIZED_NAME_RENEW)
+  private Boolean renew;
+
   public static final String SERIALIZED_NAME_RESERVE = "reserve";
   @SerializedName(SERIALIZED_NAME_RESERVE)
   private Boolean reserve;
@@ -72,6 +76,10 @@ public class DeviceRequest {
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
   private String udid;
+
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
+  private String uuid;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
@@ -262,6 +270,29 @@ public class DeviceRequest {
   }
 
 
+  public DeviceRequest renew(Boolean renew) {
+    
+    this.renew = renew;
+    return this;
+  }
+
+   /**
+   * 标记该设备是否是免费补签请求
+   * @return renew
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "标记该设备是否是免费补签请求")
+
+  public Boolean getRenew() {
+    return renew;
+  }
+
+
+  public void setRenew(Boolean renew) {
+    this.renew = renew;
+  }
+
+
   public DeviceRequest reserve(Boolean reserve) {
     
     this.reserve = reserve;
@@ -330,6 +361,29 @@ public class DeviceRequest {
   }
 
 
+  public DeviceRequest uuid(String uuid) {
+    
+    this.uuid = uuid;
+    return this;
+  }
+
+   /**
+   * 免费补签时，指定需要补签证书对应的UUID
+   * @return uuid
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "免费补签时，指定需要补签证书对应的UUID")
+
+  public String getUuid() {
+    return uuid;
+  }
+
+
+  public void setUuid(String uuid) {
+    this.uuid = uuid;
+  }
+
+
   public DeviceRequest version(String version) {
     
     this.version = version;
@@ -370,15 +424,17 @@ public class DeviceRequest {
         Objects.equals(this.phone, deviceRequest.phone) &&
         Objects.equals(this.quality, deviceRequest.quality) &&
         Objects.equals(this.refer, deviceRequest.refer) &&
+        Objects.equals(this.renew, deviceRequest.renew) &&
         Objects.equals(this.reserve, deviceRequest.reserve) &&
         Objects.equals(this.system, deviceRequest.system) &&
         Objects.equals(this.udid, deviceRequest.udid) &&
+        Objects.equals(this.uuid, deviceRequest.uuid) &&
         Objects.equals(this.version, deviceRequest.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callback, code, model, name, param, phone, quality, refer, reserve, system, udid, version);
+    return Objects.hash(callback, code, model, name, param, phone, quality, refer, renew, reserve, system, udid, uuid, version);
   }
 
 
@@ -394,9 +450,11 @@ public class DeviceRequest {
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    quality: ").append(toIndentedString(quality)).append("\n");
     sb.append("    refer: ").append(toIndentedString(refer)).append("\n");
+    sb.append("    renew: ").append(toIndentedString(renew)).append("\n");
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    system: ").append(toIndentedString(system)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();

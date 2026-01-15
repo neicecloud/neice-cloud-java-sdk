@@ -19,6 +19,7 @@ import cloud.neice.model.DeviceRequest;
 import cloud.neice.model.ResponseOfCertificateCode;
 import cloud.neice.model.ResponseOfListOfPersonalCertificate;
 import cloud.neice.model.ResponseOfPersonalCertificate;
+import cloud.neice.model.ResponseOfRenewable;
 import cloud.neice.model.ResponseOfStatus;
 import cloud.neice.model.ResponseOfstring;
 import org.junit.Test;
@@ -131,6 +132,22 @@ public class DeviceApiTest {
     public void registersTest() throws ApiException {
         List<DeviceRequest> deviceRequests = null;
         ResponseOfstring response = api.registers(deviceRequests);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 查询设备是否可以补签
+     *
+     * 查询指定UDID的设备是否可以免费补签
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void renewableTest() throws ApiException {
+        String udid = null;
+        ResponseOfRenewable response = api.renewable(udid);
 
         // TODO: test validations
     }

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**getStatus**](DeviceApi.md#getStatus) | **POST** /aas/api/v1/status | 获取证书支持类型
 [**register**](DeviceApi.md#register) | **POST** /aas/api/v1/register | iOS设备注册
 [**registers**](DeviceApi.md#registers) | **POST** /aas/api/v1/registers | iOS设备批量提交注册
-[**renewable**](DeviceApi.md#renewable) | **POST** /aas/api/v1/renewable | 查询设备是否可以补签
+[**renewable**](DeviceApi.md#renewable) | **POST** /aas/api/v1/renewable | 查询设备补签列表信息
 
 
 <a name="createExchangeCode"></a>
@@ -441,11 +441,11 @@ Name | Type | Description  | Notes
 
 <a name="renewable"></a>
 # **renewable**
-> ResponseOfRenewable renewable(udid)
+> ResponseOfListOfRenewable renewable(udid)
 
-查询设备是否可以补签
+查询设备补签列表信息
 
-查询指定UDID的设备是否可以免费补签
+查询设备补签列表信息
 
 ### Example
 ```java
@@ -469,7 +469,7 @@ public class Example {
     DeviceApi apiInstance = new DeviceApi(defaultClient);
     String udid = "udid_example"; // String | udid
     try {
-      ResponseOfRenewable result = apiInstance.renewable(udid);
+      ResponseOfListOfRenewable result = apiInstance.renewable(udid);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DeviceApi#renewable");
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseOfRenewable**](ResponseOfRenewable.md)
+[**ResponseOfListOfRenewable**](ResponseOfListOfRenewable.md)
 
 ### Authorization
 

@@ -25,12 +25,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * ResponseOfRenewable
+ * ResponseOfListOfRenewable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T17:38:51.789649+08:00[Asia/Shanghai]")
-public class ResponseOfRenewable {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T19:45:52.908971+08:00[Asia/Shanghai]")
+public class ResponseOfListOfRenewable {
   /**
    * Gets or Sets action
    */
@@ -106,7 +108,7 @@ public class ResponseOfRenewable {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private Renewable data;
+  private List<Renewable> data = null;
 
   /**
    * Gets or Sets error
@@ -480,7 +482,7 @@ public class ResponseOfRenewable {
   private Boolean success;
 
 
-  public ResponseOfRenewable action(ActionEnum action) {
+  public ResponseOfListOfRenewable action(ActionEnum action) {
     
     this.action = action;
     return this;
@@ -503,7 +505,7 @@ public class ResponseOfRenewable {
   }
 
 
-  public ResponseOfRenewable algorithm(String algorithm) {
+  public ResponseOfListOfRenewable algorithm(String algorithm) {
     
     this.algorithm = algorithm;
     return this;
@@ -526,7 +528,7 @@ public class ResponseOfRenewable {
   }
 
 
-  public ResponseOfRenewable ciphertext(String ciphertext) {
+  public ResponseOfListOfRenewable ciphertext(String ciphertext) {
     
     this.ciphertext = ciphertext;
     return this;
@@ -549,7 +551,7 @@ public class ResponseOfRenewable {
   }
 
 
-  public ResponseOfRenewable code(Integer code) {
+  public ResponseOfListOfRenewable code(Integer code) {
     
     this.code = code;
     return this;
@@ -571,30 +573,38 @@ public class ResponseOfRenewable {
   }
 
 
-  public ResponseOfRenewable data(Renewable data) {
+  public ResponseOfListOfRenewable data(List<Renewable> data) {
     
     this.data = data;
     return this;
   }
 
+  public ResponseOfListOfRenewable addDataItem(Renewable dataItem) {
+    if (this.data == null) {
+      this.data = new ArrayList<Renewable>();
+    }
+    this.data.add(dataItem);
+    return this;
+  }
+
    /**
-   * Get data
+   * 响应数据
    * @return data
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "响应数据")
 
-  public Renewable getData() {
+  public List<Renewable> getData() {
     return data;
   }
 
 
-  public void setData(Renewable data) {
+  public void setData(List<Renewable> data) {
     this.data = data;
   }
 
 
-  public ResponseOfRenewable error(ErrorEnum error) {
+  public ResponseOfListOfRenewable error(ErrorEnum error) {
     
     this.error = error;
     return this;
@@ -617,7 +627,7 @@ public class ResponseOfRenewable {
   }
 
 
-  public ResponseOfRenewable msg(String msg) {
+  public ResponseOfListOfRenewable msg(String msg) {
     
     this.msg = msg;
     return this;
@@ -640,7 +650,7 @@ public class ResponseOfRenewable {
   }
 
 
-  public ResponseOfRenewable result(Result result) {
+  public ResponseOfListOfRenewable result(Result result) {
     
     this.result = result;
     return this;
@@ -663,7 +673,7 @@ public class ResponseOfRenewable {
   }
 
 
-  public ResponseOfRenewable session(String session) {
+  public ResponseOfListOfRenewable session(String session) {
     
     this.session = session;
     return this;
@@ -686,7 +696,7 @@ public class ResponseOfRenewable {
   }
 
 
-  public ResponseOfRenewable success(Boolean success) {
+  public ResponseOfListOfRenewable success(Boolean success) {
     
     this.success = success;
     return this;
@@ -717,17 +727,17 @@ public class ResponseOfRenewable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseOfRenewable responseOfRenewable = (ResponseOfRenewable) o;
-    return Objects.equals(this.action, responseOfRenewable.action) &&
-        Objects.equals(this.algorithm, responseOfRenewable.algorithm) &&
-        Objects.equals(this.ciphertext, responseOfRenewable.ciphertext) &&
-        Objects.equals(this.code, responseOfRenewable.code) &&
-        Objects.equals(this.data, responseOfRenewable.data) &&
-        Objects.equals(this.error, responseOfRenewable.error) &&
-        Objects.equals(this.msg, responseOfRenewable.msg) &&
-        Objects.equals(this.result, responseOfRenewable.result) &&
-        Objects.equals(this.session, responseOfRenewable.session) &&
-        Objects.equals(this.success, responseOfRenewable.success);
+    ResponseOfListOfRenewable responseOfListOfRenewable = (ResponseOfListOfRenewable) o;
+    return Objects.equals(this.action, responseOfListOfRenewable.action) &&
+        Objects.equals(this.algorithm, responseOfListOfRenewable.algorithm) &&
+        Objects.equals(this.ciphertext, responseOfListOfRenewable.ciphertext) &&
+        Objects.equals(this.code, responseOfListOfRenewable.code) &&
+        Objects.equals(this.data, responseOfListOfRenewable.data) &&
+        Objects.equals(this.error, responseOfListOfRenewable.error) &&
+        Objects.equals(this.msg, responseOfListOfRenewable.msg) &&
+        Objects.equals(this.result, responseOfListOfRenewable.result) &&
+        Objects.equals(this.session, responseOfListOfRenewable.session) &&
+        Objects.equals(this.success, responseOfListOfRenewable.success);
   }
 
   @Override
@@ -739,7 +749,7 @@ public class ResponseOfRenewable {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseOfRenewable {\n");
+    sb.append("class ResponseOfListOfRenewable {\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
     sb.append("    ciphertext: ").append(toIndentedString(ciphertext)).append("\n");

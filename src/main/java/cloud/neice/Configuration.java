@@ -13,7 +13,7 @@
 
 package cloud.neice;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T17:38:51.789649+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T19:45:52.908971+08:00[Asia/Shanghai]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

@@ -23,23 +23,25 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for ResponseOfRenewable
+ * Model tests for ResponseOfListOfRenewable
  */
-public class ResponseOfRenewableTest {
-    private final ResponseOfRenewable model = new ResponseOfRenewable();
+public class ResponseOfListOfRenewableTest {
+    private final ResponseOfListOfRenewable model = new ResponseOfListOfRenewable();
 
     /**
-     * Model tests for ResponseOfRenewable
+     * Model tests for ResponseOfListOfRenewable
      */
     @Test
-    public void testResponseOfRenewable() {
-        // TODO: test ResponseOfRenewable
+    public void testResponseOfListOfRenewable() {
+        // TODO: test ResponseOfListOfRenewable
     }
 
     /**

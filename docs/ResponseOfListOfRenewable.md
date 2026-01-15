@@ -1,6 +1,6 @@
 
 
-# ResponseOfRenewable
+# ResponseOfListOfRenewable
 
 ## Properties
 
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **algorithm** | **String** |  |  [optional]
 **ciphertext** | **String** |  |  [optional]
 **code** | **Integer** | 响应代码 | 
-**data** | [**Renewable**](Renewable.md) |  |  [optional]
+**data** | [**List&lt;Renewable&gt;**](Renewable.md) | 响应数据 |  [optional]
 **error** | [**ErrorEnum**](#ErrorEnum) |  |  [optional]
 **msg** | **String** | 错误信息:成功时为空或为success |  [optional]
 **result** | [**Result**](Result.md) |  |  [optional]

@@ -31,8 +31,8 @@ import cloud.neice.model.CertificateCode;
 import cloud.neice.model.DeviceRequest;
 import cloud.neice.model.ResponseOfCertificateCode;
 import cloud.neice.model.ResponseOfListOfPersonalCertificate;
+import cloud.neice.model.ResponseOfListOfRenewable;
 import cloud.neice.model.ResponseOfPersonalCertificate;
-import cloud.neice.model.ResponseOfRenewable;
 import cloud.neice.model.ResponseOfStatus;
 import cloud.neice.model.ResponseOfstring;
 
@@ -900,10 +900,10 @@ public class DeviceApi {
     }
 
     /**
-     * 查询设备是否可以补签
-     * 查询指定UDID的设备是否可以免费补签
+     * 查询设备补签列表信息
+     * 查询设备补签列表信息
      * @param udid udid (required)
-     * @return ResponseOfRenewable
+     * @return ResponseOfListOfRenewable
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -915,16 +915,16 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ResponseOfRenewable renewable(String udid) throws ApiException {
-        ApiResponse<ResponseOfRenewable> localVarResp = renewableWithHttpInfo(udid);
+    public ResponseOfListOfRenewable renewable(String udid) throws ApiException {
+        ApiResponse<ResponseOfListOfRenewable> localVarResp = renewableWithHttpInfo(udid);
         return localVarResp.getData();
     }
 
     /**
-     * 查询设备是否可以补签
-     * 查询指定UDID的设备是否可以免费补签
+     * 查询设备补签列表信息
+     * 查询设备补签列表信息
      * @param udid udid (required)
-     * @return ApiResponse&lt;ResponseOfRenewable&gt;
+     * @return ApiResponse&lt;ResponseOfListOfRenewable&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -936,15 +936,15 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ResponseOfRenewable> renewableWithHttpInfo(String udid) throws ApiException {
+    public ApiResponse<ResponseOfListOfRenewable> renewableWithHttpInfo(String udid) throws ApiException {
         okhttp3.Call localVarCall = renewableValidateBeforeCall(udid, null);
-        Type localVarReturnType = new TypeToken<ResponseOfRenewable>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfRenewable>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * 查询设备是否可以补签 (asynchronously)
-     * 查询指定UDID的设备是否可以免费补签
+     * 查询设备补签列表信息 (asynchronously)
+     * 查询设备补签列表信息
      * @param udid udid (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -959,10 +959,10 @@ public class DeviceApi {
         <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call renewableAsync(String udid, final ApiCallback<ResponseOfRenewable> _callback) throws ApiException {
+    public okhttp3.Call renewableAsync(String udid, final ApiCallback<ResponseOfListOfRenewable> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = renewableValidateBeforeCall(udid, _callback);
-        Type localVarReturnType = new TypeToken<ResponseOfRenewable>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseOfListOfRenewable>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

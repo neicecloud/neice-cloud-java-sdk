@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Balance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T17:38:51.789649+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T19:45:52.908971+08:00[Asia/Shanghai]")
 public class Balance {
   public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
   @SerializedName(SERIALIZED_NAME_ALGORITHM)

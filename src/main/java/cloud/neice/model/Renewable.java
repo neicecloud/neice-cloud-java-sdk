@@ -27,8 +27,16 @@ import java.io.IOException;
 /**
  * Renewable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T16:53:05.039237+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T17:38:51.789649+08:00[Asia/Shanghai]")
 public class Renewable {
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
+  private String domain;
+
+  public static final String SERIALIZED_NAME_GUIDE = "guide";
+  @SerializedName(SERIALIZED_NAME_GUIDE)
+  private String guide;
+
   public static final String SERIALIZED_NAME_RENEWABLE = "renewable";
   @SerializedName(SERIALIZED_NAME_RENEWABLE)
   private Boolean renewable;
@@ -37,9 +45,59 @@ public class Renewable {
   @SerializedName(SERIALIZED_NAME_UDID)
   private String udid;
 
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
+  private String url;
+
   public static final String SERIALIZED_NAME_UUID = "uuid";
   @SerializedName(SERIALIZED_NAME_UUID)
   private String uuid;
+
+
+  public Renewable domain(String domain) {
+    
+    this.domain = domain;
+    return this;
+  }
+
+   /**
+   * Get domain
+   * @return domain
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getDomain() {
+    return domain;
+  }
+
+
+  public void setDomain(String domain) {
+    this.domain = domain;
+  }
+
+
+  public Renewable guide(String guide) {
+    
+    this.guide = guide;
+    return this;
+  }
+
+   /**
+   * Get guide
+   * @return guide
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getGuide() {
+    return guide;
+  }
+
+
+  public void setGuide(String guide) {
+    this.guide = guide;
+  }
 
 
   public Renewable renewable(Boolean renewable) {
@@ -88,6 +146,29 @@ public class Renewable {
   }
 
 
+  public Renewable url(String url) {
+    
+    this.url = url;
+    return this;
+  }
+
+   /**
+   * Get url
+   * @return url
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getUrl() {
+    return url;
+  }
+
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+
   public Renewable uuid(String uuid) {
     
     this.uuid = uuid;
@@ -120,14 +201,17 @@ public class Renewable {
       return false;
     }
     Renewable renewable = (Renewable) o;
-    return Objects.equals(this.renewable, renewable.renewable) &&
+    return Objects.equals(this.domain, renewable.domain) &&
+        Objects.equals(this.guide, renewable.guide) &&
+        Objects.equals(this.renewable, renewable.renewable) &&
         Objects.equals(this.udid, renewable.udid) &&
+        Objects.equals(this.url, renewable.url) &&
         Objects.equals(this.uuid, renewable.uuid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(renewable, udid, uuid);
+    return Objects.hash(domain, guide, renewable, udid, url, uuid);
   }
 
 
@@ -135,8 +219,11 @@ public class Renewable {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Renewable {\n");
+    sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
+    sb.append("    guide: ").append(toIndentedString(guide)).append("\n");
     sb.append("    renewable: ").append(toIndentedString(renewable)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("}");
     return sb.toString();

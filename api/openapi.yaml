@@ -776,12 +776,21 @@ components:
     Renewable:
       example:
         renewable: true
+        domain: domain
         udid: udid
         uuid: uuid
+        guide: guide
+        url: url
       properties:
+        domain:
+          type: string
+        guide:
+          type: string
         renewable:
           type: boolean
         udid:
+          type: string
+        url:
           type: string
         uuid:
           type: string
@@ -1717,8 +1726,11 @@ components:
         code: 0
         data:
           renewable: true
+          domain: domain
           udid: udid
           uuid: uuid
+          guide: guide
+          url: url
         session: session
         success: true
         action: GET_AES_KEY

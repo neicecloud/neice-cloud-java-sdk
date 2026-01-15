@@ -41,6 +41,22 @@ public class RenewableTest {
     }
 
     /**
+     * Test the property 'domain'
+     */
+    @Test
+    public void domainTest() {
+        // TODO: test domain
+    }
+
+    /**
+     * Test the property 'guide'
+     */
+    @Test
+    public void guideTest() {
+        // TODO: test guide
+    }
+
+    /**
      * Test the property 'renewable'
      */
     @Test
@@ -54,6 +70,14 @@ public class RenewableTest {
     @Test
     public void udidTest() {
         // TODO: test udid
+    }
+
+    /**
+     * Test the property 'url'
+     */
+    @Test
+    public void urlTest() {
+        // TODO: test url
     }
 
     /**

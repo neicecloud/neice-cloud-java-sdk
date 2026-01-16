@@ -65,6 +65,14 @@ public class RenewableTest {
     }
 
     /**
+     * Test the property 'teamId'
+     */
+    @Test
+    public void teamIdTest() {
+        // TODO: test teamId
+    }
+
+    /**
      * Test the property 'udid'
      */
     @Test

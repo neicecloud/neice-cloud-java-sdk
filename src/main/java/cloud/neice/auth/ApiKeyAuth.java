@@ -18,7 +18,7 @@ import cloud.neice.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T19:45:52.908971+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

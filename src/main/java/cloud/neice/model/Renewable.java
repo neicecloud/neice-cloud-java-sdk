@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Renewable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T19:45:52.908971+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
 public class Renewable {
   public static final String SERIALIZED_NAME_DOMAIN = "domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
@@ -40,6 +40,10 @@ public class Renewable {
   public static final String SERIALIZED_NAME_RENEWABLE = "renewable";
   @SerializedName(SERIALIZED_NAME_RENEWABLE)
   private Boolean renewable;
+
+  public static final String SERIALIZED_NAME_TEAM_ID = "teamId";
+  @SerializedName(SERIALIZED_NAME_TEAM_ID)
+  private String teamId;
 
   public static final String SERIALIZED_NAME_UDID = "udid";
   @SerializedName(SERIALIZED_NAME_UDID)
@@ -120,6 +124,29 @@ public class Renewable {
 
   public void setRenewable(Boolean renewable) {
     this.renewable = renewable;
+  }
+
+
+  public Renewable teamId(String teamId) {
+    
+    this.teamId = teamId;
+    return this;
+  }
+
+   /**
+   * Get teamId
+   * @return teamId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getTeamId() {
+    return teamId;
+  }
+
+
+  public void setTeamId(String teamId) {
+    this.teamId = teamId;
   }
 
 
@@ -204,6 +231,7 @@ public class Renewable {
     return Objects.equals(this.domain, renewable.domain) &&
         Objects.equals(this.guide, renewable.guide) &&
         Objects.equals(this.renewable, renewable.renewable) &&
+        Objects.equals(this.teamId, renewable.teamId) &&
         Objects.equals(this.udid, renewable.udid) &&
         Objects.equals(this.url, renewable.url) &&
         Objects.equals(this.uuid, renewable.uuid);
@@ -211,7 +239,7 @@ public class Renewable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(domain, guide, renewable, udid, url, uuid);
+    return Objects.hash(domain, guide, renewable, teamId, udid, url, uuid);
   }
 
 
@@ -222,6 +250,7 @@ public class Renewable {
     sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
     sb.append("    guide: ").append(toIndentedString(guide)).append("\n");
     sb.append("    renewable: ").append(toIndentedString(renewable)).append("\n");
+    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");

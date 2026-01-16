@@ -777,6 +777,7 @@ components:
       example:
         renewable: true
         domain: domain
+        teamId: teamId
         udid: udid
         uuid: uuid
         guide: guide
@@ -788,6 +789,8 @@ components:
           type: string
         renewable:
           type: boolean
+        teamId:
+          type: string
         udid:
           type: string
         url:
@@ -1495,12 +1498,14 @@ components:
         data:
         - renewable: true
           domain: domain
+          teamId: teamId
           udid: udid
           uuid: uuid
           guide: guide
           url: url
         - renewable: true
           domain: domain
+          teamId: teamId
           udid: udid
           uuid: uuid
           guide: guide

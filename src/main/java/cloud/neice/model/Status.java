@@ -13,294 +13,326 @@
 
 package cloud.neice.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+import cloud.neice.ApiClient;
 /**
  * Status
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@JsonPropertyOrder({
+  Status.JSON_PROPERTY_BLIND,
+  Status.JSON_PROPERTY_BLIND_RESERVE,
+  Status.JSON_PROPERTY_BLIND_RESERVE_UNIT,
+  Status.JSON_PROPERTY_BLIND_UNIT,
+  Status.JSON_PROPERTY_MAGIC,
+  Status.JSON_PROPERTY_MAGIC_UNIT,
+  Status.JSON_PROPERTY_QUICK,
+  Status.JSON_PROPERTY_QUICK_UNIT,
+  Status.JSON_PROPERTY_RESERVE,
+  Status.JSON_PROPERTY_RESERVE_UNIT
+})
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Status {
-  public static final String SERIALIZED_NAME_BLIND = "blind";
-  @SerializedName(SERIALIZED_NAME_BLIND)
+  public static final String JSON_PROPERTY_BLIND = "blind";
+  @jakarta.annotation.Nullable
   private Boolean blind;
 
-  public static final String SERIALIZED_NAME_BLIND_RESERVE = "blindReserve";
-  @SerializedName(SERIALIZED_NAME_BLIND_RESERVE)
+  public static final String JSON_PROPERTY_BLIND_RESERVE = "blindReserve";
+  @jakarta.annotation.Nullable
   private Boolean blindReserve;
 
-  public static final String SERIALIZED_NAME_BLIND_RESERVE_UNIT = "blindReserveUnit";
-  @SerializedName(SERIALIZED_NAME_BLIND_RESERVE_UNIT)
+  public static final String JSON_PROPERTY_BLIND_RESERVE_UNIT = "blindReserveUnit";
+  @jakarta.annotation.Nullable
   private BigDecimal blindReserveUnit;
 
-  public static final String SERIALIZED_NAME_BLIND_UNIT = "blindUnit";
-  @SerializedName(SERIALIZED_NAME_BLIND_UNIT)
+  public static final String JSON_PROPERTY_BLIND_UNIT = "blindUnit";
+  @jakarta.annotation.Nullable
   private BigDecimal blindUnit;
 
-  public static final String SERIALIZED_NAME_MAGIC = "magic";
-  @SerializedName(SERIALIZED_NAME_MAGIC)
+  public static final String JSON_PROPERTY_MAGIC = "magic";
+  @jakarta.annotation.Nullable
   private Boolean magic;
 
-  public static final String SERIALIZED_NAME_MAGIC_UNIT = "magicUnit";
-  @SerializedName(SERIALIZED_NAME_MAGIC_UNIT)
+  public static final String JSON_PROPERTY_MAGIC_UNIT = "magicUnit";
+  @jakarta.annotation.Nullable
   private BigDecimal magicUnit;
 
-  public static final String SERIALIZED_NAME_QUICK = "quick";
-  @SerializedName(SERIALIZED_NAME_QUICK)
+  public static final String JSON_PROPERTY_QUICK = "quick";
+  @jakarta.annotation.Nullable
   private Boolean quick;
 
-  public static final String SERIALIZED_NAME_QUICK_UNIT = "quickUnit";
-  @SerializedName(SERIALIZED_NAME_QUICK_UNIT)
+  public static final String JSON_PROPERTY_QUICK_UNIT = "quickUnit";
+  @jakarta.annotation.Nullable
   private BigDecimal quickUnit;
 
-  public static final String SERIALIZED_NAME_RESERVE = "reserve";
-  @SerializedName(SERIALIZED_NAME_RESERVE)
+  public static final String JSON_PROPERTY_RESERVE = "reserve";
+  @jakarta.annotation.Nullable
   private Boolean reserve;
 
-  public static final String SERIALIZED_NAME_RESERVE_UNIT = "reserveUnit";
-  @SerializedName(SERIALIZED_NAME_RESERVE_UNIT)
+  public static final String JSON_PROPERTY_RESERVE_UNIT = "reserveUnit";
+  @jakarta.annotation.Nullable
   private BigDecimal reserveUnit;
 
+  public Status() { 
+  }
 
-  public Status blind(Boolean blind) {
-    
+  public Status blind(@jakarta.annotation.Nullable Boolean blind) {
     this.blind = blind;
     return this;
   }
 
-   /**
+  /**
    * 标记该系统是否支持盲盒设备证书能立即秒出激活的功能
    * @return blind
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "标记该系统是否支持盲盒设备证书能立即秒出激活的功能")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BLIND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getBlind() {
     return blind;
   }
 
 
-  public void setBlind(Boolean blind) {
+  @JsonProperty(JSON_PROPERTY_BLIND)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBlind(@jakarta.annotation.Nullable Boolean blind) {
     this.blind = blind;
   }
 
 
-  public Status blindReserve(Boolean blindReserve) {
-    
+  public Status blindReserve(@jakarta.annotation.Nullable Boolean blindReserve) {
     this.blindReserve = blindReserve;
     return this;
   }
 
-   /**
+  /**
    * 标记该系统是否支持盲盒预定设备证书的功能
    * @return blindReserve
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "标记该系统是否支持盲盒预定设备证书的功能")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BLIND_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getBlindReserve() {
     return blindReserve;
   }
 
 
-  public void setBlindReserve(Boolean blindReserve) {
+  @JsonProperty(JSON_PROPERTY_BLIND_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBlindReserve(@jakarta.annotation.Nullable Boolean blindReserve) {
     this.blindReserve = blindReserve;
   }
 
 
-  public Status blindReserveUnit(BigDecimal blindReserveUnit) {
-    
+  public Status blindReserveUnit(@jakarta.annotation.Nullable BigDecimal blindReserveUnit) {
     this.blindReserveUnit = blindReserveUnit;
     return this;
   }
 
-   /**
+  /**
    * 盲盒预定证书服务单价
    * @return blindReserveUnit
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "盲盒预定证书服务单价")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BLIND_RESERVE_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getBlindReserveUnit() {
     return blindReserveUnit;
   }
 
 
-  public void setBlindReserveUnit(BigDecimal blindReserveUnit) {
+  @JsonProperty(JSON_PROPERTY_BLIND_RESERVE_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBlindReserveUnit(@jakarta.annotation.Nullable BigDecimal blindReserveUnit) {
     this.blindReserveUnit = blindReserveUnit;
   }
 
 
-  public Status blindUnit(BigDecimal blindUnit) {
-    
+  public Status blindUnit(@jakarta.annotation.Nullable BigDecimal blindUnit) {
     this.blindUnit = blindUnit;
     return this;
   }
 
-   /**
+  /**
    * 盲盒秒出证书单价
    * @return blindUnit
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "盲盒秒出证书单价")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BLIND_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getBlindUnit() {
     return blindUnit;
   }
 
 
-  public void setBlindUnit(BigDecimal blindUnit) {
+  @JsonProperty(JSON_PROPERTY_BLIND_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBlindUnit(@jakarta.annotation.Nullable BigDecimal blindUnit) {
     this.blindUnit = blindUnit;
   }
 
 
-  public Status magic(Boolean magic) {
-    
+  public Status magic(@jakarta.annotation.Nullable Boolean magic) {
     this.magic = magic;
     return this;
   }
 
-   /**
+  /**
    * 标记该系统是否支持部分设备证书能秒出激活的功能
    * @return magic
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "标记该系统是否支持部分设备证书能秒出激活的功能")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MAGIC)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getMagic() {
     return magic;
   }
 
 
-  public void setMagic(Boolean magic) {
+  @JsonProperty(JSON_PROPERTY_MAGIC)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMagic(@jakarta.annotation.Nullable Boolean magic) {
     this.magic = magic;
   }
 
 
-  public Status magicUnit(BigDecimal magicUnit) {
-    
+  public Status magicUnit(@jakarta.annotation.Nullable BigDecimal magicUnit) {
     this.magicUnit = magicUnit;
     return this;
   }
 
-   /**
+  /**
    * 部分秒出证书单价
    * @return magicUnit
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "部分秒出证书单价")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MAGIC_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getMagicUnit() {
     return magicUnit;
   }
 
 
-  public void setMagicUnit(BigDecimal magicUnit) {
+  @JsonProperty(JSON_PROPERTY_MAGIC_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMagicUnit(@jakarta.annotation.Nullable BigDecimal magicUnit) {
     this.magicUnit = magicUnit;
   }
 
 
-  public Status quick(Boolean quick) {
-    
+  public Status quick(@jakarta.annotation.Nullable Boolean quick) {
     this.quick = quick;
     return this;
   }
 
-   /**
+  /**
    * 标记该系统是否支持全部设备证书能立即秒出激活的功能
    * @return quick
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "标记该系统是否支持全部设备证书能立即秒出激活的功能")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUICK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getQuick() {
     return quick;
   }
 
 
-  public void setQuick(Boolean quick) {
+  @JsonProperty(JSON_PROPERTY_QUICK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuick(@jakarta.annotation.Nullable Boolean quick) {
     this.quick = quick;
   }
 
 
-  public Status quickUnit(BigDecimal quickUnit) {
-    
+  public Status quickUnit(@jakarta.annotation.Nullable BigDecimal quickUnit) {
     this.quickUnit = quickUnit;
     return this;
   }
 
-   /**
+  /**
    * 全量秒出证书单价
    * @return quickUnit
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "全量秒出证书单价")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUICK_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getQuickUnit() {
     return quickUnit;
   }
 
 
-  public void setQuickUnit(BigDecimal quickUnit) {
+  @JsonProperty(JSON_PROPERTY_QUICK_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuickUnit(@jakarta.annotation.Nullable BigDecimal quickUnit) {
     this.quickUnit = quickUnit;
   }
 
 
-  public Status reserve(Boolean reserve) {
-    
+  public Status reserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
     return this;
   }
 
-   /**
+  /**
    * 标记该系统是否支持预定设备证书的功能
    * @return reserve
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "标记该系统是否支持预定设备证书的功能")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getReserve() {
     return reserve;
   }
 
 
-  public void setReserve(Boolean reserve) {
+  @JsonProperty(JSON_PROPERTY_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
   }
 
 
-  public Status reserveUnit(BigDecimal reserveUnit) {
-    
+  public Status reserveUnit(@jakarta.annotation.Nullable BigDecimal reserveUnit) {
     this.reserveUnit = reserveUnit;
     return this;
   }
 
-   /**
+  /**
    * 预定证书服务单价
    * @return reserveUnit
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "预定证书服务单价")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RESERVE_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getReserveUnit() {
     return reserveUnit;
   }
 
 
-  public void setReserveUnit(BigDecimal reserveUnit) {
+  @JsonProperty(JSON_PROPERTY_RESERVE_UNIT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReserveUnit(@jakarta.annotation.Nullable BigDecimal reserveUnit) {
     this.reserveUnit = reserveUnit;
   }
 
 
+  /**
+   * Return true if this Status object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -326,7 +358,6 @@ public class Status {
   public int hashCode() {
     return Objects.hash(blind, blindReserve, blindReserveUnit, blindUnit, magic, magicUnit, quick, quickUnit, reserve, reserveUnit);
   }
-
 
   @Override
   public String toString() {
@@ -357,5 +388,89 @@ public class Status {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `blind` to the URL query string
+    if (getBlind() != null) {
+      joiner.add(String.format("%sblind%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBlind()))));
+    }
+
+    // add `blindReserve` to the URL query string
+    if (getBlindReserve() != null) {
+      joiner.add(String.format("%sblindReserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBlindReserve()))));
+    }
+
+    // add `blindReserveUnit` to the URL query string
+    if (getBlindReserveUnit() != null) {
+      joiner.add(String.format("%sblindReserveUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBlindReserveUnit()))));
+    }
+
+    // add `blindUnit` to the URL query string
+    if (getBlindUnit() != null) {
+      joiner.add(String.format("%sblindUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBlindUnit()))));
+    }
+
+    // add `magic` to the URL query string
+    if (getMagic() != null) {
+      joiner.add(String.format("%smagic%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMagic()))));
+    }
+
+    // add `magicUnit` to the URL query string
+    if (getMagicUnit() != null) {
+      joiner.add(String.format("%smagicUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMagicUnit()))));
+    }
+
+    // add `quick` to the URL query string
+    if (getQuick() != null) {
+      joiner.add(String.format("%squick%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuick()))));
+    }
+
+    // add `quickUnit` to the URL query string
+    if (getQuickUnit() != null) {
+      joiner.add(String.format("%squickUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuickUnit()))));
+    }
+
+    // add `reserve` to the URL query string
+    if (getReserve() != null) {
+      joiner.add(String.format("%sreserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserve()))));
+    }
+
+    // add `reserveUnit` to the URL query string
+    if (getReserveUnit() != null) {
+      joiner.add(String.format("%sreserveUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserveUnit()))));
+    }
+
+    return joiner.toString();
+  }
 }
 

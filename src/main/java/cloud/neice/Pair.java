@@ -13,7 +13,7 @@
 
 package cloud.neice;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Pair {
     private String name = "";
     private String value = "";
@@ -49,10 +49,6 @@ public class Pair {
 
     private boolean isValidString(String arg) {
         if (arg == null) {
-            return false;
-        }
-
-        if (arg.trim().isEmpty()) {
             return false;
         }
 

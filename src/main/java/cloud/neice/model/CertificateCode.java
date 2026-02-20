@@ -13,266 +13,297 @@
 
 package cloud.neice.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
-import org.threeten.bp.OffsetDateTime;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+import cloud.neice.ApiClient;
 /**
  * CertificateCode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@JsonPropertyOrder({
+  CertificateCode.JSON_PROPERTY_CODE,
+  CertificateCode.JSON_PROPERTY_DOMAIN,
+  CertificateCode.JSON_PROPERTY_EXCHANGE,
+  CertificateCode.JSON_PROPERTY_MODEL,
+  CertificateCode.JSON_PROPERTY_QUALITY,
+  CertificateCode.JSON_PROPERTY_QUERY,
+  CertificateCode.JSON_PROPERTY_RESERVE,
+  CertificateCode.JSON_PROPERTY_TOKEN,
+  CertificateCode.JSON_PROPERTY_UDID
+})
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CertificateCode {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
+  public static final String JSON_PROPERTY_CODE = "code";
+  @jakarta.annotation.Nullable
   private String code;
 
-  public static final String SERIALIZED_NAME_DOMAIN = "domain";
-  @SerializedName(SERIALIZED_NAME_DOMAIN)
+  public static final String JSON_PROPERTY_DOMAIN = "domain";
+  @jakarta.annotation.Nullable
   private String domain;
 
-  public static final String SERIALIZED_NAME_EXCHANGE = "exchange";
-  @SerializedName(SERIALIZED_NAME_EXCHANGE)
+  public static final String JSON_PROPERTY_EXCHANGE = "exchange";
+  @jakarta.annotation.Nullable
   private OffsetDateTime exchange;
 
-  public static final String SERIALIZED_NAME_MODEL = "model";
-  @SerializedName(SERIALIZED_NAME_MODEL)
+  public static final String JSON_PROPERTY_MODEL = "model";
+  @jakarta.annotation.Nullable
   private String model;
 
-  public static final String SERIALIZED_NAME_QUALITY = "quality";
-  @SerializedName(SERIALIZED_NAME_QUALITY)
+  public static final String JSON_PROPERTY_QUALITY = "quality";
+  @jakarta.annotation.Nullable
   private Integer quality;
 
-  public static final String SERIALIZED_NAME_QUERY = "query";
-  @SerializedName(SERIALIZED_NAME_QUERY)
+  public static final String JSON_PROPERTY_QUERY = "query";
+  @jakarta.annotation.Nullable
   private String query;
 
-  public static final String SERIALIZED_NAME_RESERVE = "reserve";
-  @SerializedName(SERIALIZED_NAME_RESERVE)
+  public static final String JSON_PROPERTY_RESERVE = "reserve";
+  @jakarta.annotation.Nullable
   private Boolean reserve;
 
-  public static final String SERIALIZED_NAME_TOKEN = "token";
-  @SerializedName(SERIALIZED_NAME_TOKEN)
+  public static final String JSON_PROPERTY_TOKEN = "token";
+  @jakarta.annotation.Nonnull
   private String token;
 
-  public static final String SERIALIZED_NAME_UDID = "udid";
-  @SerializedName(SERIALIZED_NAME_UDID)
+  public static final String JSON_PROPERTY_UDID = "udid";
+  @jakarta.annotation.Nullable
   private String udid;
 
+  public CertificateCode() { 
+  }
 
-  public CertificateCode code(String code) {
-    
+  public CertificateCode code(@jakarta.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * 证书兑换码
    * @return code
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书兑换码")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCode() {
     return code;
   }
 
 
-  public void setCode(String code) {
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCode(@jakarta.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public CertificateCode domain(String domain) {
-    
+  public CertificateCode domain(@jakarta.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
 
-   /**
+  /**
    * 证书兑换系统的域名，请先在网站配置域名及其对应的API地址
    * @return domain
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书兑换系统的域名，请先在网站配置域名及其对应的API地址")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DOMAIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getDomain() {
     return domain;
   }
 
 
-  public void setDomain(String domain) {
+  @JsonProperty(JSON_PROPERTY_DOMAIN)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDomain(@jakarta.annotation.Nullable String domain) {
     this.domain = domain;
   }
 
 
-  public CertificateCode exchange(OffsetDateTime exchange) {
-    
+  public CertificateCode exchange(@jakarta.annotation.Nullable OffsetDateTime exchange) {
     this.exchange = exchange;
     return this;
   }
 
-   /**
+  /**
    * 兑换码完成兑换的时间
    * @return exchange
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "兑换码完成兑换的时间")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_EXCHANGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public OffsetDateTime getExchange() {
     return exchange;
   }
 
 
-  public void setExchange(OffsetDateTime exchange) {
+  @JsonProperty(JSON_PROPERTY_EXCHANGE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExchange(@jakarta.annotation.Nullable OffsetDateTime exchange) {
     this.exchange = exchange;
   }
 
 
-  public CertificateCode model(String model) {
-    
+  public CertificateCode model(@jakarta.annotation.Nullable String model) {
     this.model = model;
     return this;
   }
 
-   /**
+  /**
    * 设备型号:iPhone,iPad,iPod
    * @return model
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "设备型号:iPhone,iPad,iPod")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MODEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getModel() {
     return model;
   }
 
 
-  public void setModel(String model) {
+  @JsonProperty(JSON_PROPERTY_MODEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setModel(@jakarta.annotation.Nullable String model) {
     this.model = model;
   }
 
 
-  public CertificateCode quality(Integer quality) {
-    
+  public CertificateCode quality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
     return this;
   }
 
-   /**
+  /**
    * 默认为0:不质保,最大不能超过365天，该值仅作为参考，不作为依据，具体以上游系统为准
    * @return quality
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "默认为0:不质保,最大不能超过365天，该值仅作为参考，不作为依据，具体以上游系统为准")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUALITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getQuality() {
     return quality;
   }
 
 
-  public void setQuality(Integer quality) {
+  @JsonProperty(JSON_PROPERTY_QUALITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
   }
 
 
-  public CertificateCode query(String query) {
-    
+  public CertificateCode query(@jakarta.annotation.Nullable String query) {
     this.query = query;
     return this;
   }
 
-   /**
+  /**
    * 证书查询码
    * @return query
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书查询码")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUERY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getQuery() {
     return query;
   }
 
 
-  public void setQuery(String query) {
+  @JsonProperty(JSON_PROPERTY_QUERY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuery(@jakarta.annotation.Nullable String query) {
     this.query = query;
   }
 
 
-  public CertificateCode reserve(Boolean reserve) {
-    
+  public CertificateCode reserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
     return this;
   }
 
-   /**
+  /**
    * 表示该兑换码是否是兑换的预定证书，该值仅作为参考，不作为依据，具体以上游系统为准
    * @return reserve
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "表示该兑换码是否是兑换的预定证书，该值仅作为参考，不作为依据，具体以上游系统为准")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getReserve() {
     return reserve;
   }
 
 
-  public void setReserve(Boolean reserve) {
+  @JsonProperty(JSON_PROPERTY_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
   }
 
 
-  public CertificateCode token(String token) {
-    
+  public CertificateCode token(@jakarta.annotation.Nonnull String token) {
     this.token = token;
     return this;
   }
 
-   /**
+  /**
    * 请求鉴权令牌
    * @return token
-  **/
-  @ApiModelProperty(required = true, value = "请求鉴权令牌")
-
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getToken() {
     return token;
   }
 
 
-  public void setToken(String token) {
+  @JsonProperty(JSON_PROPERTY_TOKEN)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setToken(@jakarta.annotation.Nonnull String token) {
     this.token = token;
   }
 
 
-  public CertificateCode udid(String udid) {
-    
+  public CertificateCode udid(@jakarta.annotation.Nullable String udid) {
     this.udid = udid;
     return this;
   }
 
-   /**
+  /**
    * 绑定设备的UDID，兑换时绑定
    * @return udid
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "绑定设备的UDID，兑换时绑定")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UDID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUdid() {
     return udid;
   }
 
 
-  public void setUdid(String udid) {
+  @JsonProperty(JSON_PROPERTY_UDID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUdid(@jakarta.annotation.Nullable String udid) {
     this.udid = udid;
   }
 
 
+  /**
+   * Return true if this CertificateCode object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -297,7 +328,6 @@ public class CertificateCode {
   public int hashCode() {
     return Objects.hash(code, domain, exchange, model, quality, query, reserve, token, udid);
   }
-
 
   @Override
   public String toString() {
@@ -327,5 +357,84 @@ public class CertificateCode {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCode()))));
+    }
+
+    // add `domain` to the URL query string
+    if (getDomain() != null) {
+      joiner.add(String.format("%sdomain%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomain()))));
+    }
+
+    // add `exchange` to the URL query string
+    if (getExchange() != null) {
+      joiner.add(String.format("%sexchange%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExchange()))));
+    }
+
+    // add `model` to the URL query string
+    if (getModel() != null) {
+      joiner.add(String.format("%smodel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getModel()))));
+    }
+
+    // add `quality` to the URL query string
+    if (getQuality() != null) {
+      joiner.add(String.format("%squality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuality()))));
+    }
+
+    // add `query` to the URL query string
+    if (getQuery() != null) {
+      joiner.add(String.format("%squery%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuery()))));
+    }
+
+    // add `reserve` to the URL query string
+    if (getReserve() != null) {
+      joiner.add(String.format("%sreserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserve()))));
+    }
+
+    // add `token` to the URL query string
+    if (getToken() != null) {
+      joiner.add(String.format("%stoken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getToken()))));
+    }
+
+    // add `udid` to the URL query string
+    if (getUdid() != null) {
+      joiner.add(String.format("%sudid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUdid()))));
+    }
+
+    return joiner.toString();
+  }
 }
 

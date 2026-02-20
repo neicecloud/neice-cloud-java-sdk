@@ -13,400 +13,441 @@
 
 package cloud.neice.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+import cloud.neice.ApiClient;
 /**
  * DeviceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@JsonPropertyOrder({
+  DeviceRequest.JSON_PROPERTY_CALLBACK,
+  DeviceRequest.JSON_PROPERTY_CODE,
+  DeviceRequest.JSON_PROPERTY_MODEL,
+  DeviceRequest.JSON_PROPERTY_NAME,
+  DeviceRequest.JSON_PROPERTY_PARAM,
+  DeviceRequest.JSON_PROPERTY_PHONE,
+  DeviceRequest.JSON_PROPERTY_QUALITY,
+  DeviceRequest.JSON_PROPERTY_REFER,
+  DeviceRequest.JSON_PROPERTY_RENEW,
+  DeviceRequest.JSON_PROPERTY_RESERVE,
+  DeviceRequest.JSON_PROPERTY_SYSTEM,
+  DeviceRequest.JSON_PROPERTY_UDID,
+  DeviceRequest.JSON_PROPERTY_UUID,
+  DeviceRequest.JSON_PROPERTY_VERSION
+})
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class DeviceRequest {
-  public static final String SERIALIZED_NAME_CALLBACK = "callback";
-  @SerializedName(SERIALIZED_NAME_CALLBACK)
+  public static final String JSON_PROPERTY_CALLBACK = "callback";
+  @jakarta.annotation.Nullable
   private String callback;
 
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
+  public static final String JSON_PROPERTY_CODE = "code";
+  @jakarta.annotation.Nullable
   private String code;
 
-  public static final String SERIALIZED_NAME_MODEL = "model";
-  @SerializedName(SERIALIZED_NAME_MODEL)
+  public static final String JSON_PROPERTY_MODEL = "model";
+  @jakarta.annotation.Nullable
   private String model;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
+  @jakarta.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_PARAM = "param";
-  @SerializedName(SERIALIZED_NAME_PARAM)
+  public static final String JSON_PROPERTY_PARAM = "param";
+  @jakarta.annotation.Nullable
   private String param;
 
-  public static final String SERIALIZED_NAME_PHONE = "phone";
-  @SerializedName(SERIALIZED_NAME_PHONE)
+  public static final String JSON_PROPERTY_PHONE = "phone";
+  @jakarta.annotation.Nullable
   private String phone;
 
-  public static final String SERIALIZED_NAME_QUALITY = "quality";
-  @SerializedName(SERIALIZED_NAME_QUALITY)
+  public static final String JSON_PROPERTY_QUALITY = "quality";
+  @jakarta.annotation.Nullable
   private Integer quality;
 
-  public static final String SERIALIZED_NAME_REFER = "refer";
-  @SerializedName(SERIALIZED_NAME_REFER)
+  public static final String JSON_PROPERTY_REFER = "refer";
+  @jakarta.annotation.Nullable
   private String refer;
 
-  public static final String SERIALIZED_NAME_RENEW = "renew";
-  @SerializedName(SERIALIZED_NAME_RENEW)
+  public static final String JSON_PROPERTY_RENEW = "renew";
+  @jakarta.annotation.Nullable
   private Boolean renew;
 
-  public static final String SERIALIZED_NAME_RESERVE = "reserve";
-  @SerializedName(SERIALIZED_NAME_RESERVE)
+  public static final String JSON_PROPERTY_RESERVE = "reserve";
+  @jakarta.annotation.Nullable
   private Boolean reserve;
 
-  public static final String SERIALIZED_NAME_SYSTEM = "system";
-  @SerializedName(SERIALIZED_NAME_SYSTEM)
+  public static final String JSON_PROPERTY_SYSTEM = "system";
+  @jakarta.annotation.Nullable
   private String system;
 
-  public static final String SERIALIZED_NAME_UDID = "udid";
-  @SerializedName(SERIALIZED_NAME_UDID)
+  public static final String JSON_PROPERTY_UDID = "udid";
+  @jakarta.annotation.Nonnull
   private String udid;
 
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
+  public static final String JSON_PROPERTY_UUID = "uuid";
+  @jakarta.annotation.Nullable
   private String uuid;
 
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
+  public static final String JSON_PROPERTY_VERSION = "version";
+  @jakarta.annotation.Nullable
   private String version;
 
+  public DeviceRequest() { 
+  }
 
-  public DeviceRequest callback(String callback) {
-    
+  public DeviceRequest callback(@jakarta.annotation.Nullable String callback) {
     this.callback = callback;
     return this;
   }
 
-   /**
+  /**
    * 预定证书激活时可通过回调地址将证书推送到业务系统中，为空将不会回调
    * @return callback
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "预定证书激活时可通过回调地址将证书推送到业务系统中，为空将不会回调")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CALLBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCallback() {
     return callback;
   }
 
 
-  public void setCallback(String callback) {
+  @JsonProperty(JSON_PROPERTY_CALLBACK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCallback(@jakarta.annotation.Nullable String callback) {
     this.callback = callback;
   }
 
 
-  public DeviceRequest code(String code) {
-    
+  public DeviceRequest code(@jakarta.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * 可使用兑换码注册设备
    * @return code
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "可使用兑换码注册设备")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCode() {
     return code;
   }
 
 
-  public void setCode(String code) {
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCode(@jakarta.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public DeviceRequest model(String model) {
-    
+  public DeviceRequest model(@jakarta.annotation.Nullable String model) {
     this.model = model;
     return this;
   }
 
-   /**
+  /**
    * 兑换设备的手机型号，非必要参数
    * @return model
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "兑换设备的手机型号，非必要参数")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MODEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getModel() {
     return model;
   }
 
 
-  public void setModel(String model) {
+  @JsonProperty(JSON_PROPERTY_MODEL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setModel(@jakarta.annotation.Nullable String model) {
     this.model = model;
   }
 
 
-  public DeviceRequest name(String name) {
-    
+  public DeviceRequest name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * 当调用的预定证书激活时，激活通知短信将发送该名称，方便区分，允许为空值
    * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "当调用的预定证书激活时，激活通知短信将发送该名称，方便区分，允许为空值")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getName() {
     return name;
   }
 
 
-  public void setName(String name) {
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public DeviceRequest param(String param) {
-    
+  public DeviceRequest param(@jakarta.annotation.Nullable String param) {
     this.param = param;
     return this;
   }
 
-   /**
+  /**
    * 额外透传参数，非必要参数
    * @return param
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "额外透传参数，非必要参数")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PARAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getParam() {
     return param;
   }
 
 
-  public void setParam(String param) {
+  @JsonProperty(JSON_PROPERTY_PARAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setParam(@jakarta.annotation.Nullable String param) {
     this.param = param;
   }
 
 
-  public DeviceRequest phone(String phone) {
-    
+  public DeviceRequest phone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * 预定手机:设备激活后发送可以安装APP的通知短信，当注册预定证书时，电话号码不能为空值
    * @return phone
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "预定手机:设备激活后发送可以安装APP的通知短信，当注册预定证书时，电话号码不能为空值")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getPhone() {
     return phone;
   }
 
 
-  public void setPhone(String phone) {
+  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPhone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public DeviceRequest quality(Integer quality) {
-    
+  public DeviceRequest quality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
     return this;
   }
 
-   /**
+  /**
    * 增加质保天数后台可能会增加计费
    * @return quality
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "增加质保天数后台可能会增加计费")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUALITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getQuality() {
     return quality;
   }
 
 
-  public void setQuality(Integer quality) {
+  @JsonProperty(JSON_PROPERTY_QUALITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
   }
 
 
-  public DeviceRequest refer(String refer) {
-    
+  public DeviceRequest refer(@jakarta.annotation.Nullable String refer) {
     this.refer = refer;
     return this;
   }
 
-   /**
+  /**
    * 下游系统可以标记该设备的注册用户，上游系统将透传回去，非必要参数
    * @return refer
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "下游系统可以标记该设备的注册用户，上游系统将透传回去，非必要参数")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REFER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getRefer() {
     return refer;
   }
 
 
-  public void setRefer(String refer) {
+  @JsonProperty(JSON_PROPERTY_REFER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRefer(@jakarta.annotation.Nullable String refer) {
     this.refer = refer;
   }
 
 
-  public DeviceRequest renew(Boolean renew) {
-    
+  public DeviceRequest renew(@jakarta.annotation.Nullable Boolean renew) {
     this.renew = renew;
     return this;
   }
 
-   /**
+  /**
    * 标记该设备是否是免费补签请求
    * @return renew
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "标记该设备是否是免费补签请求")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RENEW)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getRenew() {
     return renew;
   }
 
 
-  public void setRenew(Boolean renew) {
+  @JsonProperty(JSON_PROPERTY_RENEW)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRenew(@jakarta.annotation.Nullable Boolean renew) {
     this.renew = renew;
   }
 
 
-  public DeviceRequest reserve(Boolean reserve) {
-    
+  public DeviceRequest reserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
     return this;
   }
 
-   /**
+  /**
    * 证书预定参数开关如果卡设备，将在设备处于激活状态时通知用户安装
    * @return reserve
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书预定参数开关如果卡设备，将在设备处于激活状态时通知用户安装")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getReserve() {
     return reserve;
   }
 
 
-  public void setReserve(Boolean reserve) {
+  @JsonProperty(JSON_PROPERTY_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
   }
 
 
-  public DeviceRequest system(String system) {
-    
+  public DeviceRequest system(@jakarta.annotation.Nullable String system) {
     this.system = system;
     return this;
   }
 
-   /**
+  /**
    * 兑换设备的系统，非必要参数
    * @return system
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "兑换设备的系统，非必要参数")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SYSTEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getSystem() {
     return system;
   }
 
 
-  public void setSystem(String system) {
+  @JsonProperty(JSON_PROPERTY_SYSTEM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSystem(@jakarta.annotation.Nullable String system) {
     this.system = system;
   }
 
 
-  public DeviceRequest udid(String udid) {
-    
+  public DeviceRequest udid(@jakarta.annotation.Nonnull String udid) {
     this.udid = udid;
     return this;
   }
 
-   /**
+  /**
    * iOS或iPad设备UDID
    * @return udid
-  **/
-  @ApiModelProperty(required = true, value = "iOS或iPad设备UDID")
-
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_UDID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getUdid() {
     return udid;
   }
 
 
-  public void setUdid(String udid) {
+  @JsonProperty(JSON_PROPERTY_UDID)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setUdid(@jakarta.annotation.Nonnull String udid) {
     this.udid = udid;
   }
 
 
-  public DeviceRequest uuid(String uuid) {
-    
+  public DeviceRequest uuid(@jakarta.annotation.Nullable String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * 免费补签时，指定需要补签证书对应的UUID
    * @return uuid
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "免费补签时，指定需要补签证书对应的UUID")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UUID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUuid() {
     return uuid;
   }
 
 
-  public void setUuid(String uuid) {
+  @JsonProperty(JSON_PROPERTY_UUID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUuid(@jakarta.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
 
 
-  public DeviceRequest version(String version) {
-    
+  public DeviceRequest version(@jakarta.annotation.Nullable String version) {
     this.version = version;
     return this;
   }
 
-   /**
+  /**
    * 兑换设备的客户端版本，非必要参数
    * @return version
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "兑换设备的客户端版本，非必要参数")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_VERSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getVersion() {
     return version;
   }
 
 
-  public void setVersion(String version) {
+  @JsonProperty(JSON_PROPERTY_VERSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVersion(@jakarta.annotation.Nullable String version) {
     this.version = version;
   }
 
 
+  /**
+   * Return true if this DeviceRequest object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -436,7 +477,6 @@ public class DeviceRequest {
   public int hashCode() {
     return Objects.hash(callback, code, model, name, param, phone, quality, refer, renew, reserve, system, udid, uuid, version);
   }
-
 
   @Override
   public String toString() {
@@ -471,5 +511,109 @@ public class DeviceRequest {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `callback` to the URL query string
+    if (getCallback() != null) {
+      joiner.add(String.format("%scallback%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCallback()))));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCode()))));
+    }
+
+    // add `model` to the URL query string
+    if (getModel() != null) {
+      joiner.add(String.format("%smodel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getModel()))));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `param` to the URL query string
+    if (getParam() != null) {
+      joiner.add(String.format("%sparam%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getParam()))));
+    }
+
+    // add `phone` to the URL query string
+    if (getPhone() != null) {
+      joiner.add(String.format("%sphone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhone()))));
+    }
+
+    // add `quality` to the URL query string
+    if (getQuality() != null) {
+      joiner.add(String.format("%squality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuality()))));
+    }
+
+    // add `refer` to the URL query string
+    if (getRefer() != null) {
+      joiner.add(String.format("%srefer%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRefer()))));
+    }
+
+    // add `renew` to the URL query string
+    if (getRenew() != null) {
+      joiner.add(String.format("%srenew%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRenew()))));
+    }
+
+    // add `reserve` to the URL query string
+    if (getReserve() != null) {
+      joiner.add(String.format("%sreserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserve()))));
+    }
+
+    // add `system` to the URL query string
+    if (getSystem() != null) {
+      joiner.add(String.format("%ssystem%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSystem()))));
+    }
+
+    // add `udid` to the URL query string
+    if (getUdid() != null) {
+      joiner.add(String.format("%sudid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUdid()))));
+    }
+
+    // add `uuid` to the URL query string
+    if (getUuid() != null) {
+      joiner.add(String.format("%suuid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUuid()))));
+    }
+
+    // add `version` to the URL query string
+    if (getVersion() != null) {
+      joiner.add(String.format("%sversion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVersion()))));
+    }
+
+    return joiner.toString();
+  }
 }
 

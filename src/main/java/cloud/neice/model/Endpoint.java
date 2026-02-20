@@ -13,104 +13,122 @@
 
 package cloud.neice.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+import cloud.neice.ApiClient;
 /**
  * Endpoint
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@JsonPropertyOrder({
+  Endpoint.JSON_PROPERTY_DESCRIPTION,
+  Endpoint.JSON_PROPERTY_ENDPOINT,
+  Endpoint.JSON_PROPERTY_NAME
+})
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Endpoint {
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @jakarta.annotation.Nullable
   private String description;
 
-  public static final String SERIALIZED_NAME_ENDPOINT = "endpoint";
-  @SerializedName(SERIALIZED_NAME_ENDPOINT)
+  public static final String JSON_PROPERTY_ENDPOINT = "endpoint";
+  @jakarta.annotation.Nullable
   private String endpoint;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
+  @jakarta.annotation.Nullable
   private String name;
 
+  public Endpoint() { 
+  }
 
-  public Endpoint description(String description) {
-    
+  public Endpoint description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * Get description
    * @return description
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getDescription() {
     return description;
   }
 
 
-  public void setDescription(String description) {
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Endpoint endpoint(String endpoint) {
-    
+  public Endpoint endpoint(@jakarta.annotation.Nullable String endpoint) {
     this.endpoint = endpoint;
     return this;
   }
 
-   /**
+  /**
    * Get endpoint
    * @return endpoint
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ENDPOINT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getEndpoint() {
     return endpoint;
   }
 
 
-  public void setEndpoint(String endpoint) {
+  @JsonProperty(JSON_PROPERTY_ENDPOINT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEndpoint(@jakarta.annotation.Nullable String endpoint) {
     this.endpoint = endpoint;
   }
 
 
-  public Endpoint name(String name) {
-    
+  public Endpoint name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Get name
    * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getName() {
     return name;
   }
 
 
-  public void setName(String name) {
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
+  /**
+   * Return true if this Endpoint object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -129,7 +147,6 @@ public class Endpoint {
   public int hashCode() {
     return Objects.hash(description, endpoint, name);
   }
-
 
   @Override
   public String toString() {
@@ -153,5 +170,54 @@ public class Endpoint {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `description` to the URL query string
+    if (getDescription() != null) {
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
+    }
+
+    // add `endpoint` to the URL query string
+    if (getEndpoint() != null) {
+      joiner.add(String.format("%sendpoint%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEndpoint()))));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    return joiner.toString();
+  }
 }
 

@@ -13,42 +13,58 @@
 
 package cloud.neice.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Arrays;
+import java.util.Map;
+import java.util.HashMap;
 import cloud.neice.model.Result;
 import cloud.neice.model.Version;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+import cloud.neice.ApiClient;
 /**
  * ResponseOfVersion
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@JsonPropertyOrder({
+  ResponseOfVersion.JSON_PROPERTY_ACTION,
+  ResponseOfVersion.JSON_PROPERTY_ALGORITHM,
+  ResponseOfVersion.JSON_PROPERTY_CIPHERTEXT,
+  ResponseOfVersion.JSON_PROPERTY_CODE,
+  ResponseOfVersion.JSON_PROPERTY_DATA,
+  ResponseOfVersion.JSON_PROPERTY_ERROR,
+  ResponseOfVersion.JSON_PROPERTY_MSG,
+  ResponseOfVersion.JSON_PROPERTY_RESULT,
+  ResponseOfVersion.JSON_PROPERTY_SESSION,
+  ResponseOfVersion.JSON_PROPERTY_SUCCESS
+})
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class ResponseOfVersion {
   /**
    * Gets or Sets action
    */
-  @JsonAdapter(ActionEnum.Adapter.class)
   public enum ActionEnum {
-    GET_AES_KEY("GET_AES_KEY"),
+    GET_AES_KEY(String.valueOf("GET_AES_KEY")),
     
-    NONE("NONE"),
+    NONE(String.valueOf("NONE")),
     
-    REFRESH_SERVER_PUBLIC_KEY("REFRESH_SERVER_PUBLIC_KEY"),
+    REFRESH_SERVER_PUBLIC_KEY(String.valueOf("REFRESH_SERVER_PUBLIC_KEY")),
     
-    RETRY_LATER("RETRY_LATER"),
+    RETRY_LATER(String.valueOf("RETRY_LATER")),
     
-    RE_LOGIN("RE_LOGIN"),
+    RE_LOGIN(String.valueOf("RE_LOGIN")),
     
-    UPDATE_CLIENT_VERSION("UPDATE_CLIENT_VERSION"),
+    UPDATE_CLIENT_VERSION(String.valueOf("UPDATE_CLIENT_VERSION")),
     
-    UPLOAD_CLIENT_PUBLIC_KEY("UPLOAD_CLIENT_PUBLIC_KEY");
+    UPLOAD_CLIENT_PUBLIC_KEY(String.valueOf("UPLOAD_CLIENT_PUBLIC_KEY"));
 
     private String value;
 
@@ -56,6 +72,7 @@ public class ResponseOfVersion {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -65,6 +82,7 @@ public class ResponseOfVersion {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static ActionEnum fromValue(String value) {
       for (ActionEnum b : ActionEnum.values()) {
         if (b.value.equals(value)) {
@@ -73,353 +91,339 @@ public class ResponseOfVersion {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<ActionEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ActionEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ActionEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return ActionEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_ACTION = "action";
-  @SerializedName(SERIALIZED_NAME_ACTION)
+  public static final String JSON_PROPERTY_ACTION = "action";
+  @jakarta.annotation.Nullable
   private ActionEnum action;
 
-  public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
-  @SerializedName(SERIALIZED_NAME_ALGORITHM)
+  public static final String JSON_PROPERTY_ALGORITHM = "algorithm";
+  @jakarta.annotation.Nullable
   private String algorithm;
 
-  public static final String SERIALIZED_NAME_CIPHERTEXT = "ciphertext";
-  @SerializedName(SERIALIZED_NAME_CIPHERTEXT)
+  public static final String JSON_PROPERTY_CIPHERTEXT = "ciphertext";
+  @jakarta.annotation.Nullable
   private String ciphertext;
 
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
+  public static final String JSON_PROPERTY_CODE = "code";
+  @jakarta.annotation.Nonnull
   private Integer code;
 
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
+  public static final String JSON_PROPERTY_DATA = "data";
+  @jakarta.annotation.Nullable
   private Version data;
 
   /**
    * Gets or Sets error
    */
-  @JsonAdapter(ErrorEnum.Adapter.class)
   public enum ErrorEnum {
-    ACCEPTED("ACCEPTED"),
+    ACCEPTED(String.valueOf("ACCEPTED")),
     
-    ACCESS_RATE_LIMIT("ACCESS_RATE_LIMIT"),
+    ACCESS_RATE_LIMIT(String.valueOf("ACCESS_RATE_LIMIT")),
     
-    ACCOUNT_CANCELLED("ACCOUNT_CANCELLED"),
+    ACCOUNT_CANCELLED(String.valueOf("ACCOUNT_CANCELLED")),
     
-    ACCOUNT_DISABLED("ACCOUNT_DISABLED"),
+    ACCOUNT_DISABLED(String.valueOf("ACCOUNT_DISABLED")),
     
-    ACCOUNT_LOCKED("ACCOUNT_LOCKED"),
+    ACCOUNT_LOCKED(String.valueOf("ACCOUNT_LOCKED")),
     
-    ACCOUNT_NOT_ACTIVATED("ACCOUNT_NOT_ACTIVATED"),
+    ACCOUNT_NOT_ACTIVATED(String.valueOf("ACCOUNT_NOT_ACTIVATED")),
     
-    AES_DECRYPTED_DATA_EMPTY("AES_DECRYPTED_DATA_EMPTY"),
+    AES_DECRYPTED_DATA_EMPTY(String.valueOf("AES_DECRYPTED_DATA_EMPTY")),
     
-    AES_DECRYPT_FAILED("AES_DECRYPT_FAILED"),
+    AES_DECRYPT_FAILED(String.valueOf("AES_DECRYPT_FAILED")),
     
-    AES_ENCRYPTED_DATA_EMPTY("AES_ENCRYPTED_DATA_EMPTY"),
+    AES_ENCRYPTED_DATA_EMPTY(String.valueOf("AES_ENCRYPTED_DATA_EMPTY")),
     
-    AES_ENCRYPT_FAILED("AES_ENCRYPT_FAILED"),
+    AES_ENCRYPT_FAILED(String.valueOf("AES_ENCRYPT_FAILED")),
     
-    AES_KEY_EXPIRED("AES_KEY_EXPIRED"),
+    AES_KEY_EXPIRED(String.valueOf("AES_KEY_EXPIRED")),
     
-    AES_KEY_EXPIRING_SOON("AES_KEY_EXPIRING_SOON"),
+    AES_KEY_EXPIRING_SOON(String.valueOf("AES_KEY_EXPIRING_SOON")),
     
-    AES_KEY_FORMAT_ERROR("AES_KEY_FORMAT_ERROR"),
+    AES_KEY_FORMAT_ERROR(String.valueOf("AES_KEY_FORMAT_ERROR")),
     
-    AES_KEY_GENERATE_FAILED("AES_KEY_GENERATE_FAILED"),
+    AES_KEY_GENERATE_FAILED(String.valueOf("AES_KEY_GENERATE_FAILED")),
     
-    AES_KEY_LENGTH_ERROR("AES_KEY_LENGTH_ERROR"),
+    AES_KEY_LENGTH_ERROR(String.valueOf("AES_KEY_LENGTH_ERROR")),
     
-    AES_KEY_NOT_FOUND("AES_KEY_NOT_FOUND"),
+    AES_KEY_NOT_FOUND(String.valueOf("AES_KEY_NOT_FOUND")),
     
-    AES_MODE_NOT_SUPPORTED("AES_MODE_NOT_SUPPORTED"),
+    AES_MODE_NOT_SUPPORTED(String.valueOf("AES_MODE_NOT_SUPPORTED")),
     
-    AES_PADDING_NOT_SUPPORTED("AES_PADDING_NOT_SUPPORTED"),
+    AES_PADDING_NOT_SUPPORTED(String.valueOf("AES_PADDING_NOT_SUPPORTED")),
     
-    AES_VECTOR_FORMAT_ERROR("AES_VECTOR_FORMAT_ERROR"),
+    AES_VECTOR_FORMAT_ERROR(String.valueOf("AES_VECTOR_FORMAT_ERROR")),
     
-    AES_VECTOR_LENGTH_ERROR("AES_VECTOR_LENGTH_ERROR"),
+    AES_VECTOR_LENGTH_ERROR(String.valueOf("AES_VECTOR_LENGTH_ERROR")),
     
-    ALREADY_REPORTED("ALREADY_REPORTED"),
+    ALREADY_REPORTED(String.valueOf("ALREADY_REPORTED")),
     
-    BAD_GATEWAY("BAD_GATEWAY"),
+    BAD_GATEWAY(String.valueOf("BAD_GATEWAY")),
     
-    BAD_REQUEST("BAD_REQUEST"),
+    BAD_REQUEST(String.valueOf("BAD_REQUEST")),
     
-    BUSINESS_ERROR("BUSINESS_ERROR"),
+    BUSINESS_ERROR(String.valueOf("BUSINESS_ERROR")),
     
-    CAPTCHA_ERROR("CAPTCHA_ERROR"),
+    CAPTCHA_ERROR(String.valueOf("CAPTCHA_ERROR")),
     
-    CAPTCHA_EXPIRED("CAPTCHA_EXPIRED"),
+    CAPTCHA_EXPIRED(String.valueOf("CAPTCHA_EXPIRED")),
     
-    CONFLICT("CONFLICT"),
+    CONFLICT(String.valueOf("CONFLICT")),
     
-    CONTINUE("CONTINUE"),
+    CONTINUE(String.valueOf("CONTINUE")),
     
-    CREATED("CREATED"),
+    CREATED(String.valueOf("CREATED")),
     
-    DATABASE_BACKUP_FAILED("DATABASE_BACKUP_FAILED"),
+    DATABASE_BACKUP_FAILED(String.valueOf("DATABASE_BACKUP_FAILED")),
     
-    DATABASE_CHECK_CONSTRAINT_VIOLATION("DATABASE_CHECK_CONSTRAINT_VIOLATION"),
+    DATABASE_CHECK_CONSTRAINT_VIOLATION(String.valueOf("DATABASE_CHECK_CONSTRAINT_VIOLATION")),
     
-    DATABASE_COLUMN_NOT_FOUND("DATABASE_COLUMN_NOT_FOUND"),
+    DATABASE_COLUMN_NOT_FOUND(String.valueOf("DATABASE_COLUMN_NOT_FOUND")),
     
-    DATABASE_CONNECTION_FAILED("DATABASE_CONNECTION_FAILED"),
+    DATABASE_CONNECTION_FAILED(String.valueOf("DATABASE_CONNECTION_FAILED")),
     
-    DATABASE_CONNECTION_POOL_EXHAUSTED("DATABASE_CONNECTION_POOL_EXHAUSTED"),
+    DATABASE_CONNECTION_POOL_EXHAUSTED(String.valueOf("DATABASE_CONNECTION_POOL_EXHAUSTED")),
     
-    DATABASE_DEADLOCK("DATABASE_DEADLOCK"),
+    DATABASE_DEADLOCK(String.valueOf("DATABASE_DEADLOCK")),
     
-    DATABASE_DELETE_FAILED("DATABASE_DELETE_FAILED"),
+    DATABASE_DELETE_FAILED(String.valueOf("DATABASE_DELETE_FAILED")),
     
-    DATABASE_DUPLICATE_KEY("DATABASE_DUPLICATE_KEY"),
+    DATABASE_DUPLICATE_KEY(String.valueOf("DATABASE_DUPLICATE_KEY")),
     
-    DATABASE_FOREIGN_KEY_VIOLATION("DATABASE_FOREIGN_KEY_VIOLATION"),
+    DATABASE_FOREIGN_KEY_VIOLATION(String.valueOf("DATABASE_FOREIGN_KEY_VIOLATION")),
     
-    DATABASE_INDEX_NOT_FOUND("DATABASE_INDEX_NOT_FOUND"),
+    DATABASE_INDEX_NOT_FOUND(String.valueOf("DATABASE_INDEX_NOT_FOUND")),
     
-    DATABASE_INSERT_FAILED("DATABASE_INSERT_FAILED"),
+    DATABASE_INSERT_FAILED(String.valueOf("DATABASE_INSERT_FAILED")),
     
-    DATABASE_NOT_NULL_VIOLATION("DATABASE_NOT_NULL_VIOLATION"),
+    DATABASE_NOT_NULL_VIOLATION(String.valueOf("DATABASE_NOT_NULL_VIOLATION")),
     
-    DATABASE_OPERATION_FAILED("DATABASE_OPERATION_FAILED"),
+    DATABASE_OPERATION_FAILED(String.valueOf("DATABASE_OPERATION_FAILED")),
     
-    DATABASE_PERMISSION_DENIED("DATABASE_PERMISSION_DENIED"),
+    DATABASE_PERMISSION_DENIED(String.valueOf("DATABASE_PERMISSION_DENIED")),
     
-    DATABASE_QUERY_FAILED("DATABASE_QUERY_FAILED"),
+    DATABASE_QUERY_FAILED(String.valueOf("DATABASE_QUERY_FAILED")),
     
-    DATABASE_READ_ONLY("DATABASE_READ_ONLY"),
+    DATABASE_READ_ONLY(String.valueOf("DATABASE_READ_ONLY")),
     
-    DATABASE_RESTORE_FAILED("DATABASE_RESTORE_FAILED"),
+    DATABASE_RESTORE_FAILED(String.valueOf("DATABASE_RESTORE_FAILED")),
     
-    DATABASE_SQL_SYNTAX_ERROR("DATABASE_SQL_SYNTAX_ERROR"),
+    DATABASE_SQL_SYNTAX_ERROR(String.valueOf("DATABASE_SQL_SYNTAX_ERROR")),
     
-    DATABASE_TABLE_NOT_FOUND("DATABASE_TABLE_NOT_FOUND"),
+    DATABASE_TABLE_NOT_FOUND(String.valueOf("DATABASE_TABLE_NOT_FOUND")),
     
-    DATABASE_TIMEOUT("DATABASE_TIMEOUT"),
+    DATABASE_TIMEOUT(String.valueOf("DATABASE_TIMEOUT")),
     
-    DATABASE_TRANSACTION_FAILED("DATABASE_TRANSACTION_FAILED"),
+    DATABASE_TRANSACTION_FAILED(String.valueOf("DATABASE_TRANSACTION_FAILED")),
     
-    DATABASE_UNIQUE_CONSTRAINT_VIOLATION("DATABASE_UNIQUE_CONSTRAINT_VIOLATION"),
+    DATABASE_UNIQUE_CONSTRAINT_VIOLATION(String.valueOf("DATABASE_UNIQUE_CONSTRAINT_VIOLATION")),
     
-    DATABASE_UPDATE_FAILED("DATABASE_UPDATE_FAILED"),
+    DATABASE_UPDATE_FAILED(String.valueOf("DATABASE_UPDATE_FAILED")),
     
-    DATABASE_VERSION_INCOMPATIBLE("DATABASE_VERSION_INCOMPATIBLE"),
+    DATABASE_VERSION_INCOMPATIBLE(String.valueOf("DATABASE_VERSION_INCOMPATIBLE")),
     
-    DATA_ALREADY_EXISTS("DATA_ALREADY_EXISTS"),
+    DATA_ALREADY_EXISTS(String.valueOf("DATA_ALREADY_EXISTS")),
     
-    DATA_CONSTRAINT_VIOLATION("DATA_CONSTRAINT_VIOLATION"),
+    DATA_CONSTRAINT_VIOLATION(String.valueOf("DATA_CONSTRAINT_VIOLATION")),
     
-    DATA_FORMAT_ERROR("DATA_FORMAT_ERROR"),
+    DATA_FORMAT_ERROR(String.valueOf("DATA_FORMAT_ERROR")),
     
-    DATA_INTEGRITY_ERROR("DATA_INTEGRITY_ERROR"),
+    DATA_INTEGRITY_ERROR(String.valueOf("DATA_INTEGRITY_ERROR")),
     
-    DATA_NOT_FOUND("DATA_NOT_FOUND"),
+    DATA_NOT_FOUND(String.valueOf("DATA_NOT_FOUND")),
     
-    DATA_RANGE_ERROR("DATA_RANGE_ERROR"),
+    DATA_RANGE_ERROR(String.valueOf("DATA_RANGE_ERROR")),
     
-    DATA_RELATION_ERROR("DATA_RELATION_ERROR"),
+    DATA_RELATION_ERROR(String.valueOf("DATA_RELATION_ERROR")),
     
-    DATA_STATUS_ERROR("DATA_STATUS_ERROR"),
+    DATA_STATUS_ERROR(String.valueOf("DATA_STATUS_ERROR")),
     
-    DATA_VERSION_CONFLICT("DATA_VERSION_CONFLICT"),
+    DATA_VERSION_CONFLICT(String.valueOf("DATA_VERSION_CONFLICT")),
     
-    EARLY_HINTS("EARLY_HINTS"),
+    EARLY_HINTS(String.valueOf("EARLY_HINTS")),
     
-    EXPECTATION_FAILED("EXPECTATION_FAILED"),
+    EXPECTATION_FAILED(String.valueOf("EXPECTATION_FAILED")),
     
-    FAILED_DEPENDENCY("FAILED_DEPENDENCY"),
+    FAILED_DEPENDENCY(String.valueOf("FAILED_DEPENDENCY")),
     
-    FEATURE_NOT_AVAILABLE("FEATURE_NOT_AVAILABLE"),
+    FEATURE_NOT_AVAILABLE(String.valueOf("FEATURE_NOT_AVAILABLE")),
     
-    FORBIDDEN("FORBIDDEN"),
+    FORBIDDEN(String.valueOf("FORBIDDEN")),
     
-    FORCE_ENCRYPT_REQUEST_REQUIRED("FORCE_ENCRYPT_REQUEST_REQUIRED"),
+    FORCE_ENCRYPT_REQUEST_REQUIRED(String.valueOf("FORCE_ENCRYPT_REQUEST_REQUIRED")),
     
-    FORCE_ENCRYPT_SESSION_REQUIRED("FORCE_ENCRYPT_SESSION_REQUIRED"),
+    FORCE_ENCRYPT_SESSION_REQUIRED(String.valueOf("FORCE_ENCRYPT_SESSION_REQUIRED")),
     
-    FOUND("FOUND"),
+    FOUND(String.valueOf("FOUND")),
     
-    GATEWAY_TIMEOUT("GATEWAY_TIMEOUT"),
+    GATEWAY_TIMEOUT(String.valueOf("GATEWAY_TIMEOUT")),
     
-    GONE("GONE"),
+    GONE(String.valueOf("GONE")),
     
-    HTTP_VERSION_NOT_SUPPORTED("HTTP_VERSION_NOT_SUPPORTED"),
+    HTTP_VERSION_NOT_SUPPORTED(String.valueOf("HTTP_VERSION_NOT_SUPPORTED")),
     
-    IM_USED("IM_USED"),
+    IM_USED(String.valueOf("IM_USED")),
     
-    INSUFFICIENT_STORAGE("INSUFFICIENT_STORAGE"),
+    INSUFFICIENT_STORAGE(String.valueOf("INSUFFICIENT_STORAGE")),
     
-    INTERNAL_SERVER_ERROR("INTERNAL_SERVER_ERROR"),
+    INTERNAL_SERVER_ERROR(String.valueOf("INTERNAL_SERVER_ERROR")),
     
-    IP_FORBIDDEN("IP_FORBIDDEN"),
+    IP_FORBIDDEN(String.valueOf("IP_FORBIDDEN")),
     
-    LENGTH_REQUIRED("LENGTH_REQUIRED"),
+    LENGTH_REQUIRED(String.valueOf("LENGTH_REQUIRED")),
     
-    LOCKED("LOCKED"),
+    LOCKED(String.valueOf("LOCKED")),
     
-    LOGIN_EXPIRED("LOGIN_EXPIRED"),
+    LOGIN_EXPIRED(String.valueOf("LOGIN_EXPIRED")),
     
-    LOGIN_FAILED("LOGIN_FAILED"),
+    LOGIN_FAILED(String.valueOf("LOGIN_FAILED")),
     
-    LOOP_DETECTED("LOOP_DETECTED"),
+    LOOP_DETECTED(String.valueOf("LOOP_DETECTED")),
     
-    METHOD_NOT_ALLOWED("METHOD_NOT_ALLOWED"),
+    METHOD_NOT_ALLOWED(String.valueOf("METHOD_NOT_ALLOWED")),
     
-    MOVED_PERMANENTLY("MOVED_PERMANENTLY"),
+    MOVED_PERMANENTLY(String.valueOf("MOVED_PERMANENTLY")),
     
-    MULTIPLE_CHOICES("MULTIPLE_CHOICES"),
+    MULTIPLE_CHOICES(String.valueOf("MULTIPLE_CHOICES")),
     
-    MULTI_STATUS("MULTI_STATUS"),
+    MULTI_STATUS(String.valueOf("MULTI_STATUS")),
     
-    NETWORK_AUTHENTICATION_REQUIRED("NETWORK_AUTHENTICATION_REQUIRED"),
+    NETWORK_AUTHENTICATION_REQUIRED(String.valueOf("NETWORK_AUTHENTICATION_REQUIRED")),
     
-    NON_AUTHORITATIVE_INFORMATION("NON_AUTHORITATIVE_INFORMATION"),
+    NON_AUTHORITATIVE_INFORMATION(String.valueOf("NON_AUTHORITATIVE_INFORMATION")),
     
-    NOT_ACCEPTABLE("NOT_ACCEPTABLE"),
+    NOT_ACCEPTABLE(String.valueOf("NOT_ACCEPTABLE")),
     
-    NOT_EXTENDED("NOT_EXTENDED"),
+    NOT_EXTENDED(String.valueOf("NOT_EXTENDED")),
     
-    NOT_FOUND("NOT_FOUND"),
+    NOT_FOUND(String.valueOf("NOT_FOUND")),
     
-    NOT_IMPLEMENTED("NOT_IMPLEMENTED"),
+    NOT_IMPLEMENTED(String.valueOf("NOT_IMPLEMENTED")),
     
-    NOT_MODIFIED("NOT_MODIFIED"),
+    NOT_MODIFIED(String.valueOf("NOT_MODIFIED")),
     
-    NO_CONTENT("NO_CONTENT"),
+    NO_CONTENT(String.valueOf("NO_CONTENT")),
     
-    OK("OK"),
+    OK(String.valueOf("OK")),
     
-    OPERATION_NOT_ALLOWED("OPERATION_NOT_ALLOWED"),
+    OPERATION_NOT_ALLOWED(String.valueOf("OPERATION_NOT_ALLOWED")),
     
-    OPERATION_TIMEOUT("OPERATION_TIMEOUT"),
+    OPERATION_TIMEOUT(String.valueOf("OPERATION_TIMEOUT")),
     
-    PARTIAL_CONTENT("PARTIAL_CONTENT"),
+    PARTIAL_CONTENT(String.valueOf("PARTIAL_CONTENT")),
     
-    PASSWORD_EXPIRED("PASSWORD_EXPIRED"),
+    PASSWORD_EXPIRED(String.valueOf("PASSWORD_EXPIRED")),
     
-    PASSWORD_WEAK("PASSWORD_WEAK"),
+    PASSWORD_WEAK(String.valueOf("PASSWORD_WEAK")),
     
-    PAYLOAD_TOO_LARGE("PAYLOAD_TOO_LARGE"),
+    PAYLOAD_TOO_LARGE(String.valueOf("PAYLOAD_TOO_LARGE")),
     
-    PAYMENT_REQUIRED("PAYMENT_REQUIRED"),
+    PAYMENT_REQUIRED(String.valueOf("PAYMENT_REQUIRED")),
     
-    PERMANENT_REDIRECT("PERMANENT_REDIRECT"),
+    PERMANENT_REDIRECT(String.valueOf("PERMANENT_REDIRECT")),
     
-    PERMISSION_DENIED("PERMISSION_DENIED"),
+    PERMISSION_DENIED(String.valueOf("PERMISSION_DENIED")),
     
-    PRECONDITION_FAILED("PRECONDITION_FAILED"),
+    PRECONDITION_FAILED(String.valueOf("PRECONDITION_FAILED")),
     
-    PRECONDITION_REQUIRED("PRECONDITION_REQUIRED"),
+    PRECONDITION_REQUIRED(String.valueOf("PRECONDITION_REQUIRED")),
     
-    PROCESSING("PROCESSING"),
+    PROCESSING(String.valueOf("PROCESSING")),
     
-    PROXY_AUTHENTICATION_REQUIRED("PROXY_AUTHENTICATION_REQUIRED"),
+    PROXY_AUTHENTICATION_REQUIRED(String.valueOf("PROXY_AUTHENTICATION_REQUIRED")),
     
-    RANGE_NOT_SATISFIABLE("RANGE_NOT_SATISFIABLE"),
+    RANGE_NOT_SATISFIABLE(String.valueOf("RANGE_NOT_SATISFIABLE")),
     
-    REFRESH_TOKEN_EXPIRED("REFRESH_TOKEN_EXPIRED"),
+    REFRESH_TOKEN_EXPIRED(String.valueOf("REFRESH_TOKEN_EXPIRED")),
     
-    REFRESH_TOKEN_INVALID("REFRESH_TOKEN_INVALID"),
+    REFRESH_TOKEN_INVALID(String.valueOf("REFRESH_TOKEN_INVALID")),
     
-    REQUEST_HEADER_FIELDS_TOO_LARGE("REQUEST_HEADER_FIELDS_TOO_LARGE"),
+    REQUEST_HEADER_FIELDS_TOO_LARGE(String.valueOf("REQUEST_HEADER_FIELDS_TOO_LARGE")),
     
-    REQUEST_TIMEOUT("REQUEST_TIMEOUT"),
+    REQUEST_TIMEOUT(String.valueOf("REQUEST_TIMEOUT")),
     
-    RESET_CONTENT("RESET_CONTENT"),
+    RESET_CONTENT(String.valueOf("RESET_CONTENT")),
     
-    RESOURCE_LOCKED("RESOURCE_LOCKED"),
+    RESOURCE_LOCKED(String.valueOf("RESOURCE_LOCKED")),
     
-    RSA_CLIENT_PUBLIC_KEY_EXPIRING_SOON("RSA_CLIENT_PUBLIC_KEY_EXPIRING_SOON"),
+    RSA_CLIENT_PUBLIC_KEY_EXPIRING_SOON(String.valueOf("RSA_CLIENT_PUBLIC_KEY_EXPIRING_SOON")),
     
-    RSA_CLIENT_PUBLIC_KEY_NOT_FOUND("RSA_CLIENT_PUBLIC_KEY_NOT_FOUND"),
+    RSA_CLIENT_PUBLIC_KEY_NOT_FOUND(String.valueOf("RSA_CLIENT_PUBLIC_KEY_NOT_FOUND")),
     
-    RSA_DECRYPT_FAILED("RSA_DECRYPT_FAILED"),
+    RSA_DECRYPT_FAILED(String.valueOf("RSA_DECRYPT_FAILED")),
     
-    RSA_ENCRYPT_FAILED("RSA_ENCRYPT_FAILED"),
+    RSA_ENCRYPT_FAILED(String.valueOf("RSA_ENCRYPT_FAILED")),
     
-    RSA_KEY_FORMAT_ERROR("RSA_KEY_FORMAT_ERROR"),
+    RSA_KEY_FORMAT_ERROR(String.valueOf("RSA_KEY_FORMAT_ERROR")),
     
-    RSA_KEY_GENERATE_FAILED("RSA_KEY_GENERATE_FAILED"),
+    RSA_KEY_GENERATE_FAILED(String.valueOf("RSA_KEY_GENERATE_FAILED")),
     
-    RSA_KEY_LENGTH_ERROR("RSA_KEY_LENGTH_ERROR"),
+    RSA_KEY_LENGTH_ERROR(String.valueOf("RSA_KEY_LENGTH_ERROR")),
     
-    RSA_KEY_PAIR_EXPIRING_SOON("RSA_KEY_PAIR_EXPIRING_SOON"),
+    RSA_KEY_PAIR_EXPIRING_SOON(String.valueOf("RSA_KEY_PAIR_EXPIRING_SOON")),
     
-    RSA_KEY_PAIR_MISMATCH("RSA_KEY_PAIR_MISMATCH"),
+    RSA_KEY_PAIR_MISMATCH(String.valueOf("RSA_KEY_PAIR_MISMATCH")),
     
-    RSA_KEY_PAIR_NOT_FOUND("RSA_KEY_PAIR_NOT_FOUND"),
+    RSA_KEY_PAIR_NOT_FOUND(String.valueOf("RSA_KEY_PAIR_NOT_FOUND")),
     
-    RSA_PRIVATE_KEY_NOT_FOUND("RSA_PRIVATE_KEY_NOT_FOUND"),
+    RSA_PRIVATE_KEY_NOT_FOUND(String.valueOf("RSA_PRIVATE_KEY_NOT_FOUND")),
     
-    RSA_PRIVATE_KEY_PARSE_ERROR("RSA_PRIVATE_KEY_PARSE_ERROR"),
+    RSA_PRIVATE_KEY_PARSE_ERROR(String.valueOf("RSA_PRIVATE_KEY_PARSE_ERROR")),
     
-    RSA_PUBLIC_KEY_PARSE_ERROR("RSA_PUBLIC_KEY_PARSE_ERROR"),
+    RSA_PUBLIC_KEY_PARSE_ERROR(String.valueOf("RSA_PUBLIC_KEY_PARSE_ERROR")),
     
-    RSA_SESSION_INVALID("RSA_SESSION_INVALID"),
+    RSA_SESSION_INVALID(String.valueOf("RSA_SESSION_INVALID")),
     
-    RSA_SESSION_REQUIRED("RSA_SESSION_REQUIRED"),
+    RSA_SESSION_REQUIRED(String.valueOf("RSA_SESSION_REQUIRED")),
     
-    SEE_OTHER("SEE_OTHER"),
+    SEE_OTHER(String.valueOf("SEE_OTHER")),
     
-    SERVICE_UNAVAILABLE("SERVICE_UNAVAILABLE"),
+    SERVICE_UNAVAILABLE(String.valueOf("SERVICE_UNAVAILABLE")),
     
-    SESSION_EXPIRED("SESSION_EXPIRED"),
+    SESSION_EXPIRED(String.valueOf("SESSION_EXPIRED")),
     
-    SESSION_INVALID("SESSION_INVALID"),
+    SESSION_INVALID(String.valueOf("SESSION_INVALID")),
     
-    SUCCESS("SUCCESS"),
+    SUCCESS(String.valueOf("SUCCESS")),
     
-    SWITCHING_PROTOCOLS("SWITCHING_PROTOCOLS"),
+    SWITCHING_PROTOCOLS(String.valueOf("SWITCHING_PROTOCOLS")),
     
-    SYSTEM_MAINTENANCE("SYSTEM_MAINTENANCE"),
+    SYSTEM_MAINTENANCE(String.valueOf("SYSTEM_MAINTENANCE")),
     
-    TEMPORARY_REDIRECT("TEMPORARY_REDIRECT"),
+    TEMPORARY_REDIRECT(String.valueOf("TEMPORARY_REDIRECT")),
     
-    THIRD_PARTY_LOGIN_FAILED("THIRD_PARTY_LOGIN_FAILED"),
+    THIRD_PARTY_LOGIN_FAILED(String.valueOf("THIRD_PARTY_LOGIN_FAILED")),
     
-    TOKEN_EXPIRED("TOKEN_EXPIRED"),
+    TOKEN_EXPIRED(String.valueOf("TOKEN_EXPIRED")),
     
-    TOKEN_INVALID("TOKEN_INVALID"),
+    TOKEN_INVALID(String.valueOf("TOKEN_INVALID")),
     
-    TOO_EARLY("TOO_EARLY"),
+    TOO_EARLY(String.valueOf("TOO_EARLY")),
     
-    TOO_MANY_REQUESTS("TOO_MANY_REQUESTS"),
+    TOO_MANY_REQUESTS(String.valueOf("TOO_MANY_REQUESTS")),
     
-    UNAUTHORIZED("UNAUTHORIZED"),
+    UNAUTHORIZED(String.valueOf("UNAUTHORIZED")),
     
-    UNAVAILABLE_FOR_LEGAL_REASONS("UNAVAILABLE_FOR_LEGAL_REASONS"),
+    UNAVAILABLE_FOR_LEGAL_REASONS(String.valueOf("UNAVAILABLE_FOR_LEGAL_REASONS")),
     
-    UNKNOWN_ERROR("UNKNOWN_ERROR"),
+    UNKNOWN_ERROR(String.valueOf("UNKNOWN_ERROR")),
     
-    UNPROCESSABLE_ENTITY("UNPROCESSABLE_ENTITY"),
+    UNPROCESSABLE_ENTITY(String.valueOf("UNPROCESSABLE_ENTITY")),
     
-    UNSUPPORTED_MEDIA_TYPE("UNSUPPORTED_MEDIA_TYPE"),
+    UNSUPPORTED_MEDIA_TYPE(String.valueOf("UNSUPPORTED_MEDIA_TYPE")),
     
-    UPGRADE_REQUIRED("UPGRADE_REQUIRED"),
+    UPGRADE_REQUIRED(String.valueOf("UPGRADE_REQUIRED")),
     
-    URI_TOO_LONG("URI_TOO_LONG"),
+    URI_TOO_LONG(String.valueOf("URI_TOO_LONG")),
     
-    USER_NOT_LOGIN("USER_NOT_LOGIN"),
+    USER_NOT_LOGIN(String.valueOf("USER_NOT_LOGIN")),
     
-    USE_PROXY("USE_PROXY"),
+    USE_PROXY(String.valueOf("USE_PROXY")),
     
-    VARIANT_ALSO_NEGOTIATES("VARIANT_ALSO_NEGOTIATES"),
+    VARIANT_ALSO_NEGOTIATES(String.valueOf("VARIANT_ALSO_NEGOTIATES")),
     
-    VERSION_INCOMPATIBLE("VERSION_INCOMPATIBLE");
+    VERSION_INCOMPATIBLE(String.valueOf("VERSION_INCOMPATIBLE"));
 
     private String value;
 
@@ -427,6 +431,7 @@ public class ResponseOfVersion {
       this.value = value;
     }
 
+    @JsonValue
     public String getValue() {
       return value;
     }
@@ -436,6 +441,7 @@ public class ResponseOfVersion {
       return String.valueOf(value);
     }
 
+    @JsonCreator
     public static ErrorEnum fromValue(String value) {
       for (ErrorEnum b : ErrorEnum.values()) {
         if (b.value.equals(value)) {
@@ -444,271 +450,274 @@ public class ResponseOfVersion {
       }
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
-
-    public static class Adapter extends TypeAdapter<ErrorEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final ErrorEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public ErrorEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return ErrorEnum.fromValue(value);
-      }
-    }
   }
 
-  public static final String SERIALIZED_NAME_ERROR = "error";
-  @SerializedName(SERIALIZED_NAME_ERROR)
+  public static final String JSON_PROPERTY_ERROR = "error";
+  @jakarta.annotation.Nullable
   private ErrorEnum error;
 
-  public static final String SERIALIZED_NAME_MSG = "msg";
-  @SerializedName(SERIALIZED_NAME_MSG)
+  public static final String JSON_PROPERTY_MSG = "msg";
+  @jakarta.annotation.Nullable
   private String msg;
 
-  public static final String SERIALIZED_NAME_RESULT = "result";
-  @SerializedName(SERIALIZED_NAME_RESULT)
+  public static final String JSON_PROPERTY_RESULT = "result";
+  @jakarta.annotation.Nullable
   private Result result;
 
-  public static final String SERIALIZED_NAME_SESSION = "session";
-  @SerializedName(SERIALIZED_NAME_SESSION)
+  public static final String JSON_PROPERTY_SESSION = "session";
+  @jakarta.annotation.Nullable
   private String session;
 
-  public static final String SERIALIZED_NAME_SUCCESS = "success";
-  @SerializedName(SERIALIZED_NAME_SUCCESS)
+  public static final String JSON_PROPERTY_SUCCESS = "success";
+  @jakarta.annotation.Nullable
   private Boolean success;
 
+  public ResponseOfVersion() { 
+  }
 
-  public ResponseOfVersion action(ActionEnum action) {
-    
+  public ResponseOfVersion action(@jakarta.annotation.Nullable ActionEnum action) {
     this.action = action;
     return this;
   }
 
-   /**
+  /**
    * Get action
    * @return action
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ACTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public ActionEnum getAction() {
     return action;
   }
 
 
-  public void setAction(ActionEnum action) {
+  @JsonProperty(JSON_PROPERTY_ACTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAction(@jakarta.annotation.Nullable ActionEnum action) {
     this.action = action;
   }
 
 
-  public ResponseOfVersion algorithm(String algorithm) {
-    
+  public ResponseOfVersion algorithm(@jakarta.annotation.Nullable String algorithm) {
     this.algorithm = algorithm;
     return this;
   }
 
-   /**
+  /**
    * Get algorithm
    * @return algorithm
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ALGORITHM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getAlgorithm() {
     return algorithm;
   }
 
 
-  public void setAlgorithm(String algorithm) {
+  @JsonProperty(JSON_PROPERTY_ALGORITHM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAlgorithm(@jakarta.annotation.Nullable String algorithm) {
     this.algorithm = algorithm;
   }
 
 
-  public ResponseOfVersion ciphertext(String ciphertext) {
-    
+  public ResponseOfVersion ciphertext(@jakarta.annotation.Nullable String ciphertext) {
     this.ciphertext = ciphertext;
     return this;
   }
 
-   /**
+  /**
    * Get ciphertext
    * @return ciphertext
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CIPHERTEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCiphertext() {
     return ciphertext;
   }
 
 
-  public void setCiphertext(String ciphertext) {
+  @JsonProperty(JSON_PROPERTY_CIPHERTEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCiphertext(@jakarta.annotation.Nullable String ciphertext) {
     this.ciphertext = ciphertext;
   }
 
 
-  public ResponseOfVersion code(Integer code) {
-    
+  public ResponseOfVersion code(@jakarta.annotation.Nonnull Integer code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * 响应代码
    * @return code
-  **/
-  @ApiModelProperty(required = true, value = "响应代码")
-
+   */
+  @jakarta.annotation.Nonnull
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Integer getCode() {
     return code;
   }
 
 
-  public void setCode(Integer code) {
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCode(@jakarta.annotation.Nonnull Integer code) {
     this.code = code;
   }
 
 
-  public ResponseOfVersion data(Version data) {
-    
+  public ResponseOfVersion data(@jakarta.annotation.Nullable Version data) {
     this.data = data;
     return this;
   }
 
-   /**
+  /**
    * Get data
    * @return data
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Version getData() {
     return data;
   }
 
 
-  public void setData(Version data) {
+  @JsonProperty(JSON_PROPERTY_DATA)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setData(@jakarta.annotation.Nullable Version data) {
     this.data = data;
   }
 
 
-  public ResponseOfVersion error(ErrorEnum error) {
-    
+  public ResponseOfVersion error(@jakarta.annotation.Nullable ErrorEnum error) {
     this.error = error;
     return this;
   }
 
-   /**
+  /**
    * Get error
    * @return error
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ERROR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public ErrorEnum getError() {
     return error;
   }
 
 
-  public void setError(ErrorEnum error) {
+  @JsonProperty(JSON_PROPERTY_ERROR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setError(@jakarta.annotation.Nullable ErrorEnum error) {
     this.error = error;
   }
 
 
-  public ResponseOfVersion msg(String msg) {
-    
+  public ResponseOfVersion msg(@jakarta.annotation.Nullable String msg) {
     this.msg = msg;
     return this;
   }
 
-   /**
+  /**
    * 错误信息:成功时为空或为success
    * @return msg
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "错误信息:成功时为空或为success")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MSG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getMsg() {
     return msg;
   }
 
 
-  public void setMsg(String msg) {
+  @JsonProperty(JSON_PROPERTY_MSG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMsg(@jakarta.annotation.Nullable String msg) {
     this.msg = msg;
   }
 
 
-  public ResponseOfVersion result(Result result) {
-    
+  public ResponseOfVersion result(@jakarta.annotation.Nullable Result result) {
     this.result = result;
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RESULT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Result getResult() {
     return result;
   }
 
 
-  public void setResult(Result result) {
+  @JsonProperty(JSON_PROPERTY_RESULT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setResult(@jakarta.annotation.Nullable Result result) {
     this.result = result;
   }
 
 
-  public ResponseOfVersion session(String session) {
-    
+  public ResponseOfVersion session(@jakarta.annotation.Nullable String session) {
     this.session = session;
     return this;
   }
 
-   /**
+  /**
    * Get session
    * @return session
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getSession() {
     return session;
   }
 
 
-  public void setSession(String session) {
+  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSession(@jakarta.annotation.Nullable String session) {
     this.session = session;
   }
 
 
-  public ResponseOfVersion success(Boolean success) {
-    
+  public ResponseOfVersion success(@jakarta.annotation.Nullable Boolean success) {
     this.success = success;
     return this;
   }
 
-   /**
+  /**
    * Get success
    * @return success
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SUCCESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getSuccess() {
     return success;
   }
 
 
-  public void setSuccess(Boolean success) {
+  @JsonProperty(JSON_PROPERTY_SUCCESS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSuccess(@jakarta.annotation.Nullable Boolean success) {
     this.success = success;
   }
 
 
+  /**
+   * Return true if this ResponseOfVersion object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -734,7 +743,6 @@ public class ResponseOfVersion {
   public int hashCode() {
     return Objects.hash(action, algorithm, ciphertext, code, data, error, msg, result, session, success);
   }
-
 
   @Override
   public String toString() {
@@ -765,5 +773,89 @@ public class ResponseOfVersion {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `action` to the URL query string
+    if (getAction() != null) {
+      joiner.add(String.format("%saction%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAction()))));
+    }
+
+    // add `algorithm` to the URL query string
+    if (getAlgorithm() != null) {
+      joiner.add(String.format("%salgorithm%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAlgorithm()))));
+    }
+
+    // add `ciphertext` to the URL query string
+    if (getCiphertext() != null) {
+      joiner.add(String.format("%sciphertext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCiphertext()))));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCode()))));
+    }
+
+    // add `data` to the URL query string
+    if (getData() != null) {
+      joiner.add(getData().toUrlQueryString(prefix + "data" + suffix));
+    }
+
+    // add `error` to the URL query string
+    if (getError() != null) {
+      joiner.add(String.format("%serror%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getError()))));
+    }
+
+    // add `msg` to the URL query string
+    if (getMsg() != null) {
+      joiner.add(String.format("%smsg%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMsg()))));
+    }
+
+    // add `result` to the URL query string
+    if (getResult() != null) {
+      joiner.add(getResult().toUrlQueryString(prefix + "result" + suffix));
+    }
+
+    // add `session` to the URL query string
+    if (getSession() != null) {
+      joiner.add(String.format("%ssession%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSession()))));
+    }
+
+    // add `success` to the URL query string
+    if (getSuccess() != null) {
+      joiner.add(String.format("%ssuccess%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSuccess()))));
+    }
+
+    return joiner.toString();
+  }
 }
 

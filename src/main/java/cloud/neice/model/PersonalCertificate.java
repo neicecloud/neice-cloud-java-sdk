@@ -13,780 +13,848 @@
 
 package cloud.neice.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+import cloud.neice.ApiClient;
 /**
  * PersonalCertificate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@JsonPropertyOrder({
+  PersonalCertificate.JSON_PROPERTY_CERTIFICATE,
+  PersonalCertificate.JSON_PROPERTY_CERTIFICATE_ID,
+  PersonalCertificate.JSON_PROPERTY_CODE,
+  PersonalCertificate.JSON_PROPERTY_CREATE_TIME,
+  PersonalCertificate.JSON_PROPERTY_DESCRIPTION,
+  PersonalCertificate.JSON_PROPERTY_DEVICE_ID,
+  PersonalCertificate.JSON_PROPERTY_EXPERIENCE,
+  PersonalCertificate.JSON_PROPERTY_INVISIBLE,
+  PersonalCertificate.JSON_PROPERTY_LOCK,
+  PersonalCertificate.JSON_PROPERTY_MOBILEPROVISION,
+  PersonalCertificate.JSON_PROPERTY_NAME,
+  PersonalCertificate.JSON_PROPERTY_PASSWORD,
+  PersonalCertificate.JSON_PROPERTY_PHONE,
+  PersonalCertificate.JSON_PROPERTY_PRICE,
+  PersonalCertificate.JSON_PROPERTY_PROFILE,
+  PersonalCertificate.JSON_PROPERTY_PROFILE_ID,
+  PersonalCertificate.JSON_PROPERTY_QUALITY,
+  PersonalCertificate.JSON_PROPERTY_QUALITY_TIME,
+  PersonalCertificate.JSON_PROPERTY_REFER,
+  PersonalCertificate.JSON_PROPERTY_REPAIR,
+  PersonalCertificate.JSON_PROPERTY_RESERVE,
+  PersonalCertificate.JSON_PROPERTY_SERIAL_NUMBER,
+  PersonalCertificate.JSON_PROPERTY_TAG,
+  PersonalCertificate.JSON_PROPERTY_TEAM,
+  PersonalCertificate.JSON_PROPERTY_TEAM_ID,
+  PersonalCertificate.JSON_PROPERTY_UDID,
+  PersonalCertificate.JSON_PROPERTY_UUID,
+  PersonalCertificate.JSON_PROPERTY_VALID
+})
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PersonalCertificate {
-  public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
-  @SerializedName(SERIALIZED_NAME_CERTIFICATE)
+  public static final String JSON_PROPERTY_CERTIFICATE = "certificate";
+  @jakarta.annotation.Nullable
   private String certificate;
 
-  public static final String SERIALIZED_NAME_CERTIFICATE_ID = "certificateId";
-  @SerializedName(SERIALIZED_NAME_CERTIFICATE_ID)
+  public static final String JSON_PROPERTY_CERTIFICATE_ID = "certificateId";
+  @jakarta.annotation.Nullable
   private String certificateId;
 
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
+  public static final String JSON_PROPERTY_CODE = "code";
+  @jakarta.annotation.Nullable
   private String code;
 
-  public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
-  @SerializedName(SERIALIZED_NAME_CREATE_TIME)
+  public static final String JSON_PROPERTY_CREATE_TIME = "createTime";
+  @jakarta.annotation.Nullable
   private String createTime;
 
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  @jakarta.annotation.Nullable
   private String description;
 
-  public static final String SERIALIZED_NAME_DEVICE_ID = "deviceId";
-  @SerializedName(SERIALIZED_NAME_DEVICE_ID)
+  public static final String JSON_PROPERTY_DEVICE_ID = "deviceId";
+  @jakarta.annotation.Nullable
   private String deviceId;
 
-  public static final String SERIALIZED_NAME_EXPERIENCE = "experience";
-  @SerializedName(SERIALIZED_NAME_EXPERIENCE)
+  public static final String JSON_PROPERTY_EXPERIENCE = "experience";
+  @jakarta.annotation.Nullable
   private Integer experience;
 
-  public static final String SERIALIZED_NAME_INVISIBLE = "invisible";
-  @SerializedName(SERIALIZED_NAME_INVISIBLE)
+  public static final String JSON_PROPERTY_INVISIBLE = "invisible";
+  @jakarta.annotation.Nullable
   private Boolean invisible;
 
-  public static final String SERIALIZED_NAME_LOCK = "lock";
-  @SerializedName(SERIALIZED_NAME_LOCK)
+  public static final String JSON_PROPERTY_LOCK = "lock";
+  @jakarta.annotation.Nullable
   private Integer lock;
 
-  public static final String SERIALIZED_NAME_MOBILEPROVISION = "mobileprovision";
-  @SerializedName(SERIALIZED_NAME_MOBILEPROVISION)
+  public static final String JSON_PROPERTY_MOBILEPROVISION = "mobileprovision";
+  @jakarta.annotation.Nullable
   private String mobileprovision;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
+  public static final String JSON_PROPERTY_NAME = "name";
+  @jakarta.annotation.Nullable
   private String name;
 
-  public static final String SERIALIZED_NAME_PASSWORD = "password";
-  @SerializedName(SERIALIZED_NAME_PASSWORD)
+  public static final String JSON_PROPERTY_PASSWORD = "password";
+  @jakarta.annotation.Nullable
   private String password;
 
-  public static final String SERIALIZED_NAME_PHONE = "phone";
-  @SerializedName(SERIALIZED_NAME_PHONE)
+  public static final String JSON_PROPERTY_PHONE = "phone";
+  @jakarta.annotation.Nullable
   private String phone;
 
-  public static final String SERIALIZED_NAME_PRICE = "price";
-  @SerializedName(SERIALIZED_NAME_PRICE)
+  public static final String JSON_PROPERTY_PRICE = "price";
+  @jakarta.annotation.Nullable
   private BigDecimal price;
 
-  public static final String SERIALIZED_NAME_PROFILE = "profile";
-  @SerializedName(SERIALIZED_NAME_PROFILE)
+  public static final String JSON_PROPERTY_PROFILE = "profile";
+  @jakarta.annotation.Nullable
   private String profile;
 
-  public static final String SERIALIZED_NAME_PROFILE_ID = "profileId";
-  @SerializedName(SERIALIZED_NAME_PROFILE_ID)
+  public static final String JSON_PROPERTY_PROFILE_ID = "profileId";
+  @jakarta.annotation.Nullable
   private String profileId;
 
-  public static final String SERIALIZED_NAME_QUALITY = "quality";
-  @SerializedName(SERIALIZED_NAME_QUALITY)
+  public static final String JSON_PROPERTY_QUALITY = "quality";
+  @jakarta.annotation.Nullable
   private Integer quality;
 
-  public static final String SERIALIZED_NAME_QUALITY_TIME = "qualityTime";
-  @SerializedName(SERIALIZED_NAME_QUALITY_TIME)
+  public static final String JSON_PROPERTY_QUALITY_TIME = "qualityTime";
+  @jakarta.annotation.Nullable
   private String qualityTime;
 
-  public static final String SERIALIZED_NAME_REFER = "refer";
-  @SerializedName(SERIALIZED_NAME_REFER)
+  public static final String JSON_PROPERTY_REFER = "refer";
+  @jakarta.annotation.Nullable
   private String refer;
 
-  public static final String SERIALIZED_NAME_REPAIR = "repair";
-  @SerializedName(SERIALIZED_NAME_REPAIR)
+  public static final String JSON_PROPERTY_REPAIR = "repair";
+  @jakarta.annotation.Nullable
   private Boolean repair;
 
-  public static final String SERIALIZED_NAME_RESERVE = "reserve";
-  @SerializedName(SERIALIZED_NAME_RESERVE)
+  public static final String JSON_PROPERTY_RESERVE = "reserve";
+  @jakarta.annotation.Nullable
   private Boolean reserve;
 
-  public static final String SERIALIZED_NAME_SERIAL_NUMBER = "serialNumber";
-  @SerializedName(SERIALIZED_NAME_SERIAL_NUMBER)
+  public static final String JSON_PROPERTY_SERIAL_NUMBER = "serialNumber";
+  @jakarta.annotation.Nullable
   private String serialNumber;
 
-  public static final String SERIALIZED_NAME_TAG = "tag";
-  @SerializedName(SERIALIZED_NAME_TAG)
+  public static final String JSON_PROPERTY_TAG = "tag";
+  @jakarta.annotation.Nullable
   private String tag;
 
-  public static final String SERIALIZED_NAME_TEAM = "team";
-  @SerializedName(SERIALIZED_NAME_TEAM)
+  public static final String JSON_PROPERTY_TEAM = "team";
+  @jakarta.annotation.Nullable
   private String team;
 
-  public static final String SERIALIZED_NAME_TEAM_ID = "teamId";
-  @SerializedName(SERIALIZED_NAME_TEAM_ID)
+  public static final String JSON_PROPERTY_TEAM_ID = "teamId";
+  @jakarta.annotation.Nullable
   private String teamId;
 
-  public static final String SERIALIZED_NAME_UDID = "udid";
-  @SerializedName(SERIALIZED_NAME_UDID)
+  public static final String JSON_PROPERTY_UDID = "udid";
+  @jakarta.annotation.Nullable
   private String udid;
 
-  public static final String SERIALIZED_NAME_UUID = "uuid";
-  @SerializedName(SERIALIZED_NAME_UUID)
+  public static final String JSON_PROPERTY_UUID = "uuid";
+  @jakarta.annotation.Nullable
   private String uuid;
 
-  public static final String SERIALIZED_NAME_VALID = "valid";
-  @SerializedName(SERIALIZED_NAME_VALID)
+  public static final String JSON_PROPERTY_VALID = "valid";
+  @jakarta.annotation.Nullable
   private Boolean valid;
 
+  public PersonalCertificate() { 
+  }
 
-  public PersonalCertificate certificate(String certificate) {
-    
+  public PersonalCertificate certificate(@jakarta.annotation.Nullable String certificate) {
     this.certificate = certificate;
     return this;
   }
 
-   /**
+  /**
    * 设备证书P12
    * @return certificate
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "设备证书P12")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CERTIFICATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCertificate() {
     return certificate;
   }
 
 
-  public void setCertificate(String certificate) {
+  @JsonProperty(JSON_PROPERTY_CERTIFICATE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCertificate(@jakarta.annotation.Nullable String certificate) {
     this.certificate = certificate;
   }
 
 
-  public PersonalCertificate certificateId(String certificateId) {
-    
+  public PersonalCertificate certificateId(@jakarta.annotation.Nullable String certificateId) {
     this.certificateId = certificateId;
     return this;
   }
 
-   /**
+  /**
    * 证书ID
    * @return certificateId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书ID")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CERTIFICATE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCertificateId() {
     return certificateId;
   }
 
 
-  public void setCertificateId(String certificateId) {
+  @JsonProperty(JSON_PROPERTY_CERTIFICATE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCertificateId(@jakarta.annotation.Nullable String certificateId) {
     this.certificateId = certificateId;
   }
 
 
-  public PersonalCertificate code(String code) {
-    
+  public PersonalCertificate code(@jakarta.annotation.Nullable String code) {
     this.code = code;
     return this;
   }
 
-   /**
+  /**
    * 证书兑换码
    * @return code
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书兑换码")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCode() {
     return code;
   }
 
 
-  public void setCode(String code) {
+  @JsonProperty(JSON_PROPERTY_CODE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCode(@jakarta.annotation.Nullable String code) {
     this.code = code;
   }
 
 
-  public PersonalCertificate createTime(String createTime) {
-    
+  public PersonalCertificate createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
 
-   /**
+  /**
    * 证书创建时间
    * @return createTime
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书创建时间")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CREATE_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCreateTime() {
     return createTime;
   }
 
 
-  public void setCreateTime(String createTime) {
+  @JsonProperty(JSON_PROPERTY_CREATE_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public PersonalCertificate description(String description) {
-    
+  public PersonalCertificate description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
 
-   /**
+  /**
    * 证书描述信息
    * @return description
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书描述信息")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getDescription() {
     return description;
   }
 
 
-  public void setDescription(String description) {
+  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public PersonalCertificate deviceId(String deviceId) {
-    
+  public PersonalCertificate deviceId(@jakarta.annotation.Nullable String deviceId) {
     this.deviceId = deviceId;
     return this;
   }
 
-   /**
+  /**
    * 设备ID
    * @return deviceId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "设备ID")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_DEVICE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getDeviceId() {
     return deviceId;
   }
 
 
-  public void setDeviceId(String deviceId) {
+  @JsonProperty(JSON_PROPERTY_DEVICE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setDeviceId(@jakarta.annotation.Nullable String deviceId) {
     this.deviceId = deviceId;
   }
 
 
-  public PersonalCertificate experience(Integer experience) {
-    
+  public PersonalCertificate experience(@jakarta.annotation.Nullable Integer experience) {
     this.experience = experience;
     return this;
   }
 
-   /**
+  /**
    * 允许用户体验的次数
    * @return experience
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "允许用户体验的次数")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_EXPERIENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getExperience() {
     return experience;
   }
 
 
-  public void setExperience(Integer experience) {
+  @JsonProperty(JSON_PROPERTY_EXPERIENCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setExperience(@jakarta.annotation.Nullable Integer experience) {
     this.experience = experience;
   }
 
 
-  public PersonalCertificate invisible(Boolean invisible) {
-    
+  public PersonalCertificate invisible(@jakarta.annotation.Nullable Boolean invisible) {
     this.invisible = invisible;
     return this;
   }
 
-   /**
+  /**
    * 隐形证书
    * @return invisible
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "隐形证书")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_INVISIBLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getInvisible() {
     return invisible;
   }
 
 
-  public void setInvisible(Boolean invisible) {
+  @JsonProperty(JSON_PROPERTY_INVISIBLE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setInvisible(@jakarta.annotation.Nullable Boolean invisible) {
     this.invisible = invisible;
   }
 
 
-  public PersonalCertificate lock(Integer lock) {
-    
+  public PersonalCertificate lock(@jakarta.annotation.Nullable Integer lock) {
     this.lock = lock;
     return this;
   }
 
-   /**
+  /**
    * 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁
    * @return lock
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_LOCK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getLock() {
     return lock;
   }
 
 
-  public void setLock(Integer lock) {
+  @JsonProperty(JSON_PROPERTY_LOCK)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setLock(@jakarta.annotation.Nullable Integer lock) {
     this.lock = lock;
   }
 
 
-  public PersonalCertificate mobileprovision(String mobileprovision) {
-    
+  public PersonalCertificate mobileprovision(@jakarta.annotation.Nullable String mobileprovision) {
     this.mobileprovision = mobileprovision;
     return this;
   }
 
-   /**
+  /**
    * 设备的描述文件Mobileprovision
    * @return mobileprovision
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "设备的描述文件Mobileprovision")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_MOBILEPROVISION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getMobileprovision() {
     return mobileprovision;
   }
 
 
-  public void setMobileprovision(String mobileprovision) {
+  @JsonProperty(JSON_PROPERTY_MOBILEPROVISION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMobileprovision(@jakarta.annotation.Nullable String mobileprovision) {
     this.mobileprovision = mobileprovision;
   }
 
 
-  public PersonalCertificate name(String name) {
-    
+  public PersonalCertificate name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * 证书名称
    * @return name
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书名称")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getName() {
     return name;
   }
 
 
-  public void setName(String name) {
+  @JsonProperty(JSON_PROPERTY_NAME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public PersonalCertificate password(String password) {
-    
+  public PersonalCertificate password(@jakarta.annotation.Nullable String password) {
     this.password = password;
     return this;
   }
 
-   /**
+  /**
    * 设备证书密码
    * @return password
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "设备证书密码")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PASSWORD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getPassword() {
     return password;
   }
 
 
-  public void setPassword(String password) {
+  @JsonProperty(JSON_PROPERTY_PASSWORD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPassword(@jakarta.annotation.Nullable String password) {
     this.password = password;
   }
 
 
-  public PersonalCertificate phone(String phone) {
-    
+  public PersonalCertificate phone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
     return this;
   }
 
-   /**
+  /**
    * 预定手机
    * @return phone
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "预定手机")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getPhone() {
     return phone;
   }
 
 
-  public void setPhone(String phone) {
+  @JsonProperty(JSON_PROPERTY_PHONE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPhone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
   }
 
 
-  public PersonalCertificate price(BigDecimal price) {
-    
+  public PersonalCertificate price(@jakarta.annotation.Nullable BigDecimal price) {
     this.price = price;
     return this;
   }
 
-   /**
+  /**
    * 服务价格
    * @return price
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "服务价格")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PRICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getPrice() {
     return price;
   }
 
 
-  public void setPrice(BigDecimal price) {
+  @JsonProperty(JSON_PROPERTY_PRICE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPrice(@jakarta.annotation.Nullable BigDecimal price) {
     this.price = price;
   }
 
 
-  public PersonalCertificate profile(String profile) {
-    
+  public PersonalCertificate profile(@jakarta.annotation.Nullable String profile) {
     this.profile = profile;
     return this;
   }
 
-   /**
+  /**
    * Get profile
    * @return profile
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PROFILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getProfile() {
     return profile;
   }
 
 
-  public void setProfile(String profile) {
+  @JsonProperty(JSON_PROPERTY_PROFILE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProfile(@jakarta.annotation.Nullable String profile) {
     this.profile = profile;
   }
 
 
-  public PersonalCertificate profileId(String profileId) {
-    
+  public PersonalCertificate profileId(@jakarta.annotation.Nullable String profileId) {
     this.profileId = profileId;
     return this;
   }
 
-   /**
+  /**
    * 描述文件ID
    * @return profileId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "描述文件ID")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getProfileId() {
     return profileId;
   }
 
 
-  public void setProfileId(String profileId) {
+  @JsonProperty(JSON_PROPERTY_PROFILE_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setProfileId(@jakarta.annotation.Nullable String profileId) {
     this.profileId = profileId;
   }
 
 
-  public PersonalCertificate quality(Integer quality) {
-    
+  public PersonalCertificate quality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
     return this;
   }
 
-   /**
+  /**
    * 证书质保天数
    * @return quality
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书质保天数")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUALITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getQuality() {
     return quality;
   }
 
 
-  public void setQuality(Integer quality) {
+  @JsonProperty(JSON_PROPERTY_QUALITY)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQuality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
   }
 
 
-  public PersonalCertificate qualityTime(String qualityTime) {
-    
+  public PersonalCertificate qualityTime(@jakarta.annotation.Nullable String qualityTime) {
     this.qualityTime = qualityTime;
     return this;
   }
 
-   /**
+  /**
    * 证书质保到期时间
    * @return qualityTime
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书质保到期时间")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_QUALITY_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getQualityTime() {
     return qualityTime;
   }
 
 
-  public void setQualityTime(String qualityTime) {
+  @JsonProperty(JSON_PROPERTY_QUALITY_TIME)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setQualityTime(@jakarta.annotation.Nullable String qualityTime) {
     this.qualityTime = qualityTime;
   }
 
 
-  public PersonalCertificate refer(String refer) {
-    
+  public PersonalCertificate refer(@jakarta.annotation.Nullable String refer) {
     this.refer = refer;
     return this;
   }
 
-   /**
+  /**
    * 该设备的用户,后台自动透传该参数
    * @return refer
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "该设备的用户,后台自动透传该参数")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REFER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getRefer() {
     return refer;
   }
 
 
-  public void setRefer(String refer) {
+  @JsonProperty(JSON_PROPERTY_REFER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRefer(@jakarta.annotation.Nullable String refer) {
     this.refer = refer;
   }
 
 
-  public PersonalCertificate repair(Boolean repair) {
-    
+  public PersonalCertificate repair(@jakarta.annotation.Nullable Boolean repair) {
     this.repair = repair;
     return this;
   }
 
-   /**
+  /**
    * 补偿证书:预定失败或质保期内掉签，后台重订的设备标记，一般免服务费
    * @return repair
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "补偿证书:预定失败或质保期内掉签，后台重订的设备标记，一般免服务费")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REPAIR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getRepair() {
     return repair;
   }
 
 
-  public void setRepair(Boolean repair) {
+  @JsonProperty(JSON_PROPERTY_REPAIR)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRepair(@jakarta.annotation.Nullable Boolean repair) {
     this.repair = repair;
   }
 
 
-  public PersonalCertificate reserve(Boolean reserve) {
-    
+  public PersonalCertificate reserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
     return this;
   }
 
-   /**
+  /**
    * 预定证书
    * @return reserve
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "预定证书")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getReserve() {
     return reserve;
   }
 
 
-  public void setReserve(Boolean reserve) {
+  @JsonProperty(JSON_PROPERTY_RESERVE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
   }
 
 
-  public PersonalCertificate serialNumber(String serialNumber) {
-    
+  public PersonalCertificate serialNumber(@jakarta.annotation.Nullable String serialNumber) {
     this.serialNumber = serialNumber;
     return this;
   }
 
-   /**
+  /**
    * Get serialNumber
    * @return serialNumber
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getSerialNumber() {
     return serialNumber;
   }
 
 
-  public void setSerialNumber(String serialNumber) {
+  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSerialNumber(@jakarta.annotation.Nullable String serialNumber) {
     this.serialNumber = serialNumber;
   }
 
 
-  public PersonalCertificate tag(String tag) {
-    
+  public PersonalCertificate tag(@jakarta.annotation.Nullable String tag) {
     this.tag = tag;
     return this;
   }
 
-   /**
+  /**
    * Get tag
    * @return tag
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TAG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getTag() {
     return tag;
   }
 
 
-  public void setTag(String tag) {
+  @JsonProperty(JSON_PROPERTY_TAG)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTag(@jakarta.annotation.Nullable String tag) {
     this.tag = tag;
   }
 
 
-  public PersonalCertificate team(String team) {
-    
+  public PersonalCertificate team(@jakarta.annotation.Nullable String team) {
     this.team = team;
     return this;
   }
 
-   /**
+  /**
    * Get team
    * @return team
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TEAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getTeam() {
     return team;
   }
 
 
-  public void setTeam(String team) {
+  @JsonProperty(JSON_PROPERTY_TEAM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTeam(@jakarta.annotation.Nullable String team) {
     this.team = team;
   }
 
 
-  public PersonalCertificate teamId(String teamId) {
-    
+  public PersonalCertificate teamId(@jakarta.annotation.Nullable String teamId) {
     this.teamId = teamId;
     return this;
   }
 
-   /**
+  /**
    * Get teamId
    * @return teamId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TEAM_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getTeamId() {
     return teamId;
   }
 
 
-  public void setTeamId(String teamId) {
+  @JsonProperty(JSON_PROPERTY_TEAM_ID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTeamId(@jakarta.annotation.Nullable String teamId) {
     this.teamId = teamId;
   }
 
 
-  public PersonalCertificate udid(String udid) {
-    
+  public PersonalCertificate udid(@jakarta.annotation.Nullable String udid) {
     this.udid = udid;
     return this;
   }
 
-   /**
+  /**
    * 设备的UDID
    * @return udid
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "设备的UDID")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UDID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUdid() {
     return udid;
   }
 
 
-  public void setUdid(String udid) {
+  @JsonProperty(JSON_PROPERTY_UDID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUdid(@jakarta.annotation.Nullable String udid) {
     this.udid = udid;
   }
 
 
-  public PersonalCertificate uuid(String uuid) {
-    
+  public PersonalCertificate uuid(@jakarta.annotation.Nullable String uuid) {
     this.uuid = uuid;
     return this;
   }
 
-   /**
+  /**
    * 单个设备证书UUID
    * @return uuid
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "单个设备证书UUID")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_UUID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUuid() {
     return uuid;
   }
 
 
-  public void setUuid(String uuid) {
+  @JsonProperty(JSON_PROPERTY_UUID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUuid(@jakarta.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
 
 
-  public PersonalCertificate valid(Boolean valid) {
-    
+  public PersonalCertificate valid(@jakarta.annotation.Nullable Boolean valid) {
     this.valid = valid;
     return this;
   }
 
-   /**
+  /**
    * 证书是否有效
    * @return valid
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "证书是否有效")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_VALID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getValid() {
     return valid;
   }
 
 
-  public void setValid(Boolean valid) {
+  @JsonProperty(JSON_PROPERTY_VALID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setValid(@jakarta.annotation.Nullable Boolean valid) {
     this.valid = valid;
   }
 
 
+  /**
+   * Return true if this PersonalCertificate object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -830,7 +898,6 @@ public class PersonalCertificate {
   public int hashCode() {
     return Objects.hash(certificate, certificateId, code, createTime, description, deviceId, experience, invisible, lock, mobileprovision, name, password, phone, price, profile, profileId, quality, qualityTime, refer, repair, reserve, serialNumber, tag, team, teamId, udid, uuid, valid);
   }
-
 
   @Override
   public String toString() {
@@ -879,5 +946,179 @@ public class PersonalCertificate {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `certificate` to the URL query string
+    if (getCertificate() != null) {
+      joiner.add(String.format("%scertificate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificate()))));
+    }
+
+    // add `certificateId` to the URL query string
+    if (getCertificateId() != null) {
+      joiner.add(String.format("%scertificateId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificateId()))));
+    }
+
+    // add `code` to the URL query string
+    if (getCode() != null) {
+      joiner.add(String.format("%scode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCode()))));
+    }
+
+    // add `createTime` to the URL query string
+    if (getCreateTime() != null) {
+      joiner.add(String.format("%screateTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreateTime()))));
+    }
+
+    // add `description` to the URL query string
+    if (getDescription() != null) {
+      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
+    }
+
+    // add `deviceId` to the URL query string
+    if (getDeviceId() != null) {
+      joiner.add(String.format("%sdeviceId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDeviceId()))));
+    }
+
+    // add `experience` to the URL query string
+    if (getExperience() != null) {
+      joiner.add(String.format("%sexperience%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExperience()))));
+    }
+
+    // add `invisible` to the URL query string
+    if (getInvisible() != null) {
+      joiner.add(String.format("%sinvisible%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInvisible()))));
+    }
+
+    // add `lock` to the URL query string
+    if (getLock() != null) {
+      joiner.add(String.format("%slock%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLock()))));
+    }
+
+    // add `mobileprovision` to the URL query string
+    if (getMobileprovision() != null) {
+      joiner.add(String.format("%smobileprovision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileprovision()))));
+    }
+
+    // add `name` to the URL query string
+    if (getName() != null) {
+      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
+    }
+
+    // add `password` to the URL query string
+    if (getPassword() != null) {
+      joiner.add(String.format("%spassword%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPassword()))));
+    }
+
+    // add `phone` to the URL query string
+    if (getPhone() != null) {
+      joiner.add(String.format("%sphone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhone()))));
+    }
+
+    // add `price` to the URL query string
+    if (getPrice() != null) {
+      joiner.add(String.format("%sprice%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPrice()))));
+    }
+
+    // add `profile` to the URL query string
+    if (getProfile() != null) {
+      joiner.add(String.format("%sprofile%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProfile()))));
+    }
+
+    // add `profileId` to the URL query string
+    if (getProfileId() != null) {
+      joiner.add(String.format("%sprofileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProfileId()))));
+    }
+
+    // add `quality` to the URL query string
+    if (getQuality() != null) {
+      joiner.add(String.format("%squality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuality()))));
+    }
+
+    // add `qualityTime` to the URL query string
+    if (getQualityTime() != null) {
+      joiner.add(String.format("%squalityTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQualityTime()))));
+    }
+
+    // add `refer` to the URL query string
+    if (getRefer() != null) {
+      joiner.add(String.format("%srefer%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRefer()))));
+    }
+
+    // add `repair` to the URL query string
+    if (getRepair() != null) {
+      joiner.add(String.format("%srepair%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRepair()))));
+    }
+
+    // add `reserve` to the URL query string
+    if (getReserve() != null) {
+      joiner.add(String.format("%sreserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserve()))));
+    }
+
+    // add `serialNumber` to the URL query string
+    if (getSerialNumber() != null) {
+      joiner.add(String.format("%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
+    }
+
+    // add `tag` to the URL query string
+    if (getTag() != null) {
+      joiner.add(String.format("%stag%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTag()))));
+    }
+
+    // add `team` to the URL query string
+    if (getTeam() != null) {
+      joiner.add(String.format("%steam%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTeam()))));
+    }
+
+    // add `teamId` to the URL query string
+    if (getTeamId() != null) {
+      joiner.add(String.format("%steamId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTeamId()))));
+    }
+
+    // add `udid` to the URL query string
+    if (getUdid() != null) {
+      joiner.add(String.format("%sudid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUdid()))));
+    }
+
+    // add `uuid` to the URL query string
+    if (getUuid() != null) {
+      joiner.add(String.format("%suuid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUuid()))));
+    }
+
+    // add `valid` to the URL query string
+    if (getValid() != null) {
+      joiner.add(String.format("%svalid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getValid()))));
+    }
+
+    return joiner.toString();
+  }
 }
 

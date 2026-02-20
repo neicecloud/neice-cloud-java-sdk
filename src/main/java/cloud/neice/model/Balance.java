@@ -13,267 +13,297 @@
 
 package cloud.neice.model;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
+import java.util.Arrays;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+
+import cloud.neice.ApiClient;
 /**
  * Balance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@JsonPropertyOrder({
+  Balance.JSON_PROPERTY_ALGORITHM,
+  Balance.JSON_PROPERTY_BALANCE,
+  Balance.JSON_PROPERTY_CIPHERTEXT,
+  Balance.JSON_PROPERTY_ESCROW,
+  Balance.JSON_PROPERTY_REWARD,
+  Balance.JSON_PROPERTY_SESSION,
+  Balance.JSON_PROPERTY_TOTAL,
+  Balance.JSON_PROPERTY_USER_UUID,
+  Balance.JSON_PROPERTY_VOUCHER
+})
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Balance {
-  public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
-  @SerializedName(SERIALIZED_NAME_ALGORITHM)
+  public static final String JSON_PROPERTY_ALGORITHM = "algorithm";
+  @jakarta.annotation.Nullable
   private String algorithm;
 
-  public static final String SERIALIZED_NAME_BALANCE = "balance";
-  @SerializedName(SERIALIZED_NAME_BALANCE)
+  public static final String JSON_PROPERTY_BALANCE = "balance";
+  @jakarta.annotation.Nullable
   private BigDecimal balance;
 
-  public static final String SERIALIZED_NAME_CIPHERTEXT = "ciphertext";
-  @SerializedName(SERIALIZED_NAME_CIPHERTEXT)
+  public static final String JSON_PROPERTY_CIPHERTEXT = "ciphertext";
+  @jakarta.annotation.Nullable
   private String ciphertext;
 
-  public static final String SERIALIZED_NAME_ESCROW = "escrow";
-  @SerializedName(SERIALIZED_NAME_ESCROW)
+  public static final String JSON_PROPERTY_ESCROW = "escrow";
+  @jakarta.annotation.Nullable
   private BigDecimal escrow;
 
-  public static final String SERIALIZED_NAME_REWARD = "reward";
-  @SerializedName(SERIALIZED_NAME_REWARD)
+  public static final String JSON_PROPERTY_REWARD = "reward";
+  @jakarta.annotation.Nullable
   private BigDecimal reward;
 
-  public static final String SERIALIZED_NAME_SESSION = "session";
-  @SerializedName(SERIALIZED_NAME_SESSION)
+  public static final String JSON_PROPERTY_SESSION = "session";
+  @jakarta.annotation.Nullable
   private String session;
 
-  public static final String SERIALIZED_NAME_TOTAL = "total";
-  @SerializedName(SERIALIZED_NAME_TOTAL)
+  public static final String JSON_PROPERTY_TOTAL = "total";
+  @jakarta.annotation.Nullable
   private BigDecimal total;
 
-  public static final String SERIALIZED_NAME_USER_UUID = "userUuid";
-  @SerializedName(SERIALIZED_NAME_USER_UUID)
+  public static final String JSON_PROPERTY_USER_UUID = "userUuid";
+  @jakarta.annotation.Nullable
   private String userUuid;
 
-  public static final String SERIALIZED_NAME_VOUCHER = "voucher";
-  @SerializedName(SERIALIZED_NAME_VOUCHER)
+  public static final String JSON_PROPERTY_VOUCHER = "voucher";
+  @jakarta.annotation.Nullable
   private BigDecimal voucher;
 
+  public Balance() { 
+  }
 
-  public Balance algorithm(String algorithm) {
-    
+  public Balance algorithm(@jakarta.annotation.Nullable String algorithm) {
     this.algorithm = algorithm;
     return this;
   }
 
-   /**
+  /**
    * Get algorithm
    * @return algorithm
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ALGORITHM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getAlgorithm() {
     return algorithm;
   }
 
 
-  public void setAlgorithm(String algorithm) {
+  @JsonProperty(JSON_PROPERTY_ALGORITHM)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setAlgorithm(@jakarta.annotation.Nullable String algorithm) {
     this.algorithm = algorithm;
   }
 
 
-  public Balance balance(BigDecimal balance) {
-    
+  public Balance balance(@jakarta.annotation.Nullable BigDecimal balance) {
     this.balance = balance;
     return this;
   }
 
-   /**
+  /**
    * Get balance
    * @return balance
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_BALANCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getBalance() {
     return balance;
   }
 
 
-  public void setBalance(BigDecimal balance) {
+  @JsonProperty(JSON_PROPERTY_BALANCE)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBalance(@jakarta.annotation.Nullable BigDecimal balance) {
     this.balance = balance;
   }
 
 
-  public Balance ciphertext(String ciphertext) {
-    
+  public Balance ciphertext(@jakarta.annotation.Nullable String ciphertext) {
     this.ciphertext = ciphertext;
     return this;
   }
 
-   /**
+  /**
    * Get ciphertext
    * @return ciphertext
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_CIPHERTEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCiphertext() {
     return ciphertext;
   }
 
 
-  public void setCiphertext(String ciphertext) {
+  @JsonProperty(JSON_PROPERTY_CIPHERTEXT)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCiphertext(@jakarta.annotation.Nullable String ciphertext) {
     this.ciphertext = ciphertext;
   }
 
 
-  public Balance escrow(BigDecimal escrow) {
-    
+  public Balance escrow(@jakarta.annotation.Nullable BigDecimal escrow) {
     this.escrow = escrow;
     return this;
   }
 
-   /**
+  /**
    * Get escrow
    * @return escrow
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_ESCROW)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getEscrow() {
     return escrow;
   }
 
 
-  public void setEscrow(BigDecimal escrow) {
+  @JsonProperty(JSON_PROPERTY_ESCROW)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setEscrow(@jakarta.annotation.Nullable BigDecimal escrow) {
     this.escrow = escrow;
   }
 
 
-  public Balance reward(BigDecimal reward) {
-    
+  public Balance reward(@jakarta.annotation.Nullable BigDecimal reward) {
     this.reward = reward;
     return this;
   }
 
-   /**
+  /**
    * Get reward
    * @return reward
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_REWARD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getReward() {
     return reward;
   }
 
 
-  public void setReward(BigDecimal reward) {
+  @JsonProperty(JSON_PROPERTY_REWARD)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setReward(@jakarta.annotation.Nullable BigDecimal reward) {
     this.reward = reward;
   }
 
 
-  public Balance session(String session) {
-    
+  public Balance session(@jakarta.annotation.Nullable String session) {
     this.session = session;
     return this;
   }
 
-   /**
+  /**
    * Get session
    * @return session
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getSession() {
     return session;
   }
 
 
-  public void setSession(String session) {
+  @JsonProperty(JSON_PROPERTY_SESSION)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSession(@jakarta.annotation.Nullable String session) {
     this.session = session;
   }
 
 
-  public Balance total(BigDecimal total) {
-    
+  public Balance total(@jakarta.annotation.Nullable BigDecimal total) {
     this.total = total;
     return this;
   }
 
-   /**
+  /**
    * Get total
    * @return total
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_TOTAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getTotal() {
     return total;
   }
 
 
-  public void setTotal(BigDecimal total) {
+  @JsonProperty(JSON_PROPERTY_TOTAL)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setTotal(@jakarta.annotation.Nullable BigDecimal total) {
     this.total = total;
   }
 
 
-  public Balance userUuid(String userUuid) {
-    
+  public Balance userUuid(@jakarta.annotation.Nullable String userUuid) {
     this.userUuid = userUuid;
     return this;
   }
 
-   /**
+  /**
    * Get userUuid
    * @return userUuid
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_USER_UUID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUserUuid() {
     return userUuid;
   }
 
 
-  public void setUserUuid(String userUuid) {
+  @JsonProperty(JSON_PROPERTY_USER_UUID)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setUserUuid(@jakarta.annotation.Nullable String userUuid) {
     this.userUuid = userUuid;
   }
 
 
-  public Balance voucher(BigDecimal voucher) {
-    
+  public Balance voucher(@jakarta.annotation.Nullable BigDecimal voucher) {
     this.voucher = voucher;
     return this;
   }
 
-   /**
+  /**
    * Get voucher
    * @return voucher
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @jakarta.annotation.Nullable
+  @JsonProperty(JSON_PROPERTY_VOUCHER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getVoucher() {
     return voucher;
   }
 
 
-  public void setVoucher(BigDecimal voucher) {
+  @JsonProperty(JSON_PROPERTY_VOUCHER)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setVoucher(@jakarta.annotation.Nullable BigDecimal voucher) {
     this.voucher = voucher;
   }
 
 
+  /**
+   * Return true if this Balance object is equal to o.
+   */
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -298,7 +328,6 @@ public class Balance {
   public int hashCode() {
     return Objects.hash(algorithm, balance, ciphertext, escrow, reward, session, total, userUuid, voucher);
   }
-
 
   @Override
   public String toString() {
@@ -328,5 +357,84 @@ public class Balance {
     return o.toString().replace("\n", "\n    ");
   }
 
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @return URL query string
+   */
+  public String toUrlQueryString() {
+    return toUrlQueryString(null);
+  }
+
+  /**
+   * Convert the instance into URL query string.
+   *
+   * @param prefix prefix of the query string
+   * @return URL query string
+   */
+  public String toUrlQueryString(String prefix) {
+    String suffix = "";
+    String containerSuffix = "";
+    String containerPrefix = "";
+    if (prefix == null) {
+      // style=form, explode=true, e.g. /pet?name=cat&type=manx
+      prefix = "";
+    } else {
+      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
+      prefix = prefix + "[";
+      suffix = "]";
+      containerSuffix = "]";
+      containerPrefix = "[";
+    }
+
+    StringJoiner joiner = new StringJoiner("&");
+
+    // add `algorithm` to the URL query string
+    if (getAlgorithm() != null) {
+      joiner.add(String.format("%salgorithm%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAlgorithm()))));
+    }
+
+    // add `balance` to the URL query string
+    if (getBalance() != null) {
+      joiner.add(String.format("%sbalance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBalance()))));
+    }
+
+    // add `ciphertext` to the URL query string
+    if (getCiphertext() != null) {
+      joiner.add(String.format("%sciphertext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCiphertext()))));
+    }
+
+    // add `escrow` to the URL query string
+    if (getEscrow() != null) {
+      joiner.add(String.format("%sescrow%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEscrow()))));
+    }
+
+    // add `reward` to the URL query string
+    if (getReward() != null) {
+      joiner.add(String.format("%sreward%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReward()))));
+    }
+
+    // add `session` to the URL query string
+    if (getSession() != null) {
+      joiner.add(String.format("%ssession%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSession()))));
+    }
+
+    // add `total` to the URL query string
+    if (getTotal() != null) {
+      joiner.add(String.format("%stotal%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTotal()))));
+    }
+
+    // add `userUuid` to the URL query string
+    if (getUserUuid() != null) {
+      joiner.add(String.format("%suserUuid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserUuid()))));
+    }
+
+    // add `voucher` to the URL query string
+    if (getVoucher() != null) {
+      joiner.add(String.format("%svoucher%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVoucher()))));
+    }
+
+    return joiner.toString();
+  }
 }
 

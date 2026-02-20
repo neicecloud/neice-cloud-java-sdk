@@ -62,8 +62,9 @@ paths:
       tags:
       - device
       x-codegen-request-body-name: udid
-      x-contentType: application/json
-      x-accepts: '*/*'
+      x-content-type: application/json
+      x-accepts:
+      - '*/*'
   /aas/api/v1/certificates:
     post:
       description: 获取iOS设备证书列表
@@ -113,7 +114,8 @@ paths:
       summary: 获取iOS设备证书列表
       tags:
       - device
-      x-accepts: '*/*'
+      x-accepts:
+      - '*/*'
   /aas/api/v1/exchange/code:
     post:
       description: 创建iOS设备证书兑换码
@@ -151,8 +153,9 @@ paths:
       tags:
       - device
       x-codegen-request-body-name: request
-      x-contentType: application/json
-      x-accepts: '*/*'
+      x-content-type: application/json
+      x-accepts:
+      - '*/*'
   /aas/api/v1/register:
     post:
       description: iOS设备注册
@@ -190,8 +193,9 @@ paths:
       tags:
       - device
       x-codegen-request-body-name: request
-      x-contentType: application/json
-      x-accepts: '*/*'
+      x-content-type: application/json
+      x-accepts:
+      - '*/*'
   /aas/api/v1/registers:
     post:
       description: 请确保批量提交的数据的准性，提交后不可撤销，批量提交注册将不直接返回证书，请通过回调接口接收证书，如果没提供回调接口，可使用查询接口查询
@@ -231,8 +235,9 @@ paths:
       tags:
       - device
       x-codegen-request-body-name: deviceRequests
-      x-contentType: application/json
-      x-accepts: '*/*'
+      x-content-type: application/json
+      x-accepts:
+      - '*/*'
   /aas/api/v1/renewable:
     post:
       description: 查询设备补签列表信息
@@ -270,8 +275,9 @@ paths:
       tags:
       - device
       x-codegen-request-body-name: udid
-      x-contentType: application/json
-      x-accepts: '*/*'
+      x-content-type: application/json
+      x-accepts:
+      - '*/*'
   /aas/api/v1/status:
     post:
       description: 获取证书支持类型
@@ -301,7 +307,8 @@ paths:
       summary: 获取证书支持类型
       tags:
       - device
-      x-accepts: '*/*'
+      x-accepts:
+      - '*/*'
   /aas/api/v1/version:
     post:
       description: 获取接口系统版本
@@ -331,7 +338,8 @@ paths:
       summary: 获取接口系统版本
       tags:
       - version
-      x-accepts: '*/*'
+      x-accepts:
+      - '*/*'
   /endpoint/getEndpoint:
     post:
       description: 获取签名节点入口
@@ -373,8 +381,9 @@ paths:
       tags:
       - endpoint
       x-codegen-request-body-name: param
-      x-contentType: application/json
-      x-accepts: '*/*'
+      x-content-type: application/json
+      x-accepts:
+      - '*/*'
   /oauth2/token:
     post:
       description: 获取Token
@@ -414,7 +423,8 @@ paths:
       summary: 获取Token
       tags:
       - oauth
-      x-accepts: '*/*'
+      x-accepts:
+      - '*/*'
   /oauth2/userInfo:
     get:
       description: 获取用户信息
@@ -441,7 +451,8 @@ paths:
       summary: 获取用户信息
       tags:
       - oauth
-      x-accepts: application/json;charset=UTF-8
+      x-accepts:
+      - application/json;charset=UTF-8
     post:
       description: 获取用户信息
       operationId: getUserInfo_1
@@ -470,7 +481,8 @@ paths:
       summary: 获取用户信息
       tags:
       - oauth
-      x-accepts: application/json;charset=UTF-8
+      x-accepts:
+      - application/json;charset=UTF-8
   /user/api/v1/balance:
     post:
       description: 获取用户余额
@@ -500,7 +512,8 @@ paths:
       summary: 获取用户余额
       tags:
       - balance
-      x-accepts: '*/*'
+      x-accepts:
+      - '*/*'
 components:
   schemas:
     Balance:
@@ -558,10 +571,10 @@ components:
           format: date-time
           type: string
         model:
-          description: 设备型号:iPhone,iPad,iPod
+          description: "设备型号:iPhone,iPad,iPod"
           type: string
         quality:
-          description: 默认为0:不质保,最大不能超过365天，该值仅作为参考，不作为依据，具体以上游系统为准
+          description: "默认为0:不质保,最大不能超过365天，该值仅作为参考，不作为依据，具体以上游系统为准"
           format: int32
           type: integer
         query:
@@ -715,7 +728,8 @@ components:
           description: 隐形证书
           type: boolean
         lock:
-          description: 锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续费锁;800,备份锁;10000,杀死锁
+          description: "锁定:0,不加锁;100,导出锁;200,体验锁;300,解码锁;400,付款锁;500,优惠锁;600,包月锁;700,续\
+            费锁;800,备份锁;10000,杀死锁"
           format: int32
           type: integer
         mobileprovision:
@@ -746,7 +760,7 @@ components:
           description: 证书质保到期时间
           type: string
         refer:
-          description: 该设备的用户,后台自动透传该参数
+          description: "该设备的用户,后台自动透传该参数"
           type: string
         repair:
           description: 补偿证书:预定失败或质保期内掉签，后台重订的设备标记，一般免服务费

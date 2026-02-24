@@ -13,76 +13,90 @@
 
 package cloud.neice.model;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import cloud.neice.ApiClient;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import cloud.neice.JSON;
+
 /**
  * CertificateCode
  */
-@JsonPropertyOrder({
-  CertificateCode.JSON_PROPERTY_CODE,
-  CertificateCode.JSON_PROPERTY_DOMAIN,
-  CertificateCode.JSON_PROPERTY_EXCHANGE,
-  CertificateCode.JSON_PROPERTY_MODEL,
-  CertificateCode.JSON_PROPERTY_QUALITY,
-  CertificateCode.JSON_PROPERTY_QUERY,
-  CertificateCode.JSON_PROPERTY_RESERVE,
-  CertificateCode.JSON_PROPERTY_TOKEN,
-  CertificateCode.JSON_PROPERTY_UDID
-})
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class CertificateCode {
-  public static final String JSON_PROPERTY_CODE = "code";
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
   @jakarta.annotation.Nullable
   private String code;
 
-  public static final String JSON_PROPERTY_DOMAIN = "domain";
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
   @jakarta.annotation.Nullable
   private String domain;
 
-  public static final String JSON_PROPERTY_EXCHANGE = "exchange";
+  public static final String SERIALIZED_NAME_EXCHANGE = "exchange";
+  @SerializedName(SERIALIZED_NAME_EXCHANGE)
   @jakarta.annotation.Nullable
   private OffsetDateTime exchange;
 
-  public static final String JSON_PROPERTY_MODEL = "model";
+  public static final String SERIALIZED_NAME_MODEL = "model";
+  @SerializedName(SERIALIZED_NAME_MODEL)
   @jakarta.annotation.Nullable
   private String model;
 
-  public static final String JSON_PROPERTY_QUALITY = "quality";
+  public static final String SERIALIZED_NAME_QUALITY = "quality";
+  @SerializedName(SERIALIZED_NAME_QUALITY)
   @jakarta.annotation.Nullable
   private Integer quality;
 
-  public static final String JSON_PROPERTY_QUERY = "query";
+  public static final String SERIALIZED_NAME_QUERY = "query";
+  @SerializedName(SERIALIZED_NAME_QUERY)
   @jakarta.annotation.Nullable
   private String query;
 
-  public static final String JSON_PROPERTY_RESERVE = "reserve";
+  public static final String SERIALIZED_NAME_RESERVE = "reserve";
+  @SerializedName(SERIALIZED_NAME_RESERVE)
   @jakarta.annotation.Nullable
   private Boolean reserve;
 
-  public static final String JSON_PROPERTY_TOKEN = "token";
+  public static final String SERIALIZED_NAME_TOKEN = "token";
+  @SerializedName(SERIALIZED_NAME_TOKEN)
   @jakarta.annotation.Nonnull
   private String token;
 
-  public static final String JSON_PROPERTY_UDID = "udid";
+  public static final String SERIALIZED_NAME_UDID = "udid";
+  @SerializedName(SERIALIZED_NAME_UDID)
   @jakarta.annotation.Nullable
   private String udid;
 
-  public CertificateCode() { 
+  public CertificateCode() {
   }
 
   public CertificateCode code(@jakarta.annotation.Nullable String code) {
@@ -95,15 +109,10 @@ public class CertificateCode {
    * @return code
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCode() {
     return code;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@jakarta.annotation.Nullable String code) {
     this.code = code;
   }
@@ -119,15 +128,10 @@ public class CertificateCode {
    * @return domain
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getDomain() {
     return domain;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDomain(@jakarta.annotation.Nullable String domain) {
     this.domain = domain;
   }
@@ -143,15 +147,10 @@ public class CertificateCode {
    * @return exchange
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXCHANGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public OffsetDateTime getExchange() {
     return exchange;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXCHANGE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExchange(@jakarta.annotation.Nullable OffsetDateTime exchange) {
     this.exchange = exchange;
   }
@@ -167,15 +166,10 @@ public class CertificateCode {
    * @return model
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MODEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getModel() {
     return model;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MODEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModel(@jakarta.annotation.Nullable String model) {
     this.model = model;
   }
@@ -191,15 +185,10 @@ public class CertificateCode {
    * @return quality
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getQuality() {
     return quality;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_QUALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
   }
@@ -215,15 +204,10 @@ public class CertificateCode {
    * @return query
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUERY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getQuery() {
     return query;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_QUERY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuery(@jakarta.annotation.Nullable String query) {
     this.query = query;
   }
@@ -239,15 +223,10 @@ public class CertificateCode {
    * @return reserve
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getReserve() {
     return reserve;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
   }
@@ -263,15 +242,10 @@ public class CertificateCode {
    * @return token
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_TOKEN)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getToken() {
     return token;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TOKEN)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setToken(@jakarta.annotation.Nonnull String token) {
     this.token = token;
   }
@@ -287,23 +261,16 @@ public class CertificateCode {
    * @return udid
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UDID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUdid() {
     return udid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_UDID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUdid(@jakarta.annotation.Nullable String udid) {
     this.udid = udid;
   }
 
 
-  /**
-   * Return true if this CertificateCode object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -357,84 +324,123 @@ public class CertificateCode {
     return o.toString().replace("\n", "\n    ");
   }
 
-  /**
-   * Convert the instance into URL query string.
-   *
-   * @return URL query string
-   */
-  public String toUrlQueryString() {
-    return toUrlQueryString(null);
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("code");
+    openapiFields.add("domain");
+    openapiFields.add("exchange");
+    openapiFields.add("model");
+    openapiFields.add("quality");
+    openapiFields.add("query");
+    openapiFields.add("reserve");
+    openapiFields.add("token");
+    openapiFields.add("udid");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("token");
   }
 
   /**
-   * Convert the instance into URL query string.
+   * Validates the JSON Element and throws an exception if issues found
    *
-   * @param prefix prefix of the query string
-   * @return URL query string
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CertificateCode
    */
-  public String toUrlQueryString(String prefix) {
-    String suffix = "";
-    String containerSuffix = "";
-    String containerPrefix = "";
-    if (prefix == null) {
-      // style=form, explode=true, e.g. /pet?name=cat&type=manx
-      prefix = "";
-    } else {
-      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
-      prefix = prefix + "[";
-      suffix = "]";
-      containerSuffix = "]";
-      containerPrefix = "[";
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CertificateCode.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CertificateCode is not found in the empty JSON string", CertificateCode.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!CertificateCode.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CertificateCode` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CertificateCode.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
+      }
+      if ((jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) && !jsonObj.get("domain").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
+      }
+      if ((jsonObj.get("model") != null && !jsonObj.get("model").isJsonNull()) && !jsonObj.get("model").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `model` to be a primitive type in the JSON string but got `%s`", jsonObj.get("model").toString()));
+      }
+      if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
+      }
+      if (!jsonObj.get("token").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token").toString()));
+      }
+      if ((jsonObj.get("udid") != null && !jsonObj.get("udid").isJsonNull()) && !jsonObj.get("udid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `udid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("udid").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CertificateCode.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CertificateCode' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CertificateCode> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CertificateCode.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CertificateCode>() {
+           @Override
+           public void write(JsonWriter out, CertificateCode value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CertificateCode read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
     }
+  }
 
-    StringJoiner joiner = new StringJoiner("&");
+  /**
+   * Create an instance of CertificateCode given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CertificateCode
+   * @throws IOException if the JSON string is invalid with respect to CertificateCode
+   */
+  public static CertificateCode fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CertificateCode.class);
+  }
 
-    // add `code` to the URL query string
-    if (getCode() != null) {
-      joiner.add(String.format("%scode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCode()))));
-    }
-
-    // add `domain` to the URL query string
-    if (getDomain() != null) {
-      joiner.add(String.format("%sdomain%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomain()))));
-    }
-
-    // add `exchange` to the URL query string
-    if (getExchange() != null) {
-      joiner.add(String.format("%sexchange%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExchange()))));
-    }
-
-    // add `model` to the URL query string
-    if (getModel() != null) {
-      joiner.add(String.format("%smodel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getModel()))));
-    }
-
-    // add `quality` to the URL query string
-    if (getQuality() != null) {
-      joiner.add(String.format("%squality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuality()))));
-    }
-
-    // add `query` to the URL query string
-    if (getQuery() != null) {
-      joiner.add(String.format("%squery%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuery()))));
-    }
-
-    // add `reserve` to the URL query string
-    if (getReserve() != null) {
-      joiner.add(String.format("%sreserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserve()))));
-    }
-
-    // add `token` to the URL query string
-    if (getToken() != null) {
-      joiner.add(String.format("%stoken%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getToken()))));
-    }
-
-    // add `udid` to the URL query string
-    if (getUdid() != null) {
-      joiner.add(String.format("%sudid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUdid()))));
-    }
-
-    return joiner.toString();
+  /**
+   * Convert an instance of CertificateCode to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

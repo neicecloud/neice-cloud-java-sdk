@@ -13,50 +13,64 @@
 
 package cloud.neice.model;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import cloud.neice.ApiClient;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import cloud.neice.JSON;
+
 /**
  * Version
  */
-@JsonPropertyOrder({
-  Version.JSON_PROPERTY_BUILD,
-  Version.JSON_PROPERTY_MAJOR,
-  Version.JSON_PROPERTY_MINOR,
-  Version.JSON_PROPERTY_REVISION
-})
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Version {
-  public static final String JSON_PROPERTY_BUILD = "build";
+  public static final String SERIALIZED_NAME_BUILD = "build";
+  @SerializedName(SERIALIZED_NAME_BUILD)
   @jakarta.annotation.Nullable
   private Integer build;
 
-  public static final String JSON_PROPERTY_MAJOR = "major";
+  public static final String SERIALIZED_NAME_MAJOR = "major";
+  @SerializedName(SERIALIZED_NAME_MAJOR)
   @jakarta.annotation.Nullable
   private Integer major;
 
-  public static final String JSON_PROPERTY_MINOR = "minor";
+  public static final String SERIALIZED_NAME_MINOR = "minor";
+  @SerializedName(SERIALIZED_NAME_MINOR)
   @jakarta.annotation.Nullable
   private Integer minor;
 
-  public static final String JSON_PROPERTY_REVISION = "revision";
+  public static final String SERIALIZED_NAME_REVISION = "revision";
+  @SerializedName(SERIALIZED_NAME_REVISION)
   @jakarta.annotation.Nullable
   private Integer revision;
 
-  public Version() { 
+  public Version() {
   }
 
   public Version build(@jakarta.annotation.Nullable Integer build) {
@@ -69,15 +83,10 @@ public class Version {
    * @return build
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BUILD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getBuild() {
     return build;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BUILD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBuild(@jakarta.annotation.Nullable Integer build) {
     this.build = build;
   }
@@ -93,15 +102,10 @@ public class Version {
    * @return major
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MAJOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getMajor() {
     return major;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MAJOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMajor(@jakarta.annotation.Nullable Integer major) {
     this.major = major;
   }
@@ -117,15 +121,10 @@ public class Version {
    * @return minor
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MINOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getMinor() {
     return minor;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MINOR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMinor(@jakarta.annotation.Nullable Integer minor) {
     this.minor = minor;
   }
@@ -141,23 +140,16 @@ public class Version {
    * @return revision
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REVISION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getRevision() {
     return revision;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REVISION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRevision(@jakarta.annotation.Nullable Integer revision) {
     this.revision = revision;
   }
 
 
-  /**
-   * Return true if this Version object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -201,59 +193,92 @@ public class Version {
     return o.toString().replace("\n", "\n    ");
   }
 
-  /**
-   * Convert the instance into URL query string.
-   *
-   * @return URL query string
-   */
-  public String toUrlQueryString() {
-    return toUrlQueryString(null);
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("build");
+    openapiFields.add("major");
+    openapiFields.add("minor");
+    openapiFields.add("revision");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
   }
 
   /**
-   * Convert the instance into URL query string.
+   * Validates the JSON Element and throws an exception if issues found
    *
-   * @param prefix prefix of the query string
-   * @return URL query string
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Version
    */
-  public String toUrlQueryString(String prefix) {
-    String suffix = "";
-    String containerSuffix = "";
-    String containerPrefix = "";
-    if (prefix == null) {
-      // style=form, explode=true, e.g. /pet?name=cat&type=manx
-      prefix = "";
-    } else {
-      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
-      prefix = prefix + "[";
-      suffix = "]";
-      containerSuffix = "]";
-      containerPrefix = "[";
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Version.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Version is not found in the empty JSON string", Version.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Version.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Version` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Version.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Version' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Version> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Version.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Version>() {
+           @Override
+           public void write(JsonWriter out, Version value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Version read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
     }
+  }
 
-    StringJoiner joiner = new StringJoiner("&");
+  /**
+   * Create an instance of Version given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Version
+   * @throws IOException if the JSON string is invalid with respect to Version
+   */
+  public static Version fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Version.class);
+  }
 
-    // add `build` to the URL query string
-    if (getBuild() != null) {
-      joiner.add(String.format("%sbuild%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBuild()))));
-    }
-
-    // add `major` to the URL query string
-    if (getMajor() != null) {
-      joiner.add(String.format("%smajor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMajor()))));
-    }
-
-    // add `minor` to the URL query string
-    if (getMinor() != null) {
-      joiner.add(String.format("%sminor%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMinor()))));
-    }
-
-    // add `revision` to the URL query string
-    if (getRevision() != null) {
-      joiner.add(String.format("%srevision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRevision()))));
-    }
-
-    return joiner.toString();
+  /**
+   * Convert an instance of Version to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

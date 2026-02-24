@@ -13,65 +13,79 @@
 
 package cloud.neice.model;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import cloud.neice.ApiClient;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import cloud.neice.JSON;
+
 /**
  * Renewable
  */
-@JsonPropertyOrder({
-  Renewable.JSON_PROPERTY_DOMAIN,
-  Renewable.JSON_PROPERTY_GUIDE,
-  Renewable.JSON_PROPERTY_RENEWABLE,
-  Renewable.JSON_PROPERTY_TEAM_ID,
-  Renewable.JSON_PROPERTY_UDID,
-  Renewable.JSON_PROPERTY_URL,
-  Renewable.JSON_PROPERTY_UUID
-})
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Renewable {
-  public static final String JSON_PROPERTY_DOMAIN = "domain";
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
   @jakarta.annotation.Nullable
   private String domain;
 
-  public static final String JSON_PROPERTY_GUIDE = "guide";
+  public static final String SERIALIZED_NAME_GUIDE = "guide";
+  @SerializedName(SERIALIZED_NAME_GUIDE)
   @jakarta.annotation.Nullable
   private String guide;
 
-  public static final String JSON_PROPERTY_RENEWABLE = "renewable";
+  public static final String SERIALIZED_NAME_RENEWABLE = "renewable";
+  @SerializedName(SERIALIZED_NAME_RENEWABLE)
   @jakarta.annotation.Nullable
   private Boolean renewable;
 
-  public static final String JSON_PROPERTY_TEAM_ID = "teamId";
+  public static final String SERIALIZED_NAME_TEAM_ID = "teamId";
+  @SerializedName(SERIALIZED_NAME_TEAM_ID)
   @jakarta.annotation.Nullable
   private String teamId;
 
-  public static final String JSON_PROPERTY_UDID = "udid";
+  public static final String SERIALIZED_NAME_UDID = "udid";
+  @SerializedName(SERIALIZED_NAME_UDID)
   @jakarta.annotation.Nullable
   private String udid;
 
-  public static final String JSON_PROPERTY_URL = "url";
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   @jakarta.annotation.Nullable
   private String url;
 
-  public static final String JSON_PROPERTY_UUID = "uuid";
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
   @jakarta.annotation.Nullable
   private String uuid;
 
-  public Renewable() { 
+  public Renewable() {
   }
 
   public Renewable domain(@jakarta.annotation.Nullable String domain) {
@@ -84,15 +98,10 @@ public class Renewable {
    * @return domain
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getDomain() {
     return domain;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DOMAIN)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDomain(@jakarta.annotation.Nullable String domain) {
     this.domain = domain;
   }
@@ -108,15 +117,10 @@ public class Renewable {
    * @return guide
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_GUIDE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getGuide() {
     return guide;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_GUIDE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGuide(@jakarta.annotation.Nullable String guide) {
     this.guide = guide;
   }
@@ -132,15 +136,10 @@ public class Renewable {
    * @return renewable
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RENEWABLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getRenewable() {
     return renewable;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RENEWABLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRenewable(@jakarta.annotation.Nullable Boolean renewable) {
     this.renewable = renewable;
   }
@@ -156,15 +155,10 @@ public class Renewable {
    * @return teamId
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TEAM_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getTeamId() {
     return teamId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TEAM_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTeamId(@jakarta.annotation.Nullable String teamId) {
     this.teamId = teamId;
   }
@@ -180,15 +174,10 @@ public class Renewable {
    * @return udid
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UDID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUdid() {
     return udid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_UDID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUdid(@jakarta.annotation.Nullable String udid) {
     this.udid = udid;
   }
@@ -204,15 +193,10 @@ public class Renewable {
    * @return url
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUrl() {
     return url;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_URL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUrl(@jakarta.annotation.Nullable String url) {
     this.url = url;
   }
@@ -228,23 +212,16 @@ public class Renewable {
    * @return uuid
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUuid() {
     return uuid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUuid(@jakarta.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
 
 
-  /**
-   * Return true if this Renewable object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -294,74 +271,113 @@ public class Renewable {
     return o.toString().replace("\n", "\n    ");
   }
 
-  /**
-   * Convert the instance into URL query string.
-   *
-   * @return URL query string
-   */
-  public String toUrlQueryString() {
-    return toUrlQueryString(null);
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("domain");
+    openapiFields.add("guide");
+    openapiFields.add("renewable");
+    openapiFields.add("teamId");
+    openapiFields.add("udid");
+    openapiFields.add("url");
+    openapiFields.add("uuid");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
   }
 
   /**
-   * Convert the instance into URL query string.
+   * Validates the JSON Element and throws an exception if issues found
    *
-   * @param prefix prefix of the query string
-   * @return URL query string
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Renewable
    */
-  public String toUrlQueryString(String prefix) {
-    String suffix = "";
-    String containerSuffix = "";
-    String containerPrefix = "";
-    if (prefix == null) {
-      // style=form, explode=true, e.g. /pet?name=cat&type=manx
-      prefix = "";
-    } else {
-      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
-      prefix = prefix + "[";
-      suffix = "]";
-      containerSuffix = "]";
-      containerPrefix = "[";
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Renewable.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Renewable is not found in the empty JSON string", Renewable.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Renewable.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Renewable` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) && !jsonObj.get("domain").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
+      }
+      if ((jsonObj.get("guide") != null && !jsonObj.get("guide").isJsonNull()) && !jsonObj.get("guide").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `guide` to be a primitive type in the JSON string but got `%s`", jsonObj.get("guide").toString()));
+      }
+      if ((jsonObj.get("teamId") != null && !jsonObj.get("teamId").isJsonNull()) && !jsonObj.get("teamId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `teamId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("teamId").toString()));
+      }
+      if ((jsonObj.get("udid") != null && !jsonObj.get("udid").isJsonNull()) && !jsonObj.get("udid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `udid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("udid").toString()));
+      }
+      if ((jsonObj.get("url") != null && !jsonObj.get("url").isJsonNull()) && !jsonObj.get("url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
+      }
+      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Renewable.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Renewable' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Renewable> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Renewable.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Renewable>() {
+           @Override
+           public void write(JsonWriter out, Renewable value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Renewable read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
     }
+  }
 
-    StringJoiner joiner = new StringJoiner("&");
+  /**
+   * Create an instance of Renewable given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Renewable
+   * @throws IOException if the JSON string is invalid with respect to Renewable
+   */
+  public static Renewable fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Renewable.class);
+  }
 
-    // add `domain` to the URL query string
-    if (getDomain() != null) {
-      joiner.add(String.format("%sdomain%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDomain()))));
-    }
-
-    // add `guide` to the URL query string
-    if (getGuide() != null) {
-      joiner.add(String.format("%sguide%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGuide()))));
-    }
-
-    // add `renewable` to the URL query string
-    if (getRenewable() != null) {
-      joiner.add(String.format("%srenewable%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRenewable()))));
-    }
-
-    // add `teamId` to the URL query string
-    if (getTeamId() != null) {
-      joiner.add(String.format("%steamId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTeamId()))));
-    }
-
-    // add `udid` to the URL query string
-    if (getUdid() != null) {
-      joiner.add(String.format("%sudid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUdid()))));
-    }
-
-    // add `url` to the URL query string
-    if (getUrl() != null) {
-      joiner.add(String.format("%surl%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUrl()))));
-    }
-
-    // add `uuid` to the URL query string
-    if (getUuid() != null) {
-      joiner.add(String.format("%suuid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUuid()))));
-    }
-
-    return joiner.toString();
+  /**
+   * Convert an instance of Renewable to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

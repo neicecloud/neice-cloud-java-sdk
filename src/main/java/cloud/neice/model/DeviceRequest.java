@@ -13,100 +13,114 @@
 
 package cloud.neice.model;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import cloud.neice.ApiClient;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import cloud.neice.JSON;
+
 /**
  * DeviceRequest
  */
-@JsonPropertyOrder({
-  DeviceRequest.JSON_PROPERTY_CALLBACK,
-  DeviceRequest.JSON_PROPERTY_CODE,
-  DeviceRequest.JSON_PROPERTY_MODEL,
-  DeviceRequest.JSON_PROPERTY_NAME,
-  DeviceRequest.JSON_PROPERTY_PARAM,
-  DeviceRequest.JSON_PROPERTY_PHONE,
-  DeviceRequest.JSON_PROPERTY_QUALITY,
-  DeviceRequest.JSON_PROPERTY_REFER,
-  DeviceRequest.JSON_PROPERTY_RENEW,
-  DeviceRequest.JSON_PROPERTY_RESERVE,
-  DeviceRequest.JSON_PROPERTY_SYSTEM,
-  DeviceRequest.JSON_PROPERTY_UDID,
-  DeviceRequest.JSON_PROPERTY_UUID,
-  DeviceRequest.JSON_PROPERTY_VERSION
-})
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class DeviceRequest {
-  public static final String JSON_PROPERTY_CALLBACK = "callback";
+  public static final String SERIALIZED_NAME_CALLBACK = "callback";
+  @SerializedName(SERIALIZED_NAME_CALLBACK)
   @jakarta.annotation.Nullable
   private String callback;
 
-  public static final String JSON_PROPERTY_CODE = "code";
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
   @jakarta.annotation.Nullable
   private String code;
 
-  public static final String JSON_PROPERTY_MODEL = "model";
+  public static final String SERIALIZED_NAME_MODEL = "model";
+  @SerializedName(SERIALIZED_NAME_MODEL)
   @jakarta.annotation.Nullable
   private String model;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
   private String name;
 
-  public static final String JSON_PROPERTY_PARAM = "param";
+  public static final String SERIALIZED_NAME_PARAM = "param";
+  @SerializedName(SERIALIZED_NAME_PARAM)
   @jakarta.annotation.Nullable
   private String param;
 
-  public static final String JSON_PROPERTY_PHONE = "phone";
+  public static final String SERIALIZED_NAME_PHONE = "phone";
+  @SerializedName(SERIALIZED_NAME_PHONE)
   @jakarta.annotation.Nullable
   private String phone;
 
-  public static final String JSON_PROPERTY_QUALITY = "quality";
+  public static final String SERIALIZED_NAME_QUALITY = "quality";
+  @SerializedName(SERIALIZED_NAME_QUALITY)
   @jakarta.annotation.Nullable
   private Integer quality;
 
-  public static final String JSON_PROPERTY_REFER = "refer";
+  public static final String SERIALIZED_NAME_REFER = "refer";
+  @SerializedName(SERIALIZED_NAME_REFER)
   @jakarta.annotation.Nullable
   private String refer;
 
-  public static final String JSON_PROPERTY_RENEW = "renew";
+  public static final String SERIALIZED_NAME_RENEW = "renew";
+  @SerializedName(SERIALIZED_NAME_RENEW)
   @jakarta.annotation.Nullable
   private Boolean renew;
 
-  public static final String JSON_PROPERTY_RESERVE = "reserve";
+  public static final String SERIALIZED_NAME_RESERVE = "reserve";
+  @SerializedName(SERIALIZED_NAME_RESERVE)
   @jakarta.annotation.Nullable
   private Boolean reserve;
 
-  public static final String JSON_PROPERTY_SYSTEM = "system";
+  public static final String SERIALIZED_NAME_SYSTEM = "system";
+  @SerializedName(SERIALIZED_NAME_SYSTEM)
   @jakarta.annotation.Nullable
   private String system;
 
-  public static final String JSON_PROPERTY_UDID = "udid";
+  public static final String SERIALIZED_NAME_UDID = "udid";
+  @SerializedName(SERIALIZED_NAME_UDID)
   @jakarta.annotation.Nonnull
   private String udid;
 
-  public static final String JSON_PROPERTY_UUID = "uuid";
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
   @jakarta.annotation.Nullable
   private String uuid;
 
-  public static final String JSON_PROPERTY_VERSION = "version";
+  public static final String SERIALIZED_NAME_VERSION = "version";
+  @SerializedName(SERIALIZED_NAME_VERSION)
   @jakarta.annotation.Nullable
   private String version;
 
-  public DeviceRequest() { 
+  public DeviceRequest() {
   }
 
   public DeviceRequest callback(@jakarta.annotation.Nullable String callback) {
@@ -119,15 +133,10 @@ public class DeviceRequest {
    * @return callback
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CALLBACK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCallback() {
     return callback;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CALLBACK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCallback(@jakarta.annotation.Nullable String callback) {
     this.callback = callback;
   }
@@ -143,15 +152,10 @@ public class DeviceRequest {
    * @return code
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCode() {
     return code;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@jakarta.annotation.Nullable String code) {
     this.code = code;
   }
@@ -167,15 +171,10 @@ public class DeviceRequest {
    * @return model
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MODEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getModel() {
     return model;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MODEL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setModel(@jakarta.annotation.Nullable String model) {
     this.model = model;
   }
@@ -191,15 +190,10 @@ public class DeviceRequest {
    * @return name
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getName() {
     return name;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
@@ -215,15 +209,10 @@ public class DeviceRequest {
    * @return param
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PARAM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getParam() {
     return param;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PARAM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setParam(@jakarta.annotation.Nullable String param) {
     this.param = param;
   }
@@ -239,15 +228,10 @@ public class DeviceRequest {
    * @return phone
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PHONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getPhone() {
     return phone;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PHONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPhone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
   }
@@ -263,15 +247,10 @@ public class DeviceRequest {
    * @return quality
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getQuality() {
     return quality;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_QUALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
   }
@@ -287,15 +266,10 @@ public class DeviceRequest {
    * @return refer
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REFER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getRefer() {
     return refer;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REFER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRefer(@jakarta.annotation.Nullable String refer) {
     this.refer = refer;
   }
@@ -311,15 +285,10 @@ public class DeviceRequest {
    * @return renew
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RENEW)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getRenew() {
     return renew;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RENEW)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRenew(@jakarta.annotation.Nullable Boolean renew) {
     this.renew = renew;
   }
@@ -335,15 +304,10 @@ public class DeviceRequest {
    * @return reserve
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getReserve() {
     return reserve;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
   }
@@ -359,15 +323,10 @@ public class DeviceRequest {
    * @return system
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SYSTEM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getSystem() {
     return system;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SYSTEM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(@jakarta.annotation.Nullable String system) {
     this.system = system;
   }
@@ -383,15 +342,10 @@ public class DeviceRequest {
    * @return udid
    */
   @jakarta.annotation.Nonnull
-  @JsonProperty(JSON_PROPERTY_UDID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getUdid() {
     return udid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_UDID)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUdid(@jakarta.annotation.Nonnull String udid) {
     this.udid = udid;
   }
@@ -407,15 +361,10 @@ public class DeviceRequest {
    * @return uuid
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUuid() {
     return uuid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUuid(@jakarta.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
@@ -431,23 +380,16 @@ public class DeviceRequest {
    * @return version
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VERSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getVersion() {
     return version;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_VERSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@jakarta.annotation.Nullable String version) {
     this.version = version;
   }
 
 
-  /**
-   * Return true if this DeviceRequest object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -511,109 +453,143 @@ public class DeviceRequest {
     return o.toString().replace("\n", "\n    ");
   }
 
-  /**
-   * Convert the instance into URL query string.
-   *
-   * @return URL query string
-   */
-  public String toUrlQueryString() {
-    return toUrlQueryString(null);
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("callback");
+    openapiFields.add("code");
+    openapiFields.add("model");
+    openapiFields.add("name");
+    openapiFields.add("param");
+    openapiFields.add("phone");
+    openapiFields.add("quality");
+    openapiFields.add("refer");
+    openapiFields.add("renew");
+    openapiFields.add("reserve");
+    openapiFields.add("system");
+    openapiFields.add("udid");
+    openapiFields.add("uuid");
+    openapiFields.add("version");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("udid");
   }
 
   /**
-   * Convert the instance into URL query string.
+   * Validates the JSON Element and throws an exception if issues found
    *
-   * @param prefix prefix of the query string
-   * @return URL query string
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DeviceRequest
    */
-  public String toUrlQueryString(String prefix) {
-    String suffix = "";
-    String containerSuffix = "";
-    String containerPrefix = "";
-    if (prefix == null) {
-      // style=form, explode=true, e.g. /pet?name=cat&type=manx
-      prefix = "";
-    } else {
-      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
-      prefix = prefix + "[";
-      suffix = "]";
-      containerSuffix = "]";
-      containerPrefix = "[";
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!DeviceRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DeviceRequest is not found in the empty JSON string", DeviceRequest.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!DeviceRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DeviceRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : DeviceRequest.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("callback") != null && !jsonObj.get("callback").isJsonNull()) && !jsonObj.get("callback").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callback` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callback").toString()));
+      }
+      if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
+      }
+      if ((jsonObj.get("model") != null && !jsonObj.get("model").isJsonNull()) && !jsonObj.get("model").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `model` to be a primitive type in the JSON string but got `%s`", jsonObj.get("model").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("param") != null && !jsonObj.get("param").isJsonNull()) && !jsonObj.get("param").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `param` to be a primitive type in the JSON string but got `%s`", jsonObj.get("param").toString()));
+      }
+      if ((jsonObj.get("phone") != null && !jsonObj.get("phone").isJsonNull()) && !jsonObj.get("phone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `phone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone").toString()));
+      }
+      if ((jsonObj.get("refer") != null && !jsonObj.get("refer").isJsonNull()) && !jsonObj.get("refer").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `refer` to be a primitive type in the JSON string but got `%s`", jsonObj.get("refer").toString()));
+      }
+      if ((jsonObj.get("system") != null && !jsonObj.get("system").isJsonNull()) && !jsonObj.get("system").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `system` to be a primitive type in the JSON string but got `%s`", jsonObj.get("system").toString()));
+      }
+      if (!jsonObj.get("udid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `udid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("udid").toString()));
+      }
+      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+      if ((jsonObj.get("version") != null && !jsonObj.get("version").isJsonNull()) && !jsonObj.get("version").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `version` to be a primitive type in the JSON string but got `%s`", jsonObj.get("version").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!DeviceRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DeviceRequest' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<DeviceRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DeviceRequest.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<DeviceRequest>() {
+           @Override
+           public void write(JsonWriter out, DeviceRequest value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public DeviceRequest read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
     }
+  }
 
-    StringJoiner joiner = new StringJoiner("&");
+  /**
+   * Create an instance of DeviceRequest given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DeviceRequest
+   * @throws IOException if the JSON string is invalid with respect to DeviceRequest
+   */
+  public static DeviceRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DeviceRequest.class);
+  }
 
-    // add `callback` to the URL query string
-    if (getCallback() != null) {
-      joiner.add(String.format("%scallback%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCallback()))));
-    }
-
-    // add `code` to the URL query string
-    if (getCode() != null) {
-      joiner.add(String.format("%scode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCode()))));
-    }
-
-    // add `model` to the URL query string
-    if (getModel() != null) {
-      joiner.add(String.format("%smodel%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getModel()))));
-    }
-
-    // add `name` to the URL query string
-    if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
-    }
-
-    // add `param` to the URL query string
-    if (getParam() != null) {
-      joiner.add(String.format("%sparam%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getParam()))));
-    }
-
-    // add `phone` to the URL query string
-    if (getPhone() != null) {
-      joiner.add(String.format("%sphone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhone()))));
-    }
-
-    // add `quality` to the URL query string
-    if (getQuality() != null) {
-      joiner.add(String.format("%squality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuality()))));
-    }
-
-    // add `refer` to the URL query string
-    if (getRefer() != null) {
-      joiner.add(String.format("%srefer%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRefer()))));
-    }
-
-    // add `renew` to the URL query string
-    if (getRenew() != null) {
-      joiner.add(String.format("%srenew%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRenew()))));
-    }
-
-    // add `reserve` to the URL query string
-    if (getReserve() != null) {
-      joiner.add(String.format("%sreserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserve()))));
-    }
-
-    // add `system` to the URL query string
-    if (getSystem() != null) {
-      joiner.add(String.format("%ssystem%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSystem()))));
-    }
-
-    // add `udid` to the URL query string
-    if (getUdid() != null) {
-      joiner.add(String.format("%sudid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUdid()))));
-    }
-
-    // add `uuid` to the URL query string
-    if (getUuid() != null) {
-      joiner.add(String.format("%suuid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUuid()))));
-    }
-
-    // add `version` to the URL query string
-    if (getVersion() != null) {
-      joiner.add(String.format("%sversion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVersion()))));
-    }
-
-    return joiner.toString();
+  /**
+   * Convert an instance of DeviceRequest to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

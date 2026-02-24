@@ -13,171 +13,185 @@
 
 package cloud.neice.model;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import cloud.neice.ApiClient;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import cloud.neice.JSON;
+
 /**
  * PersonalCertificate
  */
-@JsonPropertyOrder({
-  PersonalCertificate.JSON_PROPERTY_CERTIFICATE,
-  PersonalCertificate.JSON_PROPERTY_CERTIFICATE_ID,
-  PersonalCertificate.JSON_PROPERTY_CODE,
-  PersonalCertificate.JSON_PROPERTY_CREATE_TIME,
-  PersonalCertificate.JSON_PROPERTY_DESCRIPTION,
-  PersonalCertificate.JSON_PROPERTY_DEVICE_ID,
-  PersonalCertificate.JSON_PROPERTY_EXPERIENCE,
-  PersonalCertificate.JSON_PROPERTY_INVISIBLE,
-  PersonalCertificate.JSON_PROPERTY_LOCK,
-  PersonalCertificate.JSON_PROPERTY_MOBILEPROVISION,
-  PersonalCertificate.JSON_PROPERTY_NAME,
-  PersonalCertificate.JSON_PROPERTY_PASSWORD,
-  PersonalCertificate.JSON_PROPERTY_PHONE,
-  PersonalCertificate.JSON_PROPERTY_PRICE,
-  PersonalCertificate.JSON_PROPERTY_PROFILE,
-  PersonalCertificate.JSON_PROPERTY_PROFILE_ID,
-  PersonalCertificate.JSON_PROPERTY_QUALITY,
-  PersonalCertificate.JSON_PROPERTY_QUALITY_TIME,
-  PersonalCertificate.JSON_PROPERTY_REFER,
-  PersonalCertificate.JSON_PROPERTY_REPAIR,
-  PersonalCertificate.JSON_PROPERTY_RESERVE,
-  PersonalCertificate.JSON_PROPERTY_SERIAL_NUMBER,
-  PersonalCertificate.JSON_PROPERTY_TAG,
-  PersonalCertificate.JSON_PROPERTY_TEAM,
-  PersonalCertificate.JSON_PROPERTY_TEAM_ID,
-  PersonalCertificate.JSON_PROPERTY_UDID,
-  PersonalCertificate.JSON_PROPERTY_UUID,
-  PersonalCertificate.JSON_PROPERTY_VALID
-})
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class PersonalCertificate {
-  public static final String JSON_PROPERTY_CERTIFICATE = "certificate";
+  public static final String SERIALIZED_NAME_CERTIFICATE = "certificate";
+  @SerializedName(SERIALIZED_NAME_CERTIFICATE)
   @jakarta.annotation.Nullable
   private String certificate;
 
-  public static final String JSON_PROPERTY_CERTIFICATE_ID = "certificateId";
+  public static final String SERIALIZED_NAME_CERTIFICATE_ID = "certificateId";
+  @SerializedName(SERIALIZED_NAME_CERTIFICATE_ID)
   @jakarta.annotation.Nullable
   private String certificateId;
 
-  public static final String JSON_PROPERTY_CODE = "code";
+  public static final String SERIALIZED_NAME_CODE = "code";
+  @SerializedName(SERIALIZED_NAME_CODE)
   @jakarta.annotation.Nullable
   private String code;
 
-  public static final String JSON_PROPERTY_CREATE_TIME = "createTime";
+  public static final String SERIALIZED_NAME_CREATE_TIME = "createTime";
+  @SerializedName(SERIALIZED_NAME_CREATE_TIME)
   @jakarta.annotation.Nullable
   private String createTime;
 
-  public static final String JSON_PROPERTY_DESCRIPTION = "description";
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @jakarta.annotation.Nullable
   private String description;
 
-  public static final String JSON_PROPERTY_DEVICE_ID = "deviceId";
+  public static final String SERIALIZED_NAME_DEVICE_ID = "deviceId";
+  @SerializedName(SERIALIZED_NAME_DEVICE_ID)
   @jakarta.annotation.Nullable
   private String deviceId;
 
-  public static final String JSON_PROPERTY_EXPERIENCE = "experience";
+  public static final String SERIALIZED_NAME_EXPERIENCE = "experience";
+  @SerializedName(SERIALIZED_NAME_EXPERIENCE)
   @jakarta.annotation.Nullable
   private Integer experience;
 
-  public static final String JSON_PROPERTY_INVISIBLE = "invisible";
+  public static final String SERIALIZED_NAME_INVISIBLE = "invisible";
+  @SerializedName(SERIALIZED_NAME_INVISIBLE)
   @jakarta.annotation.Nullable
   private Boolean invisible;
 
-  public static final String JSON_PROPERTY_LOCK = "lock";
+  public static final String SERIALIZED_NAME_LOCK = "lock";
+  @SerializedName(SERIALIZED_NAME_LOCK)
   @jakarta.annotation.Nullable
   private Integer lock;
 
-  public static final String JSON_PROPERTY_MOBILEPROVISION = "mobileprovision";
+  public static final String SERIALIZED_NAME_MOBILEPROVISION = "mobileprovision";
+  @SerializedName(SERIALIZED_NAME_MOBILEPROVISION)
   @jakarta.annotation.Nullable
   private String mobileprovision;
 
-  public static final String JSON_PROPERTY_NAME = "name";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nullable
   private String name;
 
-  public static final String JSON_PROPERTY_PASSWORD = "password";
+  public static final String SERIALIZED_NAME_PASSWORD = "password";
+  @SerializedName(SERIALIZED_NAME_PASSWORD)
   @jakarta.annotation.Nullable
   private String password;
 
-  public static final String JSON_PROPERTY_PHONE = "phone";
+  public static final String SERIALIZED_NAME_PHONE = "phone";
+  @SerializedName(SERIALIZED_NAME_PHONE)
   @jakarta.annotation.Nullable
   private String phone;
 
-  public static final String JSON_PROPERTY_PRICE = "price";
+  public static final String SERIALIZED_NAME_PRICE = "price";
+  @SerializedName(SERIALIZED_NAME_PRICE)
   @jakarta.annotation.Nullable
   private BigDecimal price;
 
-  public static final String JSON_PROPERTY_PROFILE = "profile";
+  public static final String SERIALIZED_NAME_PROFILE = "profile";
+  @SerializedName(SERIALIZED_NAME_PROFILE)
   @jakarta.annotation.Nullable
   private String profile;
 
-  public static final String JSON_PROPERTY_PROFILE_ID = "profileId";
+  public static final String SERIALIZED_NAME_PROFILE_ID = "profileId";
+  @SerializedName(SERIALIZED_NAME_PROFILE_ID)
   @jakarta.annotation.Nullable
   private String profileId;
 
-  public static final String JSON_PROPERTY_QUALITY = "quality";
+  public static final String SERIALIZED_NAME_QUALITY = "quality";
+  @SerializedName(SERIALIZED_NAME_QUALITY)
   @jakarta.annotation.Nullable
   private Integer quality;
 
-  public static final String JSON_PROPERTY_QUALITY_TIME = "qualityTime";
+  public static final String SERIALIZED_NAME_QUALITY_TIME = "qualityTime";
+  @SerializedName(SERIALIZED_NAME_QUALITY_TIME)
   @jakarta.annotation.Nullable
   private String qualityTime;
 
-  public static final String JSON_PROPERTY_REFER = "refer";
+  public static final String SERIALIZED_NAME_REFER = "refer";
+  @SerializedName(SERIALIZED_NAME_REFER)
   @jakarta.annotation.Nullable
   private String refer;
 
-  public static final String JSON_PROPERTY_REPAIR = "repair";
+  public static final String SERIALIZED_NAME_REPAIR = "repair";
+  @SerializedName(SERIALIZED_NAME_REPAIR)
   @jakarta.annotation.Nullable
   private Boolean repair;
 
-  public static final String JSON_PROPERTY_RESERVE = "reserve";
+  public static final String SERIALIZED_NAME_RESERVE = "reserve";
+  @SerializedName(SERIALIZED_NAME_RESERVE)
   @jakarta.annotation.Nullable
   private Boolean reserve;
 
-  public static final String JSON_PROPERTY_SERIAL_NUMBER = "serialNumber";
+  public static final String SERIALIZED_NAME_SERIAL_NUMBER = "serialNumber";
+  @SerializedName(SERIALIZED_NAME_SERIAL_NUMBER)
   @jakarta.annotation.Nullable
   private String serialNumber;
 
-  public static final String JSON_PROPERTY_TAG = "tag";
+  public static final String SERIALIZED_NAME_TAG = "tag";
+  @SerializedName(SERIALIZED_NAME_TAG)
   @jakarta.annotation.Nullable
   private String tag;
 
-  public static final String JSON_PROPERTY_TEAM = "team";
+  public static final String SERIALIZED_NAME_TEAM = "team";
+  @SerializedName(SERIALIZED_NAME_TEAM)
   @jakarta.annotation.Nullable
   private String team;
 
-  public static final String JSON_PROPERTY_TEAM_ID = "teamId";
+  public static final String SERIALIZED_NAME_TEAM_ID = "teamId";
+  @SerializedName(SERIALIZED_NAME_TEAM_ID)
   @jakarta.annotation.Nullable
   private String teamId;
 
-  public static final String JSON_PROPERTY_UDID = "udid";
+  public static final String SERIALIZED_NAME_UDID = "udid";
+  @SerializedName(SERIALIZED_NAME_UDID)
   @jakarta.annotation.Nullable
   private String udid;
 
-  public static final String JSON_PROPERTY_UUID = "uuid";
+  public static final String SERIALIZED_NAME_UUID = "uuid";
+  @SerializedName(SERIALIZED_NAME_UUID)
   @jakarta.annotation.Nullable
   private String uuid;
 
-  public static final String JSON_PROPERTY_VALID = "valid";
+  public static final String SERIALIZED_NAME_VALID = "valid";
+  @SerializedName(SERIALIZED_NAME_VALID)
   @jakarta.annotation.Nullable
   private Boolean valid;
 
-  public PersonalCertificate() { 
+  public PersonalCertificate() {
   }
 
   public PersonalCertificate certificate(@jakarta.annotation.Nullable String certificate) {
@@ -190,15 +204,10 @@ public class PersonalCertificate {
    * @return certificate
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CERTIFICATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCertificate() {
     return certificate;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CERTIFICATE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCertificate(@jakarta.annotation.Nullable String certificate) {
     this.certificate = certificate;
   }
@@ -214,15 +223,10 @@ public class PersonalCertificate {
    * @return certificateId
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CERTIFICATE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCertificateId() {
     return certificateId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CERTIFICATE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCertificateId(@jakarta.annotation.Nullable String certificateId) {
     this.certificateId = certificateId;
   }
@@ -238,15 +242,10 @@ public class PersonalCertificate {
    * @return code
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCode() {
     return code;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CODE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCode(@jakarta.annotation.Nullable String code) {
     this.code = code;
   }
@@ -262,15 +261,10 @@ public class PersonalCertificate {
    * @return createTime
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CREATE_TIME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCreateTime() {
     return createTime;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CREATE_TIME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
@@ -286,15 +280,10 @@ public class PersonalCertificate {
    * @return description
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getDescription() {
     return description;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DESCRIPTION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
@@ -310,15 +299,10 @@ public class PersonalCertificate {
    * @return deviceId
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_DEVICE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getDeviceId() {
     return deviceId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_DEVICE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDeviceId(@jakarta.annotation.Nullable String deviceId) {
     this.deviceId = deviceId;
   }
@@ -334,15 +318,10 @@ public class PersonalCertificate {
    * @return experience
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_EXPERIENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getExperience() {
     return experience;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_EXPERIENCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setExperience(@jakarta.annotation.Nullable Integer experience) {
     this.experience = experience;
   }
@@ -358,15 +337,10 @@ public class PersonalCertificate {
    * @return invisible
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_INVISIBLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getInvisible() {
     return invisible;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_INVISIBLE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setInvisible(@jakarta.annotation.Nullable Boolean invisible) {
     this.invisible = invisible;
   }
@@ -382,15 +356,10 @@ public class PersonalCertificate {
    * @return lock
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_LOCK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getLock() {
     return lock;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_LOCK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLock(@jakarta.annotation.Nullable Integer lock) {
     this.lock = lock;
   }
@@ -406,15 +375,10 @@ public class PersonalCertificate {
    * @return mobileprovision
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MOBILEPROVISION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getMobileprovision() {
     return mobileprovision;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MOBILEPROVISION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMobileprovision(@jakarta.annotation.Nullable String mobileprovision) {
     this.mobileprovision = mobileprovision;
   }
@@ -430,15 +394,10 @@ public class PersonalCertificate {
    * @return name
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getName() {
     return name;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_NAME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
@@ -454,15 +413,10 @@ public class PersonalCertificate {
    * @return password
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PASSWORD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getPassword() {
     return password;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PASSWORD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPassword(@jakarta.annotation.Nullable String password) {
     this.password = password;
   }
@@ -478,15 +432,10 @@ public class PersonalCertificate {
    * @return phone
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PHONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getPhone() {
     return phone;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PHONE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPhone(@jakarta.annotation.Nullable String phone) {
     this.phone = phone;
   }
@@ -502,15 +451,10 @@ public class PersonalCertificate {
    * @return price
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PRICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getPrice() {
     return price;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PRICE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPrice(@jakarta.annotation.Nullable BigDecimal price) {
     this.price = price;
   }
@@ -526,15 +470,10 @@ public class PersonalCertificate {
    * @return profile
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PROFILE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getProfile() {
     return profile;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PROFILE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfile(@jakarta.annotation.Nullable String profile) {
     this.profile = profile;
   }
@@ -550,15 +489,10 @@ public class PersonalCertificate {
    * @return profileId
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_PROFILE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getProfileId() {
     return profileId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_PROFILE_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setProfileId(@jakarta.annotation.Nullable String profileId) {
     this.profileId = profileId;
   }
@@ -574,15 +508,10 @@ public class PersonalCertificate {
    * @return quality
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Integer getQuality() {
     return quality;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_QUALITY)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuality(@jakarta.annotation.Nullable Integer quality) {
     this.quality = quality;
   }
@@ -598,15 +527,10 @@ public class PersonalCertificate {
    * @return qualityTime
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUALITY_TIME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getQualityTime() {
     return qualityTime;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_QUALITY_TIME)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQualityTime(@jakarta.annotation.Nullable String qualityTime) {
     this.qualityTime = qualityTime;
   }
@@ -622,15 +546,10 @@ public class PersonalCertificate {
    * @return refer
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REFER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getRefer() {
     return refer;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REFER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRefer(@jakarta.annotation.Nullable String refer) {
     this.refer = refer;
   }
@@ -646,15 +565,10 @@ public class PersonalCertificate {
    * @return repair
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REPAIR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getRepair() {
     return repair;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REPAIR)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setRepair(@jakarta.annotation.Nullable Boolean repair) {
     this.repair = repair;
   }
@@ -670,15 +584,10 @@ public class PersonalCertificate {
    * @return reserve
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getReserve() {
     return reserve;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
   }
@@ -694,15 +603,10 @@ public class PersonalCertificate {
    * @return serialNumber
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getSerialNumber() {
     return serialNumber;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SERIAL_NUMBER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSerialNumber(@jakarta.annotation.Nullable String serialNumber) {
     this.serialNumber = serialNumber;
   }
@@ -718,15 +622,10 @@ public class PersonalCertificate {
    * @return tag
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TAG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getTag() {
     return tag;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TAG)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTag(@jakarta.annotation.Nullable String tag) {
     this.tag = tag;
   }
@@ -742,15 +641,10 @@ public class PersonalCertificate {
    * @return team
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TEAM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getTeam() {
     return team;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TEAM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTeam(@jakarta.annotation.Nullable String team) {
     this.team = team;
   }
@@ -766,15 +660,10 @@ public class PersonalCertificate {
    * @return teamId
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TEAM_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getTeamId() {
     return teamId;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TEAM_ID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTeamId(@jakarta.annotation.Nullable String teamId) {
     this.teamId = teamId;
   }
@@ -790,15 +679,10 @@ public class PersonalCertificate {
    * @return udid
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UDID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUdid() {
     return udid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_UDID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUdid(@jakarta.annotation.Nullable String udid) {
     this.udid = udid;
   }
@@ -814,15 +698,10 @@ public class PersonalCertificate {
    * @return uuid
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUuid() {
     return uuid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUuid(@jakarta.annotation.Nullable String uuid) {
     this.uuid = uuid;
   }
@@ -838,23 +717,16 @@ public class PersonalCertificate {
    * @return valid
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VALID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getValid() {
     return valid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_VALID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValid(@jakarta.annotation.Nullable Boolean valid) {
     this.valid = valid;
   }
 
 
-  /**
-   * Return true if this PersonalCertificate object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -946,179 +818,176 @@ public class PersonalCertificate {
     return o.toString().replace("\n", "\n    ");
   }
 
-  /**
-   * Convert the instance into URL query string.
-   *
-   * @return URL query string
-   */
-  public String toUrlQueryString() {
-    return toUrlQueryString(null);
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("certificate");
+    openapiFields.add("certificateId");
+    openapiFields.add("code");
+    openapiFields.add("createTime");
+    openapiFields.add("description");
+    openapiFields.add("deviceId");
+    openapiFields.add("experience");
+    openapiFields.add("invisible");
+    openapiFields.add("lock");
+    openapiFields.add("mobileprovision");
+    openapiFields.add("name");
+    openapiFields.add("password");
+    openapiFields.add("phone");
+    openapiFields.add("price");
+    openapiFields.add("profile");
+    openapiFields.add("profileId");
+    openapiFields.add("quality");
+    openapiFields.add("qualityTime");
+    openapiFields.add("refer");
+    openapiFields.add("repair");
+    openapiFields.add("reserve");
+    openapiFields.add("serialNumber");
+    openapiFields.add("tag");
+    openapiFields.add("team");
+    openapiFields.add("teamId");
+    openapiFields.add("udid");
+    openapiFields.add("uuid");
+    openapiFields.add("valid");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
   }
 
   /**
-   * Convert the instance into URL query string.
+   * Validates the JSON Element and throws an exception if issues found
    *
-   * @param prefix prefix of the query string
-   * @return URL query string
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to PersonalCertificate
    */
-  public String toUrlQueryString(String prefix) {
-    String suffix = "";
-    String containerSuffix = "";
-    String containerPrefix = "";
-    if (prefix == null) {
-      // style=form, explode=true, e.g. /pet?name=cat&type=manx
-      prefix = "";
-    } else {
-      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
-      prefix = prefix + "[";
-      suffix = "]";
-      containerSuffix = "]";
-      containerPrefix = "[";
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!PersonalCertificate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in PersonalCertificate is not found in the empty JSON string", PersonalCertificate.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!PersonalCertificate.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `PersonalCertificate` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("certificate") != null && !jsonObj.get("certificate").isJsonNull()) && !jsonObj.get("certificate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `certificate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("certificate").toString()));
+      }
+      if ((jsonObj.get("certificateId") != null && !jsonObj.get("certificateId").isJsonNull()) && !jsonObj.get("certificateId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `certificateId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("certificateId").toString()));
+      }
+      if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
+      }
+      if ((jsonObj.get("createTime") != null && !jsonObj.get("createTime").isJsonNull()) && !jsonObj.get("createTime").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `createTime` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createTime").toString()));
+      }
+      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("deviceId") != null && !jsonObj.get("deviceId").isJsonNull()) && !jsonObj.get("deviceId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `deviceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deviceId").toString()));
+      }
+      if ((jsonObj.get("mobileprovision") != null && !jsonObj.get("mobileprovision").isJsonNull()) && !jsonObj.get("mobileprovision").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mobileprovision` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mobileprovision").toString()));
+      }
+      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      }
+      if ((jsonObj.get("password") != null && !jsonObj.get("password").isJsonNull()) && !jsonObj.get("password").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `password` to be a primitive type in the JSON string but got `%s`", jsonObj.get("password").toString()));
+      }
+      if ((jsonObj.get("phone") != null && !jsonObj.get("phone").isJsonNull()) && !jsonObj.get("phone").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `phone` to be a primitive type in the JSON string but got `%s`", jsonObj.get("phone").toString()));
+      }
+      if ((jsonObj.get("profile") != null && !jsonObj.get("profile").isJsonNull()) && !jsonObj.get("profile").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `profile` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profile").toString()));
+      }
+      if ((jsonObj.get("profileId") != null && !jsonObj.get("profileId").isJsonNull()) && !jsonObj.get("profileId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `profileId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("profileId").toString()));
+      }
+      if ((jsonObj.get("qualityTime") != null && !jsonObj.get("qualityTime").isJsonNull()) && !jsonObj.get("qualityTime").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `qualityTime` to be a primitive type in the JSON string but got `%s`", jsonObj.get("qualityTime").toString()));
+      }
+      if ((jsonObj.get("refer") != null && !jsonObj.get("refer").isJsonNull()) && !jsonObj.get("refer").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `refer` to be a primitive type in the JSON string but got `%s`", jsonObj.get("refer").toString()));
+      }
+      if ((jsonObj.get("serialNumber") != null && !jsonObj.get("serialNumber").isJsonNull()) && !jsonObj.get("serialNumber").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `serialNumber` to be a primitive type in the JSON string but got `%s`", jsonObj.get("serialNumber").toString()));
+      }
+      if ((jsonObj.get("tag") != null && !jsonObj.get("tag").isJsonNull()) && !jsonObj.get("tag").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tag` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tag").toString()));
+      }
+      if ((jsonObj.get("team") != null && !jsonObj.get("team").isJsonNull()) && !jsonObj.get("team").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `team` to be a primitive type in the JSON string but got `%s`", jsonObj.get("team").toString()));
+      }
+      if ((jsonObj.get("teamId") != null && !jsonObj.get("teamId").isJsonNull()) && !jsonObj.get("teamId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `teamId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("teamId").toString()));
+      }
+      if ((jsonObj.get("udid") != null && !jsonObj.get("udid").isJsonNull()) && !jsonObj.get("udid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `udid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("udid").toString()));
+      }
+      if ((jsonObj.get("uuid") != null && !jsonObj.get("uuid").isJsonNull()) && !jsonObj.get("uuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `uuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("uuid").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!PersonalCertificate.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'PersonalCertificate' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<PersonalCertificate> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(PersonalCertificate.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<PersonalCertificate>() {
+           @Override
+           public void write(JsonWriter out, PersonalCertificate value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public PersonalCertificate read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
     }
+  }
 
-    StringJoiner joiner = new StringJoiner("&");
+  /**
+   * Create an instance of PersonalCertificate given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of PersonalCertificate
+   * @throws IOException if the JSON string is invalid with respect to PersonalCertificate
+   */
+  public static PersonalCertificate fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, PersonalCertificate.class);
+  }
 
-    // add `certificate` to the URL query string
-    if (getCertificate() != null) {
-      joiner.add(String.format("%scertificate%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificate()))));
-    }
-
-    // add `certificateId` to the URL query string
-    if (getCertificateId() != null) {
-      joiner.add(String.format("%scertificateId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCertificateId()))));
-    }
-
-    // add `code` to the URL query string
-    if (getCode() != null) {
-      joiner.add(String.format("%scode%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCode()))));
-    }
-
-    // add `createTime` to the URL query string
-    if (getCreateTime() != null) {
-      joiner.add(String.format("%screateTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCreateTime()))));
-    }
-
-    // add `description` to the URL query string
-    if (getDescription() != null) {
-      joiner.add(String.format("%sdescription%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDescription()))));
-    }
-
-    // add `deviceId` to the URL query string
-    if (getDeviceId() != null) {
-      joiner.add(String.format("%sdeviceId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getDeviceId()))));
-    }
-
-    // add `experience` to the URL query string
-    if (getExperience() != null) {
-      joiner.add(String.format("%sexperience%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getExperience()))));
-    }
-
-    // add `invisible` to the URL query string
-    if (getInvisible() != null) {
-      joiner.add(String.format("%sinvisible%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getInvisible()))));
-    }
-
-    // add `lock` to the URL query string
-    if (getLock() != null) {
-      joiner.add(String.format("%slock%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getLock()))));
-    }
-
-    // add `mobileprovision` to the URL query string
-    if (getMobileprovision() != null) {
-      joiner.add(String.format("%smobileprovision%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMobileprovision()))));
-    }
-
-    // add `name` to the URL query string
-    if (getName() != null) {
-      joiner.add(String.format("%sname%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getName()))));
-    }
-
-    // add `password` to the URL query string
-    if (getPassword() != null) {
-      joiner.add(String.format("%spassword%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPassword()))));
-    }
-
-    // add `phone` to the URL query string
-    if (getPhone() != null) {
-      joiner.add(String.format("%sphone%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPhone()))));
-    }
-
-    // add `price` to the URL query string
-    if (getPrice() != null) {
-      joiner.add(String.format("%sprice%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPrice()))));
-    }
-
-    // add `profile` to the URL query string
-    if (getProfile() != null) {
-      joiner.add(String.format("%sprofile%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProfile()))));
-    }
-
-    // add `profileId` to the URL query string
-    if (getProfileId() != null) {
-      joiner.add(String.format("%sprofileId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getProfileId()))));
-    }
-
-    // add `quality` to the URL query string
-    if (getQuality() != null) {
-      joiner.add(String.format("%squality%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuality()))));
-    }
-
-    // add `qualityTime` to the URL query string
-    if (getQualityTime() != null) {
-      joiner.add(String.format("%squalityTime%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQualityTime()))));
-    }
-
-    // add `refer` to the URL query string
-    if (getRefer() != null) {
-      joiner.add(String.format("%srefer%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRefer()))));
-    }
-
-    // add `repair` to the URL query string
-    if (getRepair() != null) {
-      joiner.add(String.format("%srepair%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRepair()))));
-    }
-
-    // add `reserve` to the URL query string
-    if (getReserve() != null) {
-      joiner.add(String.format("%sreserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserve()))));
-    }
-
-    // add `serialNumber` to the URL query string
-    if (getSerialNumber() != null) {
-      joiner.add(String.format("%sserialNumber%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSerialNumber()))));
-    }
-
-    // add `tag` to the URL query string
-    if (getTag() != null) {
-      joiner.add(String.format("%stag%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTag()))));
-    }
-
-    // add `team` to the URL query string
-    if (getTeam() != null) {
-      joiner.add(String.format("%steam%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTeam()))));
-    }
-
-    // add `teamId` to the URL query string
-    if (getTeamId() != null) {
-      joiner.add(String.format("%steamId%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTeamId()))));
-    }
-
-    // add `udid` to the URL query string
-    if (getUdid() != null) {
-      joiner.add(String.format("%sudid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUdid()))));
-    }
-
-    // add `uuid` to the URL query string
-    if (getUuid() != null) {
-      joiner.add(String.format("%suuid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUuid()))));
-    }
-
-    // add `valid` to the URL query string
-    if (getValid() != null) {
-      joiner.add(String.format("%svalid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getValid()))));
-    }
-
-    return joiner.toString();
+  /**
+   * Convert an instance of PersonalCertificate to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

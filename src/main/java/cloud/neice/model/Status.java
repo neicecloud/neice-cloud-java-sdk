@@ -13,81 +13,95 @@
 
 package cloud.neice.model;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import cloud.neice.ApiClient;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import cloud.neice.JSON;
+
 /**
  * Status
  */
-@JsonPropertyOrder({
-  Status.JSON_PROPERTY_BLIND,
-  Status.JSON_PROPERTY_BLIND_RESERVE,
-  Status.JSON_PROPERTY_BLIND_RESERVE_UNIT,
-  Status.JSON_PROPERTY_BLIND_UNIT,
-  Status.JSON_PROPERTY_MAGIC,
-  Status.JSON_PROPERTY_MAGIC_UNIT,
-  Status.JSON_PROPERTY_QUICK,
-  Status.JSON_PROPERTY_QUICK_UNIT,
-  Status.JSON_PROPERTY_RESERVE,
-  Status.JSON_PROPERTY_RESERVE_UNIT
-})
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Status {
-  public static final String JSON_PROPERTY_BLIND = "blind";
+  public static final String SERIALIZED_NAME_BLIND = "blind";
+  @SerializedName(SERIALIZED_NAME_BLIND)
   @jakarta.annotation.Nullable
   private Boolean blind;
 
-  public static final String JSON_PROPERTY_BLIND_RESERVE = "blindReserve";
+  public static final String SERIALIZED_NAME_BLIND_RESERVE = "blindReserve";
+  @SerializedName(SERIALIZED_NAME_BLIND_RESERVE)
   @jakarta.annotation.Nullable
   private Boolean blindReserve;
 
-  public static final String JSON_PROPERTY_BLIND_RESERVE_UNIT = "blindReserveUnit";
+  public static final String SERIALIZED_NAME_BLIND_RESERVE_UNIT = "blindReserveUnit";
+  @SerializedName(SERIALIZED_NAME_BLIND_RESERVE_UNIT)
   @jakarta.annotation.Nullable
   private BigDecimal blindReserveUnit;
 
-  public static final String JSON_PROPERTY_BLIND_UNIT = "blindUnit";
+  public static final String SERIALIZED_NAME_BLIND_UNIT = "blindUnit";
+  @SerializedName(SERIALIZED_NAME_BLIND_UNIT)
   @jakarta.annotation.Nullable
   private BigDecimal blindUnit;
 
-  public static final String JSON_PROPERTY_MAGIC = "magic";
+  public static final String SERIALIZED_NAME_MAGIC = "magic";
+  @SerializedName(SERIALIZED_NAME_MAGIC)
   @jakarta.annotation.Nullable
   private Boolean magic;
 
-  public static final String JSON_PROPERTY_MAGIC_UNIT = "magicUnit";
+  public static final String SERIALIZED_NAME_MAGIC_UNIT = "magicUnit";
+  @SerializedName(SERIALIZED_NAME_MAGIC_UNIT)
   @jakarta.annotation.Nullable
   private BigDecimal magicUnit;
 
-  public static final String JSON_PROPERTY_QUICK = "quick";
+  public static final String SERIALIZED_NAME_QUICK = "quick";
+  @SerializedName(SERIALIZED_NAME_QUICK)
   @jakarta.annotation.Nullable
   private Boolean quick;
 
-  public static final String JSON_PROPERTY_QUICK_UNIT = "quickUnit";
+  public static final String SERIALIZED_NAME_QUICK_UNIT = "quickUnit";
+  @SerializedName(SERIALIZED_NAME_QUICK_UNIT)
   @jakarta.annotation.Nullable
   private BigDecimal quickUnit;
 
-  public static final String JSON_PROPERTY_RESERVE = "reserve";
+  public static final String SERIALIZED_NAME_RESERVE = "reserve";
+  @SerializedName(SERIALIZED_NAME_RESERVE)
   @jakarta.annotation.Nullable
   private Boolean reserve;
 
-  public static final String JSON_PROPERTY_RESERVE_UNIT = "reserveUnit";
+  public static final String SERIALIZED_NAME_RESERVE_UNIT = "reserveUnit";
+  @SerializedName(SERIALIZED_NAME_RESERVE_UNIT)
   @jakarta.annotation.Nullable
   private BigDecimal reserveUnit;
 
-  public Status() { 
+  public Status() {
   }
 
   public Status blind(@jakarta.annotation.Nullable Boolean blind) {
@@ -100,15 +114,10 @@ public class Status {
    * @return blind
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BLIND)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getBlind() {
     return blind;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BLIND)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBlind(@jakarta.annotation.Nullable Boolean blind) {
     this.blind = blind;
   }
@@ -124,15 +133,10 @@ public class Status {
    * @return blindReserve
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BLIND_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getBlindReserve() {
     return blindReserve;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BLIND_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBlindReserve(@jakarta.annotation.Nullable Boolean blindReserve) {
     this.blindReserve = blindReserve;
   }
@@ -148,15 +152,10 @@ public class Status {
    * @return blindReserveUnit
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BLIND_RESERVE_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getBlindReserveUnit() {
     return blindReserveUnit;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BLIND_RESERVE_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBlindReserveUnit(@jakarta.annotation.Nullable BigDecimal blindReserveUnit) {
     this.blindReserveUnit = blindReserveUnit;
   }
@@ -172,15 +171,10 @@ public class Status {
    * @return blindUnit
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BLIND_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getBlindUnit() {
     return blindUnit;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BLIND_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBlindUnit(@jakarta.annotation.Nullable BigDecimal blindUnit) {
     this.blindUnit = blindUnit;
   }
@@ -196,15 +190,10 @@ public class Status {
    * @return magic
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MAGIC)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getMagic() {
     return magic;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MAGIC)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMagic(@jakarta.annotation.Nullable Boolean magic) {
     this.magic = magic;
   }
@@ -220,15 +209,10 @@ public class Status {
    * @return magicUnit
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_MAGIC_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getMagicUnit() {
     return magicUnit;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_MAGIC_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMagicUnit(@jakarta.annotation.Nullable BigDecimal magicUnit) {
     this.magicUnit = magicUnit;
   }
@@ -244,15 +228,10 @@ public class Status {
    * @return quick
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUICK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getQuick() {
     return quick;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_QUICK)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuick(@jakarta.annotation.Nullable Boolean quick) {
     this.quick = quick;
   }
@@ -268,15 +247,10 @@ public class Status {
    * @return quickUnit
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_QUICK_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getQuickUnit() {
     return quickUnit;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_QUICK_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setQuickUnit(@jakarta.annotation.Nullable BigDecimal quickUnit) {
     this.quickUnit = quickUnit;
   }
@@ -292,15 +266,10 @@ public class Status {
    * @return reserve
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Boolean getReserve() {
     return reserve;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RESERVE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserve(@jakarta.annotation.Nullable Boolean reserve) {
     this.reserve = reserve;
   }
@@ -316,23 +285,16 @@ public class Status {
    * @return reserveUnit
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_RESERVE_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getReserveUnit() {
     return reserveUnit;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_RESERVE_UNIT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReserveUnit(@jakarta.annotation.Nullable BigDecimal reserveUnit) {
     this.reserveUnit = reserveUnit;
   }
 
 
-  /**
-   * Return true if this Status object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -388,89 +350,98 @@ public class Status {
     return o.toString().replace("\n", "\n    ");
   }
 
-  /**
-   * Convert the instance into URL query string.
-   *
-   * @return URL query string
-   */
-  public String toUrlQueryString() {
-    return toUrlQueryString(null);
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("blind");
+    openapiFields.add("blindReserve");
+    openapiFields.add("blindReserveUnit");
+    openapiFields.add("blindUnit");
+    openapiFields.add("magic");
+    openapiFields.add("magicUnit");
+    openapiFields.add("quick");
+    openapiFields.add("quickUnit");
+    openapiFields.add("reserve");
+    openapiFields.add("reserveUnit");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
   }
 
   /**
-   * Convert the instance into URL query string.
+   * Validates the JSON Element and throws an exception if issues found
    *
-   * @param prefix prefix of the query string
-   * @return URL query string
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Status
    */
-  public String toUrlQueryString(String prefix) {
-    String suffix = "";
-    String containerSuffix = "";
-    String containerPrefix = "";
-    if (prefix == null) {
-      // style=form, explode=true, e.g. /pet?name=cat&type=manx
-      prefix = "";
-    } else {
-      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
-      prefix = prefix + "[";
-      suffix = "]";
-      containerSuffix = "]";
-      containerPrefix = "[";
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Status.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Status is not found in the empty JSON string", Status.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Status.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Status` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Status.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Status' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Status> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Status.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Status>() {
+           @Override
+           public void write(JsonWriter out, Status value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Status read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
     }
+  }
 
-    StringJoiner joiner = new StringJoiner("&");
+  /**
+   * Create an instance of Status given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Status
+   * @throws IOException if the JSON string is invalid with respect to Status
+   */
+  public static Status fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Status.class);
+  }
 
-    // add `blind` to the URL query string
-    if (getBlind() != null) {
-      joiner.add(String.format("%sblind%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBlind()))));
-    }
-
-    // add `blindReserve` to the URL query string
-    if (getBlindReserve() != null) {
-      joiner.add(String.format("%sblindReserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBlindReserve()))));
-    }
-
-    // add `blindReserveUnit` to the URL query string
-    if (getBlindReserveUnit() != null) {
-      joiner.add(String.format("%sblindReserveUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBlindReserveUnit()))));
-    }
-
-    // add `blindUnit` to the URL query string
-    if (getBlindUnit() != null) {
-      joiner.add(String.format("%sblindUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBlindUnit()))));
-    }
-
-    // add `magic` to the URL query string
-    if (getMagic() != null) {
-      joiner.add(String.format("%smagic%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMagic()))));
-    }
-
-    // add `magicUnit` to the URL query string
-    if (getMagicUnit() != null) {
-      joiner.add(String.format("%smagicUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getMagicUnit()))));
-    }
-
-    // add `quick` to the URL query string
-    if (getQuick() != null) {
-      joiner.add(String.format("%squick%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuick()))));
-    }
-
-    // add `quickUnit` to the URL query string
-    if (getQuickUnit() != null) {
-      joiner.add(String.format("%squickUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getQuickUnit()))));
-    }
-
-    // add `reserve` to the URL query string
-    if (getReserve() != null) {
-      joiner.add(String.format("%sreserve%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserve()))));
-    }
-
-    // add `reserveUnit` to the URL query string
-    if (getReserveUnit() != null) {
-      joiner.add(String.format("%sreserveUnit%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReserveUnit()))));
-    }
-
-    return joiner.toString();
+  /**
+   * Convert an instance of Status to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

@@ -13,76 +13,90 @@
 
 package cloud.neice.model;
 
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.StringJoiner;
 import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-import cloud.neice.ApiClient;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import cloud.neice.JSON;
+
 /**
  * Balance
  */
-@JsonPropertyOrder({
-  Balance.JSON_PROPERTY_ALGORITHM,
-  Balance.JSON_PROPERTY_BALANCE,
-  Balance.JSON_PROPERTY_CIPHERTEXT,
-  Balance.JSON_PROPERTY_ESCROW,
-  Balance.JSON_PROPERTY_REWARD,
-  Balance.JSON_PROPERTY_SESSION,
-  Balance.JSON_PROPERTY_TOTAL,
-  Balance.JSON_PROPERTY_USER_UUID,
-  Balance.JSON_PROPERTY_VOUCHER
-})
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Balance {
-  public static final String JSON_PROPERTY_ALGORITHM = "algorithm";
+  public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
+  @SerializedName(SERIALIZED_NAME_ALGORITHM)
   @jakarta.annotation.Nullable
   private String algorithm;
 
-  public static final String JSON_PROPERTY_BALANCE = "balance";
+  public static final String SERIALIZED_NAME_BALANCE = "balance";
+  @SerializedName(SERIALIZED_NAME_BALANCE)
   @jakarta.annotation.Nullable
   private BigDecimal balance;
 
-  public static final String JSON_PROPERTY_CIPHERTEXT = "ciphertext";
+  public static final String SERIALIZED_NAME_CIPHERTEXT = "ciphertext";
+  @SerializedName(SERIALIZED_NAME_CIPHERTEXT)
   @jakarta.annotation.Nullable
   private String ciphertext;
 
-  public static final String JSON_PROPERTY_ESCROW = "escrow";
+  public static final String SERIALIZED_NAME_ESCROW = "escrow";
+  @SerializedName(SERIALIZED_NAME_ESCROW)
   @jakarta.annotation.Nullable
   private BigDecimal escrow;
 
-  public static final String JSON_PROPERTY_REWARD = "reward";
+  public static final String SERIALIZED_NAME_REWARD = "reward";
+  @SerializedName(SERIALIZED_NAME_REWARD)
   @jakarta.annotation.Nullable
   private BigDecimal reward;
 
-  public static final String JSON_PROPERTY_SESSION = "session";
+  public static final String SERIALIZED_NAME_SESSION = "session";
+  @SerializedName(SERIALIZED_NAME_SESSION)
   @jakarta.annotation.Nullable
   private String session;
 
-  public static final String JSON_PROPERTY_TOTAL = "total";
+  public static final String SERIALIZED_NAME_TOTAL = "total";
+  @SerializedName(SERIALIZED_NAME_TOTAL)
   @jakarta.annotation.Nullable
   private BigDecimal total;
 
-  public static final String JSON_PROPERTY_USER_UUID = "userUuid";
+  public static final String SERIALIZED_NAME_USER_UUID = "userUuid";
+  @SerializedName(SERIALIZED_NAME_USER_UUID)
   @jakarta.annotation.Nullable
   private String userUuid;
 
-  public static final String JSON_PROPERTY_VOUCHER = "voucher";
+  public static final String SERIALIZED_NAME_VOUCHER = "voucher";
+  @SerializedName(SERIALIZED_NAME_VOUCHER)
   @jakarta.annotation.Nullable
   private BigDecimal voucher;
 
-  public Balance() { 
+  public Balance() {
   }
 
   public Balance algorithm(@jakarta.annotation.Nullable String algorithm) {
@@ -95,15 +109,10 @@ public class Balance {
    * @return algorithm
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ALGORITHM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getAlgorithm() {
     return algorithm;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ALGORITHM)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setAlgorithm(@jakarta.annotation.Nullable String algorithm) {
     this.algorithm = algorithm;
   }
@@ -119,15 +128,10 @@ public class Balance {
    * @return balance
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_BALANCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getBalance() {
     return balance;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_BALANCE)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setBalance(@jakarta.annotation.Nullable BigDecimal balance) {
     this.balance = balance;
   }
@@ -143,15 +147,10 @@ public class Balance {
    * @return ciphertext
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_CIPHERTEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCiphertext() {
     return ciphertext;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_CIPHERTEXT)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCiphertext(@jakarta.annotation.Nullable String ciphertext) {
     this.ciphertext = ciphertext;
   }
@@ -167,15 +166,10 @@ public class Balance {
    * @return escrow
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_ESCROW)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getEscrow() {
     return escrow;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_ESCROW)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEscrow(@jakarta.annotation.Nullable BigDecimal escrow) {
     this.escrow = escrow;
   }
@@ -191,15 +185,10 @@ public class Balance {
    * @return reward
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_REWARD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getReward() {
     return reward;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_REWARD)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReward(@jakarta.annotation.Nullable BigDecimal reward) {
     this.reward = reward;
   }
@@ -215,15 +204,10 @@ public class Balance {
    * @return session
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_SESSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getSession() {
     return session;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_SESSION)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSession(@jakarta.annotation.Nullable String session) {
     this.session = session;
   }
@@ -239,15 +223,10 @@ public class Balance {
    * @return total
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_TOTAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getTotal() {
     return total;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_TOTAL)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTotal(@jakarta.annotation.Nullable BigDecimal total) {
     this.total = total;
   }
@@ -263,15 +242,10 @@ public class Balance {
    * @return userUuid
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_USER_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getUserUuid() {
     return userUuid;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_USER_UUID)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUserUuid(@jakarta.annotation.Nullable String userUuid) {
     this.userUuid = userUuid;
   }
@@ -287,23 +261,16 @@ public class Balance {
    * @return voucher
    */
   @jakarta.annotation.Nullable
-  @JsonProperty(JSON_PROPERTY_VOUCHER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getVoucher() {
     return voucher;
   }
 
-
-  @JsonProperty(JSON_PROPERTY_VOUCHER)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVoucher(@jakarta.annotation.Nullable BigDecimal voucher) {
     this.voucher = voucher;
   }
 
 
-  /**
-   * Return true if this Balance object is equal to o.
-   */
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -357,84 +324,109 @@ public class Balance {
     return o.toString().replace("\n", "\n    ");
   }
 
-  /**
-   * Convert the instance into URL query string.
-   *
-   * @return URL query string
-   */
-  public String toUrlQueryString() {
-    return toUrlQueryString(null);
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("algorithm");
+    openapiFields.add("balance");
+    openapiFields.add("ciphertext");
+    openapiFields.add("escrow");
+    openapiFields.add("reward");
+    openapiFields.add("session");
+    openapiFields.add("total");
+    openapiFields.add("userUuid");
+    openapiFields.add("voucher");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
   }
 
   /**
-   * Convert the instance into URL query string.
+   * Validates the JSON Element and throws an exception if issues found
    *
-   * @param prefix prefix of the query string
-   * @return URL query string
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Balance
    */
-  public String toUrlQueryString(String prefix) {
-    String suffix = "";
-    String containerSuffix = "";
-    String containerPrefix = "";
-    if (prefix == null) {
-      // style=form, explode=true, e.g. /pet?name=cat&type=manx
-      prefix = "";
-    } else {
-      // deepObject style e.g. /pet?id[name]=cat&id[type]=manx
-      prefix = prefix + "[";
-      suffix = "]";
-      containerSuffix = "]";
-      containerPrefix = "[";
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Balance.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Balance is not found in the empty JSON string", Balance.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Balance.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Balance` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("algorithm") != null && !jsonObj.get("algorithm").isJsonNull()) && !jsonObj.get("algorithm").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `algorithm` to be a primitive type in the JSON string but got `%s`", jsonObj.get("algorithm").toString()));
+      }
+      if ((jsonObj.get("ciphertext") != null && !jsonObj.get("ciphertext").isJsonNull()) && !jsonObj.get("ciphertext").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ciphertext` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ciphertext").toString()));
+      }
+      if ((jsonObj.get("session") != null && !jsonObj.get("session").isJsonNull()) && !jsonObj.get("session").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `session` to be a primitive type in the JSON string but got `%s`", jsonObj.get("session").toString()));
+      }
+      if ((jsonObj.get("userUuid") != null && !jsonObj.get("userUuid").isJsonNull()) && !jsonObj.get("userUuid").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `userUuid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("userUuid").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Balance.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Balance' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Balance> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Balance.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Balance>() {
+           @Override
+           public void write(JsonWriter out, Balance value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Balance read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
     }
+  }
 
-    StringJoiner joiner = new StringJoiner("&");
+  /**
+   * Create an instance of Balance given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Balance
+   * @throws IOException if the JSON string is invalid with respect to Balance
+   */
+  public static Balance fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Balance.class);
+  }
 
-    // add `algorithm` to the URL query string
-    if (getAlgorithm() != null) {
-      joiner.add(String.format("%salgorithm%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getAlgorithm()))));
-    }
-
-    // add `balance` to the URL query string
-    if (getBalance() != null) {
-      joiner.add(String.format("%sbalance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBalance()))));
-    }
-
-    // add `ciphertext` to the URL query string
-    if (getCiphertext() != null) {
-      joiner.add(String.format("%sciphertext%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCiphertext()))));
-    }
-
-    // add `escrow` to the URL query string
-    if (getEscrow() != null) {
-      joiner.add(String.format("%sescrow%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEscrow()))));
-    }
-
-    // add `reward` to the URL query string
-    if (getReward() != null) {
-      joiner.add(String.format("%sreward%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getReward()))));
-    }
-
-    // add `session` to the URL query string
-    if (getSession() != null) {
-      joiner.add(String.format("%ssession%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSession()))));
-    }
-
-    // add `total` to the URL query string
-    if (getTotal() != null) {
-      joiner.add(String.format("%stotal%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getTotal()))));
-    }
-
-    // add `userUuid` to the URL query string
-    if (getUserUuid() != null) {
-      joiner.add(String.format("%suserUuid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserUuid()))));
-    }
-
-    // add `voucher` to the URL query string
-    if (getVoucher() != null) {
-      joiner.add(String.format("%svoucher%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getVoucher()))));
-    }
-
-    return joiner.toString();
+  /**
+   * Convert an instance of Balance to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
 }
 

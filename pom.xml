@@ -336,4 +336,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spotless.version>2.43.0</spotless.version>
     </properties>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>https://git.minclouds.com/nexus/content/repositories/releases</url>
+        </repository>
+    </distributionManagement>
 </project>

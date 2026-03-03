@@ -589,8 +589,6 @@ components:
         udid:
           description: 绑定设备的UDID，兑换时绑定
           type: string
-      required:
-      - token
       title: CertificateCode
       type: object
     DeviceRequest:

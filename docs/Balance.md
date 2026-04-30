@@ -6,6 +6,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**acquire** | **BigDecimal** |  |  [optional]
 **algorithm** | **String** |  |  [optional]
 **balance** | **BigDecimal** |  |  [optional]
 **ciphertext** | **String** |  |  [optional]

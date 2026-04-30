@@ -28,8 +28,12 @@ import java.math.BigDecimal;
 /**
  * Balance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-01T01:00:36.571127+08:00[Asia/Shanghai]")
 public class Balance {
+  public static final String SERIALIZED_NAME_ACQUIRE = "acquire";
+  @SerializedName(SERIALIZED_NAME_ACQUIRE)
+  private BigDecimal acquire;
+
   public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
   @SerializedName(SERIALIZED_NAME_ALGORITHM)
   private String algorithm;
@@ -65,6 +69,31 @@ public class Balance {
   public static final String SERIALIZED_NAME_VOUCHER = "voucher";
   @SerializedName(SERIALIZED_NAME_VOUCHER)
   private BigDecimal voucher;
+
+  public Balance() { 
+  }
+
+  public Balance acquire(BigDecimal acquire) {
+    
+    this.acquire = acquire;
+    return this;
+  }
+
+   /**
+   * Get acquire
+   * @return acquire
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getAcquire() {
+    return acquire;
+  }
+
+
+  public void setAcquire(BigDecimal acquire) {
+    this.acquire = acquire;
+  }
 
 
   public Balance algorithm(String algorithm) {
@@ -283,7 +312,8 @@ public class Balance {
       return false;
     }
     Balance balance = (Balance) o;
-    return Objects.equals(this.algorithm, balance.algorithm) &&
+    return Objects.equals(this.acquire, balance.acquire) &&
+        Objects.equals(this.algorithm, balance.algorithm) &&
         Objects.equals(this.balance, balance.balance) &&
         Objects.equals(this.ciphertext, balance.ciphertext) &&
         Objects.equals(this.escrow, balance.escrow) &&
@@ -296,14 +326,14 @@ public class Balance {
 
   @Override
   public int hashCode() {
-    return Objects.hash(algorithm, balance, ciphertext, escrow, reward, session, total, userUuid, voucher);
+    return Objects.hash(acquire, algorithm, balance, ciphertext, escrow, reward, session, total, userUuid, voucher);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Balance {\n");
+    sb.append("    acquire: ").append(toIndentedString(acquire)).append("\n");
     sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    ciphertext: ").append(toIndentedString(ciphertext)).append("\n");

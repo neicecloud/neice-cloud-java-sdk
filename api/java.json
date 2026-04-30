@@ -1,0 +1,10 @@
+{
+  "sourceFolder": "src/main/java",
+  "apiPackage": "cloud.neice.api",
+  "modelPackage": "cloud.neice.model",
+  "configPackage": "cloud.neice.conf",
+  "groupId": "cloud.neice",
+  "artifactId": "neice-cloud-java-sdk",
+  "name": "neice-cloud-java-sdk",
+  "version": "1.0.0"
+}

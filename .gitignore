@@ -19,5 +19,8 @@ hs_err_pid*
 target
 .gradle
 build
-/.openapi-generator/
 /.idea/
+/.openapi-generator/
+/.tools/
+/.github/
+/neice-cloud-java-sdk.iml

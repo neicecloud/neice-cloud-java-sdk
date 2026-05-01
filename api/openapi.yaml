@@ -518,16 +518,19 @@ components:
   schemas:
     Balance:
       example:
-        reward: 5.962133916683182
+        reward: 5.637376656633329
         ciphertext: ciphertext
-        total: 5.637376656633329
-        balance: 6.027456183070403
+        total: 2.3021358869347655
+        balance: 1.4658129805029452
         session: session
-        voucher: 2.3021358869347655
+        voucher: 7.061401241503109
         userUuid: userUuid
-        escrow: 1.4658129805029452
+        escrow: 5.962133916683182
+        acquire: 6.027456183070403
         algorithm: algorithm
       properties:
+        acquire:
+          type: number
         algorithm:
           type: string
         balance:
@@ -819,14 +822,15 @@ components:
         ciphertext: ciphertext
         code: 0
         data:
-          reward: 5.962133916683182
+          reward: 5.637376656633329
           ciphertext: ciphertext
-          total: 5.637376656633329
-          balance: 6.027456183070403
+          total: 2.3021358869347655
+          balance: 1.4658129805029452
           session: session
-          voucher: 2.3021358869347655
+          voucher: 7.061401241503109
           userUuid: userUuid
-          escrow: 1.4658129805029452
+          escrow: 5.962133916683182
+          acquire: 6.027456183070403
           algorithm: algorithm
         session: session
         success: true

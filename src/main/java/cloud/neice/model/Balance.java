@@ -51,7 +51,6 @@ import cloud.neice.JSON;
  */
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Balance {
-
   public static final String SERIALIZED_NAME_ACQUIRE = "acquire";
   @SerializedName(SERIALIZED_NAME_ACQUIRE)
   @jakarta.annotation.Nullable
@@ -122,6 +121,7 @@ public class Balance {
   public void setAcquire(@jakarta.annotation.Nullable BigDecimal acquire) {
     this.acquire = acquire;
   }
+
 
   public Balance algorithm(@jakarta.annotation.Nullable String algorithm) {
     this.algorithm = algorithm;

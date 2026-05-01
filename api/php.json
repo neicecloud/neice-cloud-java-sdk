@@ -1,0 +1,6 @@
+{
+  "apiPackage": "Api",
+  "modelPackage": "Model",
+  "gitUserId": "neicecloud",
+  "gitRepoId": "neice-cloud-php-sdk"
+}

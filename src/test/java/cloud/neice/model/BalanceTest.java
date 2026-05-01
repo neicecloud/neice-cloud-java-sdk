@@ -42,6 +42,14 @@ public class BalanceTest {
     }
 
     /**
+     * Test the property 'acquire'
+     */
+    @Test
+    public void acquireTest() {
+        // TODO: test acquire
+    }
+
+    /**
      * Test the property 'algorithm'
      */
     @Test

@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * Balance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-01T01:00:36.571127+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Balance {
   public static final String SERIALIZED_NAME_ACQUIRE = "acquire";
   @SerializedName(SERIALIZED_NAME_ACQUIRE)
@@ -70,8 +70,6 @@ public class Balance {
   @SerializedName(SERIALIZED_NAME_VOUCHER)
   private BigDecimal voucher;
 
-  public Balance() { 
-  }
 
   public Balance acquire(BigDecimal acquire) {
     
@@ -328,6 +326,7 @@ public class Balance {
   public int hashCode() {
     return Objects.hash(acquire, algorithm, balance, ciphertext, escrow, reward, session, total, userUuid, voucher);
   }
+
 
   @Override
   public String toString() {

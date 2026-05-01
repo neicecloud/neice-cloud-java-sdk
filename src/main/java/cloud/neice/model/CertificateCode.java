@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * CertificateCode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-16T15:56:48.019518+08:00[Asia/Shanghai]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CertificateCode {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -238,7 +238,8 @@ public class CertificateCode {
    * 请求鉴权令牌
    * @return token
   **/
-  @ApiModelProperty(required = true, value = "请求鉴权令牌")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "请求鉴权令牌")
 
   public String getToken() {
     return token;

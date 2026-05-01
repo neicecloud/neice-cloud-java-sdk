@@ -6,5 +6,6 @@
   "groupId": "cloud.neice",
   "artifactId": "neice-cloud-java-sdk",
   "name": "neice-cloud-java-sdk",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "hideGenerationTimestamp": true
 }

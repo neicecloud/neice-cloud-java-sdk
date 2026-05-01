@@ -20,4 +20,4 @@ target
 .gradle
 build
 /.openapi-generator/
-/.idea/
+neice-cloud-java-sdk.iml

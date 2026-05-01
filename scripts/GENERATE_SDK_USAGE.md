@@ -26,7 +26,7 @@ Both modes use:
 
 ## Version Mapping
 
-- default mode: `openapi-generator-cli 5.4.0`
+- default mode: `openapi-generator-cli 5.0.0` (Maven: `https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/5.0.0/openapi-generator-cli-5.0.0.jar`)
 - `--modern`: `openapi-generator-cli 7.7.0`
 
 If the required generator is missing locally, the script auto-downloads the corresponding jar into `.tools/`.

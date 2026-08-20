@@ -12,6 +12,8 @@
 |**code** | **String** | 证书兑换码 |  [optional] |
 |**createTime** | **String** | 证书创建时间 |  [optional] |
 |**description** | **String** | 证书描述信息 |  [optional] |
+|**developmentCertificate** | **String** | IOS_DEVELOPMENT类型证书P12，附加产品 |  [optional] |
+|**developmentMobileprovision** | **String** | IOS_APP_DEVELOPMENT描述文件，附加产品 |  [optional] |
 |**deviceId** | **String** | 设备ID |  [optional] |
 |**experience** | **Integer** | 允许用户体验的次数 |  [optional] |
 |**invisible** | **Boolean** | 隐形证书 |  [optional] |

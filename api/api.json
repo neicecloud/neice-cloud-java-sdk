@@ -899,6 +899,14 @@
           "type": "string",
           "description": "证书描述信息"
         },
+        "developmentCertificate": {
+          "type": "string",
+          "description": "IOS_DEVELOPMENT类型证书P12，附加产品"
+        },
+        "developmentMobileprovision": {
+          "type": "string",
+          "description": "IOS_APP_DEVELOPMENT描述文件，附加产品"
+        },
         "deviceId": {
           "type": "string",
           "description": "设备ID"

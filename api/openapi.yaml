@@ -676,6 +676,7 @@ components:
       example:
         repair: true
         code: code
+        developmentMobileprovision: developmentMobileprovision
         certificateId: certificateId
         mobileprovision: mobileprovision
         certificate: certificate
@@ -696,6 +697,7 @@ components:
         profile: profile
         team: team
         quality: 5
+        developmentCertificate: developmentCertificate
         createTime: createTime
         phone: phone
         refer: refer
@@ -717,6 +719,12 @@ components:
           type: string
         description:
           description: 证书描述信息
+          type: string
+        developmentCertificate:
+          description: IOS_DEVELOPMENT类型证书P12，附加产品
+          type: string
+        developmentMobileprovision:
+          description: IOS_APP_DEVELOPMENT描述文件，附加产品
           type: string
         deviceId:
           description: 设备ID
@@ -1251,6 +1259,7 @@ components:
         data:
         - repair: true
           code: code
+          developmentMobileprovision: developmentMobileprovision
           certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
@@ -1271,6 +1280,7 @@ components:
           profile: profile
           team: team
           quality: 5
+          developmentCertificate: developmentCertificate
           createTime: createTime
           phone: phone
           refer: refer
@@ -1279,6 +1289,7 @@ components:
           name: name
         - repair: true
           code: code
+          developmentMobileprovision: developmentMobileprovision
           certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
@@ -1299,6 +1310,7 @@ components:
           profile: profile
           team: team
           quality: 5
+          developmentCertificate: developmentCertificate
           createTime: createTime
           phone: phone
           refer: refer
@@ -1735,6 +1747,7 @@ components:
         data:
           repair: true
           code: code
+          developmentMobileprovision: developmentMobileprovision
           certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
@@ -1755,6 +1768,7 @@ components:
           profile: profile
           team: team
           quality: 5
+          developmentCertificate: developmentCertificate
           createTime: createTime
           phone: phone
           refer: refer

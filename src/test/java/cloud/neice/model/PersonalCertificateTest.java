@@ -79,6 +79,22 @@ public class PersonalCertificateTest {
     }
 
     /**
+     * Test the property 'developmentCertificate'
+     */
+    @Test
+    public void developmentCertificateTest() {
+        // TODO: test developmentCertificate
+    }
+
+    /**
+     * Test the property 'developmentMobileprovision'
+     */
+    @Test
+    public void developmentMobileprovisionTest() {
+        // TODO: test developmentMobileprovision
+    }
+
+    /**
      * Test the property 'deviceId'
      */
     @Test

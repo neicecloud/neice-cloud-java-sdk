@@ -96,6 +96,26 @@ public class CertificateCode {
   @jakarta.annotation.Nullable
   private String udid;
 
+  public static final String SERIALIZED_NAME_ENABLE = "enable";
+  @SerializedName(SERIALIZED_NAME_ENABLE)
+  @jakarta.annotation.Nullable
+  private Boolean enable;
+
+  public static final String SERIALIZED_NAME_BLACK = "black";
+  @SerializedName(SERIALIZED_NAME_BLACK)
+  @jakarta.annotation.Nullable
+  private Boolean black;
+
+  public static final String SERIALIZED_NAME_DELETED = "deleted";
+  @SerializedName(SERIALIZED_NAME_DELETED)
+  @jakarta.annotation.Nullable
+  private Boolean deleted;
+
+  public static final String SERIALIZED_NAME_DISABLED = "disabled";
+  @SerializedName(SERIALIZED_NAME_DISABLED)
+  @jakarta.annotation.Nullable
+  private Boolean disabled;
+
   public CertificateCode() {
   }
 
@@ -270,6 +290,81 @@ public class CertificateCode {
   }
 
 
+  public CertificateCode enable(@jakarta.annotation.Nullable Boolean enable) {
+    this.enable = enable;
+    return this;
+  }
+
+  /**
+   * 证书网侧可用状态，与AAS禁用字段互为反义
+   * @return enable
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getEnable() {
+    return enable;
+  }
+
+  public void setEnable(@jakarta.annotation.Nullable Boolean enable) {
+    this.enable = enable;
+  }
+
+
+  public CertificateCode black(@jakarta.annotation.Nullable Boolean black) {
+    this.black = black;
+    return this;
+  }
+
+  /**
+   * 是否拉黑
+   * @return black
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getBlack() {
+    return black;
+  }
+
+  public void setBlack(@jakarta.annotation.Nullable Boolean black) {
+    this.black = black;
+  }
+
+
+  public CertificateCode deleted(@jakarta.annotation.Nullable Boolean deleted) {
+    this.deleted = deleted;
+    return this;
+  }
+
+  /**
+   * 证书网侧软删除标记
+   * @return deleted
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getDeleted() {
+    return deleted;
+  }
+
+  public void setDeleted(@jakarta.annotation.Nullable Boolean deleted) {
+    this.deleted = deleted;
+  }
+
+
+  public CertificateCode disabled(@jakarta.annotation.Nullable Boolean disabled) {
+    this.disabled = disabled;
+    return this;
+  }
+
+  /**
+   * AAS侧禁用状态，与证书网可用字段互为反义
+   * @return disabled
+   */
+  @jakarta.annotation.Nullable
+  public Boolean getDisabled() {
+    return disabled;
+  }
+
+  public void setDisabled(@jakarta.annotation.Nullable Boolean disabled) {
+    this.disabled = disabled;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -288,12 +383,16 @@ public class CertificateCode {
         Objects.equals(this.query, certificateCode.query) &&
         Objects.equals(this.reserve, certificateCode.reserve) &&
         Objects.equals(this.token, certificateCode.token) &&
-        Objects.equals(this.udid, certificateCode.udid);
+        Objects.equals(this.udid, certificateCode.udid) &&
+        Objects.equals(this.enable, certificateCode.enable) &&
+        Objects.equals(this.black, certificateCode.black) &&
+        Objects.equals(this.deleted, certificateCode.deleted) &&
+        Objects.equals(this.disabled, certificateCode.disabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, domain, exchange, model, quality, query, reserve, token, udid);
+    return Objects.hash(code, domain, exchange, model, quality, query, reserve, token, udid, enable, black, deleted, disabled);
   }
 
   @Override
@@ -309,6 +408,10 @@ public class CertificateCode {
     sb.append("    reserve: ").append(toIndentedString(reserve)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("    udid: ").append(toIndentedString(udid)).append("\n");
+    sb.append("    enable: ").append(toIndentedString(enable)).append("\n");
+    sb.append("    black: ").append(toIndentedString(black)).append("\n");
+    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
+    sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -340,6 +443,10 @@ public class CertificateCode {
     openapiFields.add("reserve");
     openapiFields.add("token");
     openapiFields.add("udid");
+    openapiFields.add("enable");
+    openapiFields.add("black");
+    openapiFields.add("deleted");
+    openapiFields.add("disabled");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

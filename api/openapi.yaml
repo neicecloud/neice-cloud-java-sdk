@@ -559,6 +559,10 @@ components:
         udid: udid
         quality: 6
         token: token
+        enable: true
+        black: false
+        deleted: false
+        disabled: false
       properties:
         code:
           description: 证书兑换码
@@ -589,6 +593,18 @@ components:
         udid:
           description: 绑定设备的UDID，兑换时绑定
           type: string
+        enable:
+          description: 证书网侧可用状态，与AAS禁用字段互为反义
+          type: boolean
+        black:
+          description: 是否拉黑
+          type: boolean
+        deleted:
+          description: 证书网侧软删除标记
+          type: boolean
+        disabled:
+          description: AAS侧禁用状态，与证书网可用字段互为反义
+          type: boolean
       required:
       - token
       title: CertificateCode

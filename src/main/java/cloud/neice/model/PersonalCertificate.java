@@ -76,6 +76,16 @@ public class PersonalCertificate {
   @jakarta.annotation.Nullable
   private String description;
 
+  public static final String SERIALIZED_NAME_DEVELOPMENT_CERTIFICATE = "developmentCertificate";
+  @SerializedName(SERIALIZED_NAME_DEVELOPMENT_CERTIFICATE)
+  @jakarta.annotation.Nullable
+  private String developmentCertificate;
+
+  public static final String SERIALIZED_NAME_DEVELOPMENT_MOBILEPROVISION = "developmentMobileprovision";
+  @SerializedName(SERIALIZED_NAME_DEVELOPMENT_MOBILEPROVISION)
+  @jakarta.annotation.Nullable
+  private String developmentMobileprovision;
+
   public static final String SERIALIZED_NAME_DEVICE_ID = "deviceId";
   @SerializedName(SERIALIZED_NAME_DEVICE_ID)
   @jakarta.annotation.Nullable
@@ -286,6 +296,44 @@ public class PersonalCertificate {
 
   public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
+  }
+
+
+  public PersonalCertificate developmentCertificate(@jakarta.annotation.Nullable String developmentCertificate) {
+    this.developmentCertificate = developmentCertificate;
+    return this;
+  }
+
+  /**
+   * IOS_DEVELOPMENT类型证书P12，附加产品
+   * @return developmentCertificate
+   */
+  @jakarta.annotation.Nullable
+  public String getDevelopmentCertificate() {
+    return developmentCertificate;
+  }
+
+  public void setDevelopmentCertificate(@jakarta.annotation.Nullable String developmentCertificate) {
+    this.developmentCertificate = developmentCertificate;
+  }
+
+
+  public PersonalCertificate developmentMobileprovision(@jakarta.annotation.Nullable String developmentMobileprovision) {
+    this.developmentMobileprovision = developmentMobileprovision;
+    return this;
+  }
+
+  /**
+   * IOS_APP_DEVELOPMENT描述文件，附加产品
+   * @return developmentMobileprovision
+   */
+  @jakarta.annotation.Nullable
+  public String getDevelopmentMobileprovision() {
+    return developmentMobileprovision;
+  }
+
+  public void setDevelopmentMobileprovision(@jakarta.annotation.Nullable String developmentMobileprovision) {
+    this.developmentMobileprovision = developmentMobileprovision;
   }
 
 
@@ -741,6 +789,8 @@ public class PersonalCertificate {
         Objects.equals(this.code, personalCertificate.code) &&
         Objects.equals(this.createTime, personalCertificate.createTime) &&
         Objects.equals(this.description, personalCertificate.description) &&
+        Objects.equals(this.developmentCertificate, personalCertificate.developmentCertificate) &&
+        Objects.equals(this.developmentMobileprovision, personalCertificate.developmentMobileprovision) &&
         Objects.equals(this.deviceId, personalCertificate.deviceId) &&
         Objects.equals(this.experience, personalCertificate.experience) &&
         Objects.equals(this.invisible, personalCertificate.invisible) &&
@@ -768,7 +818,7 @@ public class PersonalCertificate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(certificate, certificateId, code, createTime, description, deviceId, experience, invisible, lock, mobileprovision, name, password, phone, price, profile, profileId, quality, qualityTime, refer, repair, reserve, serialNumber, tag, team, teamId, udid, uuid, valid);
+    return Objects.hash(certificate, certificateId, code, createTime, description, developmentCertificate, developmentMobileprovision, deviceId, experience, invisible, lock, mobileprovision, name, password, phone, price, profile, profileId, quality, qualityTime, refer, repair, reserve, serialNumber, tag, team, teamId, udid, uuid, valid);
   }
 
   @Override
@@ -780,6 +830,8 @@ public class PersonalCertificate {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    developmentCertificate: ").append(toIndentedString(developmentCertificate)).append("\n");
+    sb.append("    developmentMobileprovision: ").append(toIndentedString(developmentMobileprovision)).append("\n");
     sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
     sb.append("    experience: ").append(toIndentedString(experience)).append("\n");
     sb.append("    invisible: ").append(toIndentedString(invisible)).append("\n");
@@ -830,6 +882,8 @@ public class PersonalCertificate {
     openapiFields.add("code");
     openapiFields.add("createTime");
     openapiFields.add("description");
+    openapiFields.add("developmentCertificate");
+    openapiFields.add("developmentMobileprovision");
     openapiFields.add("deviceId");
     openapiFields.add("experience");
     openapiFields.add("invisible");
@@ -893,6 +947,12 @@ public class PersonalCertificate {
       }
       if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
+      if ((jsonObj.get("developmentCertificate") != null && !jsonObj.get("developmentCertificate").isJsonNull()) && !jsonObj.get("developmentCertificate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `developmentCertificate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("developmentCertificate").toString()));
+      }
+      if ((jsonObj.get("developmentMobileprovision") != null && !jsonObj.get("developmentMobileprovision").isJsonNull()) && !jsonObj.get("developmentMobileprovision").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `developmentMobileprovision` to be a primitive type in the JSON string but got `%s`", jsonObj.get("developmentMobileprovision").toString()));
       }
       if ((jsonObj.get("deviceId") != null && !jsonObj.get("deviceId").isJsonNull()) && !jsonObj.get("deviceId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `deviceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("deviceId").toString()));

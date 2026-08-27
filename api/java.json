@@ -1,0 +1,14 @@
+{
+  "sourceFolder": "src/main/java",
+  "apiPackage": "cloud.neice.api",
+  "modelPackage": "cloud.neice.model",
+  "invokerPackage": "cloud.neice",
+  "groupId": "cloud.neice",
+  "artifactId": "neice-cloud-java-sdk",
+  "artifactVersion": "3.0.0",
+  "dateLibrary": "java8",
+  "hideGenerationTimestamp": true,
+  "openApiNullable": false,
+  "useJakartaEe": true,
+  "serializationLibrary": "jackson"
+}

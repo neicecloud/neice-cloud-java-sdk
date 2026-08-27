@@ -518,16 +518,19 @@ components:
   schemas:
     Balance:
       example:
-        reward: 5.962133916683182
+        reward: 5.637376656633329
         ciphertext: ciphertext
-        total: 5.637376656633329
-        balance: 6.027456183070403
+        total: 2.3021358869347655
+        balance: 1.4658129805029452
         session: session
-        voucher: 2.3021358869347655
+        voucher: 7.061401241503109
         userUuid: userUuid
-        escrow: 1.4658129805029452
+        escrow: 5.962133916683182
+        acquire: 6.027456183070403
         algorithm: algorithm
       properties:
+        acquire:
+          type: number
         algorithm:
           type: string
         balance:
@@ -691,6 +694,7 @@ components:
       example:
         repair: true
         code: code
+        developmentMobileprovision: developmentMobileprovision
         certificateId: certificateId
         mobileprovision: mobileprovision
         certificate: certificate
@@ -711,6 +715,7 @@ components:
         profile: profile
         team: team
         quality: 5
+        developmentCertificate: developmentCertificate
         createTime: createTime
         phone: phone
         refer: refer
@@ -732,6 +737,12 @@ components:
           type: string
         description:
           description: 证书描述信息
+          type: string
+        developmentCertificate:
+          description: IOS_DEVELOPMENT类型证书P12，附加产品
+          type: string
+        developmentMobileprovision:
+          description: IOS_APP_DEVELOPMENT描述文件，附加产品
           type: string
         deviceId:
           description: 设备ID
@@ -837,14 +848,15 @@ components:
         ciphertext: ciphertext
         code: 0
         data:
-          reward: 5.962133916683182
+          reward: 5.637376656633329
           ciphertext: ciphertext
-          total: 5.637376656633329
-          balance: 6.027456183070403
+          total: 2.3021358869347655
+          balance: 1.4658129805029452
           session: session
-          voucher: 2.3021358869347655
+          voucher: 7.061401241503109
           userUuid: userUuid
-          escrow: 1.4658129805029452
+          escrow: 5.962133916683182
+          acquire: 6.027456183070403
           algorithm: algorithm
         session: session
         success: true
@@ -1265,6 +1277,7 @@ components:
         data:
         - repair: true
           code: code
+          developmentMobileprovision: developmentMobileprovision
           certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
@@ -1285,6 +1298,7 @@ components:
           profile: profile
           team: team
           quality: 5
+          developmentCertificate: developmentCertificate
           createTime: createTime
           phone: phone
           refer: refer
@@ -1293,6 +1307,7 @@ components:
           name: name
         - repair: true
           code: code
+          developmentMobileprovision: developmentMobileprovision
           certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
@@ -1313,6 +1328,7 @@ components:
           profile: profile
           team: team
           quality: 5
+          developmentCertificate: developmentCertificate
           createTime: createTime
           phone: phone
           refer: refer
@@ -1749,6 +1765,7 @@ components:
         data:
           repair: true
           code: code
+          developmentMobileprovision: developmentMobileprovision
           certificateId: certificateId
           mobileprovision: mobileprovision
           certificate: certificate
@@ -1769,6 +1786,7 @@ components:
           profile: profile
           team: team
           quality: 5
+          developmentCertificate: developmentCertificate
           createTime: createTime
           phone: phone
           refer: refer

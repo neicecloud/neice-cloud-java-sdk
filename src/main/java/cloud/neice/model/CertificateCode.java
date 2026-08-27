@@ -88,7 +88,7 @@ public class CertificateCode {
 
   public static final String SERIALIZED_NAME_TOKEN = "token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   private String token;
 
   public static final String SERIALIZED_NAME_UDID = "udid";
@@ -252,7 +252,7 @@ public class CertificateCode {
   }
 
 
-  public CertificateCode token(@jakarta.annotation.Nonnull String token) {
+  public CertificateCode token(@jakarta.annotation.Nullable String token) {
     this.token = token;
     return this;
   }
@@ -261,12 +261,12 @@ public class CertificateCode {
    * 请求鉴权令牌
    * @return token
    */
-  @jakarta.annotation.Nonnull
+  @jakarta.annotation.Nullable
   public String getToken() {
     return token;
   }
 
-  public void setToken(@jakarta.annotation.Nonnull String token) {
+  public void setToken(@jakarta.annotation.Nullable String token) {
     this.token = token;
   }
 
@@ -450,7 +450,6 @@ public class CertificateCode {
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("token");
   }
 
   /**
@@ -473,13 +472,6 @@ public class CertificateCode {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CertificateCode` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : CertificateCode.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
-        }
-      }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("code") != null && !jsonObj.get("code").isJsonNull()) && !jsonObj.get("code").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("code").toString()));
@@ -493,7 +485,7 @@ public class CertificateCode {
       if ((jsonObj.get("query") != null && !jsonObj.get("query").isJsonNull()) && !jsonObj.get("query").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `query` to be a primitive type in the JSON string but got `%s`", jsonObj.get("query").toString()));
       }
-      if (!jsonObj.get("token").isJsonPrimitive()) {
+      if ((jsonObj.get("token") != null && !jsonObj.get("token").isJsonNull()) && !jsonObj.get("token").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("token").toString()));
       }
       if ((jsonObj.get("udid") != null && !jsonObj.get("udid").isJsonNull()) && !jsonObj.get("udid").isJsonPrimitive()) {

@@ -51,6 +51,11 @@ import cloud.neice.JSON;
  */
 @jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.12.0")
 public class Balance {
+  public static final String SERIALIZED_NAME_ACQUIRE = "acquire";
+  @SerializedName(SERIALIZED_NAME_ACQUIRE)
+  @jakarta.annotation.Nullable
+  private BigDecimal acquire;
+
   public static final String SERIALIZED_NAME_ALGORITHM = "algorithm";
   @SerializedName(SERIALIZED_NAME_ALGORITHM)
   @jakarta.annotation.Nullable
@@ -98,6 +103,25 @@ public class Balance {
 
   public Balance() {
   }
+
+  public Balance acquire(@jakarta.annotation.Nullable BigDecimal acquire) {
+    this.acquire = acquire;
+    return this;
+  }
+
+  /**
+   * Get acquire
+   * @return acquire
+   */
+  @jakarta.annotation.Nullable
+  public BigDecimal getAcquire() {
+    return acquire;
+  }
+
+  public void setAcquire(@jakarta.annotation.Nullable BigDecimal acquire) {
+    this.acquire = acquire;
+  }
+
 
   public Balance algorithm(@jakarta.annotation.Nullable String algorithm) {
     this.algorithm = algorithm;
@@ -280,7 +304,8 @@ public class Balance {
       return false;
     }
     Balance balance = (Balance) o;
-    return Objects.equals(this.algorithm, balance.algorithm) &&
+    return Objects.equals(this.acquire, balance.acquire) &&
+        Objects.equals(this.algorithm, balance.algorithm) &&
         Objects.equals(this.balance, balance.balance) &&
         Objects.equals(this.ciphertext, balance.ciphertext) &&
         Objects.equals(this.escrow, balance.escrow) &&
@@ -293,13 +318,14 @@ public class Balance {
 
   @Override
   public int hashCode() {
-    return Objects.hash(algorithm, balance, ciphertext, escrow, reward, session, total, userUuid, voucher);
+    return Objects.hash(acquire, algorithm, balance, ciphertext, escrow, reward, session, total, userUuid, voucher);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Balance {\n");
+    sb.append("    acquire: ").append(toIndentedString(acquire)).append("\n");
     sb.append("    algorithm: ").append(toIndentedString(algorithm)).append("\n");
     sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
     sb.append("    ciphertext: ").append(toIndentedString(ciphertext)).append("\n");
@@ -331,6 +357,7 @@ public class Balance {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("acquire");
     openapiFields.add("algorithm");
     openapiFields.add("balance");
     openapiFields.add("ciphertext");
